@@ -1,45 +1,279 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beyond the Magic Consulting</title>
-  <meta name="description" content="Beyond the Magic Consulting — Performance Architects." />
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond the Magic Consulting LLC — Performance Architects</title>
+  <meta name="description" content="Beyond the Magic Consulting LLC helps hospitality, entertainment, and experience-driven organizations architect exceptional performance. Performance Architects.">
+  <meta property="og:title" content="Beyond the Magic Consulting LLC — Performance Architects">
+  <meta property="og:description" content="We help organizations architect exceptional experiences and operational excellence.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://beyondthemagic.consulting">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <div class="brand">Beyond the Magic</div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/services/">Services</a>
-        <a href="/about/">About</a>
-        <a href="/contact/">Contact</a>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav class="nav" role="navigation" aria-label="Primary">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Beyond the Magic Consulting — Home">
+      <img src="/assets/logo.svg" alt="" class="nav__logo-mark" width="34" height="27">
+      <div class="nav__logo-text">
+        <span class="nav__logo-primary">Beyond the Magic</span>
+        <span class="nav__logo-sub">Performance Architects</span>
+      </div>
+    </a>
+    <div class="nav__links">
+      <a href="/about/">About</a>
+      <a href="/services/">Services</a>
+      <a href="/case-studies/">Case Studies</a>
+      <a href="/insights/">Insights</a>
+      <a href="/speaking/">Speaking</a>
+      <a href="/contact/" class="nav__cta">Work With Us</a>
+    </div>
+    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <span class="eyebrow">Performance Architects</span>
+        <h1 class="hero__headline">
+          What happens when<br>
+          <em>magic becomes</em><br>
+          measurable?
+        </h1>
+        <span class="rule"></span>
+        <p class="hero__body">
+          We work with hospitality, entertainment, and experience-driven organizations to close the gap between the extraordinary they promise and the performance they deliver. Rigorous systems. Elevated standards. Results that endure.
+        </p>
+        <div class="hero__actions">
+          <a href="/services/" class="btn btn--primary">Our Services</a>
+          <a href="/case-studies/" class="btn btn--outline">See Our Work</a>
+        </div>
+      </div>
+      <div class="hero__mark-wrap" aria-hidden="true">
+        <img src="/assets/logo.svg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section section--warm" aria-labelledby="services-h">
+    <div class="section__inner">
+      <span class="eyebrow">What We Do</span>
+      <h2 id="services-h">Structured disciplines.<br>Singular outcomes.</h2>
+      <span class="rule"></span>
+      <p class="lead">Our practice is built around three interlocking disciplines — each capable of transforming how your organization performs, and together forming an architecture of sustained excellence.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <span class="service-card__num">01</span>
+          <h3 class="service-card__title">Experience Architecture</h3>
+          <p class="service-card__body">We map, design, and engineer the full guest journey — from first impression through lasting memory — ensuring every touchpoint reflects your brand's highest standards and drives return visitation.</p>
+          <a href="/services/#experience-architecture" class="service-card__link">Learn more</a>
+        </div>
+        <div class="service-card">
+          <span class="service-card__num">02</span>
+          <h3 class="service-card__title">Operational Performance</h3>
+          <p class="service-card__body">We diagnose the friction, waste, and inconsistency that erodes guest satisfaction and financial performance — then build the systems that eliminate them permanently.</p>
+          <a href="/services/#operational-performance" class="service-card__link">Learn more</a>
+        </div>
+        <div class="service-card">
+          <span class="service-card__num">03</span>
+          <h3 class="service-card__title">Leadership &amp; Culture</h3>
+          <p class="service-card__body">Exceptional operations begin with exceptional teams. We develop the leaders, frameworks, and cultural infrastructure that sustain performance long after the engagement ends.</p>
+          <a href="/services/#leadership-culture" class="service-card__link">Learn more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section section--navy" aria-labelledby="philosophy-h">
+    <div class="section__inner">
+      <span class="eyebrow">Our Approach</span>
+      <h2 id="philosophy-h">Performance is<br>an architecture problem.</h2>
+      <span class="rule"></span>
+      <div class="philosophy-wrap">
+        <div class="philosophy-list">
+          <div class="philosophy-item">
+            <span class="philosophy-item__label">Diagnosis before prescription</span>
+            <p class="philosophy-item__text">We never propose solutions before we understand the system. Every engagement begins with rigorous discovery — qualitative, quantitative, observational.</p>
+          </div>
+          <div class="philosophy-item">
+            <span class="philosophy-item__label">Systems over interventions</span>
+            <p class="philosophy-item__text">One-time fixes don't compound. We build frameworks that continue to generate value after we're gone — embedded in process, culture, and leadership practice.</p>
+          </div>
+          <div class="philosophy-item">
+            <span class="philosophy-item__label">Craft alongside rigor</span>
+            <p class="philosophy-item__text">We believe operational excellence and experiential beauty are not in tension. The best-performing organizations are also the most beautifully run.</p>
+          </div>
+          <div class="philosophy-item">
+            <span class="philosophy-item__label">Long view accountability</span>
+            <p class="philosophy-item__text">We measure our success by the permanence of your results, not the length of our engagement.</p>
+          </div>
+        </div>
+        <div>
+          <p class="philosophy-body">Beyond the Magic was founded on a simple conviction: the gap between what organizations promise their guests and what they actually deliver is almost always a structural problem — not a people problem, not a values problem, not a budget problem. It is a system that has never been properly designed.</p>
+          <p class="philosophy-body" style="margin-top:20px;">We are the architects who design it.</p>
+          <a href="/about/" class="btn btn--outline" style="margin-top:36px;">Our Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDY PREVIEW -->
+  <section class="section" aria-labelledby="case-h">
+    <div class="section__inner">
+      <span class="eyebrow">Featured Work</span>
+      <h2 id="case-h">From friction to flow.</h2>
+      <span class="rule"></span>
+      <div class="case-preview-grid">
+        <div class="case-preview__content">
+          <span class="case-tag">Regional Theme Park · Operational Overhaul</span>
+          <h3 class="case-preview__title">Rebuilding the Guest Experience from the Turnstile In</h3>
+          <p class="case-preview__body">A 1.8M annual-visit regional park faced declining NPS scores, stagnant repeat-visit rates, and frontline team attrition that was eroding everything they had built. We spent 14 weeks inside their operation — then rebuilt it from the ground up.</p>
+          <a href="/case-studies/" class="btn btn--outline-dark">Read the case study</a>
+        </div>
+        <div class="case-preview__stats">
+          <div class="stat">
+            <span class="stat__num">+31</span>
+            <span class="stat__label">NPS point improvement</span>
+            <span class="stat__context">18-month post-engagement baseline</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">44%</span>
+            <span class="stat__label">Reduction in frontline attrition</span>
+            <span class="stat__context">Year-over-year comparison</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">2.1×</span>
+            <span class="stat__label">Repeat visit rate growth</span>
+            <span class="stat__context">Season-to-season</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <div class="pull-quote">
+    <span class="pull-quote__mark" aria-hidden="true">"</span>
+    <p class="pull-quote__text">They didn't just consult with us. They operated beside us until the work was actually done — and then built the systems to keep it that way.</p>
+    <div class="pull-quote__rule"></div>
+    <p class="pull-quote__attr">Vice President of Guest Experience · Regional Entertainment Group</p>
+  </div>
+
+  <!-- SPEAKING -->
+  <section class="section section--warm" aria-labelledby="speaking-h">
+    <div class="section__inner">
+      <span class="eyebrow">Thought Leadership</span>
+      <h2 id="speaking-h">Speaking &amp; Keynotes</h2>
+      <span class="rule"></span>
+      <div class="speaking-wrap">
+        <div>
+          <p class="lead" style="margin-bottom:36px;">Our principals have delivered keynotes and workshops at industry conferences, executive retreats, and leadership forums across the country.</p>
+          <div class="topics-list">
+            <div class="topic-row">
+              <span class="topic-row__title">The Architecture of Delight: Engineering Guest Experiences That Scale</span>
+              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-row__title">Beyond Service Recovery: Building Systems That Don't Break</span>
+              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-row__title">Frontline Excellence as a Leadership Strategy</span>
+              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            </div>
+            <div class="topic-row">
+              <span class="topic-row__title">Measuring What Matters: The Metrics That Lie to You</span>
+              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            </div>
+          </div>
+          <a href="/speaking/" class="btn btn--outline-dark" style="margin-top:32px;">Speaking Inquiries</a>
+        </div>
+        <div class="speaking-aside">
+          <div class="aside-stat">
+            <span class="aside-stat__num">60+</span>
+            <span class="aside-stat__label">Keynotes delivered</span>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-stat">
+            <span class="aside-stat__num">18</span>
+            <span class="aside-stat__label">Industry conferences</span>
+          </div>
+          <div class="aside-divider"></div>
+          <div class="aside-stat">
+            <span class="aside-stat__num">12K+</span>
+            <span class="aside-stat__label">Practitioners reached</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="cta-band__inner">
+      <div class="cta-band__text">
+        <h2 class="cta-band__headline">Ready to close the gap?</h2>
+        <p class="cta-band__body">Every engagement begins with a candid conversation about where you are and where you need to be. No pitch. No proposal before we understand the problem.</p>
+      </div>
+      <a href="/contact/" class="btn btn--primary">Start the Conversation</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="footer" role="contentinfo">
+  <div class="footer__grid">
+    <div>
+      <img src="/assets/logo.svg" alt="Beyond the Magic Consulting LLC" class="footer__logo">
+      <p class="footer__about">Performance architecture for hospitality, entertainment, and experience-driven organizations. We build the systems that make the magic last.</p>
+    </div>
+    <div>
+      <span class="footer__col-head">Practice</span>
+      <nav class="footer__links" aria-label="Services">
+        <a href="/services/#experience-architecture">Experience Architecture</a>
+        <a href="/services/#operational-performance">Operational Performance</a>
+        <a href="/services/#leadership-culture">Leadership &amp; Culture</a>
       </nav>
     </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow">Performance Architects</p>
-        <h1>Build the culture that builds the business.</h1>
-        <p class="lede">A modern consulting practice focused on alignment, leadership clarity, and measurable performance.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>© <span id="year"></span> Beyond the Magic Consulting LLC</small>
+    <div>
+      <span class="footer__col-head">Company</span>
+      <nav class="footer__links" aria-label="Company">
+        <a href="/about/">About</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/insights/">Insights</a>
+        <a href="/speaking/">Speaking</a>
+      </nav>
     </div>
-  </footer>
+    <div>
+      <span class="footer__col-head">Connect</span>
+      <nav class="footer__links" aria-label="Contact">
+        <a href="/contact/">Work With Us</a>
+        <a href="/speaking/">Book a Keynote</a>
+        <a href="mailto:hello@beyondthemagic.consulting">Email Us</a>
+      </nav>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p class="footer__copy">&copy; 2025 Beyond the Magic Consulting LLC. All rights reserved.</p>
+    <p class="footer__copy">Performance Architects</p>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<script src="site.js"></script>
 </body>
 </html>
