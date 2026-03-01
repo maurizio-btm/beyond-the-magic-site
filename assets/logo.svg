@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 268" role="img" aria-label="Beyond the Magic Consulting LLC">
+  <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="#1A2744"/>
+  <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="3" stroke-linejoin="miter"/>
+  <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
+  <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
+  <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
+  <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
+  <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+  <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+  <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+  <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+  <circle cx="170" cy="50" r="3" fill="#C49A72"/>
+  <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
+  <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
+  <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
+  <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
+  <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
+</svg>
