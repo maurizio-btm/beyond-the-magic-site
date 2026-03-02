@@ -3,277 +3,712 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond the Magic Consulting LLC — Performance Architects</title>
-  <meta name="description" content="Beyond the Magic Consulting LLC helps hospitality, entertainment, and experience-driven organizations architect exceptional performance. Performance Architects.">
-  <meta property="og:title" content="Beyond the Magic Consulting LLC — Performance Architects">
-  <meta property="og:description" content="We help organizations architect exceptional experiences and operational excellence.">
+  <title>Beyond the Magic Consulting — Performance Architects</title>
+  <meta name="description" content="Beyond the Magic Consulting LLC. Performance Architects. We build the strategy, systems, and leadership culture that transform aspiration into results.">
+  <meta property="og:title" content="Beyond the Magic Consulting — Performance Architects">
+  <meta property="og:description" content="We architect the conditions for exceptional performance.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://beyondthemagic.consulting">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow:wght@300;400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --navy:       #1A2744;
+      --charcoal:   #1E2023;
+      --slate-deep: #2C3038;
+      --slate-lt:   #5C6370;
+      --copper:     #A0714F;
+      --copper-lt:  #C49A72;
+      --off-white:  #F5F3EF;
+      --warm-white: #FAF8F5;
+
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --body:    'Barlow', system-ui, sans-serif;
+      --ui:      'Barlow Condensed', system-ui, sans-serif;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--off-white);
+      color: var(--charcoal);
+      font-family: var(--body);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 210px;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(196,154,114,.13);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 0 7%;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    /* Inline SVG mark in nav — large */
+    .nav__mark {
+      width: 190px;
+      height: auto;
+      flex-shrink: 0;
+    }
+
+    .nav__wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      line-height: 1;
+    }
+
+    .nav__name {
+      font-family: var(--ui);
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    .nav__sub {
+      font-family: var(--ui);
+      font-weight: 300;
+      font-size: 14px;
+      letter-spacing: .36em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      opacity: .7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      padding: 210px 7% 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Vertical spine rule */
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 19%;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(196,154,114,.09);
+    }
+
+    /* Bottom rule */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 7%; right: 7%;
+      height: 1px;
+      background: rgba(196,154,114,.12);
+    }
+
+    .hero__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 64px;
+      padding: 100px 0;
+    }
+
+    .hero__content { max-width: 700px; flex: 1; }
+
+    .eyebrow {
+      display: block;
+      font-family: var(--ui);
+      font-size: 14px;
+      letter-spacing: .46em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: clamp(52px, 7vw, 96px);
+      line-height: 1.06;
+      color: var(--off-white);
+      letter-spacing: -.01em;
+      margin-bottom: 32px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--copper-lt);
+    }
+
+    .hero__body {
+      font-size: clamp(18px, 1.9vw, 22px);
+      color: rgba(245,243,239,.48);
+      line-height: 1.95;
+      max-width: 560px;
+      margin-bottom: 52px;
+    }
+
+    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--ui);
+      font-size: 14px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      padding: 17px 36px;
+      border: 1px solid transparent;
+      transition: background .2s, border-color .2s, color .2s;
+    }
+
+    .btn--solid {
+      background: var(--copper);
+      color: var(--off-white);
+      border-color: var(--copper);
+    }
+    .btn--solid:hover { background: var(--copper-lt); border-color: var(--copper-lt); }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--off-white);
+      border-color: rgba(245,243,239,.28);
+    }
+    .btn--ghost:hover { border-color: rgba(245,243,239,.65); }
+
+    /* Large emblem watermark */
+    .hero__emblem {
+      flex-shrink: 0;
+      width: clamp(360px, 42vw, 560px);
+      opacity: .065;
+      pointer-events: none;
+    }
+
+    /* ── SECTION SHARED ── */
+    .section {
+      padding: 96px 7%;
+    }
+
+    .section__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section--warm { background: var(--warm-white); }
+    .section--navy { background: var(--navy); }
+    .section--slate { background: var(--slate-deep); }
+    .section--off   { background: var(--off-white); }
+
+    .section-eyebrow {
+      display: block;
+      font-family: var(--ui);
+      font-size: 14px;
+      letter-spacing: .44em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 16px;
+    }
+    .section--navy .section-eyebrow { color: var(--copper-lt); }
+    .section--slate .section-eyebrow { color: var(--copper-lt); }
+
+    h2 {
+      font-family: var(--display);
+      font-weight: 300;
+      font-size: clamp(38px, 4.5vw, 60px);
+      line-height: 1.08;
+      letter-spacing: -.01em;
+      color: var(--charcoal);
+      margin-bottom: 0;
+    }
+    .section--navy h2,
+    .section--slate h2 { color: var(--off-white); }
+
+    /* Copper rule */
+    .rule {
+      display: block;
+      width: 44px;
+      height: 2px;
+      background: var(--copper);
+      margin: 18px 0 32px;
+    }
+    .section--navy .rule,
+    .section--slate .rule { background: var(--copper-lt); }
+
+    .lead {
+      font-size: clamp(19px, 2vw, 22px);
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--slate-lt);
+      max-width: 640px;
+    }
+    .section--navy .lead,
+    .section--slate .lead { color: rgba(245,243,239,.48); }
+
+    p {
+      font-size: 19px;
+      line-height: 1.9;
+      color: var(--slate-lt);
+    }
+    .section--navy p,
+    .section--slate p { color: rgba(245,243,239,.48); }
+
+    /* ── WHAT WE DO — service cards ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(28,30,35,.1);
+      margin-top: 56px;
+    }
+
+    .svc {
+      background: var(--warm-white);
+      padding: 48px 38px 52px;
+      transition: background .2s;
+    }
+    .svc:hover { background: var(--off-white); }
+    .section--off .svc { background: var(--off-white); }
+    .section--off .svc:hover { background: var(--warm-white); }
+
+    .svc__num {
+      font-family: var(--ui);
+      font-size: 13px;
+      letter-spacing: .32em;
+      color: var(--copper);
+      display: block;
+      margin-bottom: 22px;
+    }
+
+    .svc__title {
+      font-family: var(--display);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.12;
+      margin-bottom: 16px;
+    }
+
+    .svc__body {
+      font-size: 18px;
+      color: var(--slate-lt);
+      line-height: 1.9;
+    }
+
+    /* ── OUR APPROACH ── */
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .approach-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 4px;
+    }
+
+    .approach-item {
+      padding-left: 20px;
+      border-left: 2px solid rgba(196,154,114,.3);
+    }
+
+    .approach-item__label {
+      font-family: var(--ui);
+      font-size: 13px;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .approach-item p { font-size: 18px; color: rgba(245,243,239,.48); }
+
+    /* ── CTA BAND ── */
+    .cta-band {
+      background: var(--navy);
+      padding: 96px 7%;
+      border-top: 1px solid rgba(196,154,114,.1);
+    }
+
+    .cta-band__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 56px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band__text { max-width: 580px; }
+    .cta-band__text h2 { color: var(--off-white); margin-bottom: 12px; }
+
+    .btn--navy-ghost {
+      background: transparent;
+      color: var(--off-white);
+      border-color: rgba(245,243,239,.28);
+    }
+    .btn--navy-ghost:hover { border-color: rgba(245,243,239,.65); }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--charcoal);
+      padding: 56px 7% 40px;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+
+    .footer__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer__brand {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .footer__mark { width: 200px; height: auto; }
+
+    .footer__brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer__brand-name {
+      font-family: var(--ui);
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(245,243,239,.5);
+    }
+
+    .footer__brand-pa {
+      font-family: var(--ui);
+      font-weight: 400;
+      font-size: 13px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      opacity: .6;
+    }
+
+    .footer__contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: right;
+    }
+
+    .footer__contact-label {
+      font-family: var(--ui);
+      font-size: 13px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--copper-lt);
+      opacity: .55;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .footer__contact a {
+      font-family: var(--ui);
+      font-size: 17px;
+      letter-spacing: .08em;
+      color: rgba(245,243,239,.35);
+      transition: color .2s;
+      display: block;
+    }
+    .footer__contact a:hover { color: rgba(245,243,239,.7); }
+
+    .footer__bottom {
+      max-width: 1280px;
+      margin: 36px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.05);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .footer__copy {
+      font-family: var(--ui);
+      font-size: 13px;
+      letter-spacing: .14em;
+      color: rgba(245,243,239,.16);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .approach-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 72px 5%; }
+      .nav { padding: 0 5%; height: 140px; }
+      .nav__mark { width: 120px; }
+      .cta-band { padding: 72px 5%; }
+      .footer { padding: 48px 5% 36px; }
+      .hero { padding: 140px 5% 0; }
+      .hero::before { display: none; }
+      .hero__inner { flex-direction: column; padding: 80px 0; gap: 48px; }
+      .hero__emblem { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .cta-band__inner { flex-direction: column; }
+      .footer__contact { text-align: left; }
+      .footer__mark { width: 130px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 42px; }
+      h2 { font-size: 34px; }
+      .nav__wordmark { display: none; }
+      .nav { height: 100px; }
+      .nav__mark { width: 90px; }
+      .hero { padding: 100px 5% 0; }
+    }
+  </style>
 </head>
 <body>
 
-<a href="#main" class="skip-link">Skip to content</a>
+  <!-- ── NAVIGATION ── -->
+  <nav aria-label="Main navigation">
+    <div class="nav">
+      <div class="nav__logo">
 
-<nav class="nav" role="navigation" aria-label="Primary">
-  <div class="nav__inner">
-    <a href="/" class="nav__logo" aria-label="Beyond the Magic Consulting — Home">
-      <img src="/assets/logo.svg" alt="" class="nav__logo-mark" width="34" height="27">
-      <div class="nav__logo-text">
-        <span class="nav__logo-primary">Beyond the Magic</span>
-        <span class="nav__logo-sub">Performance Architects</span>
+        <!-- INLINE SVG MARK — nav scale -->
+        <svg class="nav__mark" viewBox="0 0 340 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="#1A2744"/>
+          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="5" stroke-linejoin="miter"/>
+          <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="2.5" opacity="0.5"/>
+          <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
+          <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
+          <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
+          <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
+          <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <circle cx="170" cy="50" r="4" fill="#C49A72"/>
+          <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
+          <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
+          <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
+          <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
+          <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
+        </svg>
+
+        <div class="nav__wordmark">
+          <span class="nav__name">Beyond the Magic</span>
+          <span class="nav__sub">Performance Architects</span>
+        </div>
       </div>
-    </a>
-    <div class="nav__links">
-      <a href="/about/">About</a>
-      <a href="/services/">Services</a>
-      <a href="/case-studies/">Case Studies</a>
-      <a href="/insights/">Insights</a>
-      <a href="/speaking/">Speaking</a>
-      <a href="/contact/" class="nav__cta">Work With Us</a>
     </div>
-    <button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  </nav>
 
-<main id="main">
+  <main id="main">
 
-  <!-- HERO -->
-  <section class="hero" aria-label="Introduction">
-    <div class="hero__inner">
-      <div class="hero__content">
-        <span class="eyebrow">Performance Architects</span>
-        <h1 class="hero__headline">
-          What happens when<br>
-          <em>magic becomes</em><br>
-          measurable?
-        </h1>
+    <!-- ── HERO ── -->
+    <section class="hero section--navy" aria-label="Introduction">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow">Performance Architects</span>
+          <h1>We architect the conditions for <em>exceptional</em> performance.</h1>
+          <p class="hero__body">Beyond the Magic Consulting partners with organizations ready to move from aspiration to architecture — building the strategy, systems, and leadership culture that produce remarkable, repeatable results.</p>
+          <div class="hero__actions">
+            <a href="mailto:support@beyondthemagic.co" class="btn btn--solid">Get in Touch</a>
+            <a href="tel:+14079253295" class="btn btn--ghost">407-925-3295</a>
+          </div>
+        </div>
+
+        <!-- Large faint watermark emblem -->
+        <svg class="hero__emblem" viewBox="0 0 340 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="3" stroke-linejoin="miter"/>
+          <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="1.5" opacity="0.5"/>
+          <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
+          <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
+          <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
+          <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
+          <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <circle cx="170" cy="50" r="3" fill="#C49A72"/>
+          <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
+          <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
+          <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
+          <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
+          <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
+        </svg>
+      </div>
+    </section>
+
+    <!-- ── WHAT WE DO ── -->
+    <section class="section section--warm" aria-labelledby="services-h">
+      <div class="section__inner">
+        <span class="section-eyebrow">What We Do</span>
+        <h2 id="services-h">Four disciplines.<br>One integrated architecture.</h2>
         <span class="rule"></span>
-        <p class="hero__body">
-          We work with hospitality, entertainment, and experience-driven organizations to close the gap between the extraordinary they promise and the performance they deliver. Rigorous systems. Elevated standards. Results that endure.
-        </p>
-        <div class="hero__actions">
-          <a href="/services/" class="btn btn--primary">Our Services</a>
-          <a href="/case-studies/" class="btn btn--outline">See Our Work</a>
-        </div>
-      </div>
-      <div class="hero__mark-wrap" aria-hidden="true">
-        <img src="/assets/logo.svg" alt="">
-      </div>
-    </div>
-  </section>
+        <p class="lead">We don't deliver programs. We design performance systems — tailored frameworks built on deep diagnosis and sustained partnership that produce lasting, measurable change.</p>
 
-  <!-- SERVICES OVERVIEW -->
-  <section class="section section--warm" aria-labelledby="services-h">
-    <div class="section__inner">
-      <span class="eyebrow">What We Do</span>
-      <h2 id="services-h">Structured disciplines.<br>Singular outcomes.</h2>
-      <span class="rule"></span>
-      <p class="lead">Our practice is built around three interlocking disciplines — each capable of transforming how your organization performs, and together forming an architecture of sustained excellence.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <span class="service-card__num">01</span>
-          <h3 class="service-card__title">Experience Architecture</h3>
-          <p class="service-card__body">We map, design, and engineer the full guest journey — from first impression through lasting memory — ensuring every touchpoint reflects your brand's highest standards and drives return visitation.</p>
-          <a href="/services/#experience-architecture" class="service-card__link">Learn more</a>
-        </div>
-        <div class="service-card">
-          <span class="service-card__num">02</span>
-          <h3 class="service-card__title">Operational Performance</h3>
-          <p class="service-card__body">We diagnose the friction, waste, and inconsistency that erodes guest satisfaction and financial performance — then build the systems that eliminate them permanently.</p>
-          <a href="/services/#operational-performance" class="service-card__link">Learn more</a>
-        </div>
-        <div class="service-card">
-          <span class="service-card__num">03</span>
-          <h3 class="service-card__title">Leadership &amp; Culture</h3>
-          <p class="service-card__body">Exceptional operations begin with exceptional teams. We develop the leaders, frameworks, and cultural infrastructure that sustain performance long after the engagement ends.</p>
-          <a href="/services/#leadership-culture" class="service-card__link">Learn more</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="section section--navy" aria-labelledby="philosophy-h">
-    <div class="section__inner">
-      <span class="eyebrow">Our Approach</span>
-      <h2 id="philosophy-h">Performance is<br>an architecture problem.</h2>
-      <span class="rule"></span>
-      <div class="philosophy-wrap">
-        <div class="philosophy-list">
-          <div class="philosophy-item">
-            <span class="philosophy-item__label">Diagnosis before prescription</span>
-            <p class="philosophy-item__text">We never propose solutions before we understand the system. Every engagement begins with rigorous discovery — qualitative, quantitative, observational.</p>
+        <div class="services-grid">
+          <div class="svc">
+            <span class="svc__num">01</span>
+            <div class="svc__title">Performance Strategy</div>
+            <p class="svc__body">Translating vision into operational architecture. We define the performance conditions your organization must create — and build the roadmap to create them.</p>
           </div>
-          <div class="philosophy-item">
-            <span class="philosophy-item__label">Systems over interventions</span>
-            <p class="philosophy-item__text">One-time fixes don't compound. We build frameworks that continue to generate value after we're gone — embedded in process, culture, and leadership practice.</p>
+          <div class="svc">
+            <span class="svc__num">02</span>
+            <div class="svc__title">Leadership Development</div>
+            <p class="svc__body">Leaders are the highest-leverage variable in organizational performance. We develop executives and teams who build high-performance cultures by design, not by accident.</p>
           </div>
-          <div class="philosophy-item">
-            <span class="philosophy-item__label">Craft alongside rigor</span>
-            <p class="philosophy-item__text">We believe operational excellence and experiential beauty are not in tension. The best-performing organizations are also the most beautifully run.</p>
+          <div class="svc">
+            <span class="svc__num">03</span>
+            <div class="svc__title">Systems &amp; Culture Design</div>
+            <p class="svc__body">The structures, rituals, feedback loops, and norms that make exceptional performance the expected standard — rather than the occasional exception.</p>
           </div>
-          <div class="philosophy-item">
-            <span class="philosophy-item__label">Long view accountability</span>
-            <p class="philosophy-item__text">We measure our success by the permanence of your results, not the length of our engagement.</p>
+          <div class="svc">
+            <span class="svc__num">04</span>
+            <div class="svc__title">Executive Advisory</div>
+            <p class="svc__body">Trusted, candid partnership for senior leaders navigating transformation, scaling, or breakthrough performance challenges that require more than a consultant.</p>
           </div>
-        </div>
-        <div>
-          <p class="philosophy-body">Beyond the Magic was founded on a simple conviction: the gap between what organizations promise their guests and what they actually deliver is almost always a structural problem — not a people problem, not a values problem, not a budget problem. It is a system that has never been properly designed.</p>
-          <p class="philosophy-body" style="margin-top:20px;">We are the architects who design it.</p>
-          <a href="/about/" class="btn btn--outline" style="margin-top:36px;">Our Story</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDY PREVIEW -->
-  <section class="section" aria-labelledby="case-h">
-    <div class="section__inner">
-      <span class="eyebrow">Featured Work</span>
-      <h2 id="case-h">From friction to flow.</h2>
-      <span class="rule"></span>
-      <div class="case-preview-grid">
-        <div class="case-preview__content">
-          <span class="case-tag">Regional Theme Park · Operational Overhaul</span>
-          <h3 class="case-preview__title">Rebuilding the Guest Experience from the Turnstile In</h3>
-          <p class="case-preview__body">A 1.8M annual-visit regional park faced declining NPS scores, stagnant repeat-visit rates, and frontline team attrition that was eroding everything they had built. We spent 14 weeks inside their operation — then rebuilt it from the ground up.</p>
-          <a href="/case-studies/" class="btn btn--outline-dark">Read the case study</a>
-        </div>
-        <div class="case-preview__stats">
-          <div class="stat">
-            <span class="stat__num">+31</span>
-            <span class="stat__label">NPS point improvement</span>
-            <span class="stat__context">18-month post-engagement baseline</span>
+          <div class="svc">
+            <span class="svc__num">05</span>
+            <div class="svc__title">Diagnostic &amp; Assessment</div>
+            <p class="svc__body">Before prescribing, we diagnose. A rigorous assessment of where your organization stands — and the clearest, most honest picture of what's limiting performance.</p>
           </div>
-          <div class="stat">
-            <span class="stat__num">44%</span>
-            <span class="stat__label">Reduction in frontline attrition</span>
-            <span class="stat__context">Year-over-year comparison</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">2.1×</span>
-            <span class="stat__label">Repeat visit rate growth</span>
-            <span class="stat__context">Season-to-season</span>
+          <div class="svc" style="background:var(--navy); cursor:default; display:flex; align-items:flex-end;">
+            <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:300; font-style:italic; color:rgba(245,243,239,.22); line-height:1.4;">Every engagement begins with listening.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PULL QUOTE -->
-  <div class="pull-quote">
-    <span class="pull-quote__mark" aria-hidden="true">"</span>
-    <p class="pull-quote__text">They didn't just consult with us. They operated beside us until the work was actually done — and then built the systems to keep it that way.</p>
-    <div class="pull-quote__rule"></div>
-    <p class="pull-quote__attr">Vice President of Guest Experience · Regional Entertainment Group</p>
-  </div>
-
-  <!-- SPEAKING -->
-  <section class="section section--warm" aria-labelledby="speaking-h">
-    <div class="section__inner">
-      <span class="eyebrow">Thought Leadership</span>
-      <h2 id="speaking-h">Speaking &amp; Keynotes</h2>
-      <span class="rule"></span>
-      <div class="speaking-wrap">
-        <div>
-          <p class="lead" style="margin-bottom:36px;">Our principals have delivered keynotes and workshops at industry conferences, executive retreats, and leadership forums across the country.</p>
-          <div class="topics-list">
-            <div class="topic-row">
-              <span class="topic-row__title">The Architecture of Delight: Engineering Guest Experiences That Scale</span>
-              <span class="topic-row__arrow" aria-hidden="true">→</span>
+    <!-- ── OUR APPROACH ── -->
+    <section class="section section--navy" aria-labelledby="approach-h">
+      <div class="section__inner">
+        <div class="approach-grid">
+          <div>
+            <span class="section-eyebrow">Our Approach</span>
+            <h2 id="approach-h">Performance is an architecture problem, not a motivation problem.</h2>
+            <span class="rule"></span>
+            <p class="lead">Most organizations don't underperform because their people lack drive. They underperform because their systems, structures, and leadership behaviors make high performance unnecessarily hard.</p>
+            <br>
+            <p>We believe the job of a performance architect is to remove friction, align incentives, and build the conditions where exceptional becomes the norm. That's what we do — with discipline, specificity, and a healthy disrespect for cosmetic fixes.</p>
+          </div>
+          <div class="approach-list">
+            <div class="approach-item">
+              <span class="approach-item__label">Diagnosis First</span>
+              <p>We never prescribe before we understand. Every engagement begins with rigorous assessment — not assumptions shaped by a pre-sold solution.</p>
             </div>
-            <div class="topic-row">
-              <span class="topic-row__title">Beyond Service Recovery: Building Systems That Don't Break</span>
-              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            <div class="approach-item">
+              <span class="approach-item__label">Systems Over Symptoms</span>
+              <p>Lasting change happens at the system level. We build structures that sustain performance without constant intervention.</p>
             </div>
-            <div class="topic-row">
-              <span class="topic-row__title">Frontline Excellence as a Leadership Strategy</span>
-              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            <div class="approach-item">
+              <span class="approach-item__label">Candor as Care</span>
+              <p>The most helpful thing we can offer is honest perspective. We say what we see — with precision and respect.</p>
             </div>
-            <div class="topic-row">
-              <span class="topic-row__title">Measuring What Matters: The Metrics That Lie to You</span>
-              <span class="topic-row__arrow" aria-hidden="true">→</span>
+            <div class="approach-item">
+              <span class="approach-item__label">Measured Outcomes</span>
+              <p>We define success before we begin and track it throughout. Clarity on outcomes is how we earn and keep trust.</p>
             </div>
           </div>
-          <a href="/speaking/" class="btn btn--outline-dark" style="margin-top:32px;">Speaking Inquiries</a>
         </div>
-        <div class="speaking-aside">
-          <div class="aside-stat">
-            <span class="aside-stat__num">60+</span>
-            <span class="aside-stat__label">Keynotes delivered</span>
-          </div>
-          <div class="aside-divider"></div>
-          <div class="aside-stat">
-            <span class="aside-stat__num">18</span>
-            <span class="aside-stat__label">Industry conferences</span>
-          </div>
-          <div class="aside-divider"></div>
-          <div class="aside-stat">
-            <span class="aside-stat__num">12K+</span>
-            <span class="aside-stat__label">Practitioners reached</span>
-          </div>
+      </div>
+    </section>
+
+    <!-- ── CTA BAND ── -->
+    <div class="cta-band" aria-labelledby="cta-h">
+      <div class="cta-band__inner">
+        <div class="cta-band__text">
+          <span class="section-eyebrow" style="color:var(--copper-lt);">Let's Talk</span>
+          <h2 id="cta-h">Ready to close the gap?</h2>
+          <span class="rule" style="background:var(--copper-lt);"></span>
+          <p>We work with a deliberate number of organizations at any given time — because depth of attention is what real transformation requires. If you're ready for a genuine performance conversation, reach out.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;flex-shrink:0;">
+          <a href="mailto:support@beyondthemagic.co" class="btn btn--solid">support@beyondthemagic.co</a>
+          <a href="tel:+14079253295" class="btn btn--navy-ghost" style="text-align:center;">407-925-3295</a>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- CTA BAND -->
-  <div class="cta-band">
-    <div class="cta-band__inner">
-      <div class="cta-band__text">
-        <h2 class="cta-band__headline">Ready to close the gap?</h2>
-        <p class="cta-band__body">Every engagement begins with a candid conversation about where you are and where you need to be. No pitch. No proposal before we understand the problem.</p>
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <svg class="footer__mark" viewBox="0 0 340 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="#1A2744"/>
+          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="5" stroke-linejoin="miter"/>
+          <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="2.5" opacity="0.5"/>
+          <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
+          <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
+          <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
+          <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
+          <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
+          <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
+          <circle cx="170" cy="50" r="4" fill="#C49A72"/>
+          <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
+          <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
+          <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
+          <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
+          <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
+        </svg>
+        <div class="footer__brand-text">
+          <span class="footer__brand-name">Beyond the Magic Consulting</span>
+          <span class="footer__brand-pa">Performance Architects</span>
+        </div>
       </div>
-      <a href="/contact/" class="btn btn--primary">Start the Conversation</a>
-    </div>
-  </div>
 
-</main>
+      <div class="footer__contact">
+        <span class="footer__contact-label">Contact</span>
+        <a href="tel:+14079253295">407-925-3295</a>
+        <a href="mailto:support@beyondthemagic.co">support@beyondthemagic.co</a>
+      </div>
+    </div>
 
-<footer class="footer" role="contentinfo">
-  <div class="footer__grid">
-    <div>
-      <img src="/assets/logo.svg" alt="Beyond the Magic Consulting LLC" class="footer__logo">
-      <p class="footer__about">Performance architecture for hospitality, entertainment, and experience-driven organizations. We build the systems that make the magic last.</p>
+    <div class="footer__bottom">
+      <span class="footer__copy">© 2026 Beyond the Magic Consulting LLC · All rights reserved</span>
+      <span class="footer__copy">Performance Architects</span>
     </div>
-    <div>
-      <span class="footer__col-head">Practice</span>
-      <nav class="footer__links" aria-label="Services">
-        <a href="/services/#experience-architecture">Experience Architecture</a>
-        <a href="/services/#operational-performance">Operational Performance</a>
-        <a href="/services/#leadership-culture">Leadership &amp; Culture</a>
-      </nav>
-    </div>
-    <div>
-      <span class="footer__col-head">Company</span>
-      <nav class="footer__links" aria-label="Company">
-        <a href="/about/">About</a>
-        <a href="/case-studies/">Case Studies</a>
-        <a href="/insights/">Insights</a>
-        <a href="/speaking/">Speaking</a>
-      </nav>
-    </div>
-    <div>
-      <span class="footer__col-head">Connect</span>
-      <nav class="footer__links" aria-label="Contact">
-        <a href="/contact/">Work With Us</a>
-        <a href="/speaking/">Book a Keynote</a>
-        <a href="mailto:hello@beyondthemagic.consulting">Email Us</a>
-      </nav>
-    </div>
-  </div>
-  <div class="footer__bottom">
-    <p class="footer__copy">&copy; 2025 Beyond the Magic Consulting LLC. All rights reserved.</p>
-    <p class="footer__copy">Performance Architects</p>
-  </div>
-</footer>
+  </footer>
 
-<script src="site.js"></script>
 </body>
 </html>
