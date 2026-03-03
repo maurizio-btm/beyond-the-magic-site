@@ -2,6 +2,7 @@ backend:
   name: github
   repo: maurizio-13a/beyond-the-magic-site
   branch: main
+  base_url: https://decap-cms-oauth-rosy.vercel.app
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
