@@ -694,4 +694,15 @@
       <div class="footer__contact">
         <span class="footer__contact-label">Contact</span>
         <a href="tel:+14079253295">407-925-3295</a>
-        <a href="/cdn-cgi/l/email-protection#1c6f696c6c736e685c7e7965737278687479717d7b757f327f73"><span class="__cf_email__" data-cfemail="93e0e6e3e3
+        <a href="#" id="email-link">Email us</a>
+
+<script>
+  (function () {
+    const user = "hello";
+    const domain = "beyondthemagic.co";
+    const subject = "Beyond the Magic Inquiry";
+    const a = document.getElementById("email-link");
+    a.href = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
+    a.textContent = `${user}@${domain}`;
+  })();
+</script>
