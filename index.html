@@ -3,706 +3,1413 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond the Magic Consulting — Performance Architects</title>
-  <meta name="description" content="Beyond the Magic Consulting LLC. Performance Architects. We build the strategy, systems, and leadership culture that transform aspiration into results.">
-  <meta property="og:title" content="Beyond the Magic Consulting — Performance Architects">
-  <meta property="og:description" content="We architect the conditions for exceptional performance.">
-  <meta property="og:type" content="website">
+  <title>Beyond the Magic Consulting | Performance Architects</title>
+  <meta name="description" content="Beyond the Magic Consulting — Performance Architects. Born from Disney. Built for Every World. We design the systems that make consistent performance predictable, measurable, and sustainable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Barlow:wght@300;400&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ── TOKENS ── */
     :root {
-      --navy:       #1A2744;
-      --charcoal:   #1E2023;
-      --slate-deep: #2C3038;
-      --slate-lt:   #5C6370;
-      --copper:     #A0714F;
-      --copper-lt:  #C49A72;
-      --off-white:  #F5F3EF;
-      --warm-white: #FAF8F5;
-
-      --display: 'Cormorant Garamond', Georgia, serif;
-      --body:    'Barlow', system-ui, sans-serif;
-      --ui:      'Barlow Condensed', system-ui, sans-serif;
+      --navy: #1E2D4F;
+      --navy-deep: #141F38;
+      --navy-light: #2A3D66;
+      --copper: #B5885A;
+      --copper-light: #C9A070;
+      --copper-dark: #9A7048;
+      --cream: #FAF8F5;
+      --cream-warm: #F5F0EA;
+      --text-dark: #1E2D4F;
+      --text-body: #4A4A4A;
+      --text-light: #7A7A7A;
+      --white: #FFFFFF;
     }
 
-    /* ── RESET ── */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      background: var(--off-white);
-      color: var(--charcoal);
-      font-family: var(--body);
-      font-weight: 300;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
       font-size: 16px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-
-    /* ── NAV ── */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 210px;
-      background: #ffffff;
-      border-bottom: 1px solid rgba(26,39,68,.10);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      padding: 0 7%;
     }
 
-    .nav__logo {
-      display: flex;
-      align-items: center;
-      gap: 28px;
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: var(--text-body);
+      background: var(--cream);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    /* Inline SVG mark in nav — large */
-    .nav__mark {
-      width: 190px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    .nav__wordmark {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      line-height: 1;
-    }
-
-    .nav__rule {
-      display: block;
-      width: 100%;
-      height: 1.5px;
-      background: var(--copper);
-      opacity: .45;
-    }
-
-    .nav__name {
-      font-family: var(--ui);
-      font-weight: 600;
-      font-size: 22px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
+    /* ===== TYPOGRAPHY ===== */
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', sans-serif;
       color: var(--navy);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
     }
 
-    .nav__sub {
-      font-family: var(--ui);
-      font-weight: 300;
-      font-size: 14px;
-      letter-spacing: .36em;
+    .section-label {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
       color: var(--copper);
-      opacity: .85;
+      margin-bottom: 1rem;
     }
 
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: var(--navy);
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--copper-dark);
+    }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(30, 45, 79, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(181, 136, 90, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    nav.scrolled {
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
-      padding: 210px 7% 0;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .nav-logo-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--white);
+      letter-spacing: 0.08em;
+    }
+
+    .nav-logo-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      display: block;
+      margin-top: -2px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--copper);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--copper) !important;
+      color: var(--white) !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      transition: background 0.3s ease !important;
+    }
+
+    .nav-cta:hover { background: var(--copper-dark) !important; }
+    .nav-cta::after { display: none !important; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--navy-deep);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(181,136,90,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(42,61,102,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 0%, rgba(181,136,90,0.05) 0%, transparent 40%);
+    }
+
+    .hero-star {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeIn 1.5s ease 0.5s forwards;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .hero-badge {
+      width: 180px;
+      height: auto;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.5s forwards;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-style: italic;
+      color: var(--copper-light);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.7s forwards;
+    }
+
+    .hero-subtitle {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.9s forwards;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid var(--copper);
+      padding: 1rem 2.5rem;
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.1s forwards;
+    }
+
+    .hero-cta:hover {
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeIn 1s ease 1.5s forwards, bounce 2s ease infinite 2.5s;
+    }
+
+    .hero-scroll svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--copper-light);
+    }
+
+    /* ===== DECORATIVE LINE ===== */
+    .copper-line {
+      width: 60px;
+      height: 2px;
+      background: var(--copper);
+      margin-bottom: 2rem;
+    }
+
+    .copper-line.center { margin-left: auto; margin-right: auto; }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 7rem 2rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .container-narrow {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ===== ORIGIN SECTION ===== */
+    .origin {
+      background: var(--cream);
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .origin-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.02rem;
+      color: var(--text-body);
+    }
+
+    .origin-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .origin-quote {
+      background: var(--navy);
+      color: var(--white);
+      padding: 3rem;
+      position: relative;
+    }
+
+    .origin-quote::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 2rem;
+      right: 2rem;
+      height: 3px;
+      background: var(--copper);
+    }
+
+    .origin-quote blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--cream);
+    }
+
+    .origin-quote cite {
+      display: block;
+      margin-top: 1.5rem;
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-style: normal;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+    }
+
+    /* ===== PHILOSOPHY SECTION ===== */
+    .philosophy {
+      background: var(--navy-deep);
+      color: var(--white);
       position: relative;
       overflow: hidden;
     }
 
-    /* Vertical spine rule */
-    .hero::before {
+    .philosophy::before {
       content: '';
       position: absolute;
-      left: 19%;
-      top: 0; bottom: 0;
-      width: 1px;
-      background: rgba(196,154,114,.09);
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      background: radial-gradient(ellipse at 100% 50%, rgba(181,136,90,0.06) 0%, transparent 70%);
     }
 
-    /* Bottom rule */
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 7%; right: 7%;
-      height: 1px;
-      background: rgba(196,154,114,.12);
+    .philosophy .section-title {
+      color: var(--cream);
     }
 
-    .hero__inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 64px;
-      padding: 100px 0;
-    }
-
-    .hero__content { max-width: 700px; flex: 1; }
-
-    .eyebrow {
-      display: block;
-      font-family: var(--ui);
-      font-size: 14px;
-      letter-spacing: .46em;
-      text-transform: uppercase;
-      color: var(--copper-lt);
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: var(--display);
-      font-weight: 300;
-      font-size: clamp(52px, 7vw, 96px);
-      line-height: 1.06;
-      color: var(--off-white);
-      letter-spacing: -.01em;
-      margin-bottom: 32px;
-    }
-
-    .hero h1 em {
+    .philosophy-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
       font-style: italic;
-      color: var(--copper-lt);
+      color: var(--copper-light);
+      text-align: center;
+      max-width: 700px;
+      margin: 3rem auto;
+      line-height: 1.4;
+      position: relative;
     }
 
-    .hero__body {
-      font-size: clamp(18px, 1.9vw, 22px);
-      color: rgba(245,243,239,.48);
-      line-height: 1.95;
-      max-width: 560px;
-      margin-bottom: 52px;
-    }
-
-    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .btn {
-      display: inline-block;
-      font-family: var(--ui);
-      font-size: 14px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      padding: 17px 36px;
-      border: 1px solid transparent;
-      transition: background .2s, border-color .2s, color .2s;
-    }
-
-    .btn--solid {
-      background: var(--copper);
-      color: var(--off-white);
-      border-color: var(--copper);
-    }
-    .btn--solid:hover { background: var(--copper-lt); border-color: var(--copper-lt); }
-
-    .btn--ghost {
-      background: transparent;
-      color: var(--off-white);
-      border-color: rgba(245,243,239,.28);
-    }
-    .btn--ghost:hover { border-color: rgba(245,243,239,.65); }
-
-    /* Large emblem watermark */
-    .hero__emblem {
-      flex-shrink: 0;
-      width: clamp(360px, 42vw, 560px);
-      opacity: .065;
-      pointer-events: none;
-    }
-
-    /* ── SECTION SHARED ── */
-    .section {
-      padding: 96px 7%;
-    }
-
-    .section__inner {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section--warm { background: var(--warm-white); }
-    .section--navy { background: var(--navy); }
-    .section--slate { background: var(--slate-deep); }
-    .section--off   { background: var(--off-white); }
-
-    .section-eyebrow {
+    .philosophy-statement::before,
+    .philosophy-statement::after {
+      content: '';
       display: block;
-      font-family: var(--ui);
-      font-size: 14px;
-      letter-spacing: .44em;
-      text-transform: uppercase;
-      color: var(--copper);
-      margin-bottom: 16px;
-    }
-    .section--navy .section-eyebrow { color: var(--copper-lt); }
-    .section--slate .section-eyebrow { color: var(--copper-lt); }
-
-    h2 {
-      font-family: var(--display);
-      font-weight: 300;
-      font-size: clamp(38px, 4.5vw, 60px);
-      line-height: 1.08;
-      letter-spacing: -.01em;
-      color: var(--charcoal);
-      margin-bottom: 0;
-    }
-    .section--navy h2,
-    .section--slate h2 { color: var(--off-white); }
-
-    /* Copper rule */
-    .rule {
-      display: block;
-      width: 44px;
-      height: 2px;
+      width: 40px;
+      height: 1px;
       background: var(--copper);
-      margin: 18px 0 32px;
+      margin: 2rem auto;
     }
-    .section--navy .rule,
-    .section--slate .rule { background: var(--copper-lt); }
 
-    .lead {
-      font-size: clamp(19px, 2vw, 22px);
-      font-weight: 300;
-      line-height: 1.9;
-      color: var(--slate-lt);
-      max-width: 640px;
+    .philosophy p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.02rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      text-align: center;
     }
-    .section--navy .lead,
-    .section--slate .lead { color: rgba(245,243,239,.48); }
 
-    p {
-      font-size: 19px;
-      line-height: 1.9;
-      color: var(--slate-lt);
+    /* ===== FRAMEWORK SECTION ===== */
+    .framework {
+      background: var(--cream-warm);
     }
-    .section--navy p,
-    .section--slate p { color: rgba(245,243,239,.48); }
 
-    /* ── WHAT WE DO — service cards ── */
+    .framework-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .framework-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-top: 3px solid var(--copper);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .framework-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+
+    .framework-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3rem;
+      color: rgba(181,136,90,0.2);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .framework-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .framework-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services {
+      background: var(--cream);
+    }
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(28,30,35,.1);
-      margin-top: 56px;
+      gap: 1.5rem;
+      margin-top: 3rem;
     }
 
-    .svc {
-      background: var(--warm-white);
-      padding: 48px 38px 52px;
-      transition: background .2s;
+    .service-card {
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(30,45,79,0.08);
+      background: var(--white);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .svc:hover { background: var(--off-white); }
-    .section--off .svc { background: var(--off-white); }
-    .section--off .svc:hover { background: var(--warm-white); }
 
-    .svc__num {
-      font-family: var(--ui);
-      font-size: 13px;
-      letter-spacing: .32em;
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: var(--navy);
+      transition: width 0.5s ease;
+      z-index: 0;
+    }
+
+    .service-card:hover::before { width: 100%; }
+
+    .service-card > * {
+      position: relative;
+      z-index: 1;
+      transition: color 0.4s ease;
+    }
+
+    .service-card:hover h3,
+    .service-card:hover p,
+    .service-card:hover .service-icon {
+      color: var(--white);
+    }
+
+    .service-icon {
+      font-size: 1.5rem;
       color: var(--copper);
-      display: block;
-      margin-bottom: 22px;
+      margin-bottom: 1rem;
+      transition: color 0.4s ease;
     }
 
-    .svc__title {
-      font-family: var(--display);
-      font-size: 32px;
-      font-weight: 300;
-      color: var(--charcoal);
-      line-height: 1.12;
-      margin-bottom: 16px;
+    .service-card h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      transition: color 0.4s ease;
     }
 
-    .svc__body {
-      font-size: 18px;
-      color: var(--slate-lt);
-      line-height: 1.9;
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      transition: color 0.4s ease;
     }
 
-    /* ── OUR APPROACH ── */
-    .approach-grid {
+    .service-card:hover p { color: rgba(255,255,255,0.7); }
+
+    /* ===== DIFFERENTIATORS SECTION ===== */
+    .differentiators {
+      background: var(--navy);
+      color: var(--white);
+      position: relative;
+    }
+
+    .differentiators .section-title { color: var(--cream); }
+
+    .diff-list {
+      margin-top: 3rem;
+    }
+
+    .diff-item {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(181,136,90,0.15);
       align-items: start;
     }
 
-    .approach-list {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      margin-top: 4px;
+    .diff-item:last-child { border-bottom: none; }
+
+    .diff-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--copper);
+      line-height: 1;
+      min-width: 50px;
     }
 
-    .approach-item {
-      padding-left: 20px;
-      border-left: 2px solid rgba(196,154,114,.3);
-    }
-
-    .approach-item__label {
-      font-family: var(--ui);
-      font-size: 13px;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--copper-lt);
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .approach-item p { font-size: 18px; color: rgba(245,243,239,.48); }
-
-    /* ── CTA BAND ── */
-    .cta-band {
-      background: #ffffff;
-      padding: 96px 7%;
-      border-top: 1px solid rgba(26,39,68,.08);
-      border-bottom: 1px solid rgba(26,39,68,.08);
-    }
-
-    .cta-band__inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 56px;
-      flex-wrap: wrap;
-    }
-
-    .cta-band__text { max-width: 580px; }
-    .cta-band__text h2 { color: var(--navy); margin-bottom: 12px; }
-
-    .btn--navy-ghost {
-      background: transparent;
-      color: var(--off-white);
-      border-color: rgba(245,243,239,.28);
-    }
-    .btn--navy-ghost:hover { border-color: rgba(245,243,239,.65); }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--slate-deep);
-      padding: 56px 7% 40px;
-      border-top: 1px solid rgba(255,255,255,.05);
-    }
-
-    .footer__inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-
-    .footer__brand {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .footer__mark { width: 200px; height: auto; }
-
-    .footer__brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .footer__brand-name {
-      font-family: var(--ui);
+    .diff-item h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.1rem;
       font-weight: 600;
-      font-size: 18px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(245,243,239,.5);
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
     }
 
-    .footer__brand-pa {
-      font-family: var(--ui);
-      font-weight: 400;
-      font-size: 13px;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-      color: var(--copper-lt);
-      opacity: .6;
+    .diff-item p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
     }
 
-    .footer__contact {
+    /* ===== INDUSTRIES SECTION ===== */
+    .industries {
+      background: var(--cream-warm);
+    }
+
+    .industries-flex {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: right;
-    }
-
-    .footer__contact-label {
-      font-family: var(--ui);
-      font-size: 13px;
-      letter-spacing: .35em;
-      text-transform: uppercase;
-      color: var(--copper-lt);
-      opacity: .55;
-      margin-bottom: 4px;
-      display: block;
-    }
-
-    .footer__contact a {
-      font-family: var(--ui);
-      font-size: 17px;
-      letter-spacing: .08em;
-      color: rgba(245,243,239,.35);
-      transition: color .2s;
-      display: block;
-    }
-    .footer__contact a:hover { color: rgba(245,243,239,.7); }
-
-    .footer__bottom {
-      max-width: 1280px;
-      margin: 36px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,.05);
-      display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 1rem;
+      margin-top: 3rem;
+      justify-content: center;
     }
 
-    .footer__copy {
-      font-family: var(--ui);
-      font-size: 13px;
-      letter-spacing: .14em;
-      color: rgba(245,243,239,.16);
+    .industry-tag {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy);
+      padding: 1rem 2rem;
+      border: 1px solid rgba(30,45,79,0.15);
+      background: var(--white);
+      transition: all 0.3s ease;
     }
 
-    /* ── RESPONSIVE ── */
+    .industry-tag:hover {
+      border-color: var(--copper);
+      color: var(--copper-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    /* ===== PARTNERSHIP SECTION ===== */
+    .partnership {
+      background: var(--cream);
+    }
+
+    .partnership-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    .partnership-text p {
+      margin-bottom: 1.5rem;
+      font-size: 1.02rem;
+    }
+
+    .partnership-principles {
+      background: var(--navy);
+      padding: 3rem;
+      color: var(--white);
+    }
+
+    .partnership-principles h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 2rem;
+    }
+
+    .principle {
+      display: flex;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .principle-icon {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border: 1px solid var(--copper);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    .principle-icon svg {
+      width: 10px;
+      height: 10px;
+      stroke: var(--copper);
+      fill: none;
+      stroke-width: 2;
+    }
+
+    .principle p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+    }
+
+    /* ===== COMMITMENT BANNER ===== */
+    .commitment {
+      background: var(--navy-deep);
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .commitment::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(181,136,90,0.06) 0%, transparent 60%);
+    }
+
+    .commitment-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .commitment blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-style: italic;
+      color: var(--cream);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .commitment .copper-line {
+      margin: 2rem auto;
+    }
+
+    .commitment-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-style: italic;
+      color: var(--copper-light);
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    /* ===== CONTACT SECTION ===== */
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .contact-card {
+      display: flex;
+      gap: 2rem;
+      align-items: start;
+      padding: 2.5rem;
+      background: var(--white);
+      border: 1px solid rgba(30,45,79,0.06);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.03);
+      transition: all 0.4s ease;
+    }
+
+    .contact-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .contact-card:first-child {
+      border-top: 3px solid var(--copper);
+    }
+
+    .contact-card:nth-child(2) {
+      border-top: 3px solid var(--navy-light);
+    }
+
+    .contact-photo {
+      width: 110px;
+      height: 130px;
+      object-fit: cover;
+      object-position: center top;
+      flex-shrink: 0;
+      filter: grayscale(10%);
+    }
+
+    .contact-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-role {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+
+    .contact-detail {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-detail a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-detail a:hover {
+      color: var(--copper);
+    }
+
+    .primary-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-deep);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(181,136,90,0.15);
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: var(--white);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-sub {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--copper-light); }
+
+    .footer-info {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-info a {
+      color: var(--copper-light);
+      text-decoration: none;
+    }
+
+    .footer-locale {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MOBILE NAV ===== */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(20, 31, 56, 0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-menu a:hover { color: var(--copper-light); }
+
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
-      .approach-grid { grid-template-columns: 1fr; gap: 48px; }
+      .framework-grid { grid-template-columns: repeat(2, 1fr); }
+      .origin-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .partnership-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      .section { padding: 72px 5%; }
-      .nav { padding: 0 5%; height: 110px; }
-      .cta-band { padding: 72px 5%; }
-      .footer { padding: 48px 5% 36px; }
-      .hero { padding: 110px 5% 0; }
-      .hero::before { display: none; }
-      .hero__inner { flex-direction: column; padding: 80px 0; gap: 48px; }
-      .hero__emblem { display: none; }
+      section { padding: 5rem 1.5rem; }
+
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+
+      .hero h1 { font-size: clamp(2.5rem, 10vw, 4rem); }
       .services-grid { grid-template-columns: 1fr; }
-      .cta-band__inner { flex-direction: column; }
-      .footer__contact { text-align: left; }
-      .footer__mark { width: 130px; }
-      .nav__name { font-size: 19px; letter-spacing: .14em; }
-      .nav__sub  { font-size: 12px; letter-spacing: .28em; }
-    }
+      .framework-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
 
-    @media (max-width: 480px) {
-      .hero h1 { font-size: 38px; }
-      h2 { font-size: 32px; }
-      .nav { height: 96px; padding: 0 5%; }
-      .nav__name { font-size: 18px; letter-spacing: .12em; }
-      .nav__sub  { font-size: 11px; letter-spacing: .22em; }
-      .hero { padding: 96px 5% 0; }
-    }
+      .diff-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .diff-num { font-size: 1.5rem; }
 
-    @media (max-width: 360px) {
-      .nav__name { font-size: 15px; letter-spacing: .08em; }
-      .nav__sub  { font-size: 10px; letter-spacing: .18em; }
+      .contact-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAVIGATION ── -->
-  <nav aria-label="Main navigation">
-    <div class="nav">
-      <div class="nav__logo">
-        <div class="nav__wordmark">
-          <span class="nav__name">Beyond the Magic Consulting</span>
-          <span class="nav__rule"></span>
-          <span class="nav__sub">Performance Architects</span>
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <div>
+          <span class="nav-logo-text">BEYOND THE MAGIC</span>
+          <span class="nav-logo-sub">Consulting &middot; Performance Architects</span>
         </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#origin">Our Origin</a></li>
+        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#framework">Methodology</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#differentiators">Why Us</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <div class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
       </div>
     </div>
   </nav>
 
-  <main id="main">
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#origin" onclick="closeMobile()">Our Origin</a>
+    <a href="#philosophy" onclick="closeMobile()">Philosophy</a>
+    <a href="#framework" onclick="closeMobile()">Methodology</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#differentiators" onclick="closeMobile()">Why Us</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
+  </div>
 
-    <!-- ── HERO ── -->
-    <section class="hero section--navy" aria-label="Introduction">
-      <div class="hero__inner">
-        <div class="hero__content">
-          <span class="eyebrow">Performance Architects</span>
-          <h1>We architect the conditions for <em>exceptional</em> performance.</h1>
-          <p class="hero__body">Beyond the Magic Consulting partners with organizations ready to move from aspiration to architecture — building the strategy, systems, and leadership culture that produce remarkable, repeatable results.</p>
-          <div class="hero__actions">
-            <a href="/cdn-cgi/l/email-protection#60131510100f1214200205190f0e041408050d010709034e030f" class="btn btn--solid">Get in Touch</a>
-            <a href="tel:+14079253295" class="btn btn--ghost">407-925-3295</a>
-          </div>
-        </div>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <!-- Decorative star -->
+    <div class="hero-star">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <line x1="20" y1="0" x2="20" y2="40" stroke="#B5885A" stroke-width="0.5"/>
+        <line x1="0" y1="20" x2="40" y2="20" stroke="#B5885A" stroke-width="0.5"/>
+        <line x1="6" y1="6" x2="34" y2="34" stroke="#B5885A" stroke-width="0.5"/>
+        <line x1="34" y1="6" x2="6" y2="34" stroke="#B5885A" stroke-width="0.5"/>
+        <circle cx="20" cy="20" r="3" fill="#B5885A"/>
+      </svg>
+    </div>
 
-        <!-- Large faint watermark emblem -->
-        <svg class="hero__emblem" viewBox="0 0 340 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="3" stroke-linejoin="miter"/>
-          <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="1.5" opacity="0.5"/>
-          <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
-          <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
-          <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
-          <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
-          <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
-          <circle cx="170" cy="50" r="3" fill="#C49A72"/>
-          <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
-          <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
-          <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
-          <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
-          <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
-        </svg>
+    <div class="hero-content">
+      <!-- SVG Badge Logo -->
+      <svg class="hero-badge" viewBox="0 0 220 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="110" cy="95" rx="105" ry="80" fill="#1E2D4F" stroke="#B5885A" stroke-width="2.5"/>
+        <ellipse cx="110" cy="95" rx="95" ry="72" fill="none" stroke="rgba(181,136,90,0.3)" stroke-width="0.5"/>
+        <!-- Star -->
+        <line x1="110" y1="12" x2="110" y2="40" stroke="#B5885A" stroke-width="0.8"/>
+        <line x1="98" y1="24" x2="122" y2="24" stroke="#B5885A" stroke-width="0.8"/>
+        <line x1="102" y1="16" x2="118" y2="32" stroke="#B5885A" stroke-width="0.5"/>
+        <line x1="118" y1="16" x2="102" y2="32" stroke="#B5885A" stroke-width="0.5"/>
+        <circle cx="110" cy="24" r="2" fill="#B5885A"/>
+        <!-- Text -->
+        <text x="110" y="72" text-anchor="middle" font-family="Bebas Neue, sans-serif" font-size="28" fill="white" letter-spacing="3">BEYOND</text>
+        <text x="110" y="92" text-anchor="middle" font-family="Raleway, sans-serif" font-size="13" fill="white" letter-spacing="3" font-weight="300">THE MAGIC</text>
+        <text x="110" y="108" text-anchor="middle" font-family="Raleway, sans-serif" font-size="8" fill="rgba(255,255,255,0.7)" letter-spacing="2">CONSULTING</text>
+        <line x1="55" y1="120" x2="165" y2="120" stroke="rgba(181,136,90,0.4)" stroke-width="0.5"/>
+        <text x="110" y="138" text-anchor="middle" font-family="Raleway, sans-serif" font-size="7" fill="rgba(181,136,90,0.8)" letter-spacing="5" font-weight="500">PERFORMANCE ARCHITECTS</text>
+      </svg>
+
+      <h1>BEYOND THE MAGIC</h1>
+      <p class="hero-tagline">Born from Disney. Built for Every World.</p>
+      <p class="hero-subtitle">Performance Architects</p>
+      <a href="#origin" class="hero-cta">Discover Our Story</a>
+    </div>
+
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== ORIGIN ===== -->
+  <section class="origin" id="origin">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Our Origin</div>
+        <div class="copper-line"></div>
+        <h2 class="section-title">A Lineage Built <em>from the Inside</em></h2>
       </div>
-    </section>
 
-    <!-- ── WHAT WE DO ── -->
-    <section class="section section--warm" aria-labelledby="services-h">
-      <div class="section__inner">
-        <span class="section-eyebrow">What We Do</span>
-        <h2 id="services-h">Five disciplines.<br>One integrated architecture.</h2>
-        <span class="rule"></span>
-        <p class="lead">We don't deliver programs. We design performance systems — tailored frameworks built on deep diagnosis and sustained partnership that produce lasting, measurable change.</p>
-
-        <div class="services-grid">
-          <div class="svc">
-            <span class="svc__num">01</span>
-            <div class="svc__title">Performance Strategy</div>
-            <p class="svc__body">Translating vision into operational architecture. We define the performance conditions your organization must create — and build the roadmap to create them.</p>
-          </div>
-          <div class="svc">
-            <span class="svc__num">02</span>
-            <div class="svc__title">Leadership Development</div>
-            <p class="svc__body">Leaders are the highest-leverage variable in organizational performance. We develop executives and teams who build high-performance cultures by design, not by accident.</p>
-          </div>
-          <div class="svc">
-            <span class="svc__num">03</span>
-            <div class="svc__title">Systems &amp; Culture Design</div>
-            <p class="svc__body">The structures, rituals, feedback loops, and norms that make exceptional performance the expected standard — rather than the occasional exception.</p>
-          </div>
-          <div class="svc">
-            <span class="svc__num">04</span>
-            <div class="svc__title">Executive Advisory</div>
-            <p class="svc__body">Trusted, candid partnership for senior leaders navigating transformation, scaling, or breakthrough performance challenges that require more than a consultant.</p>
-          </div>
-          <div class="svc">
-            <span class="svc__num">05</span>
-            <div class="svc__title">Diagnostic &amp; Assessment</div>
-            <p class="svc__body">Before prescribing, we diagnose. A rigorous assessment of where your organization stands — and the clearest, most honest picture of what's limiting performance.</p>
-          </div>
-          <div class="svc" style="background:var(--navy); cursor:default; display:flex; align-items:flex-end;">
-            <p style="font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; font-weight:300; font-style:italic; color:rgba(245,243,239,.22); line-height:1.4;">Every engagement begins with listening.</p>
-          </div>
+      <div class="origin-grid">
+        <div class="origin-text reveal">
+          <p>Beyond the Magic Consulting exists because the greatest service and leadership principles in the world should not be confined to a single park, a single campus, or a single organization. We were founded by professionals who spent decades inside the Walt Disney Company—including years with the Disney Institute—designing, delivering, and living the systems that made Disney the global benchmark for guest experience, organizational culture, and leadership excellence.</p>
+          <p>When the Disney Institute stepped back from offering these services to external clients, we saw an opportunity and a responsibility: to carry that torch forward, and to go further.</p>
+          <p>Our founder and core team members built their careers inside the Disney ecosystem—not just studying it, but executing it at scale. That firsthand experience lives in the DNA of every engagement we deliver.</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ── OUR APPROACH ── -->
-    <section class="section section--navy" aria-labelledby="approach-h">
-      <div class="section__inner">
-        <div class="approach-grid">
-          <div>
-            <span class="section-eyebrow">Our Approach</span>
-            <h2 id="approach-h">Performance is an architecture problem, not a motivation problem.</h2>
-            <span class="rule"></span>
-            <p class="lead">Most organizations don't underperform because their people lack drive. They underperform because their systems, structures, and leadership behaviors make high performance unnecessarily hard.</p>
-            <br>
-            <p>We believe the job of a performance architect is to remove friction, align incentives, and build the conditions where exceptional becomes the norm. That's what we do — with discipline, specificity, and a healthy disrespect for cosmetic fixes.</p>
+        <div class="origin-visual reveal">
+          <div class="origin-quote">
+            <blockquote>We offer organizations the same caliber of expertise—but with greater depth, greater customization, and a more enduring partnership model than was ever possible before.</blockquote>
           </div>
-          <div class="approach-list">
-            <div class="approach-item">
-              <span class="approach-item__label">Diagnosis First</span>
-              <p>We never prescribe before we understand. Every engagement begins with rigorous assessment — not assumptions shaped by a pre-sold solution.</p>
-            </div>
-            <div class="approach-item">
-              <span class="approach-item__label">Systems Over Symptoms</span>
-              <p>Lasting change happens at the system level. We build structures that sustain performance without constant intervention.</p>
-            </div>
-            <div class="approach-item">
-              <span class="approach-item__label">Candor as Care</span>
-              <p>The most helpful thing we can offer is honest perspective. We say what we see — with precision and respect.</p>
-            </div>
-            <div class="approach-item">
-              <span class="approach-item__label">Measured Outcomes</span>
-              <p>We define success before we begin and track it throughout. Clarity on outcomes is how we earn and keep trust.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CTA BAND ── -->
-    <div class="cta-band" aria-labelledby="cta-h">
-      <div class="cta-band__inner">
-        <div class="cta-band__text">
-          <span class="section-eyebrow" style="color:var(--copper);">Let's Talk</span>
-          <h2 id="cta-h">Ready to close the gap?</h2>
-          <span class="rule" style="background:var(--copper);"></span>
-          <p style="color:var(--slate-lt);">We work with a deliberate number of organizations at any given time — because depth of attention is what real transformation requires. If you're ready for a genuine performance conversation, reach out.</p>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:16px;flex-shrink:0;">
-          <a href="/cdn-cgi/l/email-protection#9be8eeebebf4e9efdbf9fee2f4f5ffeff3fef6fafcf2f8b5f8f4" class="btn btn--solid"><span class="__cf_email__" data-cfemail="91e2e4e1e1fee3e5d1f3f4e8fefff5e5f9f4fcf0f6f8f2bff2fe">[email&#160;protected]</span></a>
-          <a href="tel:+14079253295" class="btn btn--navy-ghost" style="text-align:center;color:var(--navy);border-color:rgba(26,39,68,.3);">407-925-3295</a>
         </div>
       </div>
     </div>
+  </section>
 
-  </main>
-
-  <!-- ── FOOTER ── -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__inner">
-
-      <div class="footer__brand">
-        <svg class="footer__mark" viewBox="0 0 340 268" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="#1A2744"/>
-          <path d="M 170 4 L 208 52 A 162 108 0 0 1 332 158 A 162 108 0 0 1 8 158 A 162 108 0 0 1 132 52 Z" fill="none" stroke="#C49A72" stroke-width="5" stroke-linejoin="miter"/>
-          <ellipse cx="170" cy="158" rx="151" ry="97" fill="none" stroke="#C49A72" stroke-width="2.5" opacity="0.5"/>
-          <polygon points="170,20 174,46 170,50 166,46" fill="#C49A72"/>
-          <polygon points="170,80 174,54 170,50 166,54" fill="#C49A72"/>
-          <polygon points="198,50 172,46 170,50 172,54" fill="#C49A72"/>
-          <polygon points="142,50 168,46 170,50 168,54" fill="#C49A72"/>
-          <polygon points="191,29 172,47 170,50 173,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="149,29 168,47 170,50 167,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="191,71 172,53 170,50 167,52" fill="#C49A72" opacity="0.6"/>
-          <polygon points="149,71 168,53 170,50 173,52" fill="#C49A72" opacity="0.6"/>
-          <circle cx="170" cy="50" r="4" fill="#C49A72"/>
-          <text x="170" y="141" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="54" fill="#FFFFFF" letter-spacing="6">BEYOND</text>
-          <text x="170" y="165" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="20" fill="#FFFFFF" letter-spacing="10" opacity="0.82">THE MAGIC</text>
-          <text x="170" y="184" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="300" font-size="13" fill="#FFFFFF" letter-spacing="5" opacity="0.62">CONSULTING</text>
-          <rect x="100" y="194" width="140" height="1.5" fill="#C49A72"/>
-          <text x="170" y="213" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="500" font-size="11" fill="#C49A72" letter-spacing="4">PERFORMANCE ARCHITECTS</text>
-        </svg>
-        <div class="footer__brand-text">
-          <span class="footer__brand-name">Beyond the Magic Consulting</span>
-          <span class="footer__brand-pa">Performance Architects</span>
-        </div>
+  <!-- ===== WHO WE ARE ===== -->
+  <section class="philosophy" id="philosophy">
+    <div class="container-narrow">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Our Philosophy</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">Practitioners, <em>Not Theorists</em></h2>
       </div>
 
-      <div class="footer__contact">
-        <span class="footer__contact-label">Contact</span>
-        <a href="tel:+14079253295">407-925-3295</a>
-        <a href="#" id="email-link">Email us</a>
+      <div class="reveal">
+        <p style="text-align:center;">Headquartered in Central Florida—the cradle of experiential excellence—Beyond the Magic Consulting is a full-service consulting, learning &amp; development, and organizational transformation firm. Our team is not a collection of theorists or classroom instructors. We are practitioners.</p>
 
-<script>
-  (function () {
-    const user = "hello";
-    const domain = "beyondthemagic.co";
-    const subject = "Beyond the Magic Inquiry";
-    const a = document.getElementById("email-link");
-    a.href = `mailto:${user}@${domain}?subject=${encodeURIComponent(subject)}`;
-    a.textContent = `${user}@${domain}`;
-  })();
-</script>
+        <div class="philosophy-statement">
+          Performance is not inspired. It is designed.
+        </div>
+
+        <p style="text-align:center;">Most organizations invest heavily in training and culture initiatives while the underlying system architecture remains unchanged. We address it directly. We are a performance architecture firm—we design the systems that make consistent performance predictable, measurable, and sustainable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FRAMEWORK ===== -->
+  <section class="framework" id="framework">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">The Name Tag Framework</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">From Aspiration <em>to Operation</em></h2>
+        <p style="max-width:600px; margin:0 auto 1rem; color:var(--text-body);">Our methodology is structured around four disciplined phases that move organizations from aspiration to operation.</p>
+      </div>
+
+      <div class="framework-grid">
+        <div class="framework-card reveal">
+          <div class="framework-num">01</div>
+          <h3>Architect It</h3>
+          <p>Map the current state. Find the gap between intended and actual performance. Understand what exists before designing what's next.</p>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">02</div>
+          <h3>Build It</h3>
+          <p>Design the system. Define expectations, accountability, and decision rights. Create the architecture for consistent excellence.</p>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">03</div>
+          <h3>Activate It</h3>
+          <p>Implement, measure, and iterate. Build consistency into the system through disciplined execution and real-time feedback.</p>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">04</div>
+          <h3>Sustain It</h3>
+          <p>Observe, adjust, and protect performance in real time. Ensure what is built is owned, reinforced, and improved by your people.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">What We Do</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">The Full Transformation <em>Journey</em></h2>
+        <p style="max-width:650px; margin:0 auto 1rem; color:var(--text-body);">We partner with organizations over months—sometimes years—to co-design, install, and embed the systems required for culture and service excellence to be felt in every interaction.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Organizational Culture &amp; Experience Design</h3>
+          <p>Translating your purpose and values into observable behaviors, operational standards, and meaningful moments.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Leadership Development</h3>
+          <p>Building leaders at every level who carry the culture forward through everyday decisions, coaching conversations, and team routines.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Learning &amp; Development / Curriculum Design</h3>
+          <p>Creating tailored, experiential learning systems for executives, middle managers, frontline leaders, and teams.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Change Management</h3>
+          <p>Guiding organizations through complex transitions with clear methodology, stakeholder alignment, and sustainable implementation.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Train-the-Trainer &amp; Internal Capacity Building</h3>
+          <p>Certifying your own people to own, sustain, and continuously improve the system long after our engagement concludes.</p>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">&#9670;</div>
+          <h3>Measurement &amp; Governance</h3>
+          <p>Designing the scorecards, routines, and accountability structures that keep excellence operational and leadership informed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIFFERENTIATORS ===== -->
+  <section class="differentiators" id="differentiators">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">What Sets Us Apart</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">Five Distinctions That <em>Define Our Work</em></h2>
+      </div>
+
+      <div class="diff-list">
+        <div class="diff-item reveal">
+          <div class="diff-num">01</div>
+          <div>
+            <h3>Practitioners, Not Theorists</h3>
+            <p>The systems we design are not academic constructs—they are battle-tested operating models refined through decades of frontline leadership, operational management, and organizational transformation.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal">
+          <div class="diff-num">02</div>
+          <div>
+            <h3>Operating Systems, Not Training</h3>
+            <p>Training creates awareness. Operating systems create consistency. We build the latter—installing the infrastructure that makes excellence repeatable and measurable.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal">
+          <div class="diff-num">03</div>
+          <div>
+            <h3>Arrive, Build, Transfer, Endure</h3>
+            <p>We do not arrive, inspire, and depart. We arrive, we build, we transfer ownership, and we ensure that what is created endures—long after our formal engagement has concluded.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal">
+          <div class="diff-num">04</div>
+          <div>
+            <h3>Full-Service Capability Under One Roof</h3>
+            <p>From strategic design through curriculum development, facilitation, technology deployment, project management, and long-term measurement—without requiring multiple vendors.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal">
+          <div class="diff-num">05</div>
+          <div>
+            <h3>Scale Without Losing Fidelity</h3>
+            <p>Whether the engagement involves 50 leaders or 30,000 volunteers, our systems maintain consistency across every level, every function, and every interaction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INDUSTRIES ===== -->
+  <section class="industries">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Our Reach &amp; Track Record</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">Central Florida Roots. <em>Global Scale.</em></h2>
+        <p style="max-width:600px; margin:0 auto 1rem; color:var(--text-body);">Our team members have led service excellence, culture transformation, and large-scale operational initiatives across industries where consistency, precision, and reverence must coexist at scale.</p>
+      </div>
+
+      <div class="industries-flex reveal">
+        <div class="industry-tag">Fortune 100 Corporations</div>
+        <div class="industry-tag">Professional Sports Organizations</div>
+        <div class="industry-tag">Multi-Site International Operations</div>
+        <div class="industry-tag">Faith-Based Institutions</div>
+        <div class="industry-tag">Healthcare Systems</div>
+        <div class="industry-tag">Hospitality &amp; Entertainment</div>
+        <div class="industry-tag">Manufacturing &amp; Distribution</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PARTNERSHIP ===== -->
+  <section class="partnership">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">How We Partner</div>
+        <div class="copper-line"></div>
+        <h2 class="section-title">Collaborative. Immersive. <em>Built for Transfer.</em></h2>
+      </div>
+
+      <div class="partnership-grid">
+        <div class="partnership-text reveal">
+          <p>Our engagements are not transactional. They are collaborative, immersive, and designed for transfer of ownership.</p>
+          <p>We begin every partnership with deep discovery—understanding not just what you want to achieve, but why it matters, who will be responsible for sustaining it, and what systemic barriers have prevented success in the past.</p>
+          <p>Our goal is never dependency. Our goal is capability transfer—ensuring that when we complete our engagement, your organization is more capable than when we began, not just more inspired.</p>
+        </div>
+
+        <div class="partnership-principles reveal">
+          <h3>We co-design solutions that:</h3>
+          <div class="principle">
+            <div class="principle-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <p>Align with your mission, culture, and operational realities</p>
+          </div>
+          <div class="principle">
+            <div class="principle-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <p>Build on existing strengths rather than replacing them</p>
+          </div>
+          <div class="principle">
+            <div class="principle-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <p>Equip your people to own and evolve the system independently</p>
+          </div>
+          <div class="principle">
+            <div class="principle-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <p>Create measurable accountability from day one</p>
+          </div>
+          <div class="principle">
+            <div class="principle-icon"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+            <p>Protect against drift through governance, feedback loops, and leader reinforcement</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMITMENT BANNER ===== -->
+  <section class="commitment">
+    <div class="commitment-content reveal">
+      <div class="section-label" style="color:var(--copper-light);">Our Commitment to You</div>
+      <blockquote>
+        We do not arrive, inspire, and depart.<br>
+        We arrive, we build, we transfer ownership,<br>
+        and we ensure that what is created endures.
+      </blockquote>
+      <div class="copper-line center"></div>
+      <p class="commitment-sub">
+        We transform your ideals into experiences people can feel—<br>
+        every day, at every level, in every interaction.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Get In Touch</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">Let's Build <em>Something Extraordinary</em></h2>
+        <p style="max-width:550px; margin:0 auto 1rem; color:var(--text-body);">Ready to move from aspiration to operation? Reach out to our team to begin the conversation.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <img src="assets/images/maurizio.png" alt="Maurizio Landi" class="contact-photo">
+          <div class="contact-info">
+            <div class="primary-label">Primary Contact</div>
+            <h3>Maurizio Landi</h3>
+            <div class="contact-role">Founder &middot; Performance Architect</div>
+            <div class="contact-detail"><a href="mailto:maurizio@beyondthemagic.co">maurizio@beyondthemagic.co</a></div>
+            <div class="contact-detail"><a href="tel:4079253295">407.925.3295</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co" target="_blank">www.beyondthemagic.co</a></div>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <img src="assets/images/dennis.png" alt="Dennis Hough" class="contact-photo">
+          <div class="contact-info">
+            <h3>Dennis Hough</h3>
+            <div class="contact-role">Performance Architect</div>
+            <div class="contact-detail"><a href="mailto:dennis@beyondthemagic.co">dennis@beyondthemagic.co</a></div>
+            <div class="contact-detail"><a href="tel:8655664147">865.566.4147</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co" target="_blank">www.beyondthemagic.co</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-logo">BEYOND THE MAGIC</div>
+    <div class="footer-sub">Consulting &middot; Performance Architects</div>
+    <div class="footer-links">
+      <a href="#origin">Our Origin</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#framework">Methodology</a>
+      <a href="#services">Services</a>
+      <a href="#differentiators">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-info">
+      &copy; 2026 Beyond the Magic Consulting. All rights reserved. &nbsp;|&nbsp; <a href="https://www.beyondthemagic.co">beyondthemagic.co</a>
+    </div>
+    <div class="footer-locale">Central Florida &middot; Global Reach</div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const offset = 72;
+          const pos = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: pos, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
