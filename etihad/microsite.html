@@ -664,7 +664,7 @@ html, body {
 </div>
 <div id="scroll-hint"><span class="hint-label">Navigate</span><div class="hint-chevron"></div></div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const ACCESS_CODE = 'EtihadBTM2026';
 function checkPassword() {
   const val = document.getElementById('pw-input').value;
@@ -688,7 +688,9 @@ function checkPassword() {
     setTimeout(() => { err.textContent = '\u00a0'; }, 2600);
   }
 }
-document.getElementById('pw-input').addEventListener('keydown', e => { if (e.key === 'Enter') checkPassword(); });
+document.getElementById('pw-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkPassword();
+});
 
 const story = document.getElementById('story');
 const dots  = document.querySelectorAll('.dot');
@@ -696,37 +698,58 @@ const navPrev = document.getElementById('nav-prev');
 const navNext = document.getElementById('nav-next');
 let currentPanel = 0;
 const TOTAL = 7;
+
 const animTargets = {
-  0:['p1-content'],1:['p2-content'],2:['p3-content','pm1','pm2','pm3'],
-  3:['p4-content'],4:['p5-content','ph1','ph2','ph3','ph4'],
-  5:['p6-content','met1','met2','met3','met4'],6:['p7-content'],
+  0:['p1-content'],
+  1:['p2-content'],
+  2:['p3-content','pm1','pm2','pm3'],
+  3:['p4-content'],
+  4:['p5-content','ph1','ph2','ph3','ph4'],
+  5:['p6-content','met1','met2','met3','met4'],
+  6:['p7-content'],
 };
-const staggerDelays = { ph1:0.05,ph2:0.18,ph3:0.31,ph4:0.44, met1:0.08,met2:0.2,met3:0.32,met4:0.44, pm1:0.08,pm2:0.2,pm3:0.32 };
+
+const staggerDelays = {
+  ph1:0.05, ph2:0.18, ph3:0.31, ph4:0.44,
+  met1:0.08, met2:0.2, met3:0.32, met4:0.44,
+  pm1:0.08, pm2:0.2, pm3:0.32
+};
+
 function activatePanel(idx) {
-  (animTargets[idx]||[]).forEach(id => {
-    const el = document.getElementById(id); if (!el) return;
-    const d = staggerDelays[id]; if (d !== undefined) el.style.transitionDelay = d+'s';
+  (animTargets[idx] || []).forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const d = staggerDelays[id];
+    if (d !== undefined) el.style.transitionDelay = d + 's';
     setTimeout(() => el.classList.add('in-view'), 60);
   });
-  dots.forEach((d,i) => d.classList.toggle('active', i===idx));
+
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
   currentPanel = idx;
-  navPrev.classList.toggle('dim', idx===0);
-  navNext.classList.toggle('dim', idx===TOTAL-1);
-  document.getElementById('scroll-hint').style.opacity = idx===TOTAL-1 ? '0' : '';
+  navPrev.classList.toggle('dim', idx === 0);
+  navNext.classList.toggle('dim', idx === TOTAL - 1);
+  document.getElementById('scroll-hint').style.opacity = idx === TOTAL - 1 ? '0' : '';
 }
+
 function goTo(idx) {
-  if (idx<0||idx>=TOTAL) return;
-  story.scrollTo({left: idx*window.innerWidth, behavior:'smooth'});
+  if (idx < 0 || idx >= TOTAL) return;
+  story.scrollTo({ left: idx * window.innerWidth, behavior: 'smooth' });
 }
+
 document.addEventListener('keydown', e => {
-  if (document.getElementById('gate').style.display!=='none') return;
-  if (e.key==='ArrowRight'&&currentPanel<TOTAL-1) goTo(currentPanel+1);
-  if (e.key==='ArrowLeft'&&currentPanel>0) goTo(currentPanel-1);
+  if (document.getElementById('gate').style.display !== 'none') return;
+  if (e.key === 'ArrowRight' && currentPanel < TOTAL - 1) goTo(currentPanel + 1);
+  if (e.key === 'ArrowLeft' && currentPanel > 0) goTo(currentPanel - 1);
 });
+
 let scrollTimer;
 story.addEventListener('scroll', () => {
   clearTimeout(scrollTimer);
   scrollTimer = setTimeout(() => {
-    const idx = Math.round(story.scrollLeft/window.innerWidth);
-    if (idx!==currentPanel) activatePanel(idx);
-  }, 80
+    const idx = Math.round(story.scrollLeft / window.innerWidth);
+    if (idx !== currentPanel) activatePanel(idx);
+  }, 80);
+});
+</script>
+</body>
+</html>
