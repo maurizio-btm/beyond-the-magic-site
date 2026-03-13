@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Etihad Airways · Service Alignment · Beyond the Magic</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#0D1520">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Barlow:wght@200;300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -20,22 +22,47 @@
 html, body {
   height: 100%;
   overflow: hidden;
-  background: var(--navy-deep);
+  background:
+    radial-gradient(circle at top, rgba(160,113,79,0.10), transparent 26%),
+    linear-gradient(180deg, #10192B 0%, #0D1520 100%);
   font-family: 'Barlow', sans-serif;
   color: var(--off-white);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  position: relative;
 }
 
 /* ══ PASSWORD GATE ══ */
 #gate {
   position: fixed; inset: 0; z-index: 1000;
-  background: var(--navy-deep);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(196,154,114,0.12), transparent 24%),
+    linear-gradient(180deg, rgba(13,21,32,0.98) 0%, rgba(13,21,32,1) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: opacity 1s ease, transform 1s ease;
+  isolation: isolate;
 }
-#gate.unlocking { opacity: 0; transform: scale(1.04); pointer-events: none; }
+#gate::before {
+  content: '';
+  position: absolute;
+  inset: 28px;
+  border: 1px solid rgba(196,154,114,0.12);
+  pointer-events: none;
+}
+#gate::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(196,154,114,0.05), transparent 22%, transparent 78%, rgba(196,154,114,0.04));
+  pointer-events: none;
+}
+#gate.unlocking { opacity: 0; transform: scale(1.03); pointer-events: none; }
 
 .gate-eyebrow {
   font-family: 'Barlow Condensed', sans-serif;
@@ -46,15 +73,21 @@ html, body {
 }
 .gate-logos {
   display: flex; align-items: center;
-  justify-content: center; gap: 56px;
+  justify-content: center; gap: clamp(28px, 4vw, 56px);
   margin-bottom: 60px; opacity: 0;
   animation: fadeUp 1.2s ease 0.4s forwards;
 }
-.gate-logos img.btm-logo  { height: 110px; width: auto; }
-.gate-logos img.etihad-logo { height: 60px; width: auto; }
+.gate-logos img {
+  display: block;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 26px rgba(0,0,0,0.18));
+}
+.gate-logos img.btm-logo  { height: clamp(84px, 10vw, 110px); max-width: min(44vw, 460px); }
+.gate-logos img.etihad-logo { height: clamp(44px, 5.6vw, 60px); max-width: min(40vw, 420px); }
 .gate-divider {
-  width: 1px; height: 64px;
-  background: linear-gradient(to bottom, transparent, rgba(196,154,114,0.45), transparent);
+  width: 1px; height: clamp(58px, 8vw, 72px);
+  background: linear-gradient(to bottom, transparent, rgba(196,154,114,0.18), rgba(196,154,114,0.55), transparent);
 }
 .gate-tagline {
   font-family: 'Cormorant Garamond', serif;
@@ -74,26 +107,31 @@ html, body {
   color: rgba(245,243,239,0.3); text-transform: uppercase;
 }
 .gate-input {
-  background: transparent; border: none;
-  border-bottom: 1px solid rgba(196,154,114,0.3);
+  background: rgba(255,255,255,0.015);
+  border: 1px solid rgba(196,154,114,0.22);
   outline: none; color: var(--off-white);
   font-family: 'Barlow', sans-serif;
   font-size: 17px; font-weight: 300;
   letter-spacing: 0.25em; text-align: center;
-  width: 260px; padding: 13px 0;
-  transition: border-color 0.3s;
+  width: min(300px, 78vw); padding: 16px 18px;
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
-.gate-input:focus { border-bottom-color: var(--copper-lt); }
+.gate-input:focus {
+  border-color: rgba(196,154,114,0.55);
+  background: rgba(255,255,255,0.025);
+  box-shadow: 0 0 0 4px rgba(196,154,114,0.06);
+}
 .gate-input::placeholder { color: rgba(245,243,239,0.15); }
 .gate-btn {
-  margin-top: 4px; background: transparent;
+  margin-top: 6px; background: transparent;
   border: 1px solid var(--copper-lt); color: var(--copper-lt);
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase;
   padding: 14px 44px; cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.gate-btn:hover { background: var(--copper-lt); color: var(--navy-deep); }
+.gate-btn:hover { background: var(--copper-lt); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
 .gate-error {
   font-size: 13px; color: rgba(255,100,80,0.7);
   letter-spacing: 0.1em; height: 18px;
@@ -167,27 +205,35 @@ html, body {
 
 /* ══ SCROLL HINT ══ */
 #scroll-hint {
-  position: fixed; bottom: 62px; right: 38px;
+  position: fixed; bottom: 84px; right: 34px;
   display: none; flex-direction: column;
   align-items: center; gap: 8px; z-index: 200;
   opacity: 0; animation: fadeIn 1s ease 2s forwards;
+  padding: 10px 8px;
+  border-radius: 999px;
+  background: rgba(13,21,32,0.32);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 }
 #scroll-hint.visible { display: flex; }
 .hint-label {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 10px; letter-spacing: 0.4em;
-  color: rgba(245,243,239,0.25); text-transform: uppercase;
+  color: rgba(245,243,239,0.30); text-transform: uppercase;
   writing-mode: vertical-rl; transform: rotate(180deg);
 }
 .hint-chevron {
   width: 18px; height: 18px;
-  border-right: 1px solid rgba(196,154,114,0.4);
-  border-bottom: 1px solid rgba(196,154,114,0.4);
+  border-right: 1px solid rgba(196,154,114,0.45);
+  border-bottom: 1px solid rgba(196,154,114,0.45);
   transform: rotate(-45deg);
   animation: pulseRight 2s ease-in-out infinite; margin-top: 4px;
 }
 .slide-num {
   position: absolute; top: 34px; right: 44px;
+  padding: 8px 12px;
+  border: 1px solid rgba(196,154,114,0.14);
+  background: rgba(13,21,32,0.36);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 11px; letter-spacing: 0.45em;
   color: rgba(245,243,239,0.18); text-transform: uppercase; z-index: 10;
@@ -198,13 +244,14 @@ html, body {
 .p1-photo {
   position: absolute; inset: 0;
   background: url('Etihad-Getty.jpeg') center center / cover no-repeat;
-  opacity: 0.18;
+  opacity: 0.34;
+  transform: scale(1.02);
 }
 .p1-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 100% at 50% 50%, rgba(13,21,32,0.6) 0%, rgba(13,21,32,0.95) 70%),
-    linear-gradient(to bottom, rgba(13,21,32,0.5) 0%, rgba(13,21,32,0.85) 100%);
+    radial-gradient(ellipse 82% 100% at 50% 46%, rgba(13,21,32,0.32) 0%, rgba(13,21,32,0.80) 72%),
+    linear-gradient(to bottom, rgba(13,21,32,0.22) 0%, rgba(13,21,32,0.58) 100%);
 }
 .p1-content {
   position: relative; z-index: 2; text-align: center;
@@ -214,7 +261,7 @@ html, body {
 }
 .p1-content.in-view { opacity: 1; transform: translateY(0); }
 .p1-logo { margin-bottom: 48px; }
-.p1-logo img { height: 120px; }
+.p1-logo img { display:block; height: clamp(90px, 11vw, 120px); width:auto; max-width:min(62vw, 480px); margin: 0 auto; filter: drop-shadow(0 8px 26px rgba(0,0,0,0.18)); }
 .p1-divider-top {
   width: 1px; height: 44px;
   background: linear-gradient(to bottom, transparent, rgba(196,154,114,0.4));
@@ -244,14 +291,14 @@ html, body {
 #p2 { background: #080E1A; }
 .p2-photo {
   position: absolute; inset: 0;
-  background: url('etihad-cabin.jpg') right center / 60% auto no-repeat;
-  opacity: 0.22;
+  background: url('etihad-cabin.jpg') right center / 68% auto no-repeat;
+  opacity: 0.38;
 }
 .p2-bg {
   position: absolute; inset: 0;
   background:
-    linear-gradient(to right, rgba(8,14,26,1) 35%, rgba(8,14,26,0.4) 65%, rgba(8,14,26,0.15) 100%),
-    linear-gradient(to bottom, rgba(8,14,26,0.4) 0%, transparent 40%, rgba(8,14,26,0.6) 100%);
+    linear-gradient(to right, rgba(8,14,26,0.96) 26%, rgba(8,14,26,0.42) 60%, rgba(8,14,26,0.10) 100%),
+    linear-gradient(to bottom, rgba(8,14,26,0.18) 0%, transparent 38%, rgba(8,14,26,0.42) 100%);
 }
 .p2-content {
   position: relative; z-index: 2; display: flex;
@@ -303,14 +350,14 @@ html, body {
 .p3-photo {
   position: absolute; inset: 0;
   background: url('canceled.jpeg') center center / cover no-repeat;
-  opacity: 0.12;
-  filter: saturate(0.6) brightness(0.7);
+  opacity: 0.24;
+  filter: saturate(0.82) brightness(0.84);
 }
 .p3-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(192,74,58,0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(10,8,8,0.75) 30%, rgba(10,8,8,0.92) 100%);
+    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(192,74,58,0.14) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(10,8,8,0.52) 30%, rgba(10,8,8,0.82) 100%);
 }
 .p3-content {
   position: relative; z-index: 2; padding: 80px; max-width: 1020px; width: 100%;
@@ -343,10 +390,12 @@ html, body {
 }
 .p3-moments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 760px; }
 .p3-moment {
-  padding: 26px 22px; background: rgba(192,74,58,0.06);
-  border-top: 1px solid rgba(192,74,58,0.2);
+  padding: 26px 22px; background: rgba(192,74,58,0.07);
+  border: 1px solid rgba(192,74,58,0.14);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
   opacity: 0; transform: translateY(12px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease, border-color 0.3s, background 0.3s;
 }
 .p3-moment.in-view { opacity: 1; transform: translateY(0); }
 .p3-moment:nth-child(1) { transition-delay: 0.1s; }
@@ -396,10 +445,13 @@ html, body {
 .p5-logo-lockup img { height: 64px; }
 .p5-logo-text { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; color: var(--copper-lt); text-transform: uppercase; line-height: 1.5; }
 .p5-phase {
-  padding: 24px 26px; background: rgba(255,255,255,0.025);
+  padding: 24px 26px; background: rgba(255,255,255,0.032);
   border-left: 2px solid rgba(196,154,114,0.3);
+  border-top: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.12);
   opacity: 0; transform: translateX(12px);
-  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s;
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s, background 0.3s;
 }
 .p5-phase.in-view { opacity: 1; transform: translateX(0); }
 .p5-phase:hover { border-left-color: var(--copper-lt); background: rgba(196,154,114,0.05); }
@@ -412,14 +464,14 @@ html, body {
 .p6-photo {
   position: absolute; inset: 0;
   background: url('x8.jpeg') center 30% / cover no-repeat;
-  opacity: 0.12;
-  filter: saturate(0.5) brightness(0.8);
+  opacity: 0.26;
+  filter: saturate(0.86) brightness(0.90);
 }
 .p6-bg {
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(6,10,15,0.7) 0%, rgba(6,10,15,0.96) 80%),
-    linear-gradient(to bottom, rgba(6,10,15,0.9) 0%, rgba(6,10,15,0.7) 50%, rgba(6,10,15,0.9) 100%);
+    radial-gradient(ellipse 80% 80% at 50% 50%, rgba(6,10,15,0.42) 0%, rgba(6,10,15,0.84) 80%),
+    linear-gradient(to bottom, rgba(6,10,15,0.58) 0%, rgba(6,10,15,0.34) 50%, rgba(6,10,15,0.66) 100%);
 }
 .p6-content {
   position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr;
@@ -432,10 +484,12 @@ html, body {
 .p6-label { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 0.5em; color: var(--copper-lt); text-transform: uppercase; margin-bottom: 22px; opacity: 0.7; }
 .p6-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 56px); font-weight: 300; line-height: 1.2; color: var(--off-white); max-width: 660px; }
 .p6-metric {
-  padding: 30px; background: rgba(255,255,255,0.025);
-  border-top: 1px solid rgba(196,154,114,0.2);
+  padding: 30px; background: rgba(255,255,255,0.038);
+  border: 1px solid rgba(196,154,114,0.10);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.14);
   opacity: 0; transform: translateY(14px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease, border-color 0.3s, background 0.3s;
 }
 .p6-metric.in-view { opacity: 1; transform: translateY(0); }
 .p6-metric-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: var(--copper-lt); line-height: 1; margin-bottom: 12px; }
@@ -453,26 +507,28 @@ html, body {
 }
 .p7-content.in-view { opacity: 1; transform: translateY(0); }
 .p7-etihad-logo { margin-bottom: 36px; }
-.p7-etihad-logo img { height: 44px; opacity: 0.8; }
+.p7-etihad-logo img { display:block; height: clamp(38px, 4.5vw, 50px); width:auto; opacity: 0.92; margin: 0 auto; filter: drop-shadow(0 8px 26px rgba(0,0,0,0.16)); }
 .p7-label { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 0.5em; color: var(--copper-lt); text-transform: uppercase; margin-bottom: 30px; opacity: 0.7; }
 .p7-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.8vw, 52px); font-weight: 300; line-height: 1.35; color: var(--off-white); margin-bottom: 34px; }
 .p7-headline em { font-style: italic; color: var(--copper-lt); }
-.p7-body { font-size: 17px; font-weight: 300; line-height: 1.9; color: rgba(245,243,239,0.5); max-width: 620px; margin: 0 auto 52px; }
-.p7-team { display: flex; gap: 64px; justify-content: center; margin-bottom: 52px; }
-.p7-photo { width: 80px; height: 80px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; border: 1px solid rgba(196,154,114,0.3); }
+.p7-body { font-size: 17px; font-weight: 300; line-height: 1.9; color: rgba(245,243,239,0.58); max-width: 620px; margin: 0 auto 52px; }
+.p7-team { display: flex; gap: 26px; justify-content: center; margin-bottom: 52px; flex-wrap: wrap; }
+.p7-person { min-width: 240px; padding: 28px 26px; background: rgba(255,255,255,0.034); border: 1px solid rgba(196,154,114,0.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 18px 40px rgba(0,0,0,0.14); }
+.p7-photo { width: 84px; height: 84px; border-radius: 50%; overflow: hidden; margin: 0 auto 18px; border: 1px solid rgba(196,154,114,0.3); }
 .p7-photo img { width: 100%; height: 100%; object-fit: cover; }
 .p7-name { font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.15em; color: var(--off-white); text-transform: uppercase; margin-bottom: 5px; }
 .p7-role { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.35em; color: var(--copper-lt); text-transform: uppercase; opacity: 0.7; margin-bottom: 12px; }
-.p7-contact { font-size: 14px; font-weight: 300; color: rgba(245,243,239,0.4); line-height: 1.9; }
-.p7-contact a { color: rgba(245,243,239,0.4); text-decoration: none; }
+.p7-contact { font-size: 14px; font-weight: 300; color: rgba(245,243,239,0.62); line-height: 1.9; }
+.p7-contact a { color: rgba(245,243,239,0.62); text-decoration: none; }
 .p7-contact a:hover { color: var(--copper-lt); }
 .p7-cta {
   display: inline-block; border: 1px solid var(--copper-lt); color: var(--copper-lt);
   font-family: 'Barlow Condensed', sans-serif; font-size: 13px; letter-spacing: 0.45em;
   text-transform: uppercase; padding: 17px 48px; text-decoration: none;
-  transition: background 0.3s, color 0.3s; margin-bottom: 40px;
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s; margin-bottom: 40px;
+  box-shadow: 0 16px 38px rgba(0,0,0,0.12);
 }
-.p7-cta:hover { background: var(--copper-lt); color: var(--navy-deep); }
+.p7-cta:hover { background: var(--copper-lt); color: var(--navy-deep); transform: translateY(-1px); box-shadow: 0 20px 44px rgba(0,0,0,0.18); }
 .p7-confidential { font-family: 'Barlow Condensed', sans-serif; font-size: 11px; letter-spacing: 0.3em; color: rgba(245,243,239,0.18); text-transform: uppercase; }
 
 /* ══ ANIMATIONS ══ */
@@ -481,14 +537,39 @@ html, body {
 @keyframes pulse-red { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
 @keyframes pulseRight { 0%, 100% { transform: rotate(-45deg) translate(0,0); opacity: 0.6; } 50% { transform: rotate(-45deg) translate(3px,3px); opacity: 0.3; } }
 
-@media (max-width: 768px) {
-  .p2-content, .p5-content { flex-direction: column; gap: 40px; padding: 40px; }
+@media (max-width: 920px) {
+  .gate-logos { flex-direction: column; gap: 18px; }
+  .gate-divider { width: 72px; height: 1px; }
+  .p2-content, .p5-content { flex-direction: column; gap: 40px; padding: 48px 40px; }
   .p5-right { flex: 0 0 auto; width: 100%; }
-  .p6-content { grid-template-columns: 1fr; gap: 20px; padding: 40px; }
-  .p3-moments { grid-template-columns: 1fr; }
-  .p4-stats { gap: 32px; }
-  .p7-team { gap: 36px; }
+  .p6-content { grid-template-columns: 1fr; gap: 24px; padding: 48px 40px; }
   .p2-scene-number { display: none; }
+}
+
+@media (max-width: 768px) {
+  #progress { bottom: 18px; padding: 8px 14px; }
+  #nav-prev, #nav-next { width: 48px; height: 48px; top: auto; bottom: 24px; transform: none; }
+  #nav-prev:hover, #nav-next:hover { transform: scale(1.02); }
+  #nav-prev { left: 16px; }
+  #nav-next { right: 16px; }
+  #scroll-hint { display: none !important; }
+  .slide-num { top: 18px; right: 18px; }
+  .p1-content, .p3-content, .p4-content, .p7-content { padding: 40px 24px; }
+  .p2-content, .p5-content, .p6-content { padding: 40px 24px; }
+  .p3-moments { grid-template-columns: 1fr; }
+  .p4-stats { gap: 28px; }
+  .p7-team { gap: 18px; }
+  .p7-person { width: min(100%, 320px); }
+  .p2-photo { background-size: cover; background-position: 72% center; opacity: 0.24; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 </style>
 </head>
@@ -504,8 +585,8 @@ html, body {
   <div class="gate-tagline">Service Alignment for Disruption Recovery</div>
   <div class="gate-form">
     <div class="gate-label">Enter Access Code</div>
-    <input id="pw-input" type="password" class="gate-input" placeholder="· · · · · · · · · ·" autocomplete="off">
-    <button class="gate-btn" onclick="checkPassword()">Enter</button>
+    <input id="pw-input" type="password" class="gate-input" placeholder="· · · · · · · · · ·" autocomplete="off" autocapitalize="none" spellcheck="false" inputmode="text">
+    <button type="button" class="gate-btn" onclick="checkPassword()">Enter</button>
     <div id="pw-error" class="gate-error">&nbsp;</div>
   </div>
   <div class="gate-confidential">Beyond the Magic Consulting LLC · Not for Distribution</div>
@@ -638,7 +719,7 @@ html, body {
           <div class="p7-contact">dennis&#64;beyondthemagic&#46;co<br>+1 (865) 566-4147</div>
         </div>
       </div>
-      <a href="Etihad_BTM_ProposalFINAL.pdf" class="p7-cta" target="_blank">View the Full Proposal</a>
+      <a href="Etihad_BTM_ProposalFINAL.pdf" class="p7-cta" target="_blank" rel="noopener noreferrer">View the Full Proposal</a>
       <div class="p7-confidential">Beyond the Magic Consulting LLC · Confidential · Not for Distribution</div>
     </div>
   </section>
