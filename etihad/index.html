@@ -668,15 +668,17 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  margin: 4px auto 12px;
+  width: 100%;
 }
 .p7-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 54px;
+  min-height: 56px;
+  min-width: 320px;
   border: 1px solid rgba(196,154,114,0.64);
   color: var(--navy-deep);
   background: linear-gradient(180deg, rgba(214,177,140,1) 0%, rgba(196,154,114,1) 100%);
@@ -686,17 +688,12 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.34em;
   text-transform: uppercase;
-  padding: 0 28px;
+  padding: 0 32px;
   border-radius: 999px;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 .p7-cta:hover { transform: translateY(-1px); box-shadow: 0 18px 32px rgba(0,0,0,0.22); filter: brightness(1.03); }
-.p7-note {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  color: rgba(245,243,239,0.46);
-}
 .p7-confidential {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 10px;
@@ -777,7 +774,7 @@ html, body {
       <div class="p1-kicker">Confidential Proposal Experience</div>
       <h1 class="p1-headline">Every journey<br>begins with <em>a promise.</em></h1>
       <p class="p1-subhead">A guest experience transformation concept for Etihad, inspired by the hospitality tradition of Abu Dhabi and designed for measurable operational confidence.</p>
-      <p class="p1-body">This microsite was shaped to feel less like a website and more like an executive invitation, creating a stronger opening sense of trust, sophistication, and intent before the narrative begins.</p>
+      <p class="p1-body">This proposal experience is designed to reflect the standard it advocates, calm under pressure, elevated hospitality, and a disciplined approach to moments that matter most.</p>
       <div class="p1-meta">
         <span>March 2026</span>
         <span class="dot-sep"></span>
@@ -798,7 +795,7 @@ html, body {
         <div class="p2-label">The Guest Experience</div>
         <h2 class="p2-headline">A traveler boards with confidence.<br>The world ahead is open.</h2>
         <div class="p2-rule"></div>
-        <p class="p2-body">Etihad's guests travel for business that shapes the region, for families that span continents, for experiences that matter. When they choose Etihad, they extend their trust — and their expectations are calibrated to Abu Dhabi's standard of generous hospitality.</p>
+        <p class="p2-body">Etihad's guests travel for decisions that shape business, for reunions that bring families together, and for experiences that carry deep personal meaning. When they choose Etihad, they place their trust in a brand shaped by Abu Dhabi's tradition of generous hospitality, and they expect that standard to hold throughout the journey.</p>
         <div class="p2-journey-bar">
           <div class="jb-step"><div class="jb-num">01</div><div class="jb-label">Books</div></div>
           <div class="jb-step"><div class="jb-num">02</div><div class="jb-label">Departs</div></div>
@@ -906,7 +903,6 @@ html, body {
       </div>
       <div class="p7-actions">
         <a href="./etihad-btm-proposal.pdf" class="p7-cta" target="_blank" rel="noopener">View Full Proposal</a>
-        <div class="p7-note">Best practice, keep the PDF in the same GitHub folder as this HTML file.</div>
       </div>
       <div class="p7-confidential">Beyond the Magic Consulting LLC, Confidential, Not for Distribution</div>
     </div>
