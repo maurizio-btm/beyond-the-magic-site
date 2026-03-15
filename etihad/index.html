@@ -174,12 +174,13 @@ a { color: inherit; }
 .hero { min-height: 100svh; display: grid; align-items: end; }
 .hero .section-bg {
   background-image: url('Etihad-Getty.jpeg');
-  opacity: 0.50; background-position: center 34%;
+  opacity: 0.68;
+  background-position: center 34%;
 }
 .hero .section-overlay {
   background:
     radial-gradient(ellipse 70% 40% at 50% 10%, rgba(196,154,114,0.10), transparent 50%),
-    linear-gradient(180deg, rgba(13,21,32,0.10) 0%, rgba(13,21,32,0.38) 30%, rgba(13,21,32,0.84) 72%, rgba(13,21,32,0.97) 100%);
+    linear-gradient(180deg, rgba(13,21,32,0.20) 0%, rgba(13,21,32,0.55) 55%, rgba(13,21,32,0.85) 100%);
 }
 .hero-card {
   width: min(100%, 820px);
@@ -311,26 +312,95 @@ a { color: inherit; }
 /* ── SECTION BACKGROUNDS ── */
 .reality .section-bg {
   background-image: url('etihad-cabin.jpg');
-  opacity: 0.32; background-position: right center;
+  opacity: 0.50;
+  background-position: right center;
 }
 .reality .section-overlay {
-  background: linear-gradient(90deg, rgba(13,21,32,0.97) 0%, rgba(13,21,32,0.86) 40%, rgba(13,21,32,0.62) 100%);
+  background: linear-gradient(90deg, rgba(13,21,32,0.72) 0%, rgba(13,21,32,0.62) 40%, rgba(13,21,32,0.42) 100%);
 }
+
+/* ── DISRUPTION — alert badge + challenge cards ── */
+.disruption-inner {
+  position: relative; z-index: 1;
+  max-width: var(--max); margin: 0 auto;
+  padding: clamp(80px,10vw,130px) 24px;
+}
+.disruption-alert {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: rgba(192,74,58,0.10);
+  border: 1px solid rgba(192,74,58,0.28);
+  padding: 10px 20px 10px 14px;
+  margin-bottom: 36px;
+}
+.disruption-alert-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #C04A3A;
+  animation: pulse-alert 1.8s ease-in-out infinite;
+}
+.disruption-alert-text {
+  font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.38em; text-transform: uppercase;
+  color: rgba(220,130,110,0.85);
+}
+.disruption-headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px,4.5vw,52px); font-weight: 300;
+  line-height: 1.12; max-width: 680px; margin-bottom: 18px;
+}
+.disruption-headline strong { font-weight: 400; color: rgba(220,160,140,0.9); }
+.disruption-sub {
+  font-size: clamp(15px,1.6vw,18px); font-weight: 300; line-height: 1.85;
+  color: rgba(245,243,239,0.50); max-width: 600px;
+  margin-bottom: clamp(36px,5vw,56px);
+}
+.disruption-challenges {
+  display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 2px;
+}
+.disruption-challenge {
+  padding: clamp(20px,2.8vw,30px) clamp(18px,2.4vw,26px);
+  background: rgba(192,74,58,0.055);
+  border-top: 1px solid rgba(192,74,58,0.22);
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.disruption-challenge.visible { opacity: 1; transform: translateY(0); }
+.disruption-challenge:nth-child(1) { transition-delay: 0.08s; }
+.disruption-challenge:nth-child(2) { transition-delay: 0.20s; }
+.disruption-challenge:nth-child(3) { transition-delay: 0.32s; }
+.dc-kicker {
+  font-family: var(--font-ui); font-size: 9px; letter-spacing: 0.40em;
+  text-transform: uppercase; color: rgba(220,140,120,0.65); margin-bottom: 10px;
+}
+.dc-title {
+  font-family: var(--font-ui); font-size: 17px; font-weight: 500;
+  letter-spacing: 0.06em; color: var(--ink); text-transform: uppercase; margin-bottom: 10px;
+}
+.dc-desc { font-size: 15px; font-weight: 300; line-height: 1.8; color: rgba(245,243,239,0.42); }
+@keyframes pulse-alert {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
+}
+@media (max-width: 720px) {
+  .disruption-challenges { grid-template-columns: 1fr; }
+}
+
 .disruption .section-bg {
   background-image: url('canceled.jpeg');
-  opacity: 0.22; filter: saturate(0.7) brightness(0.9);
+  opacity: 0.38;
+  filter: saturate(0.85) brightness(1.05);
 }
 .disruption .section-overlay {
   background:
-    radial-gradient(ellipse 60% 50% at 18% 50%, rgba(192,74,58,0.14), transparent 55%),
-    linear-gradient(180deg, rgba(13,21,32,0.82) 0%, rgba(13,21,32,0.90) 100%);
+    radial-gradient(ellipse 60% 50% at 18% 50%, rgba(192,74,58,0.12), transparent 55%),
+    linear-gradient(180deg, rgba(13,21,32,0.50) 0%, rgba(13,21,32,0.78) 100%);
 }
 .solution .section-bg {
   background-image: url('x8.jpeg');
-  opacity: 0.28; background-position: center 28%;
+  opacity: 0.46;
+  background-position: center 28%;
 }
 .solution .section-overlay {
-  background: linear-gradient(180deg, rgba(13,21,32,0.78) 0%, rgba(13,21,32,0.90) 100%);
+  background: linear-gradient(180deg, rgba(13,21,32,0.48) 0%, rgba(13,21,32,0.78) 100%);
 }
 .close .section-bg {
   background-image: url('Etihad-Getty.jpeg'); opacity: 0.18;
@@ -398,13 +468,24 @@ a { color: inherit; }
 }
 .contact-photo {
   width: 80px; height: 80px; overflow: hidden;
-  border: 1px solid rgba(196,154,114,0.24);
-  background: rgba(255,255,255,0.04);
+  border: none;
+  background: transparent;
 }
-.contact-photo img { width: 100%; height: 100%; object-fit: cover; }
-.contact-card:nth-child(2) .contact-photo img { object-position: left center; }
-.contact-card:first-child .contact-photo img { object-position: center 22%; transform: scale(1.05); }
-.contact-card:last-child .contact-photo img  { object-position: center 18%; transform: scale(1.05); }
+.contact-photo img {
+  width: 112%;
+  height: 112%;
+  object-fit: cover;
+  object-position: 42% center;
+  transform: translateX(-6%);
+}
+.contact-card:first-child .contact-photo img {
+  object-position: center 22%;
+  transform: scale(1.05);
+}
+.contact-card:last-child .contact-photo img  {
+  object-position: 42% center;
+  transform: translateX(-6%) scale(1.02);
+}
 .contact-name {
   font-family: var(--font-ui); font-size: 14px; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px;
@@ -462,14 +543,14 @@ a { color: inherit; }
 <body class="locked">
 <div id="gate" aria-label="Protected access">
   <div class="gate-shell">
-    <div class="gate-eyebrow">Confidential, For Designated Recipients Only</div>
+    <div class="gate-eyebrow">Confidential · For Etihad Leadership</div>
     <div class="gate-logos">
       <img class="btm-logo" src="BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting">
       <div class="gate-divider" aria-hidden="true"></div>
       <img class="etihad-logo" src="etihad-beyond-borders.png" alt="Etihad Airways">
     </div>
     <h1 class="gate-title">Proposal Preview</h1>
-    <p class="gate-subtitle">A concise executive overview designed to complement the full proposal.</p>
+    <p class="gate-subtitle">Prepared exclusively for Etihad Airways leadership.</p>
     <div class="gate-input-wrap">
       <label class="gate-label" for="pw-input">Enter Access Code</label>
       <input id="pw-input" class="gate-input" type="password" autocomplete="off" placeholder="••••••••••••">
@@ -506,16 +587,16 @@ a { color: inherit; }
             <div class="hero-badge">Confidential Proposal Preview</div>
             <div class="hero-badge">Designed for Senior Leadership Review</div>
           </div>
-          <h1>When the journey is tested,<br><em>the brand is revealed.</em></h1>
-          <p class="hero-lead">This proposal is designed to help Etihad protect guest confidence, strengthen leadership consistency, and preserve a premium standard when disruption places the brand under pressure.</p>
+          <h1>When the journey<br>changes course,<br><em>character is revealed.</em></h1>
+          <p class="hero-lead">A framework for Etihad Airways — building consistent, confident, and guest-centred recovery across every department.</p>
           <div class="hero-summary">
             <div class="summary-pill">
               <span class="summary-label">Strategic focus</span>
               <span class="summary-value">Disruption recovery, service clarity, leadership alignment</span>
             </div>
             <div class="summary-pill">
-              <span class="summary-label">Executive intent</span>
-              <span class="summary-value">A faster path from assessment to rollout</span>
+              <span class="summary-label">Engagement model</span>
+              <span class="summary-value">Four phases. Ownership transferred. Standards that endure.</span>
             </div>
             <div class="summary-pill">
               <span class="summary-label">Next step</span>
@@ -524,7 +605,7 @@ a { color: inherit; }
           </div>
           <div class="hero-actions">
             <a class="hero-action primary" href="./etihad-btm-proposal.pdf" target="_blank" rel="noopener">View Full Proposal</a>
-            <a class="hero-action secondary" href="#reality">See Executive Highlights</a>
+            <a class="hero-action secondary" href="#reality">Read the Executive Summary</a>
           </div>
         </div>
       </div>
@@ -538,25 +619,25 @@ a { color: inherit; }
           <div class="panel reveal">
             <div class="panel-main">
               <div class="eyebrow">The Reality</div>
-              <h2>Guests do not separate disruption from service.</h2>
-              <p>They experience one journey. In moments of delay, uncertainty, or change, every interaction becomes a measure of trust in the Etihad brand.</p>
+              <h2>Etihad is more than a carrier. It is a global expression of Abu Dhabi’s culture.</h2>
+              <p>That reputation is most at risk — and most powerfully reinforced — in the moments that do not go as planned. Disruption is not a deviation from the Etihad experience. It is part of it.</p>
             </div>
           </div>
           <div class="points reveal">
             <div class="point">
-              <div class="point-kicker">What leaders feel</div>
-              <strong>Operational pressure is visible.</strong>
-              <span>Consistency across touchpoints becomes harder when recovery moments accelerate.</span>
+              <div class="point-kicker">What guests experience</div>
+              <strong>Confidence can shift in a single interaction.</strong>
+              <span>Communication, presence, and empathy determine whether a guest feels supported — or abandoned.</span>
             </div>
             <div class="point">
-              <div class="point-kicker">What guests feel</div>
-              <strong>Confidence can shift quickly.</strong>
-              <span>Communication, empathy, and presence shape whether disruption feels managed or magnified.</span>
+              <div class="point-kicker">What leaders face</div>
+              <strong>Inconsistency is rarely intentional.</strong>
+              <span>When disruptions span departments, guests feel passed between teams — not because people don’t care, but because no shared standard exists to guide them.</span>
             </div>
             <div class="point">
-              <div class="point-kicker">What matters most</div>
+              <div class="point-kicker">What is at stake</div>
               <strong>Luxury must remain recognizable under pressure.</strong>
-              <span>The standard cannot disappear when the operation is most tested.</span>
+              <span>The standard that defines Etihad in its best moments must hold in its hardest ones.</span>
             </div>
           </div>
         </div>
@@ -566,34 +647,28 @@ a { color: inherit; }
     <section class="section disruption">
       <div class="section-bg"></div>
       <div class="section-overlay"></div>
-      <div class="section-inner">
-        <div class="statement-grid">
-          <div class="panel reveal">
-            <div class="panel-main">
-              <div class="eyebrow">The Opportunity</div>
-              <h2>Disruption can become a signature moment of leadership.</h2>
-              <p>With the right operating model, leaders and frontline teams can recover service with clarity, calm, and confidence, protecting both guest trust and team alignment.</p>
-              <div class="metrics">
-                <div class="metric">
-                  <div class="metric-value">1</div>
-                  <div class="metric-label">shared recovery language across leaders and teams</div>
-                </div>
-                <div class="metric">
-                  <div class="metric-value">1</div>
-                  <div class="metric-label">clear service standard for high pressure moments</div>
-                </div>
-                <div class="metric">
-                  <div class="metric-value">1</div>
-                  <div class="metric-label">disciplined path from assessment to rollout</div>
-                </div>
-              </div>
-            </div>
+      <div class="disruption-inner">
+        <div class="disruption-alert reveal">
+          <div class="disruption-alert-dot"></div>
+          <span class="disruption-alert-text">Service Disruption &middot; Active Challenge</span>
+        </div>
+        <h2 class="disruption-headline reveal">Disruption exposes the gaps between <strong>what leaders intend</strong> and what guests experience.</h2>
+        <p class="disruption-sub reveal">When a flight delays, a connection breaks, or a guest’s journey unravels — the response is rarely consistent. Not because teams don’t care, but because no shared standard exists to guide them.</p>
+        <div class="disruption-challenges">
+          <div class="disruption-challenge">
+            <div class="dc-kicker">Challenge 01</div>
+            <div class="dc-title">Inconsistent Tone</div>
+            <div class="dc-desc">Guest communication during disruption varies significantly across teams, gates, and roles.</div>
           </div>
-          <div class="panel reveal">
-            <div class="panel-main">
-              <div class="quote-mark">“</div>
-              <p>Recovery is where a premium brand either proves its promise, or quietly weakens it. The work is not only to solve the visible problem. It is to equip people to restore confidence in the moment.</p>
-            </div>
+          <div class="disruption-challenge">
+            <div class="dc-kicker">Challenge 02</div>
+            <div class="dc-title">Unclear Ownership</div>
+            <div class="dc-desc">When disruptions span departments, guests often feel passed between teams with no resolution.</div>
+          </div>
+          <div class="disruption-challenge">
+            <div class="dc-kicker">Challenge 03</div>
+            <div class="dc-title">No Shared Standard</div>
+            <div class="dc-desc">Without a common framework, individual judgment fills the gap — with unpredictable results.</div>
           </div>
         </div>
       </div>
@@ -606,26 +681,26 @@ a { color: inherit; }
         <div class="statement-grid">
           <div class="panel reveal">
             <div class="panel-main">
-              <div class="eyebrow">The Beyond the Magic Approach</div>
-              <h2>Build the operating model, then equip the culture to carry it.</h2>
-              <p>Our proposal is designed to align senior leaders, define the service recovery standard, create the supporting tools, and prepare the organization for disciplined rollout and sustainment.</p>
+              <div class="eyebrow">The Approach</div>
+              <h2>We do not train. We build the conditions in which <em>excellence becomes habitual.</em></h2>
+              <p>Beyond the Magic works alongside organisations to design, implement, and transfer ownership of systems that produce consistent, guest-centred experiences — not just in the best moments, but in the hardest ones.</p>
             </div>
           </div>
           <div class="points reveal">
             <div class="point">
-              <div class="point-kicker">Phase 1</div>
-              <strong>Assess what guests and teams actually experience.</strong>
-              <span>Establish a factual baseline through immersion, observation, and leadership alignment.</span>
+              <div class="point-kicker">Implementation, Not Instruction</div>
+              <strong>We work inside organisations, not from a stage or a binder.</strong>
+              <span>Alongside operational leaders — building the standard where the work actually happens.</span>
             </div>
             <div class="point">
-              <div class="point-kicker">Phase 2</div>
-              <strong>Design the recovery model around Etihad's standard.</strong>
-              <span>Translate ambition into tools, routines, and practical moments of action.</span>
+              <div class="point-kicker">Ownership Transfer by Design</div>
+              <strong>Every phase reduces dependence on us.</strong>
+              <span>The organisation's ability to sustain the standard independently is the true measure of success.</span>
             </div>
             <div class="point">
-              <div class="point-kicker">Phase 3</div>
-              <strong>Roll out with confidence and reinforce over time.</strong>
-              <span>Embed the work through leader activation, training, and sustainment support.</span>
+              <div class="point-kicker">Custom to Etihad’s Culture</div>
+              <strong>No templates. Nothing borrowed from another industry.</strong>
+              <span>The framework will reflect Etihad’s values, language, and operational realities.</span>
             </div>
           </div>
         </div>
@@ -638,8 +713,8 @@ a { color: inherit; }
       <div class="section-inner">
         <div class="close-wrap reveal">
           <div class="close-logo"><img src="etihad-beyond-borders.png" alt="Etihad Airways"></div>
-          <h2>The proposal contains the full path forward.</h2>
-          <p>This preview is intentionally brief. The full proposal includes the recommended scope, phased structure, working sessions, key deliverables, timeline, and investment.</p>
+          <h2>The moments guests remember most are the ones where the airline <em>revealed its character</em> under pressure.</h2>
+          <p>Beyond the Magic will work alongside Etihad leadership to ensure that every disruption becomes an opportunity — to demonstrate professionalism, reinforce trust, and reflect the values that distinguish Etihad in the global aviation landscape. The full proposal contains the complete scope, phased structure, deliverables, timeline, and investment.</p>
           <div class="cta-row">
             <a class="cta" href="./etihad-btm-proposal.pdf" target="_blank" rel="noopener">View Full Proposal</a>
           </div>
@@ -648,7 +723,7 @@ a { color: inherit; }
               <div class="contact-photo"><img src="data:image/jpeg;base64,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" alt="Maurizio Landi"></div>
               <div>
                 <div class="contact-name">Maurizio Landi</div>
-                <div class="contact-role">Founder, Performance Architect</div>
+                <div class="contact-role">Founder &middot; Performance Architect</div>
                 <div class="contact-info">maurizio&#64;beyondthemagic&#46;co<br>+1 (407) 925 3295</div>
               </div>
             </div>
@@ -661,7 +736,7 @@ a { color: inherit; }
               </div>
             </div>
           </div>
-          <div class="footer-note">Beyond the Magic Consulting LLC, Confidential, Not for Distribution</div>
+          <div class="footer-note">Beyond the Magic Consulting LLC &middot; Confidential &middot; Not for Distribution</div>
         </div>
       </div>
     </section>
@@ -709,6 +784,17 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.18 });
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+const challengeObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.closest('.disruption-challenges')
+        .querySelectorAll('.disruption-challenge')
+        .forEach((el) => el.classList.add('visible'));
+    }
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.disruption-challenge').forEach((el) => challengeObserver.observe(el));
 </script>
 </body>
 </html>
