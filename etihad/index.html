@@ -174,13 +174,12 @@ a { color: inherit; }
 .hero { min-height: 100svh; display: grid; align-items: end; }
 .hero .section-bg {
   background-image: url('Etihad-Getty.jpeg');
-  opacity: 0.68;
-  background-position: center 34%;
+  opacity: 0.50; background-position: center 34%;
 }
 .hero .section-overlay {
   background:
     radial-gradient(ellipse 70% 40% at 50% 10%, rgba(196,154,114,0.10), transparent 50%),
-    linear-gradient(180deg, rgba(13,21,32,0.20) 0%, rgba(13,21,32,0.55) 55%, rgba(13,21,32,0.85) 100%);
+    linear-gradient(180deg, rgba(13,21,32,0.10) 0%, rgba(13,21,32,0.38) 30%, rgba(13,21,32,0.84) 72%, rgba(13,21,32,0.97) 100%);
 }
 .hero-card {
   width: min(100%, 820px);
@@ -312,29 +311,26 @@ a { color: inherit; }
 /* ── SECTION BACKGROUNDS ── */
 .reality .section-bg {
   background-image: url('etihad-cabin.jpg');
-  opacity: 0.50;
-  background-position: right center;
+  opacity: 0.32; background-position: right center;
 }
 .reality .section-overlay {
-  background: linear-gradient(90deg, rgba(13,21,32,0.72) 0%, rgba(13,21,32,0.62) 40%, rgba(13,21,32,0.42) 100%);
+  background: linear-gradient(90deg, rgba(13,21,32,0.97) 0%, rgba(13,21,32,0.86) 40%, rgba(13,21,32,0.62) 100%);
 }
 .disruption .section-bg {
   background-image: url('canceled.jpeg');
-  opacity: 0.38;
-  filter: saturate(0.85) brightness(1.05);
+  opacity: 0.22; filter: saturate(0.7) brightness(0.9);
 }
 .disruption .section-overlay {
   background:
-    radial-gradient(ellipse 60% 50% at 18% 50%, rgba(192,74,58,0.12), transparent 55%),
-    linear-gradient(180deg, rgba(13,21,32,0.50) 0%, rgba(13,21,32,0.78) 100%);
+    radial-gradient(ellipse 60% 50% at 18% 50%, rgba(192,74,58,0.14), transparent 55%),
+    linear-gradient(180deg, rgba(13,21,32,0.82) 0%, rgba(13,21,32,0.90) 100%);
 }
 .solution .section-bg {
   background-image: url('x8.jpeg');
-  opacity: 0.46;
-  background-position: center 28%;
+  opacity: 0.28; background-position: center 28%;
 }
 .solution .section-overlay {
-  background: linear-gradient(180deg, rgba(13,21,32,0.48) 0%, rgba(13,21,32,0.78) 100%);
+  background: linear-gradient(180deg, rgba(13,21,32,0.78) 0%, rgba(13,21,32,0.90) 100%);
 }
 .close .section-bg {
   background-image: url('Etihad-Getty.jpeg'); opacity: 0.18;
@@ -405,21 +401,10 @@ a { color: inherit; }
   border: 1px solid rgba(196,154,114,0.24);
   background: rgba(255,255,255,0.04);
 }
-.contact-photo img {
-  width: 112%;
-  height: 112%;
-  object-fit: cover;
-  object-position: 40% center;
-  transform: translateX(-6%);
-}
-.contact-card:first-child .contact-photo img {
-  object-position: center 22%;
-  transform: scale(1.05);
-}
-.contact-card:last-child .contact-photo img  {
-  object-position: 40% center;
-  transform: translateX(-6%) scale(1.03);
-}
+.contact-photo img { width: 100%; height: 100%; object-fit: cover; }
+.contact-card:nth-child(2) .contact-photo img { object-position: left center; }
+.contact-card:first-child .contact-photo img { object-position: center 22%; transform: scale(1.05); }
+.contact-card:last-child .contact-photo img  { object-position: center 18%; transform: scale(1.05); }
 .contact-name {
   font-family: var(--font-ui); font-size: 14px; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px;
