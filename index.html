@@ -4,955 +4,934 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beyond the Magic Consulting | Performance Architects</title>
-  <meta name="description" content="Beyond the Magic Consulting, Performance Architects. We design the systems that make performance consistent, measurable, and scalable.">
+  <meta name="description" content="Beyond the Magic Consulting — Performance Architects. Born from Disney. Built for Every World. We design the systems that make consistent performance predictable, measurable, and sustainable.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon-512.png" sizes="512x512">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
+    /* ══════════════════════════════════════
+       BTM BRAND SYSTEM
+       Navy:         #1A2744
+       Copper:       #A0714F
+       Copper Light: #C49A72
+       Off White:    #F5F3EF
+       Charcoal:     #1E2023
+
+       Display:      Cormorant Garamond
+       UI / Labels:  Barlow Condensed
+       Body:         Barlow
+    ══════════════════════════════════════ */
+
     :root {
-      --navy: #1E2D4F;
-      --navy-deep: #141F38;
-      --navy-light: #2A3D66;
-      --copper: #B5885A;
-      --copper-light: #C9A070;
-      --copper-dark: #9A7048;
-      --cream: #FAF8F5;
-      --cream-warm: #F5F0EA;
-      --text-dark: #1E2D4F;
-      --text-body: #4A4A4A;
-      --text-light: #6E6E6E;
+      --navy: #1A2744;
+      --navy-deep: #111B30;
+      --navy-light: #243458;
+      --copper: #A0714F;
+      --copper-light: #C49A72;
+      --copper-pale: #D4B896;
+      --offwhite: #F5F3EF;
+      --offwhite-warm: #EDE9E2;
+      --charcoal: #1E2023;
+      --text-body: #3D3D3D;
+      --text-muted: #6E6E6E;
       --white: #FFFFFF;
-      --shadow-soft: 0 18px 45px rgba(20, 31, 56, 0.08);
-      --shadow-card: 0 8px 30px rgba(20, 31, 56, 0.06);
-      --border-soft: 1px solid rgba(30, 45, 79, 0.08);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
     body {
-      font-family: 'Raleway', sans-serif;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
       color: var(--text-body);
-      background: var(--cream);
-      line-height: 1.7;
+      background: var(--offwhite);
+      line-height: 1.75;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
+    /* ═══ TYPOGRAPHY SYSTEM ═══ */
 
-    h1, h2, h3, h4 {
+    /* Display headings — Cormorant Garamond */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-weight: 500;
       color: var(--navy);
-      line-height: 1.08;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--copper);
     }
 
+    /* UI labels — Barlow Condensed */
     .section-label {
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.34em;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
       color: var(--copper);
       margin-bottom: 1rem;
     }
 
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.7rem);
-      font-weight: 500;
-      margin-bottom: 1.25rem;
-      color: var(--navy);
-    }
-
-    .section-title em {
-      color: var(--copper-dark);
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--text-body);
-      font-size: 1.04rem;
-    }
-
-    .container {
-      width: min(1180px, calc(100% - 3rem));
-      margin: 0 auto;
-    }
-
-    .container-narrow {
-      width: min(860px, calc(100% - 3rem));
-      margin: 0 auto;
-    }
-
-    section { padding: 6.5rem 0; }
-
-    .copper-line {
-      width: 72px;
-      height: 2px;
-      background: var(--copper);
-      margin-bottom: 1.6rem;
-    }
-
-    .centered { text-align: center; }
-    .centered .copper-line { margin-inline: auto; }
-
+    /* ═══ NAVIGATION ═══ */
     nav {
       position: fixed;
-      inset: 0 0 auto 0;
+      top: 0; left: 0; right: 0;
       z-index: 1000;
-      background: rgba(20, 31, 56, 0.9);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(181, 136, 90, 0.18);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(26, 39, 68, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(160, 113, 79, 0.15);
+      transition: box-shadow 0.4s ease;
     }
-
-    nav.scrolled {
-      background: rgba(20, 31, 56, 0.96);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
-    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
 
     .nav-inner {
-      height: 82px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      height: 70px;
     }
 
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
     .nav-logo img {
-      width: min(430px, 56vw);
-      height: auto;
+      height: 28px;
+      width: auto;
     }
 
     .nav-links {
-      list-style: none;
       display: flex;
+      list-style: none;
+      gap: 1.8rem;
       align-items: center;
-      gap: 1.4rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
     }
-
     .nav-links a {
-      text-decoration: none;
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.76);
-      transition: color 0.25s ease;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.3s ease;
       position: relative;
     }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--white); }
-
     .nav-links a::after {
-      content: "";
+      content: '';
       position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 1px;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
       background: var(--copper);
-      transition: width 0.25s ease;
+      transition: width 0.3s ease;
     }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
 
-    .nav-links a:hover::after,
-    .nav-links a:focus-visible::after { width: 100%; }
-
-    .nav-links .nav-cta {
-      padding: 0.8rem 1.25rem;
-      background: var(--copper);
-      color: var(--white);
+    .nav-cta {
+      background: var(--copper) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem;
       border-radius: 2px;
+      font-weight: 600 !important;
+      transition: background 0.3s ease !important;
     }
-
-    .nav-links .nav-cta::after { display: none; }
+    .nav-cta:hover { background: #8B6143 !important; }
+    .nav-cta::after { display: none !important; }
 
     .nav-toggle {
       display: none;
-      background: transparent;
-      border: 0;
+      flex-direction: column;
+      gap: 5px;
       cursor: pointer;
-      padding: 0.35rem;
+      padding: 4px;
+      background: none;
+      border: none;
     }
-
     .nav-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      margin: 5px 0;
+      width: 24px; height: 2px;
       background: var(--white);
-      transition: transform 0.25s ease, opacity 0.25s ease;
+      transition: all 0.3s ease;
     }
 
+    /* Mobile Menu */
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 82px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(20, 31, 56, 0.98);
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(17, 27, 48, 0.98);
       z-index: 999;
-      padding: 2rem;
-    }
-
-    .mobile-menu.open {
-      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 2rem;
     }
-
+    .mobile-menu.open { display: flex; }
     .mobile-menu a {
-      text-decoration: none;
-      color: rgba(255,255,255,0.88);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.88rem;
-      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
     }
+    .mobile-menu a:hover { color: var(--copper-light); }
 
+    /* ═══ HERO ═══ */
     .hero {
       position: relative;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      color: var(--white);
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.78) 0%, rgba(20,31,56,0.88) 100%),
         radial-gradient(circle at 18% 30%, rgba(181,136,90,0.18), transparent 36%),
         url('assets/hero-executive-room.jpeg') center center / cover no-repeat;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(20,31,56,0.58) 0%, rgba(20,31,56,0.18) 55%, rgba(20,31,56,0.45) 100%);
-      pointer-events: none;
-    }
-
     .hero-content {
       position: relative;
-      z-index: 1;
-      width: min(860px, calc(100% - 3rem));
-      margin: 0 auto;
-      padding-top: 7rem;
-      text-align: left;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
     }
 
-    .hero-logo {
-      width: min(520px, 72vw);
+    .hero-badge {
+      width: 320px;
+      height: auto;
       margin-bottom: 2rem;
-      filter: drop-shadow(0 10px 30px rgba(0,0,0,0.18));
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 2.2s forwards;
     }
 
-    .hero-kicker {
-      font-size: 0.84rem;
-      letter-spacing: 0.34em;
+    .hero-pa {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.0rem;
+      font-weight: 500;
+      letter-spacing: 0.4em;
       text-transform: uppercase;
       color: var(--copper-light);
-      margin-bottom: 1rem;
-      font-weight: 600;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 2.4s forwards;
     }
 
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.1rem, 7vw, 5.8rem);
+      font-size: clamp(2.45rem, 5vw, 3.85rem);
       font-weight: 500;
-      color: var(--white);
-      line-height: 0.98;
-      max-width: 11ch;
-      margin-bottom: 1.2rem;
-    }
-
-    .hero p {
-      max-width: 720px;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.82);
-    }
-
-    .hero-value {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.35rem, 2.6vw, 2.05rem);
-      letter-spacing: 0.07em;
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-
-    .hero-origin {
-      margin-top: 1.2rem;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.15rem, 2vw, 1.55rem);
-      color: var(--copper-light);
       font-style: italic;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: headlineReveal 1.4s ease 0.3s forwards;
+    }
+
+    .hero h1 .copper {
+      color: var(--white);
+      animation: copperGlow 0.6s ease 1.7s forwards;
+    }
+
+    @keyframes headlineReveal {
+      0% { opacity: 0; transform: translateY(15px); letter-spacing: 0.03em; }
+      50% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 1; transform: translateY(0); letter-spacing: 0; }
+    }
+
+    @keyframes copperGlow {
+      0% { color: var(--white); }
+      100% { color: var(--copper-light); }
+    }
+
+    .hero-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      max-width: 580px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 2.6s forwards;
+    }
+
+    .hero-tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 2.8s forwards;
     }
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 2.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 3.0s forwards;
     }
 
-    .button {
-      display: inline-flex;
+    .btn-outline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid var(--copper);
+      padding: 0.9rem 2.2rem;
+      transition: all 0.4s ease;
+    }
+    .btn-outline:hover {
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    .btn-ghost {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      text-decoration: none;
+      border: 1px solid rgba(196,154,114,0.25);
+      padding: 0.9rem 2.2rem;
+      transition: all 0.4s ease;
+    }
+    .btn-ghost:hover {
+      border-color: var(--copper-light);
+      color: var(--white);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%; transform: translateX(-50%);
+      opacity: 0;
+      animation: fadeIn 1s ease 3.4s forwards, bounce 2.5s ease infinite 4.5s;
+    }
+    .hero-scroll svg { width: 20px; height: 20px; stroke: var(--copper-light); }
+
+    /* ═══ INDUSTRY TICKER ═══ */
+    .ticker {
+      background: var(--navy);
+      border-top: 1px solid rgba(160,113,79,0.1);
+      border-bottom: 1px solid rgba(160,113,79,0.1);
+      padding: 1.2rem 2rem;
+      overflow: hidden;
+    }
+    .ticker-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.5rem;
-      border: 1px solid transparent;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
-      min-width: 220px;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-    .button-primary { background: var(--copper); color: var(--white); }
-    .button-primary:hover { background: var(--copper-dark); }
-    .button-secondary {
-      background: rgba(255,255,255,0.02);
-      color: var(--white);
-      border-color: rgba(255,255,255,0.3);
-    }
-    .button-secondary:hover {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.55);
-    }
-
-    .scroll-indicator {
-      position: absolute;
-      bottom: 1.8rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 1;
-      color: rgba(255,255,255,0.65);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.26em;
-    }
-
-    .credibility-strip {
-      background: var(--white);
-      padding: 2.2rem 0;
-      border-bottom: var(--border-soft);
-      border-top: var(--border-soft);
-    }
-
-    .credibility-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 2fr;
       gap: 2rem;
-      align-items: center;
-    }
-
-    .credibility-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.8rem;
-      letter-spacing: 0.06em;
-      color: var(--navy);
-    }
-
-    .credibility-copy {
-      color: var(--text-light);
-      font-size: 0.98rem;
-    }
-
-    .credibility-tags {
-      display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
     }
-
-    .credibility-tags span {
-      padding: 0.72rem 1rem;
-      background: var(--cream-warm);
-      border: 1px solid rgba(30,45,79,0.08);
-      color: var(--navy);
-      font-size: 0.77rem;
-      letter-spacing: 0.1em;
+    .ticker-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      font-weight: 600;
+      color: rgba(196,154,114,0.5);
+    }
+    .ticker-dot {
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: rgba(196,154,114,0.3);
     }
 
-    .two-col {
+    /* ═══ SHARED ═══ */
+    .copper-line { width: 50px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
+    .copper-line.center { margin-left: auto; margin-right: auto; }
+    section { padding: 6.5rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .container-narrow { max-width: 780px; margin: 0 auto; }
+
+    /* ═══ ORIGIN ═══ */
+    .origin { background: var(--offwhite); }
+    .origin-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.2fr 1fr;
       gap: 4rem;
-      align-items: center;
-      margin-top: 3rem;
+      align-items: start;
+      margin-top: 2.5rem;
     }
-
-    .eyebrow-copy p,
-    .copy-stack p { margin-bottom: 1.2rem; }
-
-    .origin-media {
+    .origin-text p {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem;
+      color: var(--text-body);
+    }
+    .origin-quote-wrap {
       position: relative;
-      min-height: 520px;
+      min-height: 480px;
       border-radius: 2px;
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
       background:
         linear-gradient(180deg, rgba(20,31,56,0.2), rgba(20,31,56,0.48)),
         url('assets/origin-facilitator.jpeg') center center / cover no-repeat;
     }
-
-    .origin-card {
+    .origin-quote {
       position: absolute;
-      right: 2rem;
-      bottom: 2rem;
-      max-width: 360px;
-      background: rgba(20,31,56,0.92);
+      right: 1.5rem;
+      bottom: 1.5rem;
+      max-width: 340px;
+      background: rgba(26,39,68,0.92);
       color: var(--white);
       padding: 2rem;
       border-top: 3px solid var(--copper);
       box-shadow: 0 14px 35px rgba(0,0,0,0.2);
     }
-
-    .origin-card blockquote {
+    .origin-quote blockquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      line-height: 1.35;
+      font-size: 1.55rem;
       font-style: italic;
-      color: var(--cream);
+      line-height: 1.5;
+      color: var(--offwhite);
     }
-
-    .origin-card cite {
+    .origin-quote cite {
       display: block;
-      margin-top: 1rem;
-      color: var(--copper-light);
-      font-size: 0.72rem;
+      margin-top: 1.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-style: normal;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      font-style: normal;
+      color: var(--copper-light);
     }
 
-    .dark-section {
+    /* ═══ PHILOSOPHY ═══ */
+    .philosophy {
       background: var(--navy-deep);
-      color: rgba(255,255,255,0.78);
+      color: var(--white);
       position: relative;
       overflow: hidden;
     }
-
-    .dark-section::before {
-      content: "";
+    .philosophy::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 84% 22%, rgba(181,136,90,0.12), transparent 28%);
-      pointer-events: none;
+      background: radial-gradient(ellipse at 80% 50%, rgba(160,113,79,0.04) 0%, transparent 60%);
     }
-
-    .dark-section .section-title { color: var(--cream); }
-
+    .philosophy .section-title { color: var(--offwhite); }
     .philosophy-statement {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-size: clamp(1.75rem, 2.8vw, 2.45rem);
+      font-style: italic;
       color: var(--copper-light);
       text-align: center;
-      font-style: italic;
-      max-width: 720px;
-      margin: 2.2rem auto;
-      line-height: 1.35;
+      max-width: 600px;
+      margin: 2.5rem auto;
+      line-height: 1.4;
     }
-
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin-top: 3rem;
+    .philosophy-statement::before,
+    .philosophy-statement::after {
+      content: ''; display: block;
+      width: 35px; height: 1px;
+      background: var(--copper);
+      margin: 1.8rem auto;
     }
-
-    .philosophy-pill {
-      padding: 1.4rem;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: rgba(255,255,255,0.03);
+    .philosophy p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1.25rem;
+      max-width: 640px;
+      margin: 0 auto 1.25rem;
       text-align: center;
-      color: rgba(255,255,255,0.78);
-      font-size: 0.94rem;
+    }
+    .philosophy-pillars {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      margin-top: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .pillar {
+      text-align: center;
+      max-width: 220px;
+    }
+    .pillar-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.0rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper-light);
     }
 
+    /* ═══ IMMERSION BAND ═══ */
     .immersion-band {
       position: relative;
-      padding: 9rem 0;
+      padding: 8rem 2rem;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.7), rgba(20,31,56,0.8)),
         url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
       color: var(--white);
       text-align: center;
     }
-
     .immersion-band h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-size: clamp(2.45rem, 4.5vw, 3.75rem);
+      font-weight: 500;
       color: var(--white);
       margin-bottom: 1rem;
     }
-
     .immersion-band p {
-      max-width: 760px;
+      max-width: 700px;
       margin: 0 auto;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.84);
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.8);
     }
 
-    .framework {
-      background: var(--cream-warm);
+    /* ═══ FRAMEWORK ═══ */
+    .framework { background: var(--offwhite-warm); }
+    .framework-intro {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.25rem;
+      color: var(--text-body);
+      max-width: 620px;
+      margin: 0 auto 1rem;
+      text-align: center;
     }
-
-    .framework-flow {
+    .framework-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 1.3rem;
-      margin-top: 3rem;
-      position: relative;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
     }
-
-    .framework-flow::before {
-      content: "";
-      position: absolute;
-      left: 4%;
-      right: 4%;
-      top: 54px;
-      height: 1px;
-      background: rgba(181,136,90,0.45);
-      z-index: 0;
-    }
-
-    .framework-step {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
+    .framework-card {
       background: var(--white);
-      border: var(--border-soft);
-      box-shadow: var(--shadow-card);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 2.2rem 1.8rem;
+      border-top: 3px solid var(--copper);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+      transition: all 0.4s ease;
+    }
+    .framework-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+    .framework-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 300;
+      color: rgba(160,113,79,0.2);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .framework-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .framework-card p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
-    .framework-step:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(20,31,56,0.1);
+    /* ═══ SERVICES — consolidated lighter layout ═══ */
+    .services { background: var(--offwhite); }
+    .services-intro {
+      font-size: 1.25rem;
+      color: var(--text-body);
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
     }
-
-    .framework-badge {
-      width: 108px;
-      height: 108px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(181,136,90,0.28);
-      color: var(--copper-dark);
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      letter-spacing: 0.08em;
-      background: var(--cream-warm);
-      margin-bottom: 1.4rem;
-    }
-
-    .framework-step h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.06em;
-      margin-bottom: 0.85rem;
-    }
-
-    .framework-step p {
-      color: var(--text-light);
-      font-size: 0.94rem;
-    }
-
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-      margin-top: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: rgba(26,39,68,0.06);
+      margin-top: 2.5rem;
     }
-
-    .service-card {
+    .service-item {
       background: var(--white);
-      border: var(--border-soft);
-      padding: 2rem;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 2.2rem 2.5rem;
+      transition: all 0.4s ease;
       position: relative;
-      overflow: hidden;
     }
-
-    .service-card::before {
-      content: "";
+    .service-item::before {
+      content: '';
       position: absolute;
-      inset: 0 auto 0 0;
-      width: 4px;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      width: 3px; height: 0;
       background: var(--copper);
-      opacity: 0.9;
+      transition: height 0.4s ease;
     }
+    .service-item:hover::before { height: 60%; }
+    .service-item:hover { background: #FDFCFA; }
 
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 38px rgba(20,31,56,0.1);
+    .service-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
     }
-
-    .service-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.32rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.8rem;
-      padding-right: 1rem;
-    }
-
-    .service-card p { color: var(--text-light); font-size: 0.93rem; }
-
     .service-outcome {
-      display: inline-block;
-      margin-top: 1rem;
-      color: var(--copper-dark);
-      text-transform: uppercase;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
       letter-spacing: 0.12em;
-      font-size: 0.72rem;
-      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--copper);
     }
 
-    .reach-band {
+    /* ═══ INDUSTRIES / REACH BAND ═══ */
+    .industries {
       background:
         linear-gradient(180deg, rgba(20,31,56,0.74), rgba(20,31,56,0.84)),
         url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
       color: var(--white);
       text-align: center;
-      padding: 7rem 0;
+      padding: 7rem 2rem;
     }
-
-    .reach-band .section-title,
-    .reach-band h3,
-    .reach-band h2 { color: var(--white); }
-
-    .reach-grid {
+    .industries .section-label { color: var(--copper-light); }
+    .industries .section-title { color: var(--white); }
+    .industries .section-title em { color: var(--copper-light); }
+    .industries-clusters {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
-
-    .reach-card {
+    .cluster {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.1);
-      padding: 1.6rem;
-      color: rgba(255,255,255,0.84);
       backdrop-filter: blur(2px);
       -webkit-backdrop-filter: blur(2px);
+      padding: 1.8rem;
+      color: rgba(255,255,255,0.85);
     }
-
-    .reach-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.2rem;
+    .cluster h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 600;
       letter-spacing: 0.06em;
-      margin-bottom: 0.65rem;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .cluster p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
     }
 
-    .diff-list { margin-top: 3rem; }
-    .diff-item {
-      display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 1.6rem;
-      padding: 2rem 0;
-      border-bottom: 1px solid rgba(181,136,90,0.16);
-    }
-    .diff-item:last-child { border-bottom: 0; }
-    .diff-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.2rem;
-      color: var(--copper);
-    }
-    .diff-item h3 {
-      font-size: 1.14rem;
-      font-weight: 700;
-      color: var(--cream);
-      margin-bottom: 0.55rem;
-      font-family: 'Raleway', sans-serif;
-    }
-    .diff-item p { color: rgba(255,255,255,0.65); }
-
-    .partnership-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 3rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-
-    .principles-card {
+    /* ═══ WHY US — consolidated distinctions + partnership ═══ */
+    .why-us {
       background: var(--navy);
       color: var(--white);
-      padding: 2.2rem;
-      box-shadow: var(--shadow-soft);
+    }
+    .why-us .section-title { color: var(--offwhite); }
+    .why-us-intro {
+      font-size: 1.25rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      text-align: center;
     }
 
-    .principles-card h3 {
-      color: var(--cream);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 1.4rem;
-    }
-
-    .principles-list {
+    .distinction {
       display: grid;
-      gap: 1rem;
-    }
-
-    .principles-list li {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 22px 1fr;
-      gap: 0.9rem;
-      color: rgba(255,255,255,0.76);
-    }
-
-    .principles-list li span {
-      width: 22px;
-      height: 22px;
-      border: 1px solid var(--copper);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--copper-light);
-      font-size: 0.8rem;
-      margin-top: 0.18rem;
-    }
-
-    .people-callout {
-      margin-top: 2.8rem;
-      padding: 2.4rem;
-      background: linear-gradient(135deg, var(--navy), var(--navy-light));
-      color: var(--white);
-      display: grid;
-      grid-template-columns: 1.2fr auto;
+      grid-template-columns: 60px 1fr;
       gap: 1.5rem;
-      align-items: center;
-      box-shadow: var(--shadow-soft);
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(160,113,79,0.12);
+      align-items: start;
     }
+    .distinction:last-child { border-bottom: none; }
 
-    .people-callout h3 {
-      color: var(--white);
+    .dist-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 300;
+      color: var(--copper);
+      line-height: 1;
+    }
+    .distinction h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 0.6rem;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--offwhite);
+      margin-bottom: 0.4rem;
+    }
+    .distinction p {
+      font-size: 1.17rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
     }
 
-    .people-callout p { color: rgba(255,255,255,0.82); }
+    /* People CTA inside Why Us */
+    .people-cta-card {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(160,113,79,0.2);
+      text-align: center;
+    }
+    .people-cta-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      color: var(--offwhite);
+      margin-bottom: 0.75rem;
+    }
+    .people-cta-card p {
+      font-size: 1.17rem;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.5rem;
+    }
+    .btn-copper {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white);
+      text-decoration: none;
+      border: 1px solid var(--copper);
+      padding: 0.8rem 2rem;
+      transition: all 0.3s ease;
+    }
+    .btn-copper:hover { background: var(--copper); }
 
+    /* ═══ COMMITMENT ═══ */
     .commitment {
-      position: relative;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.76), rgba(20,31,56,0.88)),
         url('assets/final-stage-speaking.jpeg') center center / cover no-repeat;
       text-align: center;
+      padding: 7rem 2rem;
+      position: relative;
       color: var(--white);
-      padding: 8rem 0;
     }
-
+    .commitment-content { position: relative; }
     .commitment blockquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.65rem, 2.8vw, 2.2rem);
-      max-width: 760px;
-      margin: 0 auto 1.6rem;
-      line-height: 1.5;
-      color: var(--cream);
+      font-size: clamp(1.45rem, 2.2vw, 1.9rem);
       font-style: italic;
-    }
-
-    .commitment p {
-      max-width: 660px;
+      color: var(--offwhite);
+      max-width: 600px;
       margin: 0 auto;
-      color: rgba(255,255,255,0.84);
-      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .commitment .copper-line { margin: 1.8rem auto; }
+    .commitment-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+      font-style: italic;
+      color: var(--copper-light);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.5;
     }
 
+    /* ═══ CONTACT ═══ */
+    .contact { background: var(--offwhite); }
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
-
     .contact-card {
-      background: var(--white);
-      border: var(--border-soft);
-      padding: 2rem;
-      box-shadow: var(--shadow-card);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 38px rgba(20,31,56,0.08);
-    }
-
-    .contact-top {
       display: flex;
-      align-items: center;
-      gap: 1.2rem;
-      margin-bottom: 1rem;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2.2rem;
+      background: var(--white);
+      border: 1px solid rgba(26,39,68,0.05);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.03);
+      transition: all 0.4s ease;
     }
+    .contact-card:hover {
+      box-shadow: 0 6px 25px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .contact-card:first-child { border-top: 3px solid var(--copper); }
+    .contact-card:nth-child(2) { border-top: 3px solid var(--navy-light); }
 
     .contact-photo {
-      width: 96px;
-      height: 120px;
+      width: 100px; height: 120px;
       object-fit: cover;
-      object-position: center 18%;
-      border: 1px solid rgba(30,45,79,0.08);
+      object-position: center top;
+      flex-shrink: 0;
     }
-
-    .contact-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      color: var(--copper);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .contact-card h3 {
+    .contact-info h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
     }
-
     .contact-role {
-      color: var(--navy-light);
-      font-size: 0.8rem;
-      text-transform: uppercase;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
       letter-spacing: 0.12em;
-      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 0.8rem;
     }
-
     .contact-detail {
-      color: var(--text-light);
-      margin-bottom: 0.35rem;
-      font-size: 0.94rem;
+      font-size: 1.13rem;
+      color: var(--text-muted);
+      margin-bottom: 0.3rem;
     }
-
     .contact-detail a {
       color: var(--navy);
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-detail a:hover { color: var(--copper); }
+    .primary-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 0.4rem;
     }
 
+    /* ═══ FOOTER ═══ */
     footer {
       background: var(--navy-deep);
-      color: rgba(255,255,255,0.6);
+      padding: 2.5rem 2rem;
       text-align: center;
-      padding: 3rem 0;
-      border-top: 1px solid rgba(181,136,90,0.14);
+      border-top: 1px solid rgba(160,113,79,0.12);
     }
-
-    .footer-logo {
-      width: min(320px, 72vw);
-      margin: 0 auto 1.2rem;
-      opacity: 0.92;
-    }
-
+    .footer-logo img { height: 22px; margin-bottom: 1.2rem; opacity: 0.7; }
     .footer-links {
       display: flex;
       justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 1.2rem;
       flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
     }
-
     .footer-links a {
-      text-decoration: none;
-      font-size: 0.78rem;
-      text-transform: uppercase;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 500;
       letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.58);
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover { color: var(--copper-light); }
+    .footer-info {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.03rem;
+      color: rgba(255,255,255,0.3);
+    }
+    .footer-info a { color: var(--copper-light); text-decoration: none; }
+    .footer-locale {
+      margin-top: 0.5rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.22);
     }
 
-    .footer-links a:hover { color: var(--copper-light); }
-
+    /* ═══ ANIMATIONS ═══ */
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* Fallback: if JS fails, content is still visible */
+    noscript ~ * .reveal,
+    .no-js .reveal { opacity: 1; transform: none; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1024px) {
+      .framework-grid { grid-template-columns: repeat(2, 1fr); }
+      .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .industries-clusters { grid-template-columns: 1fr; }
     }
-
-    @media (max-width: 1100px) {
-      .framework-flow,
-      .services-grid,
-      .reach-grid,
-      .philosophy-grid { grid-template-columns: repeat(2, 1fr); }
-      .two-col,
-      .partnership-grid,
-      .credibility-grid { grid-template-columns: 1fr; }
-      .people-callout { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 860px) {
+    @media (max-width: 768px) {
+      section { padding: 4.5rem 1.5rem; }
       .nav-links { display: none; }
-      .nav-toggle { display: block; }
-      .hero-content { text-align: center; }
-      .hero h1,
-      .hero p { margin-inline: auto; }
-      .hero-actions { justify-content: center; }
-      .framework-flow::before { display: none; }
-      .origin-media { min-height: 420px; }
-      .origin-card {
-        right: 1.25rem;
-        left: 1.25rem;
-        max-width: none;
-      }
-      .contact-grid,
-      .services-grid,
-      .framework-flow,
-      .reach-grid,
-      .philosophy-grid { grid-template-columns: 1fr; }
-      .diff-item { grid-template-columns: 1fr; gap: 0.6rem; }
-      .contact-top { align-items: flex-start; }
-      .nav-inner { height: 76px; }
-      .mobile-menu { top: 76px; }
+      .nav-toggle { display: flex; }
+      .hero-badge { width: 200px; }
+      .hero-body { font-size: 1.05rem; }
+      .hero-actions { gap: 0.75rem; }
+      .btn-outline, .btn-ghost { padding: 0.8rem 1.6rem; font-size: 0.85rem; }
+      .framework-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .distinction { grid-template-columns: 1fr; gap: 0.4rem; }
+      .dist-num { font-size: 1.4rem; }
+      .contact-card { flex-direction: column; align-items: center; text-align: center; }
+      .philosophy-pillars { gap: 1.5rem; }
+      .ticker-inner { gap: 1rem; }
+      .ticker-tag { font-size: 0.7rem; }
+      .origin-quote-wrap { min-height: 340px; }
+      .origin-quote { position: relative; right: auto; bottom: auto; max-width: 100%; }
+      .immersion-band { padding: 5rem 1.5rem; }
+      .industries-clusters { grid-template-columns: 1fr; }
+      .people-cta-card { padding: 1.8rem; }
     }
-
-    @media (max-width: 640px) {
-      section { padding: 5rem 0; }
-      .container,
-      .container-narrow,
-      .hero-content { width: min(100% - 1.5rem, 100%); }
-      .hero { min-height: 92vh; }
-      .hero-logo { width: min(320px, 82vw); }
-      .hero-kicker { letter-spacing: 0.22em; }
-      .button { min-width: 100%; }
-      .contact-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .contact-card { text-align: center; }
-      .nav-logo img { width: min(300px, 68vw); }
+    @media (max-width: 420px) {
+      .hero-badge { width: 160px; }
+      .hero h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.8rem; }
+      .framework-num { font-size: 2rem; }
+      .hero-actions { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ═══ NAVIGATION ═══ -->
   <nav id="mainNav">
-    <div class="container nav-inner">
-      <a href="#hero" class="nav-logo" aria-label="Beyond the Magic home">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
         <img src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting, Performance Architects">
       </a>
-
       <ul class="nav-links">
         <li><a href="#origin">Our Origin</a></li>
         <li><a href="#philosophy">Philosophy</a></li>
@@ -962,107 +941,103 @@
         <li><a href="people-behind-the-magic.html">People</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#origin">Our Origin</a>
-    <a href="#philosophy">Philosophy</a>
-    <a href="#framework">Methodology</a>
-    <a href="#services">Services</a>
-    <a href="#why-us">Why Us</a>
-    <a href="people-behind-the-magic.html">People</a>
-    <a href="#contact">Contact</a>
+    <a href="#origin" onclick="closeMobile()">Our Origin</a>
+    <a href="#philosophy" onclick="closeMobile()">Philosophy</a>
+    <a href="#framework" onclick="closeMobile()">Methodology</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#why-us" onclick="closeMobile()">Why Us</a>
+    <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
 
-  <header class="hero" id="hero">
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
     <div class="hero-content">
-      <img class="hero-logo" src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting">
-      <div class="hero-kicker">Performance Architects</div>
-      <h1>Performance is not inspired. It is designed.</h1>
-      <div class="hero-value">We design the systems that make performance consistent, measurable, and scalable.</div>
-      <p>Beyond the Magic Consulting partners with organizations to architect culture, leadership, learning, and service experiences that hold up under real world pressure, across real world complexity.</p>
-      <div class="hero-origin">Born from Disney. Built for Every World.</div>
+      <img src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" class="hero-badge">
+      <p class="hero-pa">Performance Architects</p>
+      <h1>Performance is not inspired.<br>It is <span class="copper">designed.</span></h1>
+      <p class="hero-body">We design the systems that make performance consistent, measurable, and scalable — across culture, leadership, learning, and service.</p>
+      <p class="hero-tagline">Born from Disney. Built for Every World.</p>
       <div class="hero-actions">
-        <a class="button button-primary" href="#origin">Discover Our Story</a>
-        <a class="button button-secondary" href="people-behind-the-magic.html">Meet the Team Behind the Work</a>
+        <a href="#origin" class="btn-outline">Discover Our Story</a>
+        <a href="people-behind-the-magic.html" class="btn-ghost">The Team</a>
       </div>
     </div>
-    <div class="scroll-indicator">Scroll</div>
-  </header>
-
-  <section class="credibility-strip">
-    <div class="container credibility-grid reveal">
-      <div>
-        <div class="credibility-title">Built by practitioners who have designed, delivered, and sustained performance in high expectation environments.</div>
-      </div>
-      <div>
-        <div class="credibility-copy">Our extended bench includes senior facilitators, instructional designers, engagement leaders, content strategists, and consulting talent with deep experience in service excellence, leadership development, culture activation, and enterprise transformation.</div>
-        <div class="credibility-tags">
-          <span>Aviation</span>
-          <span>Healthcare</span>
-          <span>Hospitality</span>
-          <span>Financial Services</span>
-          <span>Education</span>
-          <span>Faith Based Organizations</span>
-          <span>Sports & Venues</span>
-        </div>
-      </div>
+    <div class="hero-scroll">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
     </div>
   </section>
 
-  <section id="origin">
+  <!-- ═══ INDUSTRY TICKER ═══ -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span class="ticker-tag">Aviation</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Healthcare</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Hospitality</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Financial Services</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Education</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Faith-Based Organizations</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Sports &amp; Venues</span>
+    </div>
+  </div>
+
+  <!-- ═══ ORIGIN ═══ -->
+  <section class="origin" id="origin">
     <div class="container">
-      <div class="centered reveal">
+      <div class="reveal">
         <div class="section-label">Our Origin</div>
         <div class="copper-line"></div>
         <h2 class="section-title">A lineage built <em>from the inside</em></h2>
       </div>
-
-      <div class="two-col">
-        <div class="copy-stack reveal">
+      <div class="origin-grid">
+        <div class="origin-text reveal">
           <p>Beyond the Magic Consulting exists because the strongest service and leadership principles in the world should not be confined to a single park, a single campus, or a single organization.</p>
-          <p>Built by leaders who spent decades inside the Walt Disney Company, including years shaping work connected to the Disney Institute, the firm carries forward a lived understanding of how culture, leadership, service, and learning come together in practice, not just in theory.</p>
-          <p>When that chapter changed, we saw both an opportunity and a responsibility, to carry the torch forward, to adapt it with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
-          <p>What clients receive is not borrowed language. It is firsthand experience translated into modern operating systems for performance.</p>
+          <p>Built by leaders who spent decades inside the Walt Disney Company, including years shaping work connected to the Disney Institute, the firm carries forward a lived understanding of how culture, leadership, service, and learning come together in practice — not just in theory.</p>
+          <p>When that chapter changed, we saw both an opportunity and a responsibility — to carry the torch forward, to adapt it with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
         </div>
-
-        <div class="origin-media reveal" aria-hidden="true">
-          <div class="origin-card">
-            <blockquote>We do not just deliver training. We build operating systems for performance.</blockquote>
-            <cite>Beyond the Magic</cite>
+        <div class="reveal">
+          <div class="origin-quote-wrap">
+            <div class="origin-quote">
+              <blockquote>We do not just deliver training. We build operating systems for performance.</blockquote>
+              <cite>Beyond the Magic</cite>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="dark-section" id="philosophy">
-    <div class="container-narrow centered">
-      <div class="reveal">
+  <!-- ═══ PHILOSOPHY ═══ -->
+  <section class="philosophy" id="philosophy">
+    <div class="container-narrow">
+      <div class="reveal" style="text-align:center;">
         <div class="section-label">Our Philosophy</div>
-        <div class="copper-line"></div>
+        <div class="copper-line center"></div>
         <h2 class="section-title">Practitioners, <em>not theorists</em></h2>
       </div>
-
       <div class="reveal">
-        <p class="section-intro" style="color: rgba(255,255,255,0.76);">Most organizations invest heavily in training and culture initiatives while the underlying architecture remains unchanged. We address the architecture itself, the expectations, behaviors, accountability systems, learning experiences, and leadership routines that make excellence repeatable.</p>
+        <p style="text-align:center;">Most organizations invest heavily in training and culture initiatives while the underlying architecture remains unchanged. We address the architecture itself — the expectations, behaviors, accountability systems, and leadership routines that make excellence repeatable.</p>
         <div class="philosophy-statement">Performance is not inspired. It is designed.</div>
-        <p class="section-intro" style="color: rgba(255,255,255,0.76);">Headquartered in Central Florida, the cradle of experiential excellence, we help leaders turn aspiration into operation so the experience people want to deliver becomes the experience the system is built to sustain.</p>
+        <p style="text-align:center;">Headquartered in Central Florida, we help leaders turn aspiration into operation — so the experience people want to deliver becomes the experience the system is built to sustain.</p>
       </div>
-
-      <div class="philosophy-grid reveal">
-        <div class="philosophy-pill">Operating systems over inspiration alone</div>
-        <div class="philosophy-pill">Capability transfer over dependency</div>
-        <div class="philosophy-pill">Execution that scales without losing fidelity</div>
+      <div class="philosophy-pillars reveal">
+        <div class="pillar"><span class="pillar-label">Operating systems over inspiration alone</span></div>
+        <div class="pillar"><span class="pillar-label">Capability transfer over dependency</span></div>
+        <div class="pillar"><span class="pillar-label">Execution that scales without losing fidelity</span></div>
       </div>
     </div>
   </section>
 
+  <!-- ═══ IMMERSION BAND ═══ -->
   <section class="immersion-band">
     <div class="container reveal">
       <div class="section-label" style="color: var(--copper-light);">How We Work</div>
@@ -1071,296 +1046,255 @@
     </div>
   </section>
 
+  <!-- ═══ FRAMEWORK ═══ -->
   <section class="framework" id="framework">
     <div class="container">
-      <div class="centered reveal">
-        <div class="section-label">Methodology</div>
-        <div class="copper-line"></div>
-        <h2 class="section-title">The Name Tag Framework</h2>
-        <p class="section-intro">Four disciplined phases guide the work, each one designed to translate ideals into observable behaviors, reliable execution, and measurable outcomes.</p>
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">The Name Tag Framework</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">From aspiration <em>to operation</em></h2>
+        <p class="framework-intro">Four disciplined phases guide the work — each one designed to translate ideals into observable behaviors, reliable execution, and measurable outcomes.</p>
       </div>
-
-      <div class="framework-flow">
-        <article class="framework-step reveal">
-          <div class="framework-badge">01</div>
+      <div class="framework-grid">
+        <div class="framework-card reveal">
+          <div class="framework-num">01</div>
           <h3>Architect It</h3>
           <p>Map the current state, identify the gap between intended and actual performance, and understand what must change before design begins.</p>
-        </article>
-        <article class="framework-step reveal">
-          <div class="framework-badge">02</div>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">02</div>
           <h3>Build It</h3>
           <p>Design the system, define expectations, clarify decision rights, and create the architecture required for consistent excellence.</p>
-        </article>
-        <article class="framework-step reveal">
-          <div class="framework-badge">03</div>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">03</div>
           <h3>Activate It</h3>
           <p>Implement, test, measure, and iterate so execution becomes embedded in real time through leader reinforcement and feedback loops.</p>
-        </article>
-        <article class="framework-step reveal">
-          <div class="framework-badge">04</div>
+        </div>
+        <div class="framework-card reveal">
+          <div class="framework-num">04</div>
           <h3>Sustain It</h3>
           <p>Observe, adjust, and protect what was built so ownership lives inside your team and performance continues after the engagement ends.</p>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <!-- ═══ SERVICES — condensed ═══ -->
+  <section class="services" id="services">
     <div class="container">
-      <div class="centered reveal">
+      <div class="reveal" style="text-align:center;">
         <div class="section-label">What We Do</div>
-        <div class="copper-line"></div>
+        <div class="copper-line center"></div>
         <h2 class="section-title">The full transformation <em>journey</em></h2>
-        <p class="section-intro">We partner with organizations over months, and at times years, to co design, install, and embed the systems required for excellence to be felt in every interaction.</p>
+        <p class="services-intro">We partner with organizations over months — and at times years — to co-design, install, and embed the systems required for excellence to be felt in every interaction.</p>
       </div>
-
-      <div class="services-grid">
-        <article class="service-card reveal">
-          <h3>Organizational Culture & Experience Design</h3>
-          <p>Translate purpose and values into visible behaviors, operational standards, and designed moments that people can recognize and repeat.</p>
+      <div class="services-grid reveal">
+        <div class="service-item">
+          <h3>Organizational Culture &amp; Experience Design</h3>
           <span class="service-outcome">So culture becomes observable</span>
-        </article>
-        <article class="service-card reveal">
+        </div>
+        <div class="service-item">
           <h3>Leadership Development</h3>
-          <p>Build leaders at every level who carry the culture forward through everyday decisions, coaching conversations, and team routines.</p>
           <span class="service-outcome">So strategy is lived consistently</span>
-        </article>
-        <article class="service-card reveal">
-          <h3>Learning & Development / Curriculum Design</h3>
-          <p>Create tailored, experiential learning systems for executives, middle managers, frontline leaders, and teams.</p>
+        </div>
+        <div class="service-item">
+          <h3>Learning &amp; Development / Curriculum Design</h3>
           <span class="service-outcome">So standards scale through capability</span>
-        </article>
-        <article class="service-card reveal">
+        </div>
+        <div class="service-item">
           <h3>Change Management</h3>
-          <p>Guide organizations through complex transitions with clear methodology, stakeholder alignment, and sustainable implementation.</p>
           <span class="service-outcome">So adoption happens with less friction</span>
-        </article>
-        <article class="service-card reveal">
-          <h3>Train the Trainer & Internal Capacity Building</h3>
-          <p>Equip your own people to teach, sustain, and evolve the system long after our formal engagement concludes.</p>
+        </div>
+        <div class="service-item">
+          <h3>Train-the-Trainer &amp; Internal Capacity Building</h3>
           <span class="service-outcome">So ownership stays in house</span>
-        </article>
-        <article class="service-card reveal">
-          <h3>Measurement & Governance</h3>
-          <p>Design the scorecards, routines, and accountability structures that keep excellence operational and leadership informed.</p>
+        </div>
+        <div class="service-item">
+          <h3>Measurement &amp; Governance</h3>
           <span class="service-outcome">So performance stays measurable</span>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="reach-band">
-    <div class="container reveal">
-      <div class="section-label" style="color: var(--copper-light);">Our Reach & Track Record</div>
-      <div class="copper-line" style="margin-inline: auto; background: var(--copper-light);"></div>
-      <h2 class="section-title" style="margin-bottom: 0.75rem;">Central Florida roots. <em style="color: var(--copper-light);">Global scale.</em></h2>
-      <p class="section-intro" style="color: rgba(255,255,255,0.84);">Our team members have led service excellence, culture transformation, and large scale operational initiatives across industries where consistency, precision, and trust must coexist at scale.</p>
-      <div class="reach-grid">
-        <div class="reach-card">
+  <!-- ═══ INDUSTRIES ═══ -->
+  <section class="industries">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Our Reach &amp; Track Record</div>
+        <div class="copper-line center" style="background:var(--copper-light);"></div>
+        <h2 class="section-title">Central Florida roots. <em>Global scale.</em></h2>
+        <p style="max-width:620px; margin:0 auto 0; color:rgba(255,255,255,0.8);">Our team members have led service excellence, culture transformation, and large-scale operational initiatives across industries where consistency, precision, and trust must coexist at scale.</p>
+      </div>
+      <div class="industries-clusters reveal">
+        <div class="cluster">
           <h3>Enterprise Environments</h3>
-          <p>Fortune 100 corporations, multi site operations, and complex organizational ecosystems.</p>
+          <p>Fortune 100 corporations, multi-site operations, and complex organizational ecosystems.</p>
         </div>
-        <div class="reach-card">
-          <h3>High Stakes Experiences</h3>
-          <p>Aviation, hospitality, healthcare, faith based institutions, sports, and guest facing environments.</p>
+        <div class="cluster">
+          <h3>High-Stakes Experiences</h3>
+          <p>Aviation, hospitality, healthcare, faith-based institutions, sports, and guest-facing environments.</p>
         </div>
-        <div class="reach-card">
-          <h3>Large Scale Activation</h3>
+        <div class="cluster">
+          <h3>Large-Scale Activation</h3>
           <p>From executive audiences to frontline teams and volunteer populations, while protecting fidelity across the system.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="dark-section" id="why-us">
+  <!-- ═══ WHY US — consolidated ═══ -->
+  <section class="why-us" id="why-us">
     <div class="container">
-      <div class="centered reveal">
+      <div class="reveal" style="text-align:center;">
         <div class="section-label">Why Us</div>
-        <div class="copper-line"></div>
+        <div class="copper-line center"></div>
         <h2 class="section-title">Five distinctions that <em>define our work</em></h2>
+        <p class="why-us-intro">Our engagements are collaborative, immersive, and designed for transfer of ownership. These five principles shape how we partner and what clients can expect.</p>
       </div>
 
-      <div class="diff-list">
-        <div class="diff-item reveal">
-          <div class="diff-num">01</div>
-          <div>
-            <h3>Practitioners, Not Theorists</h3>
-            <p>The systems we design are not academic constructs. They are refined through firsthand leadership, operational management, facilitation, and transformation work in demanding environments.</p>
-          </div>
+      <div class="distinction reveal">
+        <div class="dist-num">01</div>
+        <div>
+          <h3>Practitioners, Not Theorists</h3>
+          <p>The systems we design are refined through firsthand leadership, operational management, and transformation work in demanding environments. We align with your mission, culture, and operational realities — because we have led inside environments like yours.</p>
         </div>
-        <div class="diff-item reveal">
-          <div class="diff-num">02</div>
-          <div>
-            <h3>Operating Systems, Not Training Alone</h3>
-            <p>Training creates awareness. Operating systems create consistency. We design the latter so the desired experience does not depend on individual heroics.</p>
-          </div>
+      </div>
+      <div class="distinction reveal">
+        <div class="dist-num">02</div>
+        <div>
+          <h3>Operating Systems, Not Training Alone</h3>
+          <p>Training creates awareness. Operating systems create consistency. We design the latter — building on your existing strengths rather than replacing them, so the desired experience does not depend on individual heroics.</p>
         </div>
-        <div class="diff-item reveal">
-          <div class="diff-num">03</div>
-          <div>
-            <h3>Arrive, Build, Transfer, Endure</h3>
-            <p>We do not arrive, inspire, and depart. We build with your team, transfer capability, and install the governance required for endurance.</p>
-          </div>
+      </div>
+      <div class="distinction reveal">
+        <div class="dist-num">03</div>
+        <div>
+          <h3>Arrive, Build, Transfer, Endure</h3>
+          <p>We do not arrive, inspire, and depart. We build with your team, transfer capability, and equip your people to own and evolve the system independently. Our goal is never dependency — it is capability transfer.</p>
         </div>
-        <div class="diff-item reveal">
-          <div class="diff-num">04</div>
-          <div>
-            <h3>Full Service Capability Under One Roof</h3>
-            <p>From strategy and curriculum to facilitation, project leadership, content architecture, and sustainment, the work is coordinated as one system.</p>
-          </div>
+      </div>
+      <div class="distinction reveal">
+        <div class="dist-num">04</div>
+        <div>
+          <h3>Full-Service Capability Under One Roof</h3>
+          <p>From strategy and curriculum to facilitation, project leadership, content architecture, and sustainment — the work is coordinated as one system with measurable accountability from day one.</p>
         </div>
-        <div class="diff-item reveal">
-          <div class="diff-num">05</div>
-          <div>
-            <h3>Scale Without Losing Fidelity</h3>
-            <p>Whether an engagement touches 50 leaders or 30,000 participants, the objective remains the same, protect clarity, consistency, and trust in every layer of the experience.</p>
-          </div>
+      </div>
+      <div class="distinction reveal">
+        <div class="dist-num">05</div>
+        <div>
+          <h3>Scale Without Losing Fidelity</h3>
+          <p>Whether an engagement touches 50 leaders or 30,000 participants, we protect clarity, consistency, and trust across every layer — reinforced through governance, feedback loops, and leader reinforcement that prevents drift.</p>
         </div>
+      </div>
+
+      <!-- People CTA -->
+      <div class="people-cta-card reveal">
+        <h3>The People Behind the Magic</h3>
+        <p>A curated bench of practitioners spanning leadership development, facilitation, instructional design, content strategy, and enterprise learning — structured around capabilities, not name recognition.</p>
+        <a href="people-behind-the-magic.html" class="btn-copper">Explore the Team Bench</a>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="container">
-      <div class="centered reveal">
-        <div class="section-label">How We Partner</div>
-        <div class="copper-line"></div>
-        <h2 class="section-title">Collaborative. Immersive. <em>Built for transfer.</em></h2>
-      </div>
-
-      <div class="partnership-grid">
-        <div class="copy-stack reveal">
-          <p>Our engagements are not transactional. They are collaborative, immersive, and designed for transfer of ownership.</p>
-          <p>Every partnership begins with discovery, understanding not only what must improve, but why it matters, who will own it, and which systemic barriers have prevented success in the past.</p>
-          <p>Our goal is not dependency. Our goal is capability transfer so your organization leaves the engagement stronger, clearer, and more self sufficient than when we began.</p>
-          <p>We build on existing strengths, align with operational realities, create accountability from day one, and protect against drift through governance and reinforcement.</p>
-        </div>
-
-        <div class="principles-card reveal">
-          <h3>We co-design solutions that</h3>
-          <ul class="principles-list">
-            <li><span>✓</span><div>Align with your mission, culture, and operational realities</div></li>
-            <li><span>✓</span><div>Build on existing strengths rather than replacing them</div></li>
-            <li><span>✓</span><div>Equip your people to own and evolve the system independently</div></li>
-            <li><span>✓</span><div>Create measurable accountability from day one</div></li>
-            <li><span>✓</span><div>Protect against drift through governance, feedback loops, and leader reinforcement</div></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="people-callout reveal">
-        <div>
-          <h3>The People Behind the Magic</h3>
-          <p>Beyond the Magic is supported by a curated bench of practitioners spanning leadership development, facilitation, instructional design, content strategy, operational activation, and enterprise learning. The page below is structured around capabilities, not name recognition.</p>
-        </div>
-        <div>
-          <a class="button button-primary" href="people-behind-the-magic.html">Explore the Team Bench</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- ═══ COMMITMENT ═══ -->
   <section class="commitment">
-    <div class="container reveal">
-      <div class="section-label" style="color: var(--copper-light);">Our Commitment</div>
-      <blockquote>We do not arrive, inspire, and depart. We arrive, we build, we transfer ownership, and we ensure that what is created endures.</blockquote>
-      <p>We help transform ideals into experiences people can feel, every day, at every level, in every interaction.</p>
+    <div class="commitment-content reveal">
+      <div class="section-label" style="color:var(--copper-light);">Our Commitment</div>
+      <blockquote>We do not arrive, inspire, and depart.<br>We arrive, we build, we transfer ownership,<br>and we ensure that what is created endures.</blockquote>
+      <div class="copper-line center"></div>
+      <p class="commitment-sub">We help transform ideals into experiences people can feel —<br>every day, at every level, in every interaction.</p>
     </div>
   </section>
 
-  <section id="contact">
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="contact">
     <div class="container">
-      <div class="centered reveal">
+      <div class="reveal" style="text-align:center;">
         <div class="section-label">Get In Touch</div>
-        <div class="copper-line"></div>
-        <h2 class="section-title">Let’s build something <em>extraordinary</em></h2>
-        <p class="section-intro">Ready to move from aspiration to operation. Start the conversation with our team.</p>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">Let's build something <em>extraordinary</em></h2>
+        <p style="max-width:520px; margin:0 auto 1rem; color:var(--text-body);">Ready to move from aspiration to operation. Start the conversation with our team.</p>
       </div>
-
       <div class="contact-grid">
-        <article class="contact-card reveal">
-          <div class="contact-top">
-            <img class="contact-photo" src="assets/maurizio-contact.jpeg" alt="Maurizio Landi">
-            <div>
-              <div class="contact-label">Primary Contact</div>
-              <h3>Maurizio Landi</h3>
-              <div class="contact-role">Founder, Performance Architect</div>
-            </div>
+        <div class="contact-card reveal">
+          <img src="assets/maurizio-contact.jpeg" alt="Maurizio Landi" class="contact-photo">
+          <div class="contact-info">
+            <div class="primary-label">Primary Contact</div>
+            <h3>Maurizio Landi</h3>
+            <div class="contact-role">Founder &middot; Performance Architect</div>
+            <div class="contact-detail"><a href="/cdn-cgi/l/email-protection#afc2cedaddc6d5c6c0efcdcad6c0c1cbdbc7cac2cec8c6cc81ccc0"><span class="__cf_email__" data-cfemail="5934382c2b30233036193b3c2036373d2d313c34383e303a773a36">[email&#160;protected]</span></a></div>
+            <div class="contact-detail"><a href="tel:4079253295">407.925.3295</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
           </div>
-          <div class="contact-detail"><a href="mailto:maurizio@beyondthemagic.co">maurizio@beyondthemagic.co</a></div>
-          <div class="contact-detail"><a href="tel:4079253295">407.925.3295</a></div>
-          <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
-        </article>
-
-        <article class="contact-card reveal">
-          <div class="contact-top">
-            <img class="contact-photo" src="assets/dennis-contact.jpeg" alt="Dennis Hough">
-            <div>
-              <div class="contact-label">Partner Contact</div>
-              <h3>Dennis Hough</h3>
-              <div class="contact-role">Performance Architect</div>
-            </div>
+        </div>
+        <div class="contact-card reveal">
+          <img src="assets/dennis-contact.jpeg" alt="Dennis Hough" class="contact-photo">
+          <div class="contact-info">
+            <div class="primary-label">Partner Contact</div>
+            <h3>Dennis Hough</h3>
+            <div class="contact-role">Performance Architect</div>
+            <div class="contact-detail"><a href="/cdn-cgi/l/email-protection#a4c0c1cacacdd7e4c6c1ddcbcac0d0ccc1c9c5c3cdc78ac7cb"><span class="__cf_email__" data-cfemail="ddb9b8b3b3b4ae9dbfb8a4b2b3b9a9b5b8b0bcbab4bef3beb2">[email&#160;protected]</span></a></div>
+            <div class="contact-detail"><a href="tel:8655664147">865.566.4147</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
           </div>
-          <div class="contact-detail"><a href="mailto:dennis@beyondthemagic.co">dennis@beyondthemagic.co</a></div>
-          <div class="contact-detail"><a href="tel:8655664147">865.566.4147</a></div>
-          <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
-        </article>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══ FOOTER ═══ -->
   <footer>
-    <div class="container">
-      <img class="footer-logo" src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting">
-      <div class="footer-links">
-        <a href="#origin">Our Origin</a>
-        <a href="#philosophy">Philosophy</a>
-        <a href="#framework">Methodology</a>
-        <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
-        <a href="people-behind-the-magic.html">People</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>© 2026 Beyond the Magic Consulting. All rights reserved.</div>
-      <div style="margin-top: 0.45rem; font-size: 0.8rem; color: rgba(255,255,255,0.4);">Central Florida, Global Reach</div>
+    <div class="footer-logo">
+      <img src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting">
     </div>
+    <div class="footer-links">
+      <a href="#origin">Our Origin</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#framework">Methodology</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="people-behind-the-magic.html">People</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
+    <div class="footer-locale">Central Florida &middot; Global Reach</div>
   </footer>
 
+  <!-- ═══ SCRIPTS ═══ -->
   <script>
     const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 16) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-    });
-
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
+    const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 </body>
 </html>
