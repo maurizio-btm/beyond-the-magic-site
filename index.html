@@ -88,10 +88,12 @@
       top: 0; left: 0; right: 0;
       z-index: 1000;
       background: rgba(26, 39, 68, 0.97);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(160, 113, 79, 0.15);
       transition: box-shadow 0.4s ease;
+      will-change: transform;
+      transform: translateZ(0);
     }
     nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
 
@@ -206,6 +208,7 @@
         linear-gradient(180deg, rgba(20,31,56,0.78) 0%, rgba(20,31,56,0.88) 100%),
         radial-gradient(circle at 18% 30%, rgba(181,136,90,0.18), transparent 36%),
         url('assets/hero-executive-room.jpeg') center center / cover no-repeat;
+      transform: translateZ(0);
     }
 
     .hero-content {
@@ -497,6 +500,7 @@
         url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
       color: var(--white);
       text-align: center;
+      transform: translateZ(0);
     }
     .immersion-band h2 {
       font-family: 'Cormorant Garamond', serif;
@@ -618,6 +622,7 @@
       color: var(--white);
       text-align: center;
       padding: 7rem 2rem;
+      transform: translateZ(0);
     }
     .industries .section-label { color: var(--copper-light); }
     .industries .section-title { color: var(--white); }
@@ -631,8 +636,6 @@
     .cluster {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
       padding: 1.8rem;
       color: rgba(255,255,255,0.85);
     }
@@ -738,6 +741,7 @@
       padding: 7rem 2rem;
       position: relative;
       color: var(--white);
+      transform: translateZ(0);
     }
     .commitment-content { position: relative; }
     .commitment blockquote {
@@ -879,6 +883,7 @@
       opacity: 0;
       transform: translateY(35px);
       transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
@@ -1280,6 +1285,9 @@
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
+          entry.target.addEventListener('transitionend', () => {
+            entry.target.style.willChange = 'auto';
+          }, { once: true });
           observer.unobserve(entry.target);
         }
       });
