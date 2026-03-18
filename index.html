@@ -103,7 +103,7 @@
       padding: 0 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 2.5rem;
       height: 70px;
     }
 
@@ -111,17 +111,19 @@
       display: flex;
       align-items: center;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .nav-logo img {
-      height: 28px;
+      height: 36px;
       width: auto;
     }
 
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.8rem;
+      gap: 1.6rem;
       align-items: center;
+      margin-left: auto;
     }
     .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
@@ -164,6 +166,7 @@
       padding: 4px;
       background: none;
       border: none;
+      margin-left: auto;
     }
     .nav-toggle span {
       width: 24px; height: 2px;
@@ -457,6 +460,7 @@
       margin: 2.5rem auto;
       line-height: 1.4;
     }
+    .philosophy-statement .white { color: var(--white); }
     .philosophy-statement::before,
     .philosophy-statement::after {
       content: ''; display: block;
@@ -494,7 +498,7 @@
     /* ═══ IMMERSION BAND ═══ */
     .immersion-band {
       position: relative;
-      padding: 8rem 2rem;
+      padding: 10rem 2rem;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.7), rgba(20,31,56,0.8)),
         url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
@@ -502,18 +506,10 @@
       text-align: center;
       transform: translateZ(0);
     }
-    .immersion-band h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.45rem, 4.5vw, 3.75rem);
-      font-weight: 500;
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-    .immersion-band p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.3rem;
-      color: rgba(255,255,255,0.8);
+    .immersion-band .section-label {
+      font-size: 1.4rem;
+      letter-spacing: 0.4em;
+      font-weight: 700;
     }
 
     /* ═══ FRAMEWORK ═══ */
@@ -892,15 +888,15 @@
     .no-js .reveal { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 1024px) {
+    @media (max-width: 1060px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
       .framework-grid { grid-template-columns: repeat(2, 1fr); }
       .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .industries-clusters { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       section { padding: 4.5rem 1.5rem; }
-      .nav-links { display: none; }
-      .nav-toggle { display: flex; }
       .hero-badge { width: 200px; }
       .hero-body { font-size: 1.05rem; }
       .hero-actions { gap: 0.75rem; }
@@ -916,7 +912,7 @@
       .ticker-tag { font-size: 0.7rem; }
       .origin-quote-wrap { min-height: 340px; }
       .origin-quote { position: relative; right: auto; bottom: auto; max-width: 100%; }
-      .immersion-band { padding: 5rem 1.5rem; }
+      .immersion-band { padding: 7rem 1.5rem; }
       .industries-clusters { grid-template-columns: 1fr; }
       .people-cta-card { padding: 1.8rem; }
     }
@@ -986,11 +982,16 @@
   <div class="ticker">
     <div class="ticker-inner">
       <span class="ticker-tag">Aviation</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Healthcare</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Hospitality</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Financial Services</span><span class="ticker-dot"></span>
       <span class="ticker-tag">Education</span><span class="ticker-dot"></span>
       <span class="ticker-tag">Faith-Based Organizations</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Financial Services</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Food &amp; Beverage</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Government</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Healthcare</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Hospitality</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Human Resources</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Public Sector</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Retail</span><span class="ticker-dot"></span>
       <span class="ticker-tag">Sports &amp; Venues</span>
     </div>
   </div>
@@ -1031,7 +1032,7 @@
       </div>
       <div class="reveal">
         <p style="text-align:center;">Most organizations invest heavily in training and culture initiatives while the underlying architecture remains unchanged. We address the architecture itself — the expectations, behaviors, accountability systems, and leadership routines that make excellence repeatable.</p>
-        <div class="philosophy-statement">Performance is not inspired. It is designed.</div>
+        <div class="philosophy-statement">Performance is not inspired. It is <span class="white">designed.</span></div>
         <p style="text-align:center;">Headquartered in Central Florida, we help leaders turn aspiration into operation — so the experience people want to deliver becomes the experience the system is built to sustain.</p>
       </div>
       <div class="philosophy-pillars reveal">
@@ -1045,9 +1046,7 @@
   <!-- ═══ IMMERSION BAND ═══ -->
   <section class="immersion-band">
     <div class="container reveal">
-      <div class="section-label" style="color: var(--copper-light);">How We Work</div>
-      <h2>From aspiration to operation</h2>
-      <p>Our methodology moves organizations from ambition to disciplined execution by combining diagnostic clarity, intentional design, field activation, and sustainment structures that protect performance over time.</p>
+      <div class="section-label" style="color: var(--copper-light); margin-bottom: 0;">How We Work</div>
     </div>
   </section>
 
