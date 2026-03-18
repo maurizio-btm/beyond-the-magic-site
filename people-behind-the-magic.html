@@ -5,160 +5,318 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The People Behind the Magic | Beyond the Magic Consulting</title>
   <meta name="description" content="The People Behind the Magic. A curated bench of practitioners supporting Beyond the Magic Consulting across leadership, learning, facilitation, culture, and operational excellence.">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="favicon-192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon-512.png" sizes="512x512">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <style>
+    /* ══════════════════════════════════════
+       BTM BRAND SYSTEM
+       Navy:         #1A2744
+       Copper:       #A0714F
+       Copper Light: #C49A72
+       Off White:    #F5F3EF
+       Charcoal:     #1E2023
+
+       Display:      Cormorant Garamond
+       UI / Labels:  Barlow Condensed
+       Body:         Barlow
+    ══════════════════════════════════════ */
+
     :root {
-      --navy: #1E2D4F;
-      --navy-deep: #141F38;
-      --navy-light: #2A3D66;
-      --copper: #B5885A;
-      --copper-light: #C9A070;
-      --copper-dark: #9A7048;
-      --cream: #FAF8F5;
-      --cream-warm: #F5F0EA;
-      --text-body: #4A4A4A;
-      --text-light: #6E6E6E;
+      --navy: #1A2744;
+      --navy-deep: #111B30;
+      --navy-light: #243458;
+      --copper: #A0714F;
+      --copper-light: #C49A72;
+      --copper-pale: #D4B896;
+      --offwhite: #F5F3EF;
+      --offwhite-warm: #EDE9E2;
+      --charcoal: #1E2023;
+      --text-body: #3D3D3D;
+      --text-muted: #6E6E6E;
       --white: #FFFFFF;
-      --shadow-soft: 0 18px 45px rgba(20, 31, 56, 0.08);
-      --border-soft: 1px solid rgba(30, 45, 79, 0.08);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
     body {
-      font-family: 'Raleway', sans-serif;
-      background: var(--cream);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      background: var(--offwhite);
       color: var(--text-body);
-      line-height: 1.7;
+      line-height: 1.75;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
+
     a { color: inherit; }
+
     .container { width: min(1180px, calc(100% - 3rem)); margin: 0 auto; }
+
+    /* ═══ NAVIGATION ═══ */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(20,31,56,0.94);
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(26, 39, 68, 0.97);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(181,136,90,0.18);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(160, 113, 79, 0.15);
+      will-change: transform;
+      transform: translateZ(0);
     }
+
     .nav-inner {
-      min-height: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
+      gap: 2.5rem;
+      height: 70px;
     }
-    .nav-logo img { width: min(430px, 56vw); }
-    .nav-links { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+
+    .nav-logo {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .nav-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+      margin-left: auto;
+    }
     .nav-links a {
       text-decoration: none;
-      font-size: 0.75rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.76);
-      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.3s ease;
+      position: relative;
     }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--copper);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--copper) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      transition: background 0.3s ease !important;
+    }
+    .nav-cta:hover { background: #8B6143 !important; }
+    .nav-cta::after { display: none !important; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+      margin-left: auto;
+    }
+    .nav-toggle span {
+      width: 24px; height: 2px;
+      background: var(--white);
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(17, 27, 48, 0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+    .mobile-menu a:hover { color: var(--copper-light); }
+
+    /* ═══ HERO ═══ */
     .hero {
-      padding: 8rem 0 6rem;
+      padding: 10rem 0 6rem;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.78), rgba(20,31,56,0.86)),
         url('assets/people-hero.jpeg') center center / cover no-repeat;
       color: var(--white);
       text-align: center;
+      transform: translateZ(0);
     }
+
     .hero-logo {
-      width: min(420px, 70vw);
+      width: min(320px, 60vw);
       margin: 0 auto 1.75rem;
     }
+
     .section-label {
-      font-size: 0.76rem;
-      letter-spacing: 0.34em;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--copper-light);
-      font-weight: 600;
+      color: var(--copper);
       margin-bottom: 1rem;
     }
+
     h1, h2, h3 { color: var(--navy); }
+
+    .hero .section-label { color: var(--copper-light); }
+
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(2.45rem, 5vw, 3.85rem);
       color: var(--white);
       font-weight: 500;
       margin-bottom: 1rem;
+      line-height: 1.2;
     }
+
     .hero p {
-      max-width: 840px;
+      font-family: 'Barlow', sans-serif;
+      max-width: 780px;
       margin: 0 auto;
-      font-size: 1.08rem;
-      color: rgba(255,255,255,0.84);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.8);
     }
-    section { padding: 5.5rem 0; }
+
+    /* ═══ SHARED ═══ */
+    section { padding: 6.5rem 0; }
+
+    .copper-line { width: 50px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .section-title em { color: var(--copper); font-style: italic; font-weight: 400; }
+
+    /* ═══ INTRO SECTION ═══ */
     .intro-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 3rem;
       align-items: center;
     }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      font-weight: 500;
-      margin-bottom: 1rem;
+
+    .intro-grid p {
+      font-size: 1.15rem;
+      line-height: 1.75;
     }
-    .section-title em { color: var(--copper-dark); font-style: italic; font-weight: 400; }
-    .copper-line { width: 72px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
+
     .intro-card {
       background: var(--white);
-      border: var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      padding: 2.2rem;
+      border: 1px solid rgba(26,39,68,0.06);
+      box-shadow: 0 8px 30px rgba(26,39,68,0.06);
+      padding: 2.5rem;
     }
+
     .intro-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.06em;
-      font-size: 1.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.35rem;
       margin-bottom: 0.8rem;
     }
+
+    .intro-card p { font-size: 1.15rem; }
+    .intro-card b { color: var(--navy); }
+
+    /* ═══ CAPABILITY BENCH ═══ */
     .capability-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.4rem;
       margin-top: 3rem;
     }
+
     .capability-card {
       background: var(--white);
-      border: var(--border-soft);
-      box-shadow: 0 10px 28px rgba(20,31,56,0.06);
-      padding: 2rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      border: 1px solid rgba(26,39,68,0.06);
+      box-shadow: 0 4px 20px rgba(26,39,68,0.05);
+      padding: 2.2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .capability-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 36px rgba(20,31,56,0.1);
+      box-shadow: 0 14px 35px rgba(26,39,68,0.09);
     }
+
     .capability-num {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2rem;
-      color: var(--copper);
-      margin-bottom: 0.8rem;
-      letter-spacing: 0.08em;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 300;
+      color: rgba(160,113,79,0.25);
+      margin-bottom: 0.5rem;
+      line-height: 1;
     }
+
     .capability-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.35rem;
-      letter-spacing: 0.05em;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
       margin-bottom: 0.75rem;
     }
-    .capability-card p { color: var(--text-light); font-size: 0.95rem; }
+
+    .capability-card p { color: var(--text-muted); font-size: 1.15rem; }
+
     .capability-proof {
       display: block;
       margin-top: 1rem;
-      color: var(--copper-dark);
+      font-family: 'Barlow Condensed', sans-serif;
+      color: var(--copper);
       text-transform: uppercase;
-      font-size: 0.72rem;
+      font-size: 0.95rem;
       letter-spacing: 0.12em;
-      font-weight: 700;
+      font-weight: 500;
     }
+
+    /* ═══ GALLERY BAND ═══ */
     .gallery-band {
       padding: 7rem 0;
       background:
@@ -166,105 +324,185 @@
         url('assets/team-gallery-band.jpeg') center center / cover no-repeat;
       text-align: center;
       color: var(--white);
+      transform: translateZ(0);
     }
+
+    .gallery-band .section-label { color: var(--copper-light); }
+
     .gallery-band h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.3rem, 4vw, 3.5rem);
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
       color: var(--white);
       font-weight: 500;
       margin-bottom: 1rem;
     }
+
     .gallery-band p {
-      max-width: 780px;
+      max-width: 700px;
       margin: 0 auto;
-      color: rgba(255,255,255,0.84);
-      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 1.25rem;
     }
+
     .principles-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       margin-top: 2.5rem;
     }
+
     .principle {
       background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 1.4rem;
-      color: rgba(255,255,255,0.86);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.6rem;
+      color: rgba(255,255,255,0.8);
     }
+
     .principle h3 {
       color: var(--white);
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.06em;
-      font-size: 1.15rem;
-      margin-bottom: 0.6rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 1.35rem;
+      margin-bottom: 0.5rem;
     }
+
+    .principle div { font-size: 1.1rem; }
+
+    /* ═══ CTA ═══ */
     .cta-box {
       background: linear-gradient(135deg, var(--navy), var(--navy-light));
       color: var(--white);
-      padding: 2.4rem;
-      box-shadow: var(--shadow-soft);
+      padding: 2.8rem;
+      box-shadow: 0 8px 30px rgba(26,39,68,0.1);
       display: grid;
       grid-template-columns: 1.1fr auto;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
     }
+
     .cta-box h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-size: 2.45rem;
       font-weight: 500;
       color: var(--white);
       margin-bottom: 0.5rem;
     }
-    .cta-box p { color: rgba(255,255,255,0.82); }
+
+    .cta-box p { color: rgba(255,255,255,0.75); font-size: 1.15rem; }
+
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem 1.4rem;
+      padding: 1rem 1.6rem;
       background: var(--copper);
       color: var(--white);
       text-decoration: none;
       text-transform: uppercase;
-      font-size: 0.78rem;
-      font-weight: 700;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
       letter-spacing: 0.18em;
       min-width: 220px;
+      transition: background 0.3s ease;
     }
+    .button:hover { background: #8B6143; }
+
+    /* ═══ FOOTER ═══ */
     footer {
       text-align: center;
       background: var(--navy-deep);
-      color: rgba(255,255,255,0.6);
-      padding: 3rem 0;
+      color: rgba(255,255,255,0.4);
+      padding: 2.5rem 0;
       margin-top: 5rem;
+      border-top: 1px solid rgba(160,113,79,0.12);
     }
-    .footer-logo { width: min(320px, 72vw); margin: 0 auto 1rem; }
-    @media (max-width: 1000px) {
+
+    .footer-logo {
+      height: 22px;
+      width: auto;
+      margin: 0 auto 1rem;
+      display: block;
+      opacity: 0.7;
+    }
+
+    footer div {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.03rem;
+    }
+
+    /* ═══ SCROLL REVEAL ═══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    noscript ~ * .reveal,
+    .no-js .reveal { opacity: 1; transform: none; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 1060px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
       .capability-grid { grid-template-columns: repeat(2, 1fr); }
       .intro-grid,
       .cta-box,
       .principles-grid { grid-template-columns: 1fr; }
     }
-    @media (max-width: 760px) {
-      .nav-links { display: none; }
+
+    @media (max-width: 768px) {
       .capability-grid { grid-template-columns: 1fr; }
-      .container { width: min(100% - 1.5rem, 100%); }
-      .nav-logo img { width: min(300px, 68vw); }
+      .container { width: calc(100% - 2rem); }
+      section { padding: 4.5rem 0; }
+      .hero { padding: 8rem 0 4rem; }
+      .hero-logo { width: min(200px, 50vw); }
+      .gallery-band { padding: 5rem 0; }
+      .cta-box { padding: 2rem; }
+      .cta-box h2 { font-size: 1.8rem; }
+      .button { width: 100%; }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.8rem; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a class="nav-logo" href="index.html"><img src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting"></a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#why-us">Why Us</a>
-        <a href="index.html#contact">Contact</a>
-      </div>
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting, Performance Architects">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#origin">Our Origin</a></li>
+        <li><a href="index.html#philosophy">Philosophy</a></li>
+        <li><a href="index.html#framework">Methodology</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="people-behind-the-magic.html">People</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#origin" onclick="closeMobile()">Our Origin</a>
+    <a href="index.html#philosophy" onclick="closeMobile()">Philosophy</a>
+    <a href="index.html#framework" onclick="closeMobile()">Methodology</a>
+    <a href="index.html#services" onclick="closeMobile()">Services</a>
+    <a href="index.html#why-us" onclick="closeMobile()">Why Us</a>
+    <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
+    <a href="index.html#contact" onclick="closeMobile()">Contact</a>
+  </div>
 
   <header class="hero">
     <div class="container">
@@ -276,60 +514,63 @@
   </header>
 
   <section>
-    <div class="container intro-grid">
+    <div class="container intro-grid reveal">
       <div>
         <div class="section-label">How We Think About Talent</div>
         <div class="copper-line"></div>
         <h2 class="section-title">The right expertise, <em>at the right moment</em></h2>
-        <p>We do not position the team as a static roster. We position it as a strategic bench, assembled around the needs of the engagement. That approach gives clients access to the strengths required for the work, whether the moment calls for executive alignment, facilitation excellence, learning architecture, content strategy, operational activation, or sustainment planning.It also reflects how transformation really happens. Different phases of the work require different forms of expertise, all aligned to one cohesive operating model.</p>
+        <p>We do not position the team as a static roster. We position it as a strategic bench, assembled around the needs of the engagement. That approach gives clients access to the strengths required for the work, whether the moment calls for executive alignment, facilitation excellence, learning architecture, content strategy, operational activation, or sustainment planning.</p>
+        <p style="margin-top: 1rem;">It also reflects how transformation really happens. Different phases of the work require different forms of expertise, all aligned to one cohesive operating model.</p>
       </div>
       <aside class="intro-card">
         <h3>What clients gain</h3>
-        <p>A team built for <b>depth</b>, <b>flexibility</b>, and <b>precision</b>, not a one size fits all consulting model. The result is stronger design, stronger delivery, and stronger transfer into the client organization.</p>
+        <p>A team built for <b>depth</b>, <b>flexibility</b>, and <b>precision</b> — not a one-size-fits-all consulting model. The result is stronger design, stronger delivery, and stronger transfer into the client organization.</p>
       </aside>
     </div>
   </section>
 
-  <section style="background: var(--cream-warm);">
+  <section style="background: var(--offwhite-warm);">
     <div class="container">
-      <div class="section-label">Capability Bench</div>
-      <div class="copper-line"></div>
-      <h2 class="section-title">The capabilities behind the work</h2>
+      <div class="reveal">
+        <div class="section-label">Capability Bench</div>
+        <div class="copper-line"></div>
+        <h2 class="section-title">The capabilities behind the work</h2>
+      </div>
 
       <div class="capability-grid">
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">01</div>
           <h3>Executive Alignment</h3>
           <p>Leaders who know how to align strategy, behavior, accountability, and communication across senior teams so the culture does not fragment under pressure.</p>
           <span class="capability-proof">Leadership clarity at the top</span>
         </article>
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">02</div>
           <h3>Facilitation Excellence</h3>
           <p>Senior facilitators experienced with executive audiences, large group environments, and emotionally significant learning moments that require credibility and control.</p>
           <span class="capability-proof">Trusted in the room</span>
         </article>
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">03</div>
-          <h3>Instructional Design & Learning Architecture</h3>
+          <h3>Instructional Design &amp; Learning Architecture</h3>
           <p>Designers who convert strategic intent into structured learning journeys, tools, content, and practical pathways for adoption across roles and levels.</p>
           <span class="capability-proof">Built for transfer</span>
         </article>
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">04</div>
-          <h3>Culture & Experience Design</h3>
-          <p>Practitioners who translate values into behaviors, rituals, and standards so the desired experience becomes visible in the day to day operation.</p>
+          <h3>Culture &amp; Experience Design</h3>
+          <p>Practitioners who translate values into behaviors, rituals, and standards so the desired experience becomes visible in the day-to-day operation.</p>
           <span class="capability-proof">Culture made observable</span>
         </article>
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">05</div>
           <h3>Operational Activation</h3>
           <p>Leaders who understand how work lands in the field, where friction shows up, and how to design activation plans that hold up beyond the workshop.</p>
           <span class="capability-proof">Execution in the real world</span>
         </article>
-        <article class="capability-card">
+        <article class="capability-card reveal">
           <div class="capability-num">06</div>
-          <h3>Program & Engagement Leadership</h3>
+          <h3>Program &amp; Engagement Leadership</h3>
           <p>Strategic operators who coordinate stakeholders, timelines, approvals, and delivery streams so the engagement feels seamless from start to finish.</p>
           <span class="capability-proof">One coordinated system</span>
         </article>
@@ -338,7 +579,7 @@
   </section>
 
   <section class="gallery-band">
-    <div class="container">
+    <div class="container reveal">
       <div class="section-label">Why This Matters</div>
       <h2>Transformation demands more than one point of view</h2>
       <p>The firms that create lasting change do not rely on a single personality. They rely on aligned expertise. Our bench brings together complementary disciplines so each phase of the work is supported by the people best equipped to move it forward.</p>
@@ -365,9 +606,9 @@
 
   <section>
     <div class="container">
-      <div class="cta-box">
+      <div class="cta-box reveal">
         <div>
-          <h2>Interested in how the bench supports a specific engagement</h2>
+          <h2>Interested in how the bench supports a specific engagement?</h2>
           <p>We can help map the right blend of leadership, design, facilitation, and operational support based on your goals, scale, and business environment.</p>
         </div>
         <div>
@@ -380,8 +621,34 @@
   <footer>
     <div class="container">
       <img class="footer-logo" src="assets/logo-horizontal.png" alt="Beyond the Magic Consulting">
-      <div>© 2026 Beyond the Magic Consulting. All rights reserved.</div>
+      <div>&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.2)' : 'none';
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.addEventListener('transitionend', () => {
+            entry.target.style.willChange = 'auto';
+          }, { once: true });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
