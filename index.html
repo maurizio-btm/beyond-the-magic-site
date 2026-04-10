@@ -971,7 +971,7 @@
       <div class="hero-actions">
         <a href="#origin" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">Discover Our Story</a>
         <a href="/scheduling/" class="btn-copper" style="min-width:220px; text-align:center; white-space:nowrap; padding:0.9rem 2.2rem;">Book a Session</a>
-        <a href="people-behind-the-magic.html" class="btn-ghost" style="min-width:220px; text-align:center; white-space:nowrap;">The Team</a>
+        <a href="people-behind-the-magic.html" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">The Team</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -1226,7 +1226,7 @@
         <div class="copper-line center"></div>
         <h2 class="section-title">Let's build something <em>extraordinary</em></h2>
         <p style="max-width:520px; margin:0 auto 1.5rem; color:var(--text-body);">Ready to move from aspiration to operation. Start the conversation with our team.</p>
-        <a href="/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Book a Strategic Alignment Session</a>
+        <a href="/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Book an Initial Advisory Conversation</a>
         <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted);">Or reach our team directly below</p>
       </div>
       <div class="contact-grid" style="margin-top:2.5rem;">
@@ -1319,6 +1319,37 @@
       el.href = 'mai' + 'lto:' + addr;
       el.textContent = addr;
     });
+
+    // Hide Cal floating button when contact section is visible
+    (function () {
+      const contactSection = document.getElementById('contact');
+      if (!contactSection) return;
+      const calMutObs = new MutationObserver(function () {
+        const calBtn = document.querySelector('[data-cal-namespace="initial-advisory-conversation"]')
+                    || document.querySelector('button[style*="C49A72"]');
+        if (!calBtn) return;
+        const wrapper = calBtn.closest('div[style*="position: fixed"]')
+                     || calBtn.closest('div[style*="position:fixed"]')
+                     || calBtn.parentElement;
+        if (!wrapper) return;
+        calMutObs.disconnect();
+        wrapper.style.transition = 'opacity 0.4s ease';
+        new IntersectionObserver(function (entries) {
+          wrapper.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          wrapper.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }, { threshold: 0.15 }).observe(contactSection);
+      });
+      calMutObs.observe(document.body, { childList: true, subtree: true });
+    })();
   </script>
+
+  <!-- Cal floating-popup embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "initial-advisory-conversation", {origin:"https://app.cal.com"});
+    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Let's Talk","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
+    Cal.ns["initial-advisory-conversation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1A2744"},"dark":{"cal-brand":"#F5F3EF"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal floating-popup embed code ends -->
 </body>
 </html>
