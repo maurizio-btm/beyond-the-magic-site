@@ -485,6 +485,7 @@
         <li><a href="index.html#services">Services</a></li>
         <li><a href="index.html#why-us">Why Us</a></li>
         <li><a href="people-behind-the-magic.html">People</a></li>
+        <li><a href="/scheduling/">Schedule</a></li>
         <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -500,6 +501,7 @@
     <a href="index.html#services" onclick="closeMobile()">Services</a>
     <a href="index.html#why-us" onclick="closeMobile()">Why Us</a>
     <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
+    <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
     <a href="index.html#contact" onclick="closeMobile()">Contact</a>
   </div>
 
@@ -610,8 +612,9 @@
           <h2>Interested in how the bench supports a specific engagement?</h2>
           <p>We can help map the right blend of leadership, design, facilitation, and operational support based on your goals, scale, and business environment.</p>
         </div>
-        <div>
-          <a class="button" href="index.html#contact">Start the Conversation</a>
+        <div style="display:flex; flex-direction:column; gap:0.85rem; align-items:center;">
+          <a class="button" href="/scheduling/">Book an Initial Advisory Conversation</a>
+          <a href="index.html#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.92rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s ease;" onmouseover="this.style.color='rgba(196,154,114,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Or contact us directly →</a>
         </div>
       </div>
     </div>
@@ -648,6 +651,37 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
     reveals.forEach(el => observer.observe(el));
+
+    // Hide Cal floating button when the CTA / footer area is visible
+    (function () {
+      const ctaTarget = document.querySelector('.cta-box') || document.querySelector('footer');
+      if (!ctaTarget) return;
+      const calMutObs = new MutationObserver(function () {
+        const calBtn = document.querySelector('[data-cal-namespace="initial-advisory-conversation"]')
+                    || document.querySelector('button[style*="C49A72"]');
+        if (!calBtn) return;
+        const wrapper = calBtn.closest('div[style*="position: fixed"]')
+                     || calBtn.closest('div[style*="position:fixed"]')
+                     || calBtn.parentElement;
+        if (!wrapper) return;
+        calMutObs.disconnect();
+        wrapper.style.transition = 'opacity 0.4s ease';
+        new IntersectionObserver(function (entries) {
+          wrapper.style.opacity = entries[0].isIntersecting ? '0' : '1';
+          wrapper.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+        }, { threshold: 0.15 }).observe(ctaTarget);
+      });
+      calMutObs.observe(document.body, { childList: true, subtree: true });
+    })();
   </script>
+
+  <!-- Cal floating-popup embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "initial-advisory-conversation", {origin:"https://app.cal.com"});
+    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Let's Talk","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
+    Cal.ns["initial-advisory-conversation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1A2744"},"dark":{"cal-brand":"#F5F3EF"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal floating-popup embed code ends -->
 </body>
 </html>
