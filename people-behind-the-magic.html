@@ -656,22 +656,28 @@
     (function () {
       const ctaTarget = document.querySelector('.cta-box') || document.querySelector('footer');
       if (!ctaTarget) return;
-      const calMutObs = new MutationObserver(function () {
-        const calBtn = document.querySelector('[data-cal-namespace="initial-advisory-conversation"]')
-                    || document.querySelector('button[style*="C49A72"]');
-        if (!calBtn) return;
-        const wrapper = calBtn.closest('div[style*="position: fixed"]')
-                     || calBtn.closest('div[style*="position:fixed"]')
-                     || calBtn.parentElement;
-        if (!wrapper) return;
-        calMutObs.disconnect();
-        wrapper.style.transition = 'opacity 0.4s ease';
-        new IntersectionObserver(function (entries) {
-          wrapper.style.opacity = entries[0].isIntersecting ? '0' : '1';
-          wrapper.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
-        }, { threshold: 0.15 }).observe(ctaTarget);
+      // Watch only direct children of <body> — Cal injects its floating button
+      // as a top-level fixed-position div, so this uniquely targets it without
+      // accidentally traversing into page content.
+      const calMutObs = new MutationObserver(function (mutations) {
+        for (const mutation of mutations) {
+          for (const node of mutation.addedNodes) {
+            if (node.nodeType !== 1) continue;
+            if (node.parentElement !== document.body) continue;
+            const s = node.style ? node.style.cssText : '';
+            if (!s.includes('fixed')) continue;
+            // Found Cal's floating button wrapper — stop observing and hook scroll
+            calMutObs.disconnect();
+            node.style.transition = 'opacity 0.4s ease';
+            new IntersectionObserver(function (entries) {
+              node.style.opacity = entries[0].isIntersecting ? '0' : '1';
+              node.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+            }, { threshold: 0.15 }).observe(ctaTarget);
+            return;
+          }
+        }
       });
-      calMutObs.observe(document.body, { childList: true, subtree: true });
+      calMutObs.observe(document.body, { childList: true, subtree: false });
     })();
   </script>
 
