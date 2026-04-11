@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archive (staged for deletion after 30-day review)
+_archive/
