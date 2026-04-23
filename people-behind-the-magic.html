@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The People Behind the Magic | Beyond the Magic Consulting</title>
-  <meta name="description" content="The People Behind the Magic. A curated bench of practitioners supporting Beyond the Magic Consulting across leadership, learning, facilitation, culture, and operational excellence.">
+  <meta name="description" content="Meet the leadership and practitioner bench behind Beyond the Magic Consulting — a curated team of specialists built for real-world performance transformation.">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +39,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; font-size: 16px; }
-
     body {
       font-family: 'Barlow', sans-serif;
       font-weight: 400;
@@ -51,9 +49,7 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
-
     a { color: inherit; }
-
     .container { width: min(1180px, calc(100% - 3rem)); margin: 0 auto; }
 
     /* ═══ NAVIGATION ═══ */
@@ -68,7 +64,6 @@
       will-change: transform;
       transform: translateZ(0);
     }
-
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -78,18 +73,13 @@
       gap: 2.5rem;
       height: 70px;
     }
-
     .nav-logo {
       text-decoration: none;
       display: flex;
       align-items: center;
       flex-shrink: 0;
     }
-    .nav-logo img {
-      height: 36px;
-      width: auto;
-    }
-
+    .nav-logo img { height: 36px; width: auto; }
     .nav-links {
       display: flex;
       list-style: none;
@@ -118,7 +108,6 @@
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { width: 100%; }
-
     .nav-cta {
       background: var(--copper) !important;
       color: var(--white) !important;
@@ -129,7 +118,6 @@
     }
     .nav-cta:hover { background: #8B6143 !important; }
     .nav-cta::after { display: none !important; }
-
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -140,12 +128,7 @@
       border: none;
       margin-left: auto;
     }
-    .nav-toggle span {
-      width: 24px; height: 2px;
-      background: var(--white);
-      transition: all 0.3s ease;
-    }
-
+    .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; }
     .mobile-menu {
       display: none;
       position: fixed;
@@ -179,12 +162,10 @@
       text-align: center;
       transform: translateZ(0);
     }
-
     .hero-logo {
       width: min(320px, 60vw);
       margin: 0 auto 1.75rem;
     }
-
     .section-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 500;
@@ -194,11 +175,8 @@
       color: var(--copper);
       margin-bottom: 1rem;
     }
-
     h1, h2, h3 { color: var(--navy); }
-
     .hero .section-label { color: var(--copper-light); }
-
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.45rem, 5vw, 3.85rem);
@@ -207,7 +185,6 @@
       margin-bottom: 1rem;
       line-height: 1.2;
     }
-
     .hero p {
       font-family: 'Barlow', sans-serif;
       max-width: 780px;
@@ -219,9 +196,7 @@
 
     /* ═══ SHARED ═══ */
     section { padding: 6.5rem 0; }
-
     .copper-line { width: 50px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
-
     .section-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.25rem, 4vw, 3.25rem);
@@ -232,88 +207,217 @@
     }
     .section-title em { color: var(--copper); font-style: italic; font-weight: 400; }
 
-    /* ═══ INTRO SECTION ═══ */
-    .intro-grid {
+    /* ═══ LEADERSHIP SECTION ═══ */
+    .leadership-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 3rem;
-      align-items: center;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
     }
-
-    .intro-grid p {
-      font-size: 1.15rem;
-      line-height: 1.75;
-    }
-
-    .intro-card {
+    .leader-card {
       background: var(--white);
       border: 1px solid rgba(26,39,68,0.06);
       box-shadow: 0 8px 30px rgba(26,39,68,0.06);
       padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
     }
-
-    .intro-card h3 {
-      font-family: 'Barlow Condensed', sans-serif;
+    .leader-card-top {
+      display: flex;
+      gap: 1.75rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .leader-photo {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      border: 2px solid var(--copper-pale);
+    }
+    .leader-meta { flex: 1; }
+    .leader-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 1.35rem;
-      margin-bottom: 0.8rem;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
     }
-
-    .intro-card p { font-size: 1.15rem; }
-    .intro-card b { color: var(--navy); }
-
-    /* ═══ CAPABILITY BENCH ═══ */
-    .capability-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.4rem;
-      margin-top: 3rem;
-    }
-
-    .capability-card {
-      background: var(--white);
-      border: 1px solid rgba(26,39,68,0.06);
-      box-shadow: 0 4px 20px rgba(26,39,68,0.05);
-      padding: 2.2rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .capability-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 35px rgba(26,39,68,0.09);
-    }
-
-    .capability-num {
+    .leader-title {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.75rem;
-      font-weight: 300;
-      color: rgba(160,113,79,0.25);
-      margin-bottom: 0.5rem;
-      line-height: 1;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--copper);
+      margin-bottom: 0.85rem;
     }
+    .leader-hook {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-style: italic;
+      color: var(--navy);
+      line-height: 1.45;
+    }
+    .leader-bio {
+      font-size: 1.08rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      flex: 1;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--copper);
+      border: 1px solid rgba(160,113,79,0.3);
+      padding: 0.2rem 0.7rem;
+      display: inline-block;
+    }
+    .bio-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--copper);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      background: none;
+      border: none;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: auto;
+    }
+    .bio-link:hover { color: var(--navy); }
+    .bio-link::after { content: '→'; transition: transform 0.2s ease; }
+    .bio-link:hover::after { transform: translateX(3px); }
 
-    .capability-card h3 {
+    /* ═══ ROSTER SECTION ═══ */
+    .roster-wrapper { margin-top: 3rem; }
+    .roster-entry {
+      border-left: 3px solid var(--copper);
+      padding: 2.25rem 2rem 2.25rem 2.5rem;
+      border-bottom: 1px solid rgba(26,39,68,0.07);
+      background: var(--white);
+      transition: background 0.3s ease, border-left-color 0.3s ease;
+    }
+    .roster-entry:last-child { border-bottom: none; }
+    .roster-entry:hover {
+      background: var(--offwhite);
+      border-left-color: var(--copper-light);
+    }
+    .roster-specialty {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.65rem;
       font-weight: 600;
-      margin-bottom: 0.75rem;
+      color: var(--navy);
+      margin-bottom: 0.65rem;
+      line-height: 1.2;
+    }
+    .roster-desc {
+      font-size: 1.08rem;
+      color: var(--text-body);
+      line-height: 1.8;
+      max-width: 860px;
+      margin-bottom: 1rem;
     }
 
-    .capability-card p { color: var(--text-muted); font-size: 1.15rem; }
-
-    .capability-proof {
-      display: block;
-      margin-top: 1rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      color: var(--copper);
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      letter-spacing: 0.12em;
+    /* ═══ STATS BAND ═══ */
+    .stats-band {
+      padding: 6rem 0;
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+      color: var(--white);
+      text-align: center;
+    }
+    .stats-band .section-label { color: var(--copper-light); }
+    .stats-band-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.1rem, 4vw, 3rem);
       font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .stats-band-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.1rem;
+      margin-bottom: 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 500;
+      color: var(--copper-light);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.55);
     }
 
-    /* ═══ GALLERY BAND ═══ */
+    /* ═══ INDUSTRIES BAND ═══ */
+    .industries-band {
+      padding: 3.5rem 0;
+      background: var(--offwhite-warm);
+      text-align: center;
+    }
+    .industries-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+    }
+    .industries-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .industry-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.08rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      padding: 0.3rem 1.5rem;
+      border-right: 1px solid rgba(160,113,79,0.3);
+      line-height: 1.6;
+    }
+    .industry-item:last-child { border-right: none; }
+
+    /* ═══ GALLERY/PRINCIPLES BAND ═══ */
     .gallery-band {
       padding: 7rem 0;
       background:
@@ -323,9 +427,7 @@
       color: var(--white);
       transform: translateZ(0);
     }
-
     .gallery-band .section-label { color: var(--copper-light); }
-
     .gallery-band h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.25rem, 4vw, 3.25rem);
@@ -333,28 +435,24 @@
       font-weight: 500;
       margin-bottom: 1rem;
     }
-
     .gallery-band p {
       max-width: 700px;
       margin: 0 auto;
       color: rgba(255,255,255,0.8);
-      font-size: 1.25rem;
+      font-size: 1.2rem;
     }
-
     .principles-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1rem;
       margin-top: 2.5rem;
     }
-
     .principle {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.1);
       padding: 1.6rem;
       color: rgba(255,255,255,0.8);
     }
-
     .principle h3 {
       color: var(--white);
       font-family: 'Barlow Condensed', sans-serif;
@@ -364,10 +462,9 @@
       font-size: 1.35rem;
       margin-bottom: 0.5rem;
     }
+    .principle div { font-size: 1.08rem; }
 
-    .principle div { font-size: 1.1rem; }
-
-    /* ═══ CTA ═══ */
+    /* ═══ CTA BOX ═══ */
     .cta-box {
       background: linear-gradient(135deg, var(--navy), var(--navy-light));
       color: var(--white);
@@ -378,7 +475,6 @@
       gap: 2rem;
       align-items: center;
     }
-
     .cta-box h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.45rem;
@@ -386,9 +482,7 @@
       color: var(--white);
       margin-bottom: 0.5rem;
     }
-
     .cta-box p { color: rgba(255,255,255,0.75); font-size: 1.15rem; }
-
     .button {
       display: inline-flex;
       align-items: center;
@@ -416,18 +510,100 @@
       margin-top: 5rem;
       border-top: 1px solid rgba(160,113,79,0.12);
     }
-
     .footer-logo {
       height: 40px;
       width: auto;
       margin: 0 auto 1rem;
       display: block;
     }
+    footer div { font-family: 'Barlow', sans-serif; font-size: 1.03rem; }
 
-    footer div {
-      font-family: 'Barlow', sans-serif;
-      font-size: 1.03rem;
+    /* ═══ MODALS ═══ */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 27, 48, 0.9);
+      z-index: 2000;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      overflow-y: auto;
     }
+    .modal-backdrop.active { display: flex; }
+    .modal-content {
+      background: var(--offwhite);
+      max-width: 740px;
+      width: 100%;
+      position: relative;
+      margin: auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+    .modal-header {
+      background: var(--navy);
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .modal-photo {
+      width: 115px;
+      height: 115px;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      border: 2px solid rgba(196,154,114,0.35);
+    }
+    .modal-header-meta { flex: 1; padding-top: 0.25rem; }
+    .modal-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+    .modal-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--copper-light);
+      margin-bottom: 1rem;
+    }
+    .modal-hook {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.18rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .modal-body {
+      padding: 2.5rem;
+    }
+    .modal-body p {
+      font-size: 1.07rem;
+      line-height: 1.82;
+      color: var(--text-body);
+      margin-bottom: 1.1rem;
+    }
+    .modal-body p:last-of-type { margin-bottom: 1.75rem; }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.45);
+      font-size: 1.4rem;
+      line-height: 1;
+      padding: 0.35rem 0.6rem;
+      transition: color 0.2s ease;
+      font-family: 'Barlow', sans-serif;
+    }
+    .modal-close:hover { color: var(--white); }
 
     /* ═══ SCROLL REVEAL ═══ */
     .reveal {
@@ -437,22 +613,18 @@
       will-change: opacity, transform;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    noscript ~ * .reveal,
-    .no-js .reveal { opacity: 1; transform: none; }
+    noscript ~ * .reveal, .no-js .reveal { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
     @media (max-width: 1060px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .capability-grid { grid-template-columns: repeat(2, 1fr); }
-      .intro-grid,
-      .cta-box,
-      .principles-grid { grid-template-columns: 1fr; }
+      .leadership-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .principles-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-box { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 768px) {
-      .capability-grid { grid-template-columns: 1fr; }
       .container { width: calc(100% - 2rem); }
       section { padding: 4.5rem 0; }
       .hero { padding: 8rem 0 4rem; }
@@ -461,15 +633,29 @@
       .cta-box { padding: 2rem; }
       .cta-box h2 { font-size: 1.8rem; }
       .button { width: 100%; }
+      .leader-card-top { flex-direction: column; align-items: center; text-align: center; }
+      .leader-photo { width: 110px; height: 110px; }
+      .roster-entry { padding: 1.75rem 1.25rem 1.75rem 1.5rem; }
+      .roster-specialty { font-size: 1.4rem; }
+      .modal-header { flex-direction: column; align-items: center; text-align: center; }
+      .modal-photo { width: 100px; height: 100px; }
+      .modal-body { padding: 1.75rem; }
+      .modal-backdrop { padding: 1.5rem 1rem; }
+      .industry-item { border-right: none; padding: 0.25rem 0.9rem; border: 1px solid rgba(160,113,79,0.25); margin: 0.2rem; }
     }
-
+    @media (max-width: 520px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+      .principles-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 420px) {
-      .hero h1 { font-size: 1.8rem; }
-      .section-title { font-size: 1.8rem; }
+      .hero h1 { font-size: 1.85rem; }
+      .section-title { font-size: 1.85rem; }
     }
   </style>
 </head>
 <body>
+
+  <!-- ═══ NAVIGATION ═══ -->
   <nav id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
@@ -502,106 +688,248 @@
     <a href="index.html#contact" onclick="closeMobile()">Contact</a>
   </div>
 
+  <!-- ═══ HERO ═══ -->
   <header class="hero">
     <div class="container">
       <img class="hero-logo" src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" fetchpriority="high">
       <div class="section-label">The People Behind the Magic</div>
-      <h1>A curated bench of practitioners built for real world execution</h1>
-      <p>Beyond the Magic is intentionally structured around capability, not celebrity. The strength of the work comes from a deep bench of professionals who know how to align leaders, design learning, shape culture, facilitate transformation, and install systems that last.</p>
+      <h1>A curated bench of practitioners built for real-world execution</h1>
+      <p>Beyond the Magic is intentionally structured around capability, not celebrity. What follows is the leadership every engagement is anchored to — and the practitioner bench that stands behind it.</p>
     </div>
   </header>
 
+  <!-- ═══ LEADERSHIP SECTION ═══ -->
   <section>
-    <div class="container intro-grid reveal">
-      <div>
-        <div class="section-label">How We Think About Talent</div>
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Your Points of Contact</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">The right expertise, <em>at the right moment</em></h2>
-        <p>We do not position the team as a static roster. We position it as a strategic bench, assembled around the needs of the engagement. That approach gives clients access to the strengths required for the work, whether the moment calls for executive alignment, facilitation excellence, learning architecture, content strategy, operational activation, or sustainment planning.</p>
-        <p style="margin-top: 1rem;">It also reflects how transformation really happens. Different phases of the work require different forms of expertise, all aligned to one cohesive operating model.</p>
+        <h2 class="section-title">The architects who lead <em>every engagement</em></h2>
+        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8;">Every BTM engagement is led directly by a named Performance Architect — a practitioner with decades of earned experience inside world-class organizations. They are the relationship, the strategy, and the accountability from first conversation through final delivery.</p>
       </div>
-      <aside class="intro-card">
-        <h3>What clients gain</h3>
-        <p>A team built for <b>depth</b>, <b>flexibility</b>, and <b>precision</b> — not a one-size-fits-all consulting model. The result is stronger design, stronger delivery, and stronger transfer into the client organization.</p>
-      </aside>
+
+      <div class="leadership-grid">
+
+        <!-- Maurizio Landi -->
+        <div class="leader-card reveal">
+          <div class="leader-card-top">
+            <img class="leader-photo" src="assets/maurizio.png" alt="Maurizio Landi, Founder and Performance Architect">
+            <div class="leader-meta">
+              <div class="leader-name">Maurizio Landi</div>
+              <div class="leader-title">Founder &middot; Performance Architect</div>
+              <div class="leader-hook">"Performance is not inspired, it is designed."</div>
+            </div>
+          </div>
+          <p class="leader-bio">Maurizio spent over two decades inside world-class operational environments — opening a hotel from the ground up before thirty at Marriott International, then leading 375 Cast Members across Disney's flagship resorts and earning the Walt Disney Legacy Award. At Disney Institute, he closed over $3.2 million in enterprise engagements with Fortune 100 clients before founding Beyond the Magic to close the gap between inspiration and lasting infrastructure.</p>
+          <div class="tag-row">
+            <span class="tag">Walt Disney Legacy Award</span>
+            <span class="tag">Marriott International</span>
+            <span class="tag">Disney Institute</span>
+            <span class="tag">English &amp; Spanish</span>
+          </div>
+          <button class="bio-link" onclick="openModal('modal-maurizio')">Read Full Bio</button>
+        </div>
+
+        <!-- Dennis Hough -->
+        <div class="leader-card reveal">
+          <div class="leader-card-top">
+            <img class="leader-photo" src="assets/dennis.png" alt="Dennis Hough, Performance Architect and Organizational Strategist">
+            <div class="leader-meta">
+              <div class="leader-name">Dennis Hough</div>
+              <div class="leader-title">Performance Architect &middot; Organizational Strategist</div>
+              <div class="leader-hook">"Success is achieved by helping others be successful."</div>
+            </div>
+          </div>
+          <p class="leader-bio">An Industrial Engineer by training and a people developer by conviction, Dennis brings thirty years of experience shaped by Fortune 100 operations, the rigors of national security infrastructure, and his own organizational development practice — delivering an average 20% improvement in operational efficiency and profitability across clients ranging from startups to $150 million enterprises. A servant leader in every sense of the word.</p>
+          <div class="tag-row">
+            <span class="tag">Industrial Engineer</span>
+            <span class="tag">Six Sigma Black Belt</span>
+            <span class="tag">DOE National Security Complex</span>
+            <span class="tag">Founder, Affirm Consulting</span>
+          </div>
+          <button class="bio-link" onclick="openModal('modal-dennis')">Read Full Bio</button>
+        </div>
+
+      </div>
     </div>
   </section>
 
+  <!-- ═══ PRACTITIONER ROSTER ═══ -->
   <section style="background: var(--offwhite-warm);">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Capability Bench</div>
+        <div class="section-label">Practitioner Roster</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">The capabilities behind the work</h2>
+        <h2 class="section-title">The specialists who <em>stand behind the work</em></h2>
+        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8; margin-bottom: 3rem;">Assembled by conversation, not by resume. Every practitioner on this bench was invited because they hold a specific capability that took years — sometimes decades — to develop inside some of the most demanding organizations in the world. None of them are generic. All of them are proven.</p>
       </div>
 
-      <div class="capability-grid">
-        <article class="capability-card reveal">
-          <div class="capability-num">01</div>
-          <h3>Executive Alignment</h3>
-          <p>Leaders who know how to align strategy, behavior, accountability, and communication across senior teams so the culture does not fragment under pressure.</p>
-          <span class="capability-proof">Leadership clarity at the top</span>
-        </article>
-        <article class="capability-card reveal">
-          <div class="capability-num">02</div>
-          <h3>Facilitation Excellence</h3>
-          <p>Senior facilitators experienced with executive audiences, large group environments, and emotionally significant learning moments that require credibility and control.</p>
-          <span class="capability-proof">Trusted in the room</span>
-        </article>
-        <article class="capability-card reveal">
-          <div class="capability-num">03</div>
-          <h3>Instructional Design &amp; Learning Architecture</h3>
-          <p>Designers who convert strategic intent into structured learning journeys, tools, content, and practical pathways for adoption across roles and levels.</p>
-          <span class="capability-proof">Built for transfer</span>
-        </article>
-        <article class="capability-card reveal">
-          <div class="capability-num">04</div>
-          <h3>Culture &amp; Experience Design</h3>
-          <p>Practitioners who translate values into behaviors, rituals, and standards so the desired experience becomes visible in the day-to-day operation.</p>
-          <span class="capability-proof">Culture made observable</span>
-        </article>
-        <article class="capability-card reveal">
-          <div class="capability-num">05</div>
-          <h3>Operational Activation</h3>
-          <p>Leaders who understand how work lands in the field, where friction shows up, and how to design activation plans that hold up beyond the workshop.</p>
-          <span class="capability-proof">Execution in the real world</span>
-        </article>
-        <article class="capability-card reveal">
-          <div class="capability-num">06</div>
-          <h3>Program &amp; Engagement Leadership</h3>
-          <p>Strategic operators who coordinate stakeholders, timelines, approvals, and delivery streams so the engagement feels seamless from start to finish.</p>
-          <span class="capability-proof">One coordinated system</span>
-        </article>
+      <div class="roster-wrapper reveal">
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Learning Systems &amp; Journey Architecture</div>
+          <p class="roster-desc">The practitioner who walks into a training conversation and asks the harder question: where does the learning actually go after the room empties? Rooted in operations at one of the world's most admired entertainment organizations, this specialist engineers full learning journeys — systems that follow a person from their first day through full, sustained performance. Not a course designer. A learning architect.</p>
+          <div class="tag-row">
+            <span class="tag">Learning Journey Architecture</span>
+            <span class="tag">Onboarding &amp; Performance Systems</span>
+            <span class="tag">L&amp;D Design &amp; Sustainment</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Talent Acquisition &amp; Onboarding Strategy</div>
+          <p class="roster-desc">The specialist who understands that who you hire and how you welcome them shapes everything that follows. A former senior recruiter who spent years inside one of the world's most selective hiring environments — with particular expertise in translating non-traditional backgrounds, including military service, into organizational strength. A published author whose frameworks connect selection criteria to culture, not just skill set.</p>
+          <div class="tag-row">
+            <span class="tag">Talent Selection &amp; Culture Fit</span>
+            <span class="tag">Military-to-Civilian Translation</span>
+            <span class="tag">Onboarding Program Design</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Culture &amp; Guest Experience Design</div>
+          <p class="roster-desc">A practitioner who spent a career inside one of the world's most admired organizations, reaching its highest levels of recognition for living the culture from the inside out — not just teaching it. Brings that same operational lens to client challenges: not what the culture should say, but what it should feel like on the floor, in the interaction, and in every guest-facing moment. Designs solutions that are lean, legible, and built to hold long after the engagement ends.</p>
+          <div class="tag-row">
+            <span class="tag">Service Culture Design</span>
+            <span class="tag">Behavioral Standards Development</span>
+            <span class="tag">Guest Experience Architecture</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Enterprise Facilitation &amp; Service Culture</div>
+          <p class="roster-desc">With decades of experience translating world-class service principles to Fortune 100 organizations worldwide — across professional sports organizations, major stadium and venue operations, and large-volume event environments — this facilitator understands how to move large, complex audiences and hold rooms that do not tolerate weak facilitation. Built for scale. Designed for impact.</p>
+          <div class="tag-row">
+            <span class="tag">Large-Group Facilitation</span>
+            <span class="tag">High-Volume Event Environments</span>
+            <span class="tag">Service Culture Deployment</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Executive Team Alignment &amp; C-Suite Advisory</div>
+          <p class="roster-desc">The practitioner you bring in when the leadership team is talented but not unified. A former corporate attorney whose legal training sharpened not just how they think, but how they listen, question, and guide. Specializes in working with C-suite executives who struggle to align — not by forcing consensus, but by building the process architecture that makes agreement the natural outcome.</p>
+          <div class="tag-row">
+            <span class="tag">C-Suite Advisory &amp; Facilitation</span>
+            <span class="tag">Consensus &amp; Agreement Building</span>
+            <span class="tag">Negotiation &amp; Process Architecture</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Executive Coaching &amp; Leadership Wellbeing</div>
+          <p class="roster-desc">A former leadership development manager who has spent a career working inside the layer of the organization most often overlooked and most often responsible for whether anything actually holds: middle management. Works one-on-one with executives and emerging leaders to reduce burnout, build sustainable performance habits, and develop leadership teams that operate at their best — not just on good days.</p>
+          <div class="tag-row">
+            <span class="tag">Executive Coaching</span>
+            <span class="tag">Leadership Development</span>
+            <span class="tag">Wellbeing &amp; Burnout Prevention</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Creative Problem Solving &amp; Innovation Design</div>
+          <p class="roster-desc">The practitioner called in when the challenge is not execution — it is imagination. Applies research-backed creative frameworks to executive-level challenges, designing learning solutions that unlock capability rather than simply transfer information. A trusted thought partner for leaders who know something needs to change but cannot yet see what, or how.</p>
+          <div class="tag-row">
+            <span class="tag">Creative Strategy</span>
+            <span class="tag">Executive Learning Design</span>
+            <span class="tag">Innovation Frameworks</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">Emotional Intelligence &amp; Communication Strategy</div>
+          <p class="roster-desc">A leadership strategist shaped by two environments that demand absolute clarity under pressure: finance and military service. Certified in Applied Strategic Thinking through the Center for Management and Organizational Effectiveness. Works at the intersection of emotional intelligence, business acumen, and organizational communication to build leadership teams that perform with composure, cohesion, and accountability — regardless of conditions.</p>
+          <div class="tag-row">
+            <span class="tag">Emotional Intelligence Coaching</span>
+            <span class="tag">Organizational Communication</span>
+            <span class="tag">Applied Strategic Thinking</span>
+          </div>
+        </div>
+
+        <div class="roster-entry">
+          <div class="roster-specialty">International Business &amp; Growth Strategy</div>
+          <p class="roster-desc">A multilingual business mentor and certified leadership coach with more than twenty years of international consulting experience spanning European, American, and Latin American markets. Has driven measurable revenue and profitability growth for small and medium-sized companies across three continents — through work in marketing, market research, talent management, and technology. Delivers in both English and Spanish.</p>
+          <div class="tag-row">
+            <span class="tag">International Market Strategy</span>
+            <span class="tag">Multilingual Delivery (EN/ES)</span>
+            <span class="tag">Revenue &amp; Growth Consulting</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ═══ STATS BAND ═══ -->
+  <div class="stats-band">
+    <div class="container reveal">
+      <div class="section-label">The Collective</div>
+      <div class="stats-band-title">The depth behind every engagement</div>
+      <p class="stats-band-sub">This is not a one-person operation. And it was never meant to be.</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">11+</div>
+          <div class="stat-label">Practitioners &amp; Architects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">200+</div>
+          <div class="stat-label">Combined Years of Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Industries Represented</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4+</div>
+          <div class="stat-label">Continents of Delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ INDUSTRIES BAND ═══ -->
+  <div class="industries-band">
+    <div class="container reveal">
+      <div class="industries-label">Environments &amp; Industries Represented Across This Bench</div>
+      <div class="industries-list">
+        <span class="industry-item">Global Entertainment</span>
+        <span class="industry-item">Hospitality &amp; Hotels</span>
+        <span class="industry-item">Manufacturing &amp; Engineering</span>
+        <span class="industry-item">Professional Sports &amp; Venues</span>
+        <span class="industry-item">Military &amp; Defense</span>
+        <span class="industry-item">International Markets</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ WHY THIS MATTERS ═══ -->
   <section class="gallery-band">
     <div class="container reveal">
       <div class="section-label">Why This Matters</div>
       <h2>Transformation demands more than one point of view</h2>
-      <p>The firms that create lasting change do not rely on a single personality. They rely on aligned expertise. Our bench brings together complementary disciplines so each phase of the work is supported by the people best equipped to move it forward.</p>
+      <p>The firms that create lasting change do not rely on a single personality. They rely on aligned expertise. This bench brings together complementary disciplines so each phase of the work is supported by the people best equipped to move it forward.</p>
       <div class="principles-grid">
         <div class="principle">
           <h3>Depth</h3>
-          <div>Experienced practitioners, not generic staffing.</div>
+          <div>Experienced practitioners from the world's most demanding organizations — not generic staffing.</div>
         </div>
         <div class="principle">
           <h3>Flexibility</h3>
-          <div>Capability aligned to the needs of the engagement.</div>
+          <div>The right capability aligned to the specific engagement — not a one-size-fits-all model.</div>
         </div>
         <div class="principle">
           <h3>Consistency</h3>
-          <div>One operating philosophy across all contributors.</div>
+          <div>One operating philosophy across all contributors, regardless of who is in the room.</div>
         </div>
         <div class="principle">
           <h3>Transfer</h3>
-          <div>Built to strengthen the client organization over time.</div>
+          <div>Every engagement is designed to strengthen the client organization long after the work ends.</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══ CTA ═══ -->
   <section>
     <div class="container">
       <div class="cta-box reveal">
@@ -611,12 +939,13 @@
         </div>
         <div style="display:flex; flex-direction:column; gap:0.85rem; align-items:center;">
           <a class="button" href="/scheduling/">Book an Initial Advisory Conversation</a>
-          <a href="index.html#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.92rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s ease;" onmouseover="this.style.color='rgba(196,154,114,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Or contact us directly →</a>
+          <a href="index.html#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.92rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s ease;" onmouseover="this.style.color='rgba(196,154,114,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Or contact us directly &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="container">
       <img class="footer-logo" src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
@@ -624,17 +953,83 @@
     </div>
   </footer>
 
+  <!-- ═══ MODAL: MAURIZIO ═══ -->
+  <div class="modal-backdrop" id="modal-maurizio" role="dialog" aria-modal="true" aria-labelledby="modal-maurizio-name">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-maurizio')" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <img class="modal-photo" src="assets/maurizio.png" alt="Maurizio Landi">
+        <div class="modal-header-meta">
+          <div class="modal-name" id="modal-maurizio-name">Maurizio Landi</div>
+          <div class="modal-title">Founder &middot; Performance Architect</div>
+          <div class="modal-hook">"Performance is not inspired, it is designed."</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p>Maurizio Landi has spent over two decades studying one question: why do some organizations deliver exceptional performance consistently while others, with the same talent, the same training, and the same intentions, cannot?</p>
+        <p>That conviction was shaped early. Maurizio grew up inside a family-owned import business, watching a small warehouse grow into a substantial operation bringing fine European foods to the U.S. market. He saw firsthand that growth does not come from ambition alone — it comes from the structure you build around the people who do the work.</p>
+        <p>He carried that understanding into a nine-year career with Marriott International, starting as an hourly front desk agent and advancing through four properties across Central Florida — ultimately leading the build-out, hiring, grand opening, and full operations of the Residence Inn by Marriott in Lake Mary. Before he was thirty, he had opened a hotel from the ground up.</p>
+        <p>In 2011, Maurizio joined The Walt Disney Company as Concierge Manager at Disney's Grand Floridian Resort &amp; Spa — the company's flagship property. It was there he first observed something that would shape the rest of his career: the same service culture that defined the Grand Floridian's luxury experience was present, in equal measure, at Disney's most affordable property. The offering was different. The service was not. That consistency was not accidental — it was systematic. And that fascination pulled him toward the architecture behind the culture.</p>
+        <p>Over the next fifteen years, he held operational leadership roles across housekeeping, custodial, and warehouse management — leading a team of 375 Cast Members and overseeing more than 5,400 rooms at Disney's All-Star Resorts. He was recognized with the Walt Disney Legacy Award, the highest honor a Cast Member can receive, given to those who exemplify dreaming, creating, and inspiring.</p>
+        <p>His trajectory shifted from operations to organizational development. At Disney University, he led the onboarding team, facilitated a seven-week leadership development program, and developed safety and wellness training for leaders across Walt Disney World, Disneyland Resort, Disney Cruise Line, and Walt Disney Imagineering — shaping how Disney's own leaders learned to lead.</p>
+        <p>At Disney Institute, Maurizio spent four years as an Account Manager and Senior Facilitator. He led consultative engagements with enterprise clients across diverse industries, closed over $3.2 million in revenue, and built a portfolio of 28 strategic client relationships — helping organizations translate world-class principles into their own business environments.</p>
+        <p>It was inside that work — delivering world-class content to organizations eager to transform — that he identified the gap. Clients left inspired. But inspiration without infrastructure does not sustain. That insight became Beyond the Magic. Maurizio delivers in both English and Spanish, having built curriculum and facilitated programs for international clients across aviation and finance in Latin America.</p>
+        <div class="tag-row">
+          <span class="tag">Walt Disney Legacy Award</span>
+          <span class="tag">Marriott International</span>
+          <span class="tag">Disney Institute Senior Facilitator</span>
+          <span class="tag">Disney University</span>
+          <span class="tag">English &amp; Spanish</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: DENNIS ═══ -->
+  <div class="modal-backdrop" id="modal-dennis" role="dialog" aria-modal="true" aria-labelledby="modal-dennis-name">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modal-dennis')" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <img class="modal-photo" src="assets/dennis.png" alt="Dennis Hough">
+        <div class="modal-header-meta">
+          <div class="modal-name" id="modal-dennis-name">Dennis Hough</div>
+          <div class="modal-title">Performance Architect &middot; Organizational Strategist</div>
+          <div class="modal-hook">"Success is achieved by helping others be successful."</div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <p>Dennis Hough has spent thirty years asking the same question inside every organization he has served: what separates the leaders who develop people from the leaders who simply manage them? The answer, he has found, is almost never talent. It is intention, investment, and the willingness to come alongside someone and believe in their potential before they believe in it themselves.</p>
+        <p>Trained as an Industrial Engineer at the University of Tennessee — shaped to see systems, diagnose gaps, and build solutions that hold — Dennis entered the workforce with a rigorous, process-oriented mind. Early in his career, working in quality management and operations leadership within a Fortune 100 corporation, he discovered something no engineering curriculum teaches: the most important variable in any system is the person running it. That discovery became his life's work.</p>
+        <p>He spent a decade at the Department of Energy's Y-12 National Security Complex — one of the nation's most demanding operational environments — progressing through roles in quality engineering, facility management, business development, and strategic program development. He launched the Oak Ridge–Huntsville Partnership Office, a multi-institution collaboration connecting national laboratories, federal agencies, and universities. Along the way, he was recognized as a Department of Energy Mentor of the Year Nominee and a Small Business Advocate of the Year.</p>
+        <p>In 2015, Dennis founded Affirm Consulting, building it into a respected organizational development and strategy execution practice that partnered with companies ranging from startups to $150 million enterprises — delivering an average 20% improvement in operational efficiency and profitability across client engagements. In 2022, he served as Chief Operating Officer at MacArthur Group, a behavioral health enterprise serving U.S. Veterans, where he grew the organization to $20+ million in revenue and rebuilt the executive leadership team from the inside out.</p>
+        <p>In 2026, Dennis joined forces with Maurizio Landi as a Performance Architect at Beyond the Magic Consulting — bringing decades of operational strategy, leadership development, and organizational transformation to BTM's growing portfolio of clients.</p>
+        <p>What unifies every chapter of Dennis's career is not an industry or a title. It is a posture. He teaches. He mentors. He encourages. Rooted in his faith and his family, Dennis is a servant leader in every sense of the word — someone who has sat in the seat, made the hard calls, and consistently helped organizations and individuals find their way forward.</p>
+        <div class="tag-row">
+          <span class="tag">Industrial Engineer</span>
+          <span class="tag">Six Sigma Black Belt</span>
+          <span class="tag">DOE National Security Complex</span>
+          <span class="tag">Founder, Affirm Consulting</span>
+          <span class="tag">Servant Leadership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ SCRIPTS ═══ -->
   <script>
+    // Nav scroll shadow
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => {
       nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.2)' : 'none';
     });
 
+    // Mobile menu
     const navToggle = document.getElementById('navToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
     function closeMobile() { mobileMenu.classList.remove('open'); }
 
+    // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -649,13 +1044,40 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
     reveals.forEach(el => observer.observe(el));
 
-    // Hide Cal floating button when the CTA / footer area is visible
+    // Modal open / close
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+      backdrop.addEventListener('click', function(e) {
+        if (e.target === this) {
+          this.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-backdrop.active').forEach(m => {
+          m.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    // Hide Cal floating button when CTA section is visible
     (function () {
       const ctaTarget = document.querySelector('.cta-box') || document.querySelector('footer');
       if (!ctaTarget) return;
-      // Watch only direct children of <body> — Cal injects its floating button
-      // as a top-level fixed-position div, so this uniquely targets it without
-      // accidentally traversing into page content.
       const calMutObs = new MutationObserver(function (mutations) {
         for (const mutation of mutations) {
           for (const node of mutation.addedNodes) {
@@ -663,7 +1085,6 @@
             if (node.parentElement !== document.body) continue;
             const s = node.style ? node.style.cssText : '';
             if (!s.includes('fixed')) continue;
-            // Found Cal's floating button wrapper — stop observing and hook scroll
             calMutObs.disconnect();
             node.style.transition = 'opacity 0.4s ease';
             new IntersectionObserver(function (entries) {
@@ -686,5 +1107,6 @@
     Cal.ns["initial-advisory-conversation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1A2744"},"dark":{"cal-brand":"#F5F3EF"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   <!-- Cal floating-popup embed code ends -->
+
 </body>
 </html>
