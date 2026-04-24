@@ -400,9 +400,16 @@
       border-radius: 2px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .origin-quote-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
       background:
-        linear-gradient(180deg, rgba(20,31,56,0.2), rgba(20,31,56,0.48)),
-        url('assets/origin-facilitator.jpeg') center center / cover no-repeat;
+        linear-gradient(180deg, rgba(20,31,56,0.2), rgba(20,31,56,0.52)),
+        url('assets/final-stage-speaking.jpeg') center center / cover no-repeat;
+      filter: blur(4px);
+      z-index: 0;
     }
     .origin-quote {
       position: absolute;
@@ -414,6 +421,7 @@
       padding: 2rem;
       border-top: 3px solid var(--copper);
       box-shadow: 0 14px 35px rgba(0,0,0,0.2);
+      z-index: 1;
     }
     .origin-quote blockquote {
       font-family: 'Cormorant Garamond', serif;
@@ -433,55 +441,17 @@
       color: var(--copper-light);
     }
 
-    /* ═══ PHILOSOPHY ═══ */
-    .philosophy {
-      background: var(--navy-deep);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-    .philosophy::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 80% 50%, rgba(160,113,79,0.04) 0%, transparent 60%);
-    }
-    .philosophy .section-title { color: var(--offwhite); }
-    .philosophy-statement {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.75rem, 2.8vw, 2.45rem);
-      font-style: italic;
-      color: var(--copper-light);
-      text-align: center;
-      max-width: 600px;
-      margin: 2.5rem auto;
-      line-height: 1.4;
-    }
-    .philosophy-statement .white { color: var(--white); }
-    .philosophy-statement::before,
-    .philosophy-statement::after {
-      content: ''; display: block;
-      width: 35px; height: 1px;
-      background: var(--copper);
-      margin: 1.8rem auto;
-    }
-    .philosophy p {
-      color: rgba(255,255,255,0.65);
-      font-size: 1.25rem;
-      max-width: 640px;
-      margin: 0 auto 1.25rem;
-      text-align: center;
-    }
+    /* ═══ ORIGIN PILLARS ═══ */
     .philosophy-pillars {
       display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin-top: 2.5rem;
+      justify-content: flex-start;
+      gap: 2.5rem;
+      margin-top: 2rem;
       flex-wrap: wrap;
     }
     .pillar {
-      text-align: center;
-      max-width: 220px;
+      text-align: left;
+      max-width: 240px;
     }
     .pillar-label {
       font-family: 'Barlow Condensed', sans-serif;
@@ -489,24 +459,26 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--copper-light);
+      color: var(--copper);
     }
 
-    /* ═══ IMMERSION BAND ═══ */
-    .immersion-band {
-      position: relative;
-      padding: 10rem 2rem;
+    /* ═══ FRAMEWORK DIVIDER BAND ═══ */
+    .framework-divider {
+      margin: 3.5rem -2rem;
+      padding: 5rem 2rem;
       background:
-        linear-gradient(180deg, rgba(20,31,56,0.7), rgba(20,31,56,0.8)),
+        linear-gradient(180deg, rgba(20,31,56,0.65), rgba(20,31,56,0.75)),
         url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
-      color: var(--white);
       text-align: center;
       transform: translateZ(0);
     }
-    .immersion-band .section-label {
-      font-size: 1.4rem;
-      letter-spacing: 0.4em;
-      font-weight: 700;
+    .framework-divider-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--copper-light);
     }
 
     /* ═══ FRAMEWORK ═══ */
@@ -607,45 +579,6 @@
       color: var(--copper);
     }
 
-    /* ═══ INDUSTRIES / REACH BAND ═══ */
-    .industries {
-      background:
-        linear-gradient(180deg, rgba(20,31,56,0.74), rgba(20,31,56,0.84)),
-        url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 7rem 2rem;
-      transform: translateZ(0);
-    }
-    .industries .section-label { color: var(--copper-light); }
-    .industries .section-title { color: var(--white); }
-    .industries .section-title em { color: var(--copper-light); }
-    .industries-clusters {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-    .cluster {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 1.8rem;
-      color: rgba(255,255,255,0.85);
-    }
-    .cluster h3 {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-    .cluster p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.6;
-    }
 
     /* ═══ WHY US — consolidated distinctions + partnership ═══ */
     .why-us {
@@ -728,8 +661,8 @@
     /* ═══ COMMITMENT ═══ */
     .commitment {
       background:
-        linear-gradient(180deg, rgba(20,31,56,0.76), rgba(20,31,56,0.88)),
-        url('assets/final-stage-speaking.jpeg') center center / cover no-repeat;
+        linear-gradient(180deg, rgba(20,31,56,0.72), rgba(20,31,56,0.84)),
+        url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
       text-align: center;
       padding: 7rem 2rem;
       position: relative;
@@ -865,6 +798,149 @@
       color: rgba(255,255,255,0.22);
     }
 
+    /* ═══ PROOF / TRACK RECORD ═══ */
+    .proof { background: var(--offwhite-warm); }
+
+    .proof-stats {
+      display: flex;
+      justify-content: center;
+      background: var(--navy);
+      margin: 3rem -2rem 3.5rem;
+      flex-wrap: wrap;
+    }
+    .proof-stat {
+      padding: 1.8rem 2.5rem;
+      text-align: center;
+      border-right: 1px solid rgba(160,113,79,0.15);
+      flex: 1;
+      min-width: 160px;
+    }
+    .proof-stat:last-child { border-right: none; }
+    .proof-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: var(--copper-light);
+      line-height: 1;
+      display: block;
+    }
+    .proof-stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .proof-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--white);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      border-top: 3px solid var(--copper);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .proof-featured-img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .proof-featured-copy {
+      padding: 3rem 2.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .proof-sector {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 0.6rem;
+    }
+    .proof-featured-copy h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .proof-featured-copy p {
+      font-size: 1.17rem;
+      color: var(--text-body);
+      line-height: 1.75;
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 0;
+    }
+    .proof-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      border-top: 3px solid var(--copper);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+      transition: all 0.4s ease;
+    }
+    .proof-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+    }
+    .proof-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+    .proof-card p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .proof-also {
+      margin-top: 3rem;
+      padding-top: 2.2rem;
+      border-top: 1px solid rgba(26,39,68,0.09);
+      text-align: center;
+    }
+    .proof-also-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+    }
+    .proof-also-names {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      line-height: 2.2;
+    }
+    .proof-also-names span { margin: 0 0.4rem; }
+    .proof-also-dot {
+      color: var(--copper);
+      margin: 0 0.3rem;
+    }
+
     /* ═══ ANIMATIONS ═══ */
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
@@ -890,7 +966,6 @@
       .nav-toggle { display: flex; }
       .framework-grid { grid-template-columns: repeat(2, 1fr); }
       .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .industries-clusters { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       section { padding: 4.5rem 1.5rem; }
@@ -909,9 +984,14 @@
       .ticker-tag { font-size: 0.7rem; }
       .origin-quote-wrap { min-height: 340px; }
       .origin-quote { position: relative; right: auto; bottom: auto; max-width: 100%; }
-      .immersion-band { padding: 7rem 1.5rem; }
-      .industries-clusters { grid-template-columns: 1fr; }
       .people-cta-card { padding: 1.8rem; }
+      .framework-divider { margin: 2.5rem -1.5rem; padding: 4rem 1.5rem; }
+      .proof-featured { grid-template-columns: 1fr; }
+      .proof-featured-img { min-height: 260px; object-position: center; }
+      .proof-featured-copy { padding: 2rem 1.8rem; }
+      .proof-grid { grid-template-columns: 1fr; }
+      .proof-stats { margin: 2.5rem -1.5rem 2.5rem; }
+      .proof-stat { min-width: 50%; border-bottom: 1px solid rgba(160,113,79,0.1); }
     }
     @media (max-width: 420px) {
       .hero-badge { width: 160px; }
@@ -931,10 +1011,8 @@
         <img src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
       </a>
       <ul class="nav-links">
-        <li><a href="#origin">Origin</a></li>
-        <li><a href="#philosophy">Philosophy</a></li>
+        <li><a href="#origin">Our Story</a></li>
         <li><a href="#framework">Approach</a></li>
-        <li><a href="#services">Services</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="people-behind-the-magic.html">People</a></li>
         <li><a href="/scheduling/">Schedule</a></li>
@@ -947,10 +1025,8 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#origin" onclick="closeMobile()">Origin</a>
-    <a href="#philosophy" onclick="closeMobile()">Philosophy</a>
+    <a href="#origin" onclick="closeMobile()">Our Story</a>
     <a href="#framework" onclick="closeMobile()">Approach</a>
-    <a href="#services" onclick="closeMobile()">Services</a>
     <a href="#why-us" onclick="closeMobile()">Why Us</a>
     <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
     <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
@@ -998,19 +1074,25 @@
     </div>
   </div>
 
-  <!-- ═══ ORIGIN ═══ -->
+  <!-- ═══ WHO WE ARE ═══ -->
   <section class="origin" id="origin">
+    <span id="philosophy"></span>
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Our Origin</div>
+        <div class="section-label">Our Story</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">A lineage built <em>from the inside</em></h2>
+        <h2 class="section-title">Built from the inside. <em>Committed to what lasts.</em></h2>
       </div>
       <div class="origin-grid">
         <div class="origin-text reveal">
-          <p>Beyond the Magic Consulting exists because the strongest service and leadership principles in the world should not be confined to a single park, a single campus, or a single organization.</p>
-          <p>Built by leaders who spent decades inside the Walt Disney Company, including years shaping work connected to the Disney Institute, the firm carries forward a lived understanding of how culture, leadership, service, and learning come together in practice — not just in theory.</p>
-          <p>When that chapter changed, we saw both an opportunity and a responsibility — to carry the torch forward, to adapt it with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
+          <p>Maurizio Landi built his practice on a belief that the strongest performance principles in the world should not be confined to a single organization.</p>
+          <p>Shaped by decades inside the Walt Disney Company — including years of work connected to the Disney Institute — he carries a practitioner's understanding of how culture, leadership, learning, and service come together not in theory, but in the daily systems and operational disciplines that make excellence repeatable at scale. When that chapter closed, he saw both a responsibility and an opportunity: to carry that methodology forward with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
+          <p>A trusted counselor by nature, Maurizio's approach has always been grounded in integrity, a genuine investment in the people he serves, and a conviction that what you build for others should outlast the engagement. That ethic extends beyond client work — into board service, community leadership, and relationships that have endured across two decades of practice.</p>
+          <div class="philosophy-pillars reveal">
+            <div class="pillar"><span class="pillar-label">Structure, not just inspiration</span></div>
+            <div class="pillar"><span class="pillar-label">Integration, not just content</span></div>
+            <div class="pillar"><span class="pillar-label">Sustainment, not just launch</span></div>
+          </div>
         </div>
         <div class="reveal">
           <div class="origin-quote-wrap">
@@ -1024,39 +1106,14 @@
     </div>
   </section>
 
-  <!-- ═══ PHILOSOPHY ═══ -->
-  <section class="philosophy" id="philosophy">
-    <div class="container-narrow">
-      <div class="reveal" style="text-align:center;">
-        <div class="section-label">Our Philosophy</div>
-        <div class="copper-line center"></div>
-        <h2 class="section-title">Practitioners, <em>not theorists</em></h2>
-      </div>
-      <div class="reveal">
-        <p style="text-align:center;">Most organizations invest heavily in training and culture initiatives while the underlying architecture remains unchanged. Training can reinforce a culture, but training alone cannot sustain one. We address the architecture itself — the identity, the expectations, the systems, and the leadership routines that make excellence repeatable.</p>
-        <div class="philosophy-statement">Performance is not inspired. It is <span class="white">designed.</span></div>
-        <p style="text-align:center;">We believe culture becomes real when identity is intentionally designed, clearly understood, practically equipped, and consistently sustained. That belief shapes every engagement we lead — turning aspiration into structure, and structure into performance that endures.</p>
-      </div>
-      <div class="philosophy-pillars reveal">
-        <div class="pillar"><span class="pillar-label">Structure, not just inspiration</span></div>
-        <div class="pillar"><span class="pillar-label">Integration, not just content</span></div>
-        <div class="pillar"><span class="pillar-label">Sustainment, not just launch</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ IMMERSION BAND ═══ -->
-  <section class="immersion-band">
-    <div class="container reveal">
-      <div class="section-label" style="color: var(--copper-light); margin-bottom: 0;">How We Work</div>
-    </div>
-  </section>
-
-  <!-- ═══ FRAMEWORK ═══ -->
+  <!-- ═══ HOW WE WORK + WHAT WE DELIVER ═══ -->
   <section class="framework" id="framework">
+    <span id="services"></span>
+
+    <!-- The Name Tag Framework -->
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">The Name Tag Framework</div>
+        <div class="section-label">Our Approach</div>
         <div class="copper-line center"></div>
         <h2 class="section-title">From aspiration <em>to operation</em></h2>
         <p class="framework-intro">A name tag is a small object with heavy meaning. It identifies the individual, signals belonging to something bigger, and carries expectations about how the brand should be experienced. Every organization has its own version of that symbolic carrier of identity. Our framework is built around how to design it, support it, and make it last.</p>
@@ -1084,17 +1141,15 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ═══ SERVICES — condensed ═══ -->
-  <section class="services" id="services">
+    <!-- Visual divider band -->
+    <div class="framework-divider reveal">
+      <span class="framework-divider-label">What We Deliver</span>
+    </div>
+
+    <!-- Services -->
     <div class="container">
-      <div class="reveal" style="text-align:center;">
-        <div class="section-label">What We Do</div>
-        <div class="copper-line center"></div>
-        <h2 class="section-title">The full transformation <em>journey</em></h2>
-        <p class="services-intro">We partner with organizations over months — and at times years — to co-design, install, and embed the systems required for excellence to be felt in every interaction.</p>
-      </div>
+      <p class="services-intro reveal">We partner with organizations over months — and at times years — to co-design, install, and embed the systems required for excellence to be felt in every interaction.</p>
       <div class="services-grid reveal">
         <div class="service-item">
           <h3>Organizational Culture &amp; Experience Design</h3>
@@ -1121,32 +1176,92 @@
           <span class="service-outcome">So performance stays measurable</span>
         </div>
       </div>
+      <div class="reveal" style="text-align:center; margin-top:2.5rem;">
+        <a href="/scheduling/" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Start the Conversation</a>
+      </div>
     </div>
+
   </section>
 
-  <!-- ═══ INDUSTRIES ═══ -->
-  <section class="industries">
+  <!-- ═══ PROOF / TRACK RECORD ═══ -->
+  <section class="proof" id="proof">
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">Our Reach &amp; Track Record</div>
-        <div class="copper-line center" style="background:var(--copper-light);"></div>
-        <h2 class="section-title">Central Florida roots. <em>Global scale.</em></h2>
-        <p style="max-width:620px; margin:0 auto 0; color:rgba(255,255,255,0.8);">Our team members have led service excellence, culture transformation, and large-scale operational initiatives across industries where consistency, precision, and trust must coexist at scale.</p>
+        <div class="section-label">Track Record</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">The work <em>speaks for itself</em></h2>
+        <p style="max-width:620px; margin:0 auto 0; font-size:1.2rem; color:var(--text-body);">Before BTM, this bench was already in the room — at Fortune 500 companies, military institutions, global enterprises, and universities. That experience doesn't disappear when the umbrella changes.</p>
       </div>
-      <div class="industries-clusters reveal">
-        <div class="cluster">
-          <h3>Enterprise Environments</h3>
-          <p>Fortune 100 corporations, multi-site operations, and complex organizational ecosystems.</p>
-        </div>
-        <div class="cluster">
-          <h3>High-Stakes Experiences</h3>
-          <p>Aviation, hospitality, healthcare, faith-based institutions, sports, and guest-facing environments.</p>
-        </div>
-        <div class="cluster">
-          <h3>Large-Scale Activation</h3>
-          <p>From executive audiences to frontline teams and volunteer populations, while protecting fidelity across the system.</p>
+    </div>
+
+    <!-- Stat bar — full-width navy band -->
+    <div class="proof-stats reveal">
+      <div class="proof-stat">
+        <span class="proof-stat-num">12,000+</span>
+        <span class="proof-stat-label">Professionals Developed</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-stat-num">113</span>
+        <span class="proof-stat-label">Engagements Delivered</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-stat-num">200+</span>
+        <span class="proof-stat-label">Facilitation Days</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-stat-num">14</span>
+        <span class="proof-stat-label">Industries Served</span>
+      </div>
+      <div class="proof-stat">
+        <span class="proof-stat-num">3</span>
+        <span class="proof-stat-label">Languages Delivered</span>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Featured: Stryker -->
+      <div class="proof-featured reveal">
+        <img src="assets/stryker-costa-rica.jpg" alt="Maurizio Landi facilitating at Stryker's Costa Rica office" class="proof-featured-img" loading="lazy">
+        <div class="proof-featured-copy">
+          <div class="proof-sector">Enterprise &middot; Global Operations</div>
+          <h3>Stryker</h3>
+          <p>A Fortune 500 medical device leader engaged our team to design and deliver a custom leadership experience at their Costa Rica operations — entirely on-site, in their environment. The engagement required full curriculum customization, bilingual facilitation capability, and deep alignment with Stryker's operational culture. This is what it looks like when development is built around an organization's specific identity, not adapted from a shelf.</p>
         </div>
       </div>
+
+      <!-- Three supporting vignettes -->
+      <div class="proof-grid">
+        <div class="proof-card reveal">
+          <div class="proof-sector">Government &middot; Senior Leadership</div>
+          <h3>U.S. Army War College</h3>
+          <p>Engaged to develop and facilitate programming for the nation's most senior military leaders and strategic decision-makers. An audience that demands substance over inspiration — and structure that holds under pressure.</p>
+        </div>
+        <div class="proof-card reveal">
+          <div class="proof-sector">Hospitality &middot; Service Excellence</div>
+          <h3>Drury Hotels</h3>
+          <p>Led a custom-designed service excellence program for 400 team members — on-site, built directly around Drury's brand standards. Designed to be owned and sustained by their internal leaders long after the engagement ended.</p>
+        </div>
+        <div class="proof-card reveal">
+          <div class="proof-sector">Financial Services &middot; Executive Learning</div>
+          <h3>Thrivent</h3>
+          <p>A two-day custom leadership experience for 96 senior leaders — designed around Thrivent's organizational identity and mission, delivered in an immersive environment where the setting itself became part of the learning.</p>
+        </div>
+      </div>
+
+      <!-- Also served -->
+      <div class="proof-also reveal">
+        <div class="proof-also-label">Also Served</div>
+        <div class="proof-also-names">
+          <span>Southern Methodist University</span><span class="proof-also-dot">&middot;</span>
+          <span>Sicredi</span><span class="proof-also-dot">&middot;</span>
+          <span>Zion Church</span><span class="proof-also-dot">&middot;</span>
+          <span>Hispanic Chamber of Commerce</span><span class="proof-also-dot">&middot;</span>
+          <span>Spruce Meadows</span><span class="proof-also-dot">&middot;</span>
+          <span>SR Companies</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1156,40 +1271,26 @@
       <div class="reveal" style="text-align:center;">
         <div class="section-label">Why Us</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">Five distinctions that <em>define our work</em></h2>
-        <p class="why-us-intro">Our engagements are collaborative, immersive, and designed for transfer of ownership. These five principles shape how we partner and what clients can expect.</p>
+        <h2 class="section-title">Three distinctions that <em>define our work</em></h2>
+        <p class="why-us-intro">Our engagements are collaborative, immersive, and designed for transfer of ownership. These three principles shape how we partner and what clients can expect.</p>
       </div>
 
       <div class="distinction reveal">
         <div class="dist-num">01</div>
-        <div>
-          <h3>Practitioners, Not Theorists</h3>
-          <p>The systems we design are refined through firsthand leadership, operational management, and transformation work in demanding environments. We align with your mission, culture, and operational realities — because we have led inside environments like yours.</p>
-        </div>
-      </div>
-      <div class="distinction reveal">
-        <div class="dist-num">02</div>
         <div>
           <h3>Operating Systems, Not Training Alone</h3>
           <p>Training creates awareness. Operating systems create consistency. We design the latter — building on your existing strengths rather than replacing them, so the desired experience does not depend on individual heroics.</p>
         </div>
       </div>
       <div class="distinction reveal">
-        <div class="dist-num">03</div>
+        <div class="dist-num">02</div>
         <div>
           <h3>Arrive, Build, Transfer, Endure</h3>
           <p>We do not arrive, inspire, and depart. We build with your team, transfer capability, and equip your people to own and evolve the system independently. Our goal is never dependency — it is capability transfer.</p>
         </div>
       </div>
       <div class="distinction reveal">
-        <div class="dist-num">04</div>
-        <div>
-          <h3>Full-Service Capability Under One Roof</h3>
-          <p>From strategy and curriculum to facilitation, project leadership, content architecture, and sustainment — the work is coordinated as one system with measurable accountability from day one.</p>
-        </div>
-      </div>
-      <div class="distinction reveal">
-        <div class="dist-num">05</div>
+        <div class="dist-num">03</div>
         <div>
           <h3>Scale Without Losing Fidelity</h3>
           <p>Whether an engagement touches 50 leaders or 30,000 participants, we protect clarity, consistency, and trust across every layer — reinforced through governance, feedback loops, and leader reinforcement that prevents drift.</p>
@@ -1205,13 +1306,14 @@
     </div>
   </section>
 
-  <!-- ═══ COMMITMENT ═══ -->
+  <!-- ═══ CTA BRIDGE ═══ -->
   <section class="commitment">
     <div class="commitment-content reveal">
-      <div class="section-label" style="color:var(--copper-light);">Our Commitment</div>
-      <blockquote>We do not arrive, inspire, and depart.<br>We arrive, we build, we transfer ownership,<br>and we ensure that what is created endures.</blockquote>
+      <div class="section-label" style="color:var(--copper-light);">The Next Step</div>
+      <blockquote>Ready to move from aspiration<br>to operation?</blockquote>
       <div class="copper-line center"></div>
-      <p class="commitment-sub">We help transform ideals into experiences people can feel —<br>every day, at every level, in every interaction.</p>
+      <p class="commitment-sub">Start with a conversation. No pitch — just an honest dialogue about what your organization needs and whether we are the right fit to help you build it.</p>
+      <a href="/scheduling/" class="btn-outline" style="display:inline-block; margin-top:2rem;">Book an Advisory Conversation</a>
     </div>
   </section>
 
@@ -1259,10 +1361,8 @@
       <img src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
     </div>
     <div class="footer-links">
-      <a href="#origin">Origin</a>
-      <a href="#philosophy">Philosophy</a>
+      <a href="#origin">Our Story</a>
       <a href="#framework">Approach</a>
-      <a href="#services">Services</a>
       <a href="#why-us">Why Us</a>
       <a href="people-behind-the-magic.html">People</a>
       <a href="#contact">Contact</a>
