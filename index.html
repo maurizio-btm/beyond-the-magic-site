@@ -160,7 +160,11 @@
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      padding: 4px;
+      padding: 10px;
+      min-width: 44px;
+      min-height: 44px;
+      justify-content: center;
+      align-items: center;
       background: none;
       border: none;
       margin-left: auto;
@@ -999,6 +1003,8 @@
       .section-title { font-size: 1.8rem; }
       .framework-num { font-size: 2rem; }
       .hero-actions { flex-direction: column; align-items: center; }
+      .proof-stats { margin: 2rem -1rem 2rem; }
+      .framework-divider { margin: 2rem -1rem; padding: 3rem 1rem; }
     }
   </style>
 </head>
@@ -1327,6 +1333,7 @@
         <p style="max-width:520px; margin:0 auto 1.5rem; color:var(--text-body);">Ready to move from aspiration to operation. Start the conversation with our team.</p>
         <a href="/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Book an Initial Advisory Conversation</a>
         <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted);">Or reach our team directly below</p>
+        <p style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; letter-spacing:0.1em; margin-top:0.6rem; color:var(--text-muted);">Main Office &middot; <a class="phn" data-p="3212856244" style="color:var(--copper); text-decoration:none;">(321) 285-MAGIC</a></p>
       </div>
       <div class="contact-grid" style="margin-top:2.5rem;">
         <div class="contact-card reveal">
@@ -1369,6 +1376,7 @@
     </div>
     <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
     <div class="footer-locale">Central Florida &middot; Global Reach</div>
+    <div class="footer-info" style="margin-top:0.35rem;"><a class="phn" data-p="3212856244" style="color:var(--copper-light); text-decoration:none;">(321) 285-MAGIC</a></div>
   </footer>
 
   <!-- ═══ SCRIPTS ═══ -->
@@ -1415,6 +1423,11 @@
       const addr = u + '@' + d + '.' + t;
       el.href = 'mai' + 'lto:' + addr;
       el.textContent = addr;
+    });
+
+    // Assemble phone hrefs at runtime so Cloudflare cannot detect them
+    document.querySelectorAll('.phn').forEach(el => {
+      el.href = 'tel:+1' + el.getAttribute('data-p');
     });
 
     // Hide Cal floating button when contact section is visible
