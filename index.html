@@ -208,11 +208,25 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
+      background: var(--navy);
+      transform: translateZ(0);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: url('assets/hero-executive-room.jpeg') center center / cover no-repeat;
+      filter: blur(5px);
+      z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.78) 0%, rgba(20,31,56,0.88) 100%),
-        radial-gradient(circle at 18% 30%, rgba(181,136,90,0.18), transparent 36%),
-        url('assets/hero-executive-room.jpeg') center center / cover no-repeat;
-      transform: translateZ(0);
+        radial-gradient(circle at 18% 30%, rgba(181,136,90,0.18), transparent 36%);
+      z-index: 1;
     }
 
     .hero-content {
@@ -470,13 +484,30 @@
     .framework-divider {
       margin: 3.5rem -2rem;
       padding: 5rem 2rem;
-      background:
-        linear-gradient(180deg, rgba(20,31,56,0.65), rgba(20,31,56,0.75)),
-        url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
       text-align: center;
       transform: translateZ(0);
     }
+    .framework-divider::before {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
+      filter: blur(5px);
+      z-index: 0;
+    }
+    .framework-divider::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20,31,56,0.65), rgba(20,31,56,0.75));
+      z-index: 1;
+    }
     .framework-divider-label {
+      position: relative;
+      z-index: 2;
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.1rem;
       font-weight: 600;
@@ -664,16 +695,30 @@
 
     /* ═══ COMMITMENT ═══ */
     .commitment {
-      background:
-        linear-gradient(180deg, rgba(20,31,56,0.72), rgba(20,31,56,0.84)),
-        url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
       text-align: center;
       padding: 7rem 2rem;
-      position: relative;
       color: var(--white);
       transform: translateZ(0);
     }
-    .commitment-content { position: relative; }
+    .commitment::before {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
+      filter: blur(5px);
+      z-index: 0;
+    }
+    .commitment::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(20,31,56,0.72), rgba(20,31,56,0.84));
+      z-index: 1;
+    }
+    .commitment-content { position: relative; z-index: 2; }
     .commitment blockquote {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.45rem, 2.2vw, 1.9rem);
