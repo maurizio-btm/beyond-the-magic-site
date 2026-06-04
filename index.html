@@ -317,6 +317,23 @@
       animation: fadeInUp 0.8s ease 3.0s forwards;
     }
 
+    .hero-helper {
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.38);
+      max-width: 500px;
+      margin: 1.2rem auto 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease 3.2s forwards;
+    }
+    .hero-helper a {
+      color: var(--copper-light);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .hero-helper a:hover { color: var(--copper-pale); }
+
     .btn-outline {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 1.05rem;
@@ -1063,9 +1080,10 @@
       </a>
       <ul class="nav-links">
         <li><a href="#origin">Our Story</a></li>
-        <li><a href="#framework">Approach</a></li>
+        <li><a href="#framework">How We Work</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="people-behind-the-magic.html">People</a></li>
+        <li><a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a></li>
         <li><a href="/scheduling/">Schedule</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
@@ -1077,9 +1095,10 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#origin" onclick="closeMobile()">Our Story</a>
-    <a href="#framework" onclick="closeMobile()">Approach</a>
+    <a href="#framework" onclick="closeMobile()">How We Work</a>
     <a href="#why-us" onclick="closeMobile()">Why Us</a>
     <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
+    <a href="https://bizhealth.ai" target="_blank" rel="noopener" onclick="closeMobile()">Assessment</a>
     <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
@@ -1090,12 +1109,13 @@
       <img src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" class="hero-badge" fetchpriority="high">
       <p class="hero-pa">Performance Architects</p>
       <h1>Performance is not inspired.<br>It is <span class="copper">designed.</span></h1>
-      <p class="hero-body">We design the systems that make performance consistent, measurable, and scalable — across culture, leadership, learning, and service.</p>
+      <p class="hero-body">We design the systems behind service excellence — so customer experience, leadership behavior, and team performance improve in ways that last.</p>
       <div class="hero-actions">
-        <a href="#origin" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">Discover Our Story</a>
         <a href="/scheduling/" class="btn-copper" style="min-width:220px; text-align:center; white-space:nowrap; padding:0.9rem 2.2rem;">Book a Session</a>
-        <a href="people-behind-the-magic.html" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">The Team</a>
+        <a href="https://bizhealth.ai" class="btn-outline" target="_blank" rel="noopener" style="min-width:220px; text-align:center; white-space:nowrap;">Start with a Health Assessment</a>
+        <a href="#origin" class="btn-ghost" style="min-width:220px; text-align:center; white-space:nowrap;">Our Story</a>
       </div>
+      <p class="hero-helper">Not ready for a full engagement? <a href="https://bizhealth.ai" target="_blank" rel="noopener">BizHealth.ai</a> offers a diagnostic starting point — identify where leadership, culture, operations, and customer experience need the most attention first.</p>
     </div>
     <div class="hero-scroll">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
@@ -1138,6 +1158,7 @@
           <p>Maurizio Landi built his practice on a belief that the strongest performance principles in the world should not be confined to a single organization.</p>
           <p>Shaped by decades inside one of the world's most operationally complex entertainment enterprises — including years leading enterprise consulting and facilitating executive leadership programs across industries — he carries a practitioner's understanding of how culture, leadership, learning, and service come together not in theory, but in the daily systems and operational disciplines that make excellence repeatable at scale. When that chapter closed, he saw both a responsibility and an opportunity: to carry that methodology forward with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
           <p>A trusted counselor by nature, Maurizio's approach has always been grounded in integrity, a genuine investment in the people he serves, and a conviction that what you build for others should outlast the engagement. That ethic extends beyond client work — into board service, community leadership, and relationships that have endured across two decades of practice.</p>
+          <p>That experience shapes how BTM helps organizations build cultures, leaders, and service systems that hold under real-world pressure.</p>
           <div class="philosophy-pillars reveal">
             <div class="pillar"><span class="pillar-label">Structure, not just inspiration</span></div>
             <div class="pillar"><span class="pillar-label">Integration, not just content</span></div>
@@ -1166,7 +1187,7 @@
         <div class="section-label">Our Approach</div>
         <div class="copper-line center"></div>
         <h2 class="section-title">From aspiration <em>to operation</em></h2>
-        <p class="framework-intro">A name tag is a small object with heavy meaning. It identifies the individual, signals belonging to something bigger, and carries expectations about how the brand should be experienced. Every organization has its own version of that symbolic carrier of identity. Our framework is built around how to design it, support it, and make it last.</p>
+        <p class="framework-intro">Every organization has symbols, standards, and behaviors that shape how its brand is experienced. Our work helps leaders design those systems intentionally, build them into daily operations, activate them through learning and leadership, and sustain them over time.</p>
       </div>
       <div class="framework-grid">
         <div class="framework-card reveal">
@@ -1189,6 +1210,16 @@
           <h3>Sustain</h3>
           <p>Reinforce, measure, coach, and maintain the culture so the identity does not fade as the organization grows, changes, or faces pressure.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- BizHealth.ai Integration Block -->
+    <div class="container">
+      <div class="reveal" style="margin-top:3rem; padding:2.5rem 3rem; background:var(--white); border-top:3px solid var(--copper); box-shadow:0 1px 12px rgba(0,0,0,0.05); text-align:center;">
+        <div class="section-label">Start with diagnosis before design</div>
+        <div class="copper-line center"></div>
+        <p style="font-size:1.2rem; color:var(--text-body); max-width:580px; margin:0 auto 1.75rem; line-height:1.7;">For organizations that need clarity before committing to a larger engagement, <a href="https://bizhealth.ai" target="_blank" rel="noopener" style="color:var(--copper); text-decoration:none;">BizHealth.ai</a> offers a practical starting point. It helps identify where leadership, culture, operations, and customer experience need the most attention — so the next step is more informed.</p>
+        <a href="https://bizhealth.ai" target="_blank" rel="noopener" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Begin the Assessment</a>
       </div>
     </div>
 
@@ -1322,7 +1353,7 @@
         <div class="section-label">Why Us</div>
         <div class="copper-line center"></div>
         <h2 class="section-title">Three distinctions that <em>define our work</em></h2>
-        <p class="why-us-intro">Our engagements are collaborative, immersive, and designed for transfer of ownership. These three principles shape how we partner and what clients can expect.</p>
+        <p class="why-us-intro">BTM is not built to deliver inspiration alone. It is built to help organizations translate standards, values, and service ambitions into operating reality. Our engagements are collaborative, immersive, and designed for transfer of ownership — these three principles define how we partner and what clients can expect.</p>
       </div>
 
       <div class="distinction reveal">
@@ -1374,7 +1405,7 @@
         <div class="section-label">Get In Touch</div>
         <div class="copper-line center"></div>
         <h2 class="section-title">Let's build something <em>extraordinary</em></h2>
-        <p style="max-width:520px; margin:0 auto 1.5rem; color:var(--text-body);">Ready to move from aspiration to operation. Start the conversation with our team.</p>
+        <p style="max-width:560px; margin:0 auto 1.5rem; color:var(--text-body);">Whether you are exploring a focused engagement or beginning with an assessment, BTM can help you identify the right next step.</p>
         <a href="/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Book an Initial Advisory Conversation</a>
         <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted);">Or reach our team directly below</p>
         <p style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; letter-spacing:0.1em; margin-top:0.6rem; color:var(--text-muted);">Main Office &middot; <a class="phn" data-p="3212856244" style="color:var(--copper); text-decoration:none;">(321) 285-MAGIC</a></p>
@@ -1413,9 +1444,10 @@
     </div>
     <div class="footer-links">
       <a href="#origin">Our Story</a>
-      <a href="#framework">Approach</a>
+      <a href="#framework">How We Work</a>
       <a href="#why-us">Why Us</a>
       <a href="people-behind-the-magic.html">People</a>
+      <a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>

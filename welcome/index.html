@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Welcome Aboard | Beyond the Magic Consulting</title>
+  <meta name="description" content="Thank you for partnering with Beyond the Magic Consulting. Here is what happens next.">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1A2744;
+      --navy-deep: #111B30;
+      --navy-light: #243458;
+      --copper: #A0714F;
+      --copper-light: #C49A72;
+      --copper-pale: #D4B896;
+      --offwhite: #F5F3EF;
+      --offwhite-warm: #EDE9E2;
+      --charcoal: #1E2023;
+      --text-body: #3D3D3D;
+      --text-muted: #6E6E6E;
+      --white: #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      color: var(--text-body);
+      background: var(--offwhite);
+      line-height: 1.75;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ═══ NAV ═══ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(25, 39, 68, 1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(160, 113, 79, 0.15);
+      transition: box-shadow 0.4s ease;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      height: 70px;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.6rem;
+      align-items: center;
+      margin-left: auto;
+    }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem;
+      font-weight: 500;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1px;
+      background: var(--copper);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      min-width: 44px;
+      min-height: 44px;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      margin-left: auto;
+    }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0; bottom: 0;
+      background: rgba(17, 27, 48, 0.98);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+    }
+    .mobile-menu a:hover { color: var(--copper-light); }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: var(--navy);
+      padding-top: 70px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: -30px;
+      background: url('../assets/hero-executive-room.jpeg') center center / cover no-repeat;
+      filter: blur(6px);
+      z-index: 0;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(20,31,56,0.82) 0%, rgba(20,31,56,0.92) 100%),
+        radial-gradient(circle at 50% 28%, rgba(196,154,114,0.22), transparent 42%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+      padding: 2rem;
+    }
+    .hero-mark {
+      width: 220px;
+      height: auto;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1.0s ease 4.4s forwards;
+    }
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp 1.0s ease 4.6s forwards;
+    }
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--copper);
+      margin: 0 auto 1.6rem;
+      opacity: 0;
+      animation: fadeUp 1.0s ease 4.8s forwards;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 7vw, 5.25rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.005em;
+    }
+    .hero h1 .line {
+      display: block;
+      opacity: 0;
+      transform: translateY(18px);
+      filter: blur(6px);
+    }
+    .hero h1 .line-1 {
+      animation: lineReveal 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.6s forwards;
+    }
+    .hero h1 .line-2 {
+      animation: lineReveal 1.8s cubic-bezier(0.2, 0.7, 0.2, 1) 2.6s forwards;
+    }
+    .hero h1 em { color: var(--copper-light); font-style: italic; }
+
+    @keyframes lineReveal {
+      0%   { opacity: 0; transform: translateY(18px); filter: blur(6px); }
+      100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    .hero-body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.78);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.75;
+      opacity: 0;
+      animation: fadeUp 1.0s ease 5.0s forwards;
+    }
+
+    @keyframes fadeUp {
+      0%   { opacity: 0; transform: translateY(14px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-mark, .hero-eyebrow, .hero-divider, .hero-body,
+      .hero h1 .line, .hero h1 .line-1, .hero h1 .line-2 {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+      }
+    }
+
+    /* ═══ GENERAL SECTIONS ═══ */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .container-narrow { max-width: 820px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.0rem, 3.6vw, 2.9rem);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 1.4rem;
+    }
+    .section-title em { font-style: italic; color: var(--copper); }
+    .copper-line { width: 50px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
+    .copper-line.center { margin-left: auto; margin-right: auto; }
+    .lead {
+      font-size: 1.18rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .lead.center { margin-left: auto; margin-right: auto; }
+
+    /* ═══ NEXT STEPS ═══ */
+    .next-steps { background: var(--offwhite); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 3rem;
+    }
+    .step-card {
+      background: var(--white);
+      border: 1px solid rgba(26,39,68,0.06);
+      border-top: 3px solid var(--copper);
+      padding: 2.2rem 1.9rem;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.03);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .step-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.07);
+    }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--copper);
+      line-height: 1;
+      margin-bottom: 0.9rem;
+    }
+    .step-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+    .step-card p {
+      font-size: 1.02rem;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* ═══ BEHIND THE SCENES ═══ */
+    .quiet-work {
+      background: var(--offwhite-warm);
+      text-align: center;
+    }
+    .quiet-work .container-narrow { padding: 1rem 0; }
+    .quiet-work .lead { margin-top: 0.5rem; }
+    .quiet-pull {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.4rem, 2.4vw, 1.8rem);
+      color: var(--navy);
+      line-height: 1.45;
+      max-width: 720px;
+      margin: 2rem auto 0;
+    }
+    .quiet-pull::before, .quiet-pull::after {
+      content: '';
+      display: block;
+      width: 38px;
+      height: 1px;
+      background: var(--copper-light);
+      margin: 0 auto 1.2rem;
+    }
+    .quiet-pull::after { margin: 1.2rem auto 0; }
+
+    /* ═══ TEAM CLOSING ═══ */
+    .closing { background: var(--navy); color: var(--white); padding: 6rem 2rem 5rem; }
+    .closing .section-label { color: var(--copper-light); }
+    .closing .section-title { color: var(--white); }
+    .closing .section-title em { color: var(--copper-light); }
+    .closing .lead { color: rgba(255,255,255,0.78); }
+    .closing .copper-line { background: var(--copper-light); }
+
+    .team-photos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+      max-width: 740px;
+      margin: 3rem auto 1.25rem;
+    }
+    .team-photo-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.4s ease;
+    }
+    .team-photo-link:hover { transform: translateY(-4px); }
+    .team-photo-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(196,154,114,0.35);
+      box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+      aspect-ratio: 4 / 5;
+      background: var(--navy-light);
+    }
+    .team-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.6s ease, filter 0.6s ease;
+      filter: saturate(0.95);
+    }
+    .team-photo-link:hover .team-photo-frame img { transform: scale(1.03); filter: saturate(1.05); }
+    .team-photo-caption {
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .team-photo-caption .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--white);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .team-photo-caption .role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+    }
+    .team-cta {
+      text-align: center;
+      margin-top: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+    .team-cta a {
+      color: var(--copper-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,154,114,0.35);
+      padding-bottom: 1px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .team-cta a:hover { color: var(--white); border-color: var(--white); }
+
+    /* ═══ CONTACT BLOCK ═══ */
+    .contact-strip {
+      background: var(--navy-deep);
+      padding: 4rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(196,154,114,0.18);
+    }
+    .contact-strip .section-label { color: var(--copper-light); }
+    .contact-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .contact-strip h2 em { font-style: italic; color: var(--copper-light); }
+    .contact-strip p.intro {
+      color: rgba(255,255,255,0.65);
+      max-width: 580px;
+      margin: 0 auto 2.4rem;
+      font-size: 1.05rem;
+    }
+    .main-line {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2.4rem;
+    }
+    .main-line a { color: var(--copper-light); text-decoration: none; }
+    .main-line a:hover { color: var(--white); }
+
+    .contact-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-tile {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,154,114,0.18);
+      border-top: 2px solid var(--copper);
+      padding: 1.6rem 1.8rem;
+    }
+    .contact-tile .tile-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.1rem;
+    }
+    .contact-tile .tile-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 0.9rem;
+    }
+    .contact-tile .tile-line { font-size: 1rem; color: rgba(255,255,255,0.78); margin-bottom: 0.25rem; }
+    .contact-tile .tile-line a {
+      color: var(--white);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,154,114,0.35);
+      padding-bottom: 1px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .contact-tile .tile-line a:hover { color: var(--copper-light); border-color: var(--copper-light); }
+
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: rgba(25, 39, 68, 1);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(160,113,79,0.12);
+    }
+    .footer-logo img { height: 40px; margin-bottom: 1.2rem; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.8rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .footer-links a:hover { color: var(--copper-light); }
+    .footer-info {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .footer-locale { color: var(--copper-light); margin-top: 0.4rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; }
+
+    /* ═══ REVEAL ═══ */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; will-change: opacity, transform; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .no-js .reveal { opacity: 1; transform: none; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .team-photos { grid-template-columns: 1fr; max-width: 360px; }
+      .contact-pair { grid-template-columns: 1fr; }
+      section { padding: 4.5rem 1.5rem; }
+      .closing { padding: 4.5rem 1.5rem 3.5rem; }
+      .contact-strip { padding: 3.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
+      </a>
+      <ul class="nav-links">
+        <li><a href="/#origin">Our Story</a></li>
+        <li><a href="/#framework">How We Work</a></li>
+        <li><a href="/#why-us">Why Us</a></li>
+        <li><a href="/people-behind-the-magic.html">People</a></li>
+        <li><a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a></li>
+        <li><a href="/scheduling/">Schedule</a></li>
+        <li><a href="/#contact" class="nav-cta" style="background:var(--copper); color:#fff; padding:0.55rem 1.3rem; border-radius:2px;">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/#origin" onclick="closeMobile()">Our Story</a>
+    <a href="/#framework" onclick="closeMobile()">How We Work</a>
+    <a href="/#why-us" onclick="closeMobile()">Why Us</a>
+    <a href="/people-behind-the-magic.html" onclick="closeMobile()">People</a>
+    <a href="https://bizhealth.ai" target="_blank" rel="noopener" onclick="closeMobile()">Assessment</a>
+    <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
+    <a href="/#contact" onclick="closeMobile()">Contact</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-content">
+      <img src="../assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" class="hero-mark">
+      <p class="hero-eyebrow">Welcome Aboard</p>
+      <div class="hero-divider"></div>
+      <h1>
+        <span class="line line-1">Thank you,</span>
+        <span class="line line-2">The <em>work</em> is already underway.</span>
+      </h1>
+      <p class="hero-body">Your signature has been received. The preparation began the moment we shook hands. With your trust confirmed, we move from groundwork to partnership.</p>
+    </div>
+  </section>
+
+  <!-- ═══ NEXT STEPS ═══ -->
+  <section class="next-steps">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">What Happens Next</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">A clear path from <em>signature</em> to start</h2>
+        <p class="lead center">No guesswork. Here is exactly what to expect over the next several days.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <h3>Countersignatures in motion</h3>
+          <p>Your signed agreement is being routed to our team for countersignatures, typically completed within 24 hours.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <h3>Final copy to your inbox</h3>
+          <p>Once fully executed, the final agreement will be emailed to you as a PDF for your records. Please save it somewhere accessible.</p>
+        </div>
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <h3>We reach out to begin</h3>
+          <p>You will hear from us shortly to confirm kickoff logistics or to deliver the first phase of work if it has already been scoped.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BEHIND THE SCENES ═══ -->
+  <section class="quiet-work">
+    <div class="container-narrow reveal">
+      <div class="section-label" style="text-align:center;">Already In Motion</div>
+      <div class="copper-line center"></div>
+      <h2 class="section-title" style="text-align:center;">What you'll feel from day one began before today</h2>
+      <p class="lead center">Behind the scenes, our team has been quietly preparing — reviewing context, sequencing the first stages of the engagement, and shaping the questions we will ask first. Your decision did not start a clock. It confirmed work that respect for your time had already set in motion.</p>
+      <p class="quiet-pull">When we said we were ready, we meant it. Now you will feel it.</p>
+    </div>
+  </section>
+
+  <!-- ═══ TEAM CLOSING ═══ -->
+  <section class="closing">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Your Team</div>
+        <div class="copper-line center"></div>
+        <h2 class="section-title">We are <em>your team</em>, ready to serve</h2>
+        <p class="lead center">Two principals. One promise: a partnership built on candor, craft, and the conviction that performance is engineered, not improvised.</p>
+      </div>
+
+      <div class="team-photos reveal">
+        <a href="/people-behind-the-magic.html" class="team-photo-link" aria-label="Meet the people behind the magic">
+          <div class="team-photo-frame">
+            <img src="../assets/maurizio-contact.jpeg" alt="Maurizio Landi, Founder and Performance Architect" loading="lazy">
+          </div>
+          <div class="team-photo-caption">
+            <span class="name">Maurizio Landi</span>
+            <span class="role">Founder &middot; Performance Architect</span>
+          </div>
+        </a>
+        <a href="/people-behind-the-magic.html" class="team-photo-link" aria-label="Meet the people behind the magic">
+          <div class="team-photo-frame">
+            <img src="../assets/dennis-contact.jpeg" alt="Dennis Hough, Performance Architect" loading="lazy">
+          </div>
+          <div class="team-photo-caption">
+            <span class="name">Dennis Hough</span>
+            <span class="role">Performance Architect</span>
+          </div>
+        </a>
+      </div>
+
+      <p class="team-cta reveal"><a href="/people-behind-the-magic.html">Meet the full bench &rarr;</a></p>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT STRIP ═══ -->
+  <section class="contact-strip">
+    <div class="reveal">
+      <div class="section-label">Reach Us Directly</div>
+      <h2>However you need us, <em>we are here</em></h2>
+      <p class="intro">Questions about the agreement, the timeline, or anything in between — use any of the lines below.</p>
+      <p class="main-line">Main Office &middot; <a class="phn" data-p="3212856244">(321) 285-MAGIC</a></p>
+    </div>
+
+    <div class="contact-pair reveal">
+      <div class="contact-tile">
+        <div class="tile-name">Maurizio Landi</div>
+        <div class="tile-role">Founder &middot; Performance Architect</div>
+        <div class="tile-line"><a class="eml" data-u="maurizio" data-d="beyondthemagic" data-t="co"></a></div>
+        <div class="tile-line"><a class="phn" data-p="4079253295">407.925.3295</a></div>
+      </div>
+      <div class="contact-tile">
+        <div class="tile-name">Dennis Hough</div>
+        <div class="tile-role">Performance Architect</div>
+        <div class="tile-line"><a class="eml" data-u="dennis" data-d="beyondthemagic" data-t="co"></a></div>
+        <div class="tile-line"><a class="phn" data-p="8655664147">865.566.4147</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-logo">
+      <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
+    </div>
+    <div class="footer-links">
+      <a href="/#origin">Our Story</a>
+      <a href="/#framework">How We Work</a>
+      <a href="/#why-us">Why Us</a>
+      <a href="/people-behind-the-magic.html">People</a>
+      <a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
+    <div class="footer-locale">Central Florida &middot; Global Reach</div>
+    <div class="footer-info" style="margin-top:0.35rem;"><a class="phn" data-p="3212856244" style="color:var(--copper-light); text-decoration:none;">(321) 285-MAGIC</a></div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Nav shadow on scroll
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    function closeMobile() { mobileMenu.classList.remove('open'); }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // Assemble emails at runtime so Cloudflare cannot detect them
+    document.querySelectorAll('.eml').forEach(el => {
+      const u = el.getAttribute('data-u');
+      const d = el.getAttribute('data-d');
+      const t = el.getAttribute('data-t');
+      const addr = u + '@' + d + '.' + t;
+      el.href = 'mai' + 'lto:' + addr;
+      el.textContent = addr;
+    });
+
+    // Assemble phone hrefs at runtime so Cloudflare cannot detect them
+    document.querySelectorAll('.phn').forEach(el => {
+      el.href = 'tel:+1' + el.getAttribute('data-p');
+    });
+  </script>
+</body>
+</html>
