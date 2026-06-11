@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Beyond the Magic — Compass Bullet Mark">
+  <title>BTM Compass — Simplified 4-Ray Bullet Mark</title>
+  <!-- Master cardinal geometry, scaled 3x, recentered at (100,100). Solid copper, no diagonals. -->
+  <polygon points="100,10 112,88 100,100 88,88" fill="#C49A72"/>
+  <polygon points="100,190 112,112 100,100 88,112" fill="#C49A72"/>
+  <polygon points="184,100 106,88 100,100 106,112" fill="#C49A72"/>
+  <polygon points="16,100 94,88 100,100 94,112" fill="#C49A72"/>
+  <circle cx="100" cy="100" r="11" fill="#C49A72"/>
+</svg>

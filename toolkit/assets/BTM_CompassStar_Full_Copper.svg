@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Beyond the Magic — Compass-Star Brand Mark">
+  <title>BTM Compass-Star — Full 8-Ray Mark</title>
+  <!-- Cardinals: master geometry scaled 3x, centered at (100,100) -->
+  <polygon points="100,10 112,88 100,100 88,88" fill="#C49A72"/>
+  <polygon points="100,190 112,112 100,100 88,112" fill="#C49A72"/>
+  <polygon points="184,100 106,88 100,100 106,112" fill="#C49A72"/>
+  <polygon points="16,100 94,88 100,100 94,112" fill="#C49A72"/>
+  <!-- Diagonals: mirror-symmetric across both axes (corrects asymmetry from master) -->
+  <polygon points="163,37 106,91 100,100 109,94" fill="#C49A72" opacity="0.6"/>
+  <polygon points="37,37 94,91 100,100 91,94" fill="#C49A72" opacity="0.6"/>
+  <polygon points="163,163 106,109 100,100 109,106" fill="#C49A72" opacity="0.6"/>
+  <polygon points="37,163 94,109 100,100 91,106" fill="#C49A72" opacity="0.6"/>
+  <!-- Center dot -->
+  <circle cx="100" cy="100" r="9" fill="#C49A72"/>
+</svg>

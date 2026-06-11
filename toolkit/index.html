@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Brand Toolkit · Beyond the Magic Consulting</title>
+<link rel="icon" href="assets/BTM_CompassStar_Bullet_Copper_1024.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1A2744; --charcoal:#1E2023; --slate-deep:#2C3038; --slate-mid:#3D4450; --slate-light:#5C6370;
+    --copper:#A0714F; --copper-light:#C49A72; --copper-pale:#D4B896;
+    --offwhite:#F5F3EF; --warmwhite:#FAF8F5; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Barlow',sans-serif;font-weight:300;color:var(--charcoal);background:var(--offwhite);font-size:16px;line-height:1.7;}
+  img{max-width:100%;display:block;}
+  a{color:var(--copper);}
+
+  .eyebrow{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--copper);}
+  .rule{width:48px;height:2px;background:var(--copper);margin:18px 0 26px;}
+  h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--navy);letter-spacing:-0.01em;line-height:1.15;}
+  h2{font-size:clamp(30px,4vw,44px);}
+  h3{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:24px;color:var(--navy);}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 8vw;}
+  @media(min-width:1500px){.wrap{padding:0 48px;}}
+  section{padding:96px 0;scroll-margin-top:64px;}
+  @media(max-width:700px){section{padding:64px 0;}}
+
+  .btn{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:14px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;padding:13px 28px;border-radius:0;cursor:pointer;transition:background .2s,color .2s,border-color .2s;}
+  .btn-copper{background:var(--copper);color:var(--white);border:1px solid var(--copper);}
+  .btn-copper:hover{background:var(--navy);border-color:var(--navy);}
+  .btn-outline-dark{background:transparent;color:var(--navy);border:1px solid var(--copper);}
+  .btn-outline-dark:hover{background:var(--copper);color:var(--white);}
+
+  /* ── Gate ─────────────────────────────────────── */
+  #gate{position:fixed;inset:0;z-index:1000;background:var(--navy);display:flex;align-items:center;justify-content:center;padding:24px;}
+  .gate-card{max-width:420px;width:100%;text-align:center;}
+  .gate-card img{width:200px;margin:0 auto 36px;}
+  .gate-card .eyebrow{color:var(--copper-light);}
+  .gate-card h1{color:var(--offwhite);font-size:clamp(34px,6vw,46px);margin:10px 0 6px;}
+  .gate-card p{color:var(--copper-pale);font-size:15px;margin-bottom:34px;}
+  .gate-form{display:flex;border:1px solid var(--copper-light);}
+  .gate-form input{flex:1;min-width:0;background:transparent;border:none;outline:none;padding:14px 16px;color:var(--offwhite);font-family:'Barlow',sans-serif;font-size:16px;letter-spacing:.08em;}
+  .gate-form input::placeholder{color:var(--slate-light);letter-spacing:.05em;}
+  .gate-form button{background:var(--copper-light);color:var(--navy);border:none;border-radius:0;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:14px;letter-spacing:.2em;text-transform:uppercase;padding:0 24px;cursor:pointer;transition:background .2s;}
+  .gate-form button:hover{background:var(--copper-pale);}
+  #gate-error{color:var(--copper-pale);font-size:13px;margin-top:14px;min-height:20px;visibility:hidden;}
+  #gate-error.show{visibility:visible;}
+  .gate-foot{margin-top:48px;font-size:12px;color:var(--slate-light);}
+  body.locked{overflow:hidden;}
+  #toolkit{display:none;}
+  body.unlocked #toolkit{display:block;}
+  body.unlocked #gate{display:none;}
+
+  /* ── Hero ─────────────────────────────────────── */
+  .hero{background:var(--navy);text-align:center;padding:110px 0 96px;}
+  .hero img{width:230px;margin:0 auto 44px;}
+  .hero .eyebrow{color:var(--copper-light);}
+  .hero h1{color:var(--offwhite);font-size:clamp(40px,6vw,72px);margin:14px 0 18px;}
+  .hero p.lede{color:var(--copper-pale);max-width:640px;margin:0 auto;font-size:17px;}
+  .hero .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:22px;color:var(--offwhite);margin-top:38px;}
+  .hero .tagline em{font-style:italic;color:var(--copper-light);}
+
+  /* ── Section nav ──────────────────────────────── */
+  .toolkit-nav{background:var(--charcoal);position:sticky;top:0;z-index:50;}
+  .toolkit-nav .wrap{display:flex;gap:34px;overflow-x:auto;height:64px;align-items:center;}
+  .toolkit-nav a{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--offwhite);text-decoration:none;white-space:nowrap;transition:color .2s;}
+  .toolkit-nav a:hover{color:var(--copper-light);}
+
+  /* ── Cards / grids ────────────────────────────── */
+  .grid{display:grid;gap:28px;}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  .card{background:var(--warmwhite);border:1px solid rgba(0,0,0,.08);display:flex;flex-direction:column;}
+  .card-preview{height:190px;display:flex;align-items:center;justify-content:center;padding:28px;}
+  .card-preview img{max-height:100%;max-width:78%;object-fit:contain;}
+  .bg-navy{background:var(--navy);}
+  .bg-white{background:var(--white);border-bottom:1px solid rgba(0,0,0,.06);}
+  .bg-photo{background:linear-gradient(135deg,var(--slate-deep) 0%,var(--navy) 45%,var(--copper) 130%);}
+  .bg-offwhite{background:var(--offwhite);border-bottom:1px solid rgba(0,0,0,.06);}
+  .card-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1;}
+  .card-body .lockup-label{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--copper);margin-bottom:8px;}
+  .card-body h3{margin-bottom:10px;}
+  .card-body p{font-size:15px;color:var(--slate-mid);margin-bottom:8px;}
+  .card-body p strong{font-weight:500;color:var(--navy);}
+  .card-body .dl{margin-top:auto;padding-top:18px;}
+  .filemeta{font-size:12.5px;color:var(--slate-light);letter-spacing:.02em;margin-top:10px;}
+
+  /* ── Color swatches ───────────────────────────── */
+  .swatch-group{margin-bottom:42px;}
+  .swatch-group .eyebrow{color:var(--slate-light);margin-bottom:16px;display:block;}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;}
+  .swatch{border:1px solid rgba(0,0,0,.08);background:var(--warmwhite);cursor:pointer;}
+  .swatch .chip{height:96px;}
+  .swatch .info{padding:13px 15px;}
+  .swatch .name{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);}
+  .swatch .hex{font-size:14px;color:var(--slate-mid);}
+  .swatch .use{font-size:12.5px;color:var(--slate-light);}
+  .swatch .copy-hint{font-size:11px;color:var(--copper);visibility:hidden;}
+  .swatch:hover .copy-hint{visibility:visible;}
+
+  /* ── Typography section ───────────────────────── */
+  .type-card{background:var(--warmwhite);border:1px solid rgba(0,0,0,.08);padding:34px 36px;margin-bottom:24px;}
+  .type-card .role{font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--copper);margin-bottom:14px;}
+  .type-sample-display{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(28px,4vw,42px);color:var(--navy);line-height:1.2;margin-bottom:14px;}
+  .type-sample-condensed{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:clamp(22px,3vw,30px);letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin-bottom:14px;}
+  .type-sample-body{font-family:'Barlow',sans-serif;font-weight:300;font-size:17px;color:var(--charcoal);max-width:680px;margin-bottom:14px;}
+  .type-card .meta{font-size:13.5px;color:var(--slate-light);margin-bottom:20px;}
+  .embed-block{background:var(--charcoal);color:var(--offwhite);font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;line-height:1.6;padding:22px 24px;overflow-x:auto;white-space:pre;margin-top:14px;}
+  .embed-head{display:flex;justify-content:space-between;align-items:center;margin-top:34px;}
+  .copy-btn{background:transparent;border:1px solid var(--copper);color:var(--copper);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:8px 16px;border-radius:0;cursor:pointer;transition:background .2s,color .2s;}
+  .copy-btn:hover{background:var(--copper);color:var(--white);}
+
+  /* ── Usage rules ──────────────────────────────── */
+  .rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px;}
+  .rules-col{background:var(--warmwhite);border:1px solid rgba(0,0,0,.08);padding:34px 36px;}
+  .rules-col h3{margin-bottom:18px;}
+  .rules-col ul{list-style:none;}
+  .rules-col li{font-size:15px;color:var(--slate-mid);padding:9px 0 9px 30px;position:relative;border-bottom:1px solid rgba(0,0,0,.05);}
+  .rules-col li:last-child{border-bottom:none;}
+  .rules-col.do li::before{content:'·';position:absolute;left:6px;top:4px;color:var(--copper);font-size:26px;font-weight:700;}
+  .rules-col.dont li::before{content:'✕';position:absolute;left:4px;top:10px;color:var(--copper);font-size:13px;}
+  .clearspace-note{margin-top:28px;background:var(--navy);padding:26px 30px;}
+  .clearspace-note p{color:var(--offwhite);font-size:15px;}
+  .clearspace-note .eyebrow{color:var(--copper-light);display:block;margin-bottom:8px;}
+
+  /* ── Usage map table ──────────────────────────── */
+  table.usage-map{width:100%;border-collapse:collapse;background:var(--warmwhite);border:1px solid rgba(0,0,0,.08);}
+  .usage-map th{background:var(--navy);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:500;font-size:11px;letter-spacing:.25em;text-transform:uppercase;text-align:left;padding:12px 16px;}
+  .usage-map td{font-size:15px;color:var(--slate-mid);padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top;}
+  .usage-map tr:nth-child(even) td{background:rgba(250,248,245,.6);}
+  .usage-map td a{color:var(--copper);text-decoration:underline;}
+  .table-scroll{overflow-x:auto;}
+
+  /* ── Documents ────────────────────────────────── */
+  .doc-card{background:var(--navy);padding:46px 48px;display:flex;flex-wrap:wrap;align-items:center;gap:30px;justify-content:space-between;}
+  .doc-card h3{color:var(--offwhite);font-size:28px;}
+  .doc-card p{color:var(--copper-pale);font-size:15px;max-width:560px;}
+  .doc-card .eyebrow{color:var(--copper-light);display:block;margin-bottom:8px;}
+  .btn-light{background:var(--copper-light);color:var(--navy);border:1px solid var(--copper-light);}
+  .btn-light:hover{background:var(--copper-pale);border-color:var(--copper-pale);}
+
+  /* ── Footer ───────────────────────────────────── */
+  footer{background:var(--navy);padding:56px 0;text-align:center;}
+  footer img{width:200px;margin:0 auto 26px;}
+  footer p{color:var(--slate-light);font-size:13px;max-width:760px;margin:0 auto;}
+
+  .alt-bg{background:var(--warmwhite);}
+  .section-intro{max-width:720px;font-size:16px;color:var(--slate-mid);margin-bottom:48px;}
+</style>
+</head>
+<body class="locked">
+
+<!-- ══════════ PASSWORD GATE ══════════ -->
+<div id="gate">
+  <div class="gate-card">
+    <img src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting">
+    <div class="eyebrow">Beyond the Magic Consulting</div>
+    <h1>Brand Toolkit</h1>
+    <p>This area is reserved for the BTM content team and approved partners.</p>
+    <form class="gate-form" id="gate-form" autocomplete="off">
+      <input type="password" id="gate-pw" placeholder="Access password" aria-label="Access password">
+      <button type="submit">Enter</button>
+    </form>
+    <div id="gate-error">That password isn’t correct. Please try again.</div>
+    <div class="gate-foot">Access provided by Beyond the Magic Consulting LLC · For approved use only</div>
+  </div>
+</div>
+
+<!-- ══════════ TOOLKIT ══════════ -->
+<div id="toolkit">
+
+  <header class="hero">
+    <div class="wrap">
+      <img src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting — primary mark">
+      <div class="eyebrow">Brand Toolkit · Version 2.0 · June 2026</div>
+      <h1>Welcome to the BTM Brand Toolkit</h1>
+      <p class="lede">Everything you need to represent Beyond the Magic Consulting with precision — approved logos, colors, typography, and the rules that govern their use. If a question isn’t answered here, ask before you improvise.</p>
+      <p class="tagline">Performance is not inspired, it is <em>designed.</em></p>
+    </div>
+  </header>
+
+  <nav class="toolkit-nav" aria-label="Toolkit sections">
+    <div class="wrap">
+      <a href="#logos">Logos</a>
+      <a href="#usage-map">File Usage Map</a>
+      <a href="#colors">Color</a>
+      <a href="#type">Typography</a>
+      <a href="#rules">Usage Rules</a>
+      <a href="#documents">Documents</a>
+    </div>
+  </nav>
+
+  <!-- ── LOGOS ── -->
+  <section id="logos">
+    <div class="wrap">
+      <div class="eyebrow">01 · The Mark &amp; Lockups</div>
+      <div class="rule"></div>
+      <h2>Approved Logo Files</h2>
+      <p class="section-intro">The mark is an executive credential, rendered as architecture — an oval name-tag form topped by an 8-point compass star. Use only the files below, exactly as supplied. The mark is never recreated, stretched, redrawn, or given effects. Five lockups are approved; each has a defined home.</p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-preview bg-navy"><img src="assets/BTM_Logo_Transparent.png" alt="Full mark on navy background"></div>
+          <div class="card-body">
+            <div class="lockup-label">Lockup 1 · Full Mark · Navy BG</div>
+            <h3>Primary — Navy</h3>
+            <p><strong>Use for:</strong> cover pages, closing pages, navy slide backgrounds, social media avatars.</p>
+            <p><strong>Never on:</strong> white or light backgrounds.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Logo_Navy_Background.png" download>Download PNG</a></div>
+            <div class="filemeta">BTM_Logo_Navy_Background.png</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-white"><img src="assets/BTM_Logo_White_Background.png" alt="Full mark on white background"></div>
+          <div class="card-body">
+            <div class="lockup-label">Lockup 2 · Full Mark · White BG</div>
+            <h3>Alternate — White</h3>
+            <p><strong>Use for:</strong> white-background documents and single-color B&amp;W contexts.</p>
+            <p><strong>Never on:</strong> warm-white or off-white backgrounds — use the transparent variant instead.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Logo_White_Background.png" download>Download PNG</a></div>
+            <div class="filemeta">BTM_Logo_White_Background.png</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-photo"><img src="assets/BTM_Logo_Transparent.png" alt="Transparent mark on alternate background"></div>
+          <div class="card-body">
+            <div class="lockup-label">Lockup 3 · Full Mark · Transparent</div>
+            <h3>Transparent</h3>
+            <p><strong>Use for:</strong> color, pattern, or photo backgrounds of any kind. The oval edge creates a self-contained composition.</p>
+            <p><strong>Never for:</strong> contexts requiring a flat contained background.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Logo_Transparent.png" download>Download PNG</a></div>
+            <div class="filemeta">BTM_Logo_Transparent.png · 1232px</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-offwhite"><img src="assets/BTM_Logo_Transparent_6000px.png" alt="High-resolution transparent mark for print"></div>
+          <div class="card-body">
+            <div class="lockup-label">Print Master · Hi-Res</div>
+            <h3>Transparent — 6000px</h3>
+            <p><strong>Use for:</strong> all print production — letterhead, business cards, report covers, signage.</p>
+            <p><strong>Tip:</strong> always start from this file for anything physical; never scale up a smaller raster.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Logo_Transparent_6000px.png" download>Download PNG</a></div>
+            <div class="filemeta">BTM_Logo_Transparent_6000px.png · 5776×4697</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-offwhite"><img src="assets/BTM_Logo.svg" alt="Vector master of the BTM mark"></div>
+          <div class="card-body">
+            <div class="lockup-label">Vector Master · SVG</div>
+            <h3>Logo — SVG</h3>
+            <p><strong>Use for:</strong> the website, all digital contexts, and vendor production. Scales to any size with no quality loss.</p>
+            <p><strong>Note:</strong> no EPS/AI master is maintained — supply this SVG to vendors.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Logo.svg" download>Download SVG</a></div>
+            <div class="filemeta">BTM_Logo.svg</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-white"><img src="assets/BTM_Wordmark_Navy.svg" alt="Horizontal wordmark in navy"></div>
+          <div class="card-body">
+            <div class="lockup-label">Lockup 4 · Wordmark · Navy</div>
+            <h3>Wordmark — Navy</h3>
+            <p><strong>Use for:</strong> white document headers, light hero panels, inline light contexts, and jointly branded deliverables.</p>
+            <p><strong>Never on:</strong> navy or dark backgrounds.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Wordmark_Navy.svg" download>Download SVG</a></div>
+            <div class="filemeta">BTM_Wordmark_Navy.svg · also: <a href="assets/BTM_Wordmark_Navy_OnWhite.svg" download>On-White</a> · <a href="assets/BTM_Wordmark_Black.svg" download>Black</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-navy"><img src="assets/BTM_Wordmark_White.svg" alt="Horizontal wordmark in white"></div>
+          <div class="card-body">
+            <div class="lockup-label">Lockup 5 · Wordmark · White</div>
+            <h3>Wordmark — White</h3>
+            <p><strong>Use for:</strong> navy slide footers, dark hero panels, web footers.</p>
+            <p><strong>Never on:</strong> white or light backgrounds.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_Wordmark_White.svg" download>Download SVG</a></div>
+            <div class="filemeta">BTM_Wordmark_White.svg</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-navy"><img src="assets/BTM_CompassStar_Full_Copper.svg" alt="Compass Star full variant" style="max-height:110px;"></div>
+          <div class="card-body">
+            <div class="lockup-label">Secondary Mark · Full</div>
+            <h3>Compass Star — Full</h3>
+            <p><strong>Use for:</strong> section dividers, large decorative accents, closing pages. Min size 24px / 8mm.</p>
+            <p><strong>Copper only</strong> — #C49A72 on dark, #A0714F on light. It supports the mark; it never replaces it.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_CompassStar_Full_Copper.svg" download>Download SVG</a></div>
+            <div class="filemeta">BTM_CompassStar_Full_Copper.svg · <a href="assets/BTM_CompassStar_Full_Copper_1024.png" download>PNG 1024</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-preview bg-navy"><img src="assets/BTM_CompassStar_Bullet_Copper.svg" alt="Compass Star bullet variant" style="max-height:80px;"></div>
+          <div class="card-body">
+            <div class="lockup-label">Secondary Mark · Bullet</div>
+            <h3>Compass Star — Bullet</h3>
+            <p><strong>Use for:</strong> list bullets, favicon, app icon, small-scale accents. Min size 10px / 3mm.</p>
+            <p><strong>Never</strong> recolor outside the approved coppers or use as a dense background pattern.</p>
+            <div class="dl"><a class="btn btn-outline-dark" href="assets/BTM_CompassStar_Bullet_Copper.svg" download>Download SVG</a></div>
+            <div class="filemeta">BTM_CompassStar_Bullet_Copper.svg · <a href="assets/BTM_CompassStar_Bullet_Copper_1024.png" download>PNG 1024</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FILE USAGE MAP ── -->
+  <section id="usage-map" class="alt-bg">
+    <div class="wrap">
+      <div class="eyebrow">02 · Specifications</div>
+      <div class="rule"></div>
+      <h2>File Usage Map</h2>
+      <p class="section-intro">Match each production use case to the correct approved source file. Never substitute files outside this map.</p>
+      <div class="table-scroll">
+        <table class="usage-map">
+          <thead><tr><th>Use Case</th><th>File</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td>Website — all digital contexts</td><td><a href="assets/BTM_Logo.svg" download>BTM_Logo.svg</a></td><td>SVG vector</td></tr>
+            <tr><td>Print — vendor production (vector master)</td><td><a href="assets/BTM_Logo.svg" download>BTM_Logo.svg</a> · wordmark SVGs</td><td>SVG — no EPS/AI master is maintained</td></tr>
+            <tr><td>Print — letterhead, business card, report cover, signage</td><td><a href="assets/BTM_Logo_Transparent_6000px.png" download>BTM_Logo_Transparent_6000px.png</a></td><td>PNG transparent</td></tr>
+            <tr><td>Screen — slide deck header</td><td><a href="assets/BTM_Logo_Navy_Background.png" download>BTM Logo Navy Background</a></td><td>PNG</td></tr>
+            <tr><td>Screen — white-background document</td><td><a href="assets/BTM_Logo_White_Background.png" download>BTM Logo White Background</a></td><td>PNG</td></tr>
+            <tr><td>Screen — alternate / photo background</td><td><a href="assets/BTM_Logo_Transparent.png" download>BTM_Logo_Transparent.png</a></td><td>PNG transparent</td></tr>
+            <tr><td>Wordmark — vector / print / web</td><td><a href="assets/BTM_Wordmark_Navy.svg" download>Navy</a> · <a href="assets/BTM_Wordmark_White.svg" download>White</a> · <a href="assets/BTM_Wordmark_Black.svg" download>Black</a> · <a href="assets/BTM_Wordmark_Navy_OnWhite.svg" download>Navy on White</a></td><td>SVG vector</td></tr>
+            <tr><td>Email signature</td><td>None — text-only standard, no logo file</td><td>—</td></tr>
+            <tr><td>Social media profile / avatar</td><td><a href="assets/BTM_Logo_Navy_Background.png" download>BTM Logo Navy Background</a></td><td>PNG</td></tr>
+            <tr><td>Favicon / app icon</td><td><a href="assets/BTM_CompassStar_Bullet_Copper_1024.png" download>Compass Star Bullet</a></td><td>PNG · ICO export</td></tr>
+            <tr><td>Secondary mark — accents, bullets, dividers</td><td><a href="assets/BTM_CompassStar_Full_Copper.svg" download>Full SVG</a> · <a href="assets/BTM_CompassStar_Bullet_Copper.svg" download>Bullet SVG</a> · <a href="assets/BTM_CompassStar_Full_Copper_1024.png" download>Full PNG</a> · <a href="assets/BTM_CompassStar_Bullet_Copper_1024.png" download>Bullet PNG</a></td><td>SVG / PNG</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COLORS ── -->
+  <section id="colors">
+    <div class="wrap">
+      <div class="eyebrow">03 · Color System</div>
+      <div class="rule"></div>
+      <h2>Palette &amp; Application</h2>
+      <p class="section-intro">Navy dominates. Copper is the only accent. Two neutrals serve as backgrounds. Never introduce additional colors without brand approval. Click any swatch to copy its hex value.</p>
+
+      <div class="swatch-group">
+        <span class="eyebrow">Primary Range · Navy / Slate</span>
+        <div class="swatches">
+          <div class="swatch" data-hex="#1A2744"><div class="chip" style="background:#1A2744"></div><div class="info"><div class="name">Navy Deep</div><div class="hex">#1A2744</div><div class="use">Primary brand color</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#1E2023"><div class="chip" style="background:#1E2023"></div><div class="info"><div class="name">Charcoal</div><div class="hex">#1E2023</div><div class="use">Body text / backgrounds</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#2C3038"><div class="chip" style="background:#2C3038"></div><div class="info"><div class="name">Slate Deep</div><div class="hex">#2C3038</div><div class="use">Section backgrounds</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#3D4450"><div class="chip" style="background:#3D4450"></div><div class="info"><div class="name">Slate Mid</div><div class="hex">#3D4450</div><div class="use">Borders / dividers</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#5C6370"><div class="chip" style="background:#5C6370"></div><div class="info"><div class="name">Slate Light</div><div class="hex">#5C6370</div><div class="use">Captions / secondary text</div><div class="copy-hint">Click to copy</div></div></div>
+        </div>
+      </div>
+
+      <div class="swatch-group">
+        <span class="eyebrow">Accent Range · Copper</span>
+        <div class="swatches">
+          <div class="swatch" data-hex="#A0714F"><div class="chip" style="background:#A0714F"></div><div class="info"><div class="name">Copper</div><div class="hex">#A0714F</div><div class="use">Primary accent — rules, labels, icons on light</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#C49A72"><div class="chip" style="background:#C49A72"></div><div class="info"><div class="name">Copper Light</div><div class="hex">#C49A72</div><div class="use">Accent on dark / navy backgrounds</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#D4B896"><div class="chip" style="background:#D4B896"></div><div class="info"><div class="name">Copper Pale</div><div class="hex">#D4B896</div><div class="use">Subtle accents · tints · texture</div><div class="copy-hint">Click to copy</div></div></div>
+        </div>
+      </div>
+
+      <div class="swatch-group">
+        <span class="eyebrow">Neutral · Backgrounds</span>
+        <div class="swatches">
+          <div class="swatch" data-hex="#F5F3EF"><div class="chip" style="background:#F5F3EF;border-bottom:1px solid rgba(0,0,0,.06)"></div><div class="info"><div class="name">Off White</div><div class="hex">#F5F3EF</div><div class="use">Primary light background</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#FAF8F5"><div class="chip" style="background:#FAF8F5;border-bottom:1px solid rgba(0,0,0,.06)"></div><div class="info"><div class="name">Warm White</div><div class="hex">#FAF8F5</div><div class="use">Section alternate / cards</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#FFFFFF"><div class="chip" style="background:#FFFFFF;border-bottom:1px solid rgba(0,0,0,.06)"></div><div class="info"><div class="name">Pure White</div><div class="hex">#FFFFFF</div><div class="use">Single-color B&amp;W / print only</div><div class="copy-hint">Click to copy</div></div></div>
+          <div class="swatch" data-hex="#000000"><div class="chip" style="background:#000000"></div><div class="info"><div class="name">Black</div><div class="hex">#000000</div><div class="use">Single-color B&amp;W print</div><div class="copy-hint">Click to copy</div></div></div>
+        </div>
+      </div>
+
+      <div class="clearspace-note">
+        <span class="eyebrow">Remember</span>
+        <p>Copper is never a background fill, and charcoal or slate text never sits on dark backgrounds. When pairing — copper #A0714F on light surfaces, copper light #C49A72 on navy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TYPOGRAPHY ── -->
+  <section id="type" class="alt-bg">
+    <div class="wrap">
+      <div class="eyebrow">04 · Typography</div>
+      <div class="rule"></div>
+      <h2>Type System</h2>
+      <p class="section-intro">Three typefaces, all free on Google Fonts. Never substitute without brand approval. Body copy is never set below 16px on screen.</p>
+
+      <div class="type-card">
+        <div class="role">Display · Page Titles, Headlines, Pull Quotes</div>
+        <div class="type-sample-display">Performance by Design.</div>
+        <div class="meta">Cormorant Garamond — Light 300 · Regular 400 · Medium 500 · Light Italic</div>
+        <a class="btn btn-copper" href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">Get Cormorant Garamond</a>
+      </div>
+
+      <div class="type-card">
+        <div class="role">Primary Sans · Labels, Navigation, Eyebrows, Data Callouts</div>
+        <div class="type-sample-condensed">Beyond the Magic</div>
+        <div class="meta">Barlow Condensed — Light 300 through Bold 700 · the workhorse of the system</div>
+        <a class="btn btn-copper" href="https://fonts.google.com/specimen/Barlow+Condensed" target="_blank" rel="noopener">Get Barlow Condensed</a>
+      </div>
+
+      <div class="type-card">
+        <div class="role">Body · Paragraphs, Proposals, Web Copy, Email</div>
+        <div class="type-sample-body">We design systems that align people, expectations, and execution so performance becomes predictable. Not through training. Not through culture campaigns. Through deliberate system design.</div>
+        <div class="meta">Barlow — Light 300 · Regular 400 · Medium 500</div>
+        <a class="btn btn-copper" href="https://fonts.google.com/specimen/Barlow" target="_blank" rel="noopener">Get Barlow</a>
+      </div>
+
+      <div class="embed-head">
+        <h3>Web Embed — All Three Fonts</h3>
+        <button class="copy-btn" id="copy-embed">Copy Snippet</button>
+      </div>
+      <div class="embed-block" id="embed-snippet">&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&amp;family=Barlow+Condensed:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&amp;display=swap" rel="stylesheet"&gt;</div>
+    </div>
+  </section>
+
+  <!-- ── USAGE RULES ── -->
+  <section id="rules">
+    <div class="wrap">
+      <div class="eyebrow">05 · Usage Rules</div>
+      <div class="rule"></div>
+      <h2>Do &amp; Do Not</h2>
+      <p class="section-intro">These rules protect the integrity of the mark wherever it appears. They apply to everything — workbooks, slides, proposals, social, signage, and co-branded materials.</p>
+
+      <div class="rules-grid">
+        <div class="rules-col do">
+          <h3>Do</h3>
+          <ul>
+            <li>Use the primary navy mark on navy backgrounds; the white-background alternate on white</li>
+            <li>Use the transparent variant on color, pattern, or photo backgrounds</li>
+            <li>Maintain minimum clearspace of 1× the height of “BEYOND” on all sides, measured from the mark’s edge</li>
+            <li>Use the horizontal wordmark for slide footers and document headers</li>
+            <li>Scale proportionally — lock aspect ratio at all times</li>
+            <li>Use only the approved copper values — never orange, gold, or tan</li>
+            <li>Use the exact approved source files from the File Usage Map</li>
+          </ul>
+        </div>
+        <div class="rules-col dont">
+          <h3>Do Not</h3>
+          <ul>
+            <li>Stretch, skew, or rotate the mark</li>
+            <li>Outline, shadow, or add effects to the mark</li>
+            <li>Place the solid-background mark on busy photo or patterned backgrounds — use the transparent variant</li>
+            <li>Recreate the mark or Compass Star from scratch — always start from the approved files</li>
+            <li>Use any font other than Barlow, Barlow Condensed, or Cormorant Garamond</li>
+            <li>Use copper as a background fill</li>
+            <li>Combine the mark with other logos at equal visual weight</li>
+            <li>Display the mark where “BEYOND” is smaller than 8mm in print</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="clearspace-note">
+        <span class="eyebrow">Co-Branding — Promoting a BTM Engagement</span>
+        <p>When BTM appears alongside your identity, the BTM mark must not compete for dominance. Your mark may appear at equal or greater size; place the BTM mark in a secondary location — footer, inside cover, or closing page. On jointly branded deliverables, use the horizontal wordmark rather than the full mark, and never place the BTM mark directly adjacent to your logo at equal scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DOCUMENTS ── -->
+  <section id="documents" class="alt-bg">
+    <div class="wrap">
+      <div class="eyebrow">06 · Brand Documents</div>
+      <div class="rule"></div>
+      <h2>The Authoritative Reference</h2>
+      <p class="section-intro">For anything this page doesn’t cover — document systems, slide templates, legal boilerplate, the business card standard — the full Brand Identity System is the binding reference.</p>
+      <div class="doc-card">
+        <div>
+          <span class="eyebrow">PDF · Version 2.0 Final · June 2026</span>
+          <h3>BTM Brand Identity System</h3>
+          <p>The complete system: brand essence and voice, the mark, lockups, color, typography, usage rules, document and presentation standards, and the file usage map. Supersedes all earlier versions.</p>
+        </div>
+        <a class="btn btn-light" href="assets/BTM_Brand_Identity_System_v2_0.pdf" download>Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <img src="assets/BTM_Wordmark_White.svg" alt="Beyond the Magic Consulting LLC">
+      <p>Questions about brand usage? Contact the brand owner before production begins.</p>
+      <p style="margin-top:14px;">Confidential · Not for distribution · © Beyond the Magic Consulting LLC</p>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var HASH = 'd7c8658f8b361c2736134cce4e8fb2da52d1e1d11dc13aa1c60301e4d9a82151';
+  var KEY = 'btm-toolkit-access';
+
+  function unlock(){
+    document.body.classList.remove('locked');
+    document.body.classList.add('unlocked');
+  }
+
+  try{ if(sessionStorage.getItem(KEY) === HASH){ unlock(); } }catch(e){}
+
+  async function sha256(str){
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(function(b){return b.toString(16).padStart(2,'0');}).join('');
+  }
+
+  document.getElementById('gate-form').addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    var input = document.getElementById('gate-pw');
+    var err = document.getElementById('gate-error');
+    try{
+      var hex = await sha256(input.value.trim());
+      if(hex === HASH){
+        try{ sessionStorage.setItem(KEY, HASH); }catch(e){}
+        unlock();
+        window.scrollTo(0,0);
+      }else{
+        err.classList.add('show');
+        input.value = '';
+        input.focus();
+      }
+    }catch(e){
+      err.textContent = 'Your browser blocked the check — please use a current browser over HTTPS.';
+      err.classList.add('show');
+    }
+  });
+
+  document.getElementById('gate-pw').addEventListener('input', function(){
+    document.getElementById('gate-error').classList.remove('show');
+  });
+
+  /* Copy hex on swatch click */
+  document.querySelectorAll('.swatch').forEach(function(sw){
+    sw.addEventListener('click', function(){
+      var hex = sw.getAttribute('data-hex');
+      navigator.clipboard.writeText(hex).then(function(){
+        var hint = sw.querySelector('.copy-hint');
+        hint.textContent = 'Copied ' + hex;
+        hint.style.visibility = 'visible';
+        setTimeout(function(){ hint.textContent = 'Click to copy'; hint.style.visibility = ''; }, 1600);
+      });
+    });
+  });
+
+  /* Copy embed snippet */
+  document.getElementById('copy-embed').addEventListener('click', function(){
+    var text = document.getElementById('embed-snippet').textContent;
+    navigator.clipboard.writeText(text).then(function(){
+      var btn = document.getElementById('copy-embed');
+      btn.textContent = 'Copied';
+      setTimeout(function(){ btn.textContent = 'Copy Snippet'; }, 1600);
+    });
+  });
+})();
+</script>
+</body>
+</html>
