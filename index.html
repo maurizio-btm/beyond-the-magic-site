@@ -52,6 +52,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Typographic widow/orphan control — progressive enhancement */
+    p, blockquote, li { text-wrap: pretty; }
+    h1, h2, h3, .section-title { text-wrap: balance; }
+
     /* ═══ TYPOGRAPHY SYSTEM ═══ */
 
     /* Display headings — Cormorant Garamond */
@@ -180,7 +184,7 @@
       display: none;
       position: fixed;
       top: 70px; left: 0; right: 0; bottom: 0;
-      background: rgba(17, 27, 48, 0.98);
+      background: var(--navy-deep);
       z-index: 999;
       flex-direction: column;
       align-items: center;
@@ -1083,7 +1087,7 @@
         <li><a href="#framework">How We Work</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="people-behind-the-magic.html">People</a></li>
-        <li><a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a></li>
+        <li><a href="/bizhealth/">Assessment</a></li>
         <li><a href="/scheduling/">Schedule</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
@@ -1098,7 +1102,7 @@
     <a href="#framework" onclick="closeMobile()">How We Work</a>
     <a href="#why-us" onclick="closeMobile()">Why Us</a>
     <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
-    <a href="https://bizhealth.ai" target="_blank" rel="noopener" onclick="closeMobile()">Assessment</a>
+    <a href="/bizhealth/" onclick="closeMobile()">Assessment</a>
     <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
@@ -1112,10 +1116,8 @@
       <p class="hero-body">We design the systems behind service excellence — so customer experience, leadership behavior, and team performance improve in ways that last.</p>
       <div class="hero-actions">
         <a href="/scheduling/" class="btn-copper" style="min-width:220px; text-align:center; white-space:nowrap; padding:0.9rem 2.2rem;">Book a Session</a>
-        <a href="https://bizhealth.ai" class="btn-outline" target="_blank" rel="noopener" style="min-width:220px; text-align:center; white-space:nowrap;">Start with a Health Assessment</a>
-        <a href="#origin" class="btn-ghost" style="min-width:220px; text-align:center; white-space:nowrap;">Our Story</a>
+        <a href="#origin" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">Our Story</a>
       </div>
-      <p class="hero-helper">Not ready for a full engagement? <a href="https://bizhealth.ai" target="_blank" rel="noopener">BizHealth.ai</a> offers a diagnostic starting point — identify where leadership, culture, operations, and customer experience need the most attention first.</p>
     </div>
     <div class="hero-scroll">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round">
@@ -1155,10 +1157,9 @@
       </div>
       <div class="origin-grid">
         <div class="origin-text reveal">
-          <p>Maurizio Landi built his practice on a belief that the strongest performance principles in the world should not be confined to a single organization.</p>
-          <p>Shaped by decades inside one of the world's most operationally complex entertainment enterprises — including years leading enterprise consulting and facilitating executive leadership programs across industries — he carries a practitioner's understanding of how culture, leadership, learning, and service come together not in theory, but in the daily systems and operational disciplines that make excellence repeatable at scale. When that chapter closed, he saw both a responsibility and an opportunity: to carry that methodology forward with greater flexibility, and to make that caliber of thinking available to organizations ready to build something enduring.</p>
-          <p>A trusted counselor by nature, Maurizio's approach has always been grounded in integrity, a genuine investment in the people he serves, and a conviction that what you build for others should outlast the engagement. That ethic extends beyond client work — into board service, community leadership, and relationships that have endured across two decades of practice.</p>
-          <p>That experience shapes how BTM helps organizations build cultures, leaders, and service systems that hold under real-world pressure.</p>
+          <p>Beyond the Magic was built on a belief that the strongest performance principles in the world should not be confined to a single organization.</p>
+          <p>Founded by Maurizio Landi and shaped by decades inside one of the world's most operationally complex entertainment enterprises — leading enterprise consulting and facilitating executive leadership programs across industries — BTM carries a practitioner's understanding of how culture, leadership, learning, and service become repeatable at scale. Not in theory. In the daily systems and operational disciplines that hold under real-world&nbsp;pressure.</p>
+          <p><a href="people-behind-the-magic.html" style="color:var(--copper); text-decoration:none; font-weight:500;">Meet the people behind the magic &rarr;</a></p>
           <div class="philosophy-pillars reveal">
             <div class="pillar"><span class="pillar-label">Structure, not just inspiration</span></div>
             <div class="pillar"><span class="pillar-label">Integration, not just content</span></div>
@@ -1218,8 +1219,8 @@
       <div class="reveal" style="margin-top:3rem; padding:2.5rem 3rem; background:var(--white); border-top:3px solid var(--copper); box-shadow:0 1px 12px rgba(0,0,0,0.05); text-align:center;">
         <div class="section-label">Start with diagnosis before design</div>
         <div class="copper-line center"></div>
-        <p style="font-size:1.2rem; color:var(--text-body); max-width:580px; margin:0 auto 1.75rem; line-height:1.7;">For organizations that need clarity before committing to a larger engagement, <a href="https://bizhealth.ai" target="_blank" rel="noopener" style="color:var(--copper); text-decoration:none;">BizHealth.ai</a> offers a practical starting point. It helps identify where leadership, culture, operations, and customer experience need the most attention — so the next step is more informed.</p>
-        <a href="https://bizhealth.ai" target="_blank" rel="noopener" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Begin the Assessment</a>
+        <p style="font-size:1.2rem; color:var(--text-body); max-width:580px; margin:0 auto 1.75rem; line-height:1.7;">For organizations that need clarity before committing to a larger engagement, <a href="/bizhealth/" style="color:var(--copper); text-decoration:none;">BizHealth.ai</a> offers a practical starting point. It helps identify where leadership, culture, operations, and customer experience need the most attention — so the next step is more informed.</p>
+        <a href="/bizhealth/" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Explore the Assessment</a>
       </div>
     </div>
 
@@ -1292,10 +1293,6 @@
       <div class="proof-stat">
         <span class="proof-stat-num">14</span>
         <span class="proof-stat-label">Industries Served</span>
-      </div>
-      <div class="proof-stat">
-        <span class="proof-stat-num">3</span>
-        <span class="proof-stat-label">Languages Delivered</span>
       </div>
     </div>
 
@@ -1425,9 +1422,9 @@
         <div class="contact-card reveal">
           <img src="assets/dennis-contact.jpeg" alt="Dennis Hough" class="contact-photo" loading="lazy">
           <div class="contact-info">
-            <div class="primary-label">Partner Contact</div>
+            <div class="primary-label">Co-Founder Contact</div>
             <h3>Dennis Hough</h3>
-            <div class="contact-role">Performance Architect</div>
+            <div class="contact-role">Co-Founder &middot; Performance Architect</div>
             <div class="contact-detail"><a class="eml" data-u="dennis" data-d="beyondthemagic" data-t="co"></a></div>
             <div class="contact-detail"><a href="tel:8655664147">865.566.4147</a></div>
             <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
@@ -1447,7 +1444,7 @@
       <a href="#framework">How We Work</a>
       <a href="#why-us">Why Us</a>
       <a href="people-behind-the-magic.html">People</a>
-      <a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a>
+      <a href="/bizhealth/">Assessment</a>
       <a href="#contact">Contact</a>
     </div>
     <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
@@ -1510,23 +1507,38 @@
     (function () {
       const contactSection = document.getElementById('contact');
       if (!contactSection) return;
-      // Watch only direct children of <body> — Cal injects its floating button
-      // as a top-level fixed-position div, so this uniquely targets it without
-      // accidentally traversing into page content.
+      // Cal injects a <cal-floating-button> custom element as a direct child
+      // of <body>. Fading the wrapper fades the fixed-position button inside it.
+      function hookCalButton(node) {
+        node.style.transition = 'opacity 0.4s ease';
+        let overCta = false, overHero = false;
+        function update() {
+          const hide = overCta || overHero;
+          node.style.opacity = hide ? '0' : '1';
+          node.style.pointerEvents = hide ? 'none' : 'auto';
+        }
+        new IntersectionObserver(function (entries) {
+          overCta = entries[0].isIntersecting;
+          update();
+        }, { threshold: 0.15 }).observe(contactSection);
+        // On small screens, also hide while the hero (with its own CTA) is on screen
+        const hero = document.querySelector('.hero');
+        if (hero && window.matchMedia('(max-width: 768px)').matches) {
+          new IntersectionObserver(function (entries) {
+            overHero = entries[0].isIntersecting;
+            update();
+          }, { threshold: 0.1 }).observe(hero);
+        }
+      }
+      const existing = document.querySelector('cal-floating-button');
+      if (existing) { hookCalButton(existing); return; }
       const calMutObs = new MutationObserver(function (mutations) {
         for (const mutation of mutations) {
           for (const node of mutation.addedNodes) {
             if (node.nodeType !== 1) continue;
-            if (node.parentElement !== document.body) continue;
-            const s = node.style ? node.style.cssText : '';
-            if (!s.includes('fixed')) continue;
-            // Found Cal's floating button wrapper — stop observing and hook scroll
+            if (node.tagName.toLowerCase() !== 'cal-floating-button') continue;
             calMutObs.disconnect();
-            node.style.transition = 'opacity 0.4s ease';
-            new IntersectionObserver(function (entries) {
-              node.style.opacity = entries[0].isIntersecting ? '0' : '1';
-              node.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
-            }, { threshold: 0.15 }).observe(contactSection);
+            hookCalButton(node);
             return;
           }
         }

@@ -38,6 +38,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Typographic widow/orphan control — progressive enhancement */
+    p, blockquote, li { text-wrap: pretty; }
+    h1, h2, h3, .section-title { text-wrap: balance; }
+
     /* ═══ NAV ═══ */
     nav {
       position: fixed;
@@ -108,7 +112,7 @@
       display: none;
       position: fixed;
       top: 70px; left: 0; right: 0; bottom: 0;
-      background: rgba(17, 27, 48, 0.98);
+      background: var(--navy-deep);
       z-index: 999;
       flex-direction: column;
       align-items: center;
@@ -564,7 +568,7 @@
         <li><a href="/#framework">How We Work</a></li>
         <li><a href="/#why-us">Why Us</a></li>
         <li><a href="/people-behind-the-magic.html">People</a></li>
-        <li><a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a></li>
+        <li><a href="/bizhealth/">Assessment</a></li>
         <li><a href="/scheduling/">Schedule</a></li>
         <li><a href="/#contact" class="nav-cta" style="background:var(--copper); color:#fff; padding:0.55rem 1.3rem; border-radius:2px;">Contact</a></li>
       </ul>
@@ -579,7 +583,7 @@
     <a href="/#framework" onclick="closeMobile()">How We Work</a>
     <a href="/#why-us" onclick="closeMobile()">Why Us</a>
     <a href="/people-behind-the-magic.html" onclick="closeMobile()">People</a>
-    <a href="https://bizhealth.ai" target="_blank" rel="noopener" onclick="closeMobile()">Assessment</a>
+    <a href="/bizhealth/" onclick="closeMobile()">Assessment</a>
     <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
     <a href="/#contact" onclick="closeMobile()">Contact</a>
   </div>
@@ -661,11 +665,11 @@
         </a>
         <a href="/people-behind-the-magic.html" class="team-photo-link" aria-label="Meet the people behind the magic">
           <div class="team-photo-frame">
-            <img src="../assets/dennis-contact.jpeg" alt="Dennis Hough, Performance Architect" loading="lazy">
+            <img src="../assets/dennis-contact.jpeg" alt="Dennis Hough, Co-Founder and Performance Architect" loading="lazy">
           </div>
           <div class="team-photo-caption">
             <span class="name">Dennis Hough</span>
-            <span class="role">Performance Architect</span>
+            <span class="role">Co-Founder &middot; Performance Architect</span>
           </div>
         </a>
       </div>
@@ -692,7 +696,7 @@
       </div>
       <div class="contact-tile">
         <div class="tile-name">Dennis Hough</div>
-        <div class="tile-role">Performance Architect</div>
+        <div class="tile-role">Co-Founder &middot; Performance Architect</div>
         <div class="tile-line"><a class="eml" data-u="dennis" data-d="beyondthemagic" data-t="co"></a></div>
         <div class="tile-line"><a class="phn" data-p="8655664147">865.566.4147</a></div>
       </div>
@@ -709,7 +713,7 @@
       <a href="/#framework">How We Work</a>
       <a href="/#why-us">Why Us</a>
       <a href="/people-behind-the-magic.html">People</a>
-      <a href="https://bizhealth.ai" target="_blank" rel="noopener">Assessment</a>
+      <a href="/bizhealth/">Assessment</a>
       <a href="/#contact">Contact</a>
     </div>
     <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
