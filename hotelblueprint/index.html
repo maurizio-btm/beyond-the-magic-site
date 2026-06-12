@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hotel Blueprint&trade; | Beyond the Magic</title>
+  <meta name="description" content="Is your hotel the same hotel on Sunday night as it is on Wednesday morning? The Hotel Blueprint by Beyond the Magic reads the heartbeat of your hotel — and hands you the system that makes excellence the default. The brand audit becomes a byproduct.">
+  <meta property="og:title" content="The Hotel Blueprint&trade; — Two Guests. One Sunday Night.">
+  <meta property="og:description" content="We don't measure one night. We read the heartbeat. The performance platform that makes your brand audit a byproduct.">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════
+       BTM BRAND SYSTEM — The Hotel Blueprint™
+    ══════════════════════════════════════ */
+    :root {
+      --navy: #1A2744;
+      --navy-deep: #111B30;
+      --navy-light: #243458;
+      --copper: #A0714F;
+      --copper-light: #C49A72;
+      --copper-pale: #D4B896;
+      --offwhite: #F5F3EF;
+      --offwhite-warm: #EDE9E2;
+      --charcoal: #1E2023;
+      --text-body: #3D3D3D;
+      --text-muted: #6E6E6E;
+      --white: #FFFFFF;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      color: var(--text-body);
+      background: var(--offwhite);
+      line-height: 1.75;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    p, blockquote, li { text-wrap: pretty; }
+    h1, h2, h3, .section-title { text-wrap: balance; }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    .section-title em { font-style: italic; color: var(--copper); }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+    .copper-line { width: 50px; height: 2px; background: var(--copper); margin-bottom: 1.5rem; }
+    .copper-line.center { margin-left: auto; margin-right: auto; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .container-narrow { max-width: 780px; margin: 0 auto; }
+
+    /* ═══ NAVIGATION ═══ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(25, 39, 68, 1);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(160, 113, 79, 0.15);
+      transition: box-shadow 0.4s ease;
+      will-change: transform; transform: translateZ(0);
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.2); }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; gap: 2.5rem; height: 70px;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-links { display: flex; list-style: none; gap: 1.6rem; align-items: center; margin-left: auto; }
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.03rem; font-weight: 500; letter-spacing: 0.10em;
+      text-transform: uppercase; color: rgba(255,255,255,0.65);
+      text-decoration: none; transition: color 0.3s ease; position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -4px; left: 0;
+      width: 0; height: 1px; background: var(--copper); transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      background: var(--copper) !important; color: var(--white) !important;
+      padding: 0.55rem 1.3rem; border-radius: 2px; font-weight: 600 !important;
+      transition: background 0.3s ease !important;
+    }
+    .nav-cta:hover { background: #8B6143 !important; }
+    .nav-cta::after { display: none !important; }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      padding: 4px; background: none; border: none; margin-left: auto;
+    }
+    .nav-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; }
+    .mobile-menu {
+      display: none; position: fixed; top: 70px; left: 0; right: 0; bottom: 0;
+      background: var(--navy-deep); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.75); text-decoration: none;
+    }
+    .mobile-menu a:hover { color: var(--copper-light); }
+
+    /* ═══ ANIMATIONS ═══ */
+    .reveal {
+      opacity: 0; transform: translateY(35px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══ BUTTONS ═══ */
+    .btn-copper, .btn-outline {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.05rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; text-decoration: none;
+      padding: 0.95rem 2.2rem; border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .btn-copper { background: var(--copper); color: var(--white); border: 1px solid var(--copper); }
+    .btn-copper:hover { background: #8B6143; border-color: #8B6143; transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid var(--copper); }
+    .btn-outline:hover { background: rgba(160,113,79,0.15); transform: translateY(-2px); }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      background: var(--navy-deep);
+      padding: 10rem 2rem 6rem;
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(160,113,79,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-mark { height: 110px; width: auto; margin-bottom: 2rem; }
+    .hero .section-label { color: var(--copper-light); }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+      font-weight: 500; color: var(--white); line-height: 1.18;
+      max-width: 820px; margin: 0 auto 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--copper-light); }
+    .hero-body {
+      font-size: 1.2rem; font-weight: 300; color: rgba(255,255,255,0.65);
+      max-width: 640px; margin: 0 auto 2.5rem; line-height: 1.8;
+    }
+    .hero-body strong { color: rgba(255,255,255,0.9); font-weight: 500; }
+    .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ═══ STORY ═══ */
+    .story { background: var(--offwhite); padding: 5.5rem 2rem 4rem; }
+    .story-scene {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      color: var(--navy); line-height: 1.4; font-weight: 500;
+      max-width: 680px; margin: 0 0 1rem;
+    }
+    .story-setup { max-width: 680px; font-size: 1.12rem; margin-bottom: 3rem; }
+    .story-block {
+      position: relative;
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+      padding-left: 1.75rem;
+      border-left: 2px solid var(--offwhite-warm);
+    }
+    .story-block.bennetts { border-left-color: var(--copper-pale); }
+    .story-block.dana { border-left-color: var(--copper); }
+    .story-who {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.95rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--copper); margin-bottom: 0.6rem;
+    }
+    .story-block p { margin-bottom: 0.9rem; font-size: 1.08rem; }
+    .story-block p:last-child { margin-bottom: 0; }
+    .story-block i { color: var(--navy); }
+    .audit-note {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
+      font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--copper); background: rgba(196,154,114,0.12);
+      border: 1px solid rgba(160,113,79,0.25);
+      border-radius: 2px; padding: 0.25rem 0.7rem; margin-top: 0.9rem;
+    }
+    .audit-note::before { content: '◈ '; color: var(--copper-light); }
+    .story-img {
+      width: 100%; display: block; border-radius: 6px; margin-top: 1.2rem;
+      filter: saturate(.88) contrast(.97);
+      box-shadow: 0 14px 35px rgba(17,27,48,0.14);
+    }
+    .story-imgrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.2rem; }
+    .story-imgrow .story-img { margin-top: 0; }
+    @media (max-width: 620px) { .story-imgrow { grid-template-columns: 1fr; } }
+    @media (min-width: 1100px) {
+      .audit-note {
+        position: absolute; right: -340px; top: 0.2rem;
+        width: 300px; margin-top: 0;
+        background: transparent; border: none;
+        border-left: 2px solid var(--copper-pale);
+        border-radius: 0; padding: 0.1rem 0 0.1rem 1rem;
+        font-size: 0.82rem; line-height: 1.5;
+      }
+      .story-wrap { max-width: 680px; margin: 0 auto; transform: translateX(-130px); }
+    }
+    .shift-band {
+      background: var(--navy); border-top: 3px solid var(--copper-light);
+      max-width: 680px; padding: 2rem 2.2rem; margin: 3rem 0 2.5rem;
+    }
+    .shift-band .story-who { color: var(--copper-light); }
+    .shift-band p { color: rgba(255,255,255,0.78); margin-bottom: 0.8rem; font-size: 1.05rem; }
+    .shift-band p:last-child { margin-bottom: 0; }
+    .shift-band strong { color: var(--white); font-weight: 500; }
+    .story-pull {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.5rem, 2.8vw, 2.1rem); color: var(--navy);
+      line-height: 1.45; max-width: 680px;
+      padding-top: 2rem; border-top: 1px solid var(--offwhite-warm); margin-top: 1rem;
+    }
+    .story-pull em { color: var(--copper); font-style: italic; }
+
+    /* ═══ THE TURN ═══ */
+    .turn { background: var(--navy-deep); padding: 5.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+    .turn::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(160,113,79,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .turn-inner { position: relative; z-index: 1; }
+    .turn h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+      color: var(--white); margin-bottom: 1.8rem; line-height: 1.25;
+    }
+    .turn-body {
+      font-size: 1.13rem; font-weight: 300; color: rgba(255,255,255,0.7);
+      max-width: 660px; margin: 0 auto 1.2rem; line-height: 1.85; text-align: left;
+    }
+    .turn-body strong { color: var(--white); font-weight: 500; }
+    .turn-q {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: clamp(1.6rem, 3vw, 2.3rem); color: var(--copper-light);
+      line-height: 1.4; max-width: 700px; margin: 2.5rem auto 1.8rem;
+    }
+    .turn-fn {
+      font-size: 0.98rem; color: rgba(255,255,255,0.5);
+      max-width: 620px; margin: 0 auto; line-height: 1.8; text-align: left;
+    }
+    .turn-fn strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+    /* ═══ HOW IT WORKS ═══ */
+    .how { background: var(--offwhite-warm); padding: 5.5rem 2rem; }
+    .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .move-card { background: var(--white); border-top: 3px solid var(--copper); padding: 2.2rem 1.9rem; }
+    .move-num {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 2.6rem; color: var(--copper-light); line-height: 1; margin-bottom: 0.8rem;
+    }
+    .move-card h3 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.25rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 0.7rem;
+    }
+    .move-card p { font-size: 1rem; line-height: 1.7; }
+    .move-card strong { color: var(--navy); font-weight: 500; }
+
+    /* scale */
+    .scale-wrap { margin-top: 3.5rem; }
+    .scale-intro {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic;
+      color: var(--navy); text-align: center; margin-bottom: 2rem;
+    }
+    .scale-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+    .scale-card {
+      background: var(--navy); padding: 1.6rem 1.4rem; cursor: default;
+      border-top: 3px solid transparent; transition: transform .3s ease, border-color .3s ease;
+    }
+    .scale-card:hover { transform: translateY(-4px); border-top-color: var(--copper-light); }
+    .scale-num {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 2.2rem; color: var(--copper-light); line-height: 1;
+    }
+    .scale-name {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.05rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--white); margin: 0.4rem 0 0.6rem;
+    }
+    .scale-card p { font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+    .scale-note {
+      text-align: center; margin-top: 2rem;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.35rem; color: var(--copper); line-height: 1.5;
+    }
+    .cls-strip {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem; margin-top: 2.2rem;
+    }
+    .cls-chip {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.95rem; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 0.5rem 1.2rem; border-radius: 2px;
+      background: var(--white); color: var(--text-muted); border: 1px solid rgba(160,113,79,0.25);
+    }
+    .cls-chip.hot { background: var(--copper); color: var(--white); border-color: var(--copper); }
+    .cls-caption { text-align: center; font-size: 1.02rem; color: var(--text-muted); margin-top: 1.4rem; max-width: 640px; margin-left: auto; margin-right: auto; }
+    .cls-caption strong { color: var(--navy); font-weight: 500; }
+
+    /* ═══ WHY IT MATTERS ═══ */
+    .why { background: var(--offwhite); padding: 5.5rem 2rem; }
+    .why-table-wrap { overflow-x: auto; margin: 2.5rem 0 1rem; }
+    .why-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    .why-table th {
+      background: var(--navy); color: var(--offwhite);
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.9rem 1.1rem; text-align: left;
+    }
+    .why-table td { padding: 0.9rem 1.1rem; font-size: 0.98rem; line-height: 1.6; border-bottom: 1px solid var(--offwhite-warm); vertical-align: top; }
+    .why-table tr:nth-child(even) td { background: rgba(237,233,226,0.5); }
+    .why-table td.inst { font-weight: 500; color: var(--navy); white-space: nowrap; }
+    .why-table td.gap { color: var(--copper); font-weight: 500; }
+    .why-line {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic;
+      color: var(--navy); text-align: center; max-width: 720px; margin: 2.5rem auto 3.5rem; line-height: 1.5;
+    }
+    .why-line em { color: var(--copper); }
+    .lever-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+    .lever {
+      background: var(--white); border-left: 3px solid var(--copper); padding: 1.8rem 1.9rem;
+    }
+    .lever h3 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.15rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 0.6rem;
+    }
+    .lever p { font-size: 0.99rem; line-height: 1.7; }
+    .lever p strong { color: var(--navy); font-weight: 500; }
+    .lever .q {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      color: var(--copper); font-size: 1.12rem; display: block; margin-top: 0.7rem;
+    }
+
+    /* ═══ RECEIVE / DASHBOARD ═══ */
+    .receive { background: var(--offwhite-warm); padding: 5.5rem 2rem; }
+    .receive-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; margin-top: 2.5rem; }
+    .artifact { margin-bottom: 2rem; }
+    .artifact h3 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.2rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--copper); margin-bottom: 0.5rem;
+    }
+    .artifact h3 span { color: var(--text-muted); font-weight: 500; }
+    .artifact p { font-size: 1rem; line-height: 1.7; }
+    .receive-close {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.45rem; color: var(--navy); line-height: 1.5; margin-top: 1.5rem;
+    }
+    /* dashboard */
+    .dash {
+      background: var(--navy); border-radius: 8px; padding: 1.8rem;
+      box-shadow: 0 24px 60px rgba(17,27,48,0.35);
+      position: sticky; top: 95px;
+    }
+    .dash-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      border-bottom: 1px solid var(--navy-light); padding-bottom: 0.8rem; margin-bottom: 1.4rem;
+    }
+    .dash-head .t {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper-light);
+    }
+    .dash-head .p {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
+      font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.85);
+    }
+    .dash-pri { text-align: center; margin-bottom: 1.4rem; }
+    .dash-pri .big {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+      font-size: 4rem; color: var(--white); line-height: 1;
+    }
+    .dash-pri .cls {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.95rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--copper-light); margin-top: 0.3rem;
+    }
+    .dash-pri .proj { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+    .dash-pri .proj b { color: var(--copper-pale); font-weight: 500; }
+    .dash-bars { margin-bottom: 1.3rem; }
+    .dbar { margin-bottom: 0.7rem; }
+    .dbar .lab {
+      display: flex; justify-content: space-between;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .dbar .lab .v { color: var(--copper-light); font-weight: 600; }
+    .dbar .track { height: 5px; background: var(--navy-light); border-radius: 3px; margin-top: 0.25rem; }
+    .dbar .fill { height: 5px; background: var(--copper-light); border-radius: 3px; transition: width .6s ease; }
+    .dash-items { border-top: 1px solid var(--navy-light); padding-top: 1rem; }
+    .dash-items .hint {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.78rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 0.7rem;
+    }
+    .ditem {
+      display: flex; gap: 0.7rem; align-items: flex-start;
+      font-size: 0.92rem; color: rgba(255,255,255,0.75); line-height: 1.5;
+      padding: 0.45rem 0.4rem; border-radius: 4px; cursor: pointer;
+      transition: background .25s ease;
+    }
+    .ditem:hover { background: rgba(196,154,114,0.08); }
+    .ditem .bx {
+      flex-shrink: 0; width: 16px; height: 16px; margin-top: 3px;
+      border: 1.5px solid var(--copper-light); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: var(--navy); font-weight: 700;
+      transition: background .25s ease;
+    }
+    .ditem.done { color: rgba(255,255,255,0.4); }
+    .ditem.done .bx { background: var(--copper-light); }
+    .ditem .gain { color: var(--copper-pale); font-family: 'Barlow Condensed', sans-serif; font-weight: 600; white-space: nowrap; }
+    .dash-milestone {
+      margin-top: 1rem; text-align: center;
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--copper-pale); border: 1px solid var(--copper);
+      border-radius: 3px; padding: 0.5rem 0.8rem;
+      opacity: 0; transform: scale(.96); transition: opacity .5s ease, transform .5s ease;
+    }
+    .dash-milestone.show { opacity: 1; transform: scale(1); }
+    .dash-cap { font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.6; }
+
+    /* ═══ EDITIONS ═══ */
+    .editions { background: var(--offwhite); padding: 5.5rem 2rem; }
+    .ed-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-top: 2.5rem; }
+    .ed-card { background: var(--white); border-top: 3px solid var(--navy); padding: 2rem 1.8rem; display: flex; flex-direction: column; }
+    .ed-card.featured { border-top-color: var(--copper); box-shadow: 0 18px 45px rgba(17,27,48,0.10); }
+    .ed-card h3 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.3rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 0.2rem;
+    }
+    .ed-seg {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
+      font-size: 0.88rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--copper); margin-bottom: 1rem;
+    }
+    .ed-card p { font-size: 0.97rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .ed-status { margin-top: auto; }
+    .badge-now {
+      display: inline-block; background: var(--copper); color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 0.35rem 0.9rem; border-radius: 2px;
+    }
+    .badge-dev {
+      display: inline-block; color: var(--text-muted);
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 500;
+      font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase;
+      border: 1px solid rgba(110,110,110,0.35); padding: 0.35rem 0.9rem; border-radius: 2px;
+    }
+    .ed-foot { text-align: center; font-size: 1rem; font-style: italic; color: var(--text-muted); margin-top: 2.2rem; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .portfolio-band {
+      background: var(--white); border-left: 3px solid var(--copper);
+      padding: 2.2rem 2.4rem; margin-top: 3rem;
+    }
+    .portfolio-band h3 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 500;
+      font-size: 1.7rem; color: var(--navy); margin-bottom: 0.8rem;
+    }
+    .portfolio-band p { font-size: 1.05rem; line-height: 1.75; }
+
+    /* ═══ INVESTMENT ═══ */
+    .invest { background: var(--navy-deep); padding: 5.5rem 2rem; position: relative; overflow: hidden; }
+    .invest::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(160,113,79,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .invest-inner { position: relative; z-index: 1; }
+    .invest .section-title { color: var(--white); }
+    .invest .section-label { color: var(--copper-light); }
+    .invest-frame {
+      font-size: 1.13rem; font-weight: 300; color: rgba(255,255,255,0.7);
+      max-width: 700px; line-height: 1.85; margin-bottom: 3rem;
+    }
+    .invest-frame strong { color: var(--white); font-weight: 500; }
+    .inv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-bottom: 2.5rem; }
+    .inv-card { background: var(--navy); border-top: 3px solid var(--copper); padding: 2rem 1.8rem; }
+    .inv-card h3 {
+      font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+      font-size: 1.15rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--copper-light); margin-bottom: 0.8rem;
+    }
+    .inv-card p { font-size: 0.97rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 0.8rem; }
+    .inv-card p strong { color: var(--white); font-weight: 500; }
+    .inv-price {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      color: var(--copper-pale); font-size: 1.1rem;
+    }
+    .invest-cta { text-align: center; margin-top: 1.5rem; }
+    .invest-cta .lead {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic;
+      color: rgba(255,255,255,0.85); margin-bottom: 1.6rem;
+    }
+
+    /* ═══ FOOTER ═══ */
+    footer {
+      background: rgba(25, 39, 68, 1); padding: 2.5rem 2rem; text-align: center;
+      border-top: 1px solid rgba(160,113,79,0.12);
+    }
+    .footer-logo img { height: 40px; margin-bottom: 1.2rem; }
+    .footer-links { display: flex; justify-content: center; gap: 1.8rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); text-decoration: none; transition: color .3s ease;
+    }
+    .footer-links a:hover { color: var(--copper-light); }
+    .footer-info, .footer-locale { font-size: 0.85rem; color: rgba(255,255,255,0.35); }
+    .footer-locale { margin-top: 0.3rem; }
+
+    /* ═══ RESPONSIVE ═══ */
+    @media (max-width: 900px) {
+      .how-grid, .scale-grid, .ed-grid, .inv-grid { grid-template-columns: 1fr 1fr; }
+      .receive-grid { grid-template-columns: 1fr; }
+      .dash { position: static; }
+      .lever-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      .hero { padding: 8rem 1.5rem 4.5rem; }
+      .hero-mark { height: 84px; }
+    }
+    @media (max-width: 620px) {
+      .how-grid, .scale-grid, .ed-grid, .inv-grid { grid-template-columns: 1fr; }
+      .story, .turn, .how, .why, .receive, .editions, .invest { padding-left: 1.4rem; padding-right: 1.4rem; }
+      .shift-band { padding: 1.5rem 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="mainNav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#story">The Story</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#why">Why It Matters</a></li>
+        <li><a href="#receive">What You Receive</a></li>
+        <li><a href="#editions">Editions</a></li>
+        <li><a href="#investment">Investment</a></li>
+        <li><a href="/scheduling/" class="nav-cta">Schedule</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#story">The Story</a>
+    <a href="#how">How It Works</a>
+    <a href="#why">Why It Matters</a>
+    <a href="#receive">What You Receive</a>
+    <a href="#editions">Editions</a>
+    <a href="#investment">Investment</a>
+    <a href="/scheduling/">Schedule</a>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero">
+    <div class="hero-inner">
+      <img class="hero-mark" src="../assets/BTM_Logo_Transparent.png" alt="Beyond the Magic">
+      <div class="section-label">The Hotel Blueprint&trade; &middot; by Beyond the Magic</div>
+      <h1>Is your hotel the same hotel<br>on <em>Sunday night?</em></h1>
+      <p class="hero-body">We don&rsquo;t measure one night. We read the heartbeat of your hotel — and hand you the system that makes excellence the default, on every shift, including the ones nobody senior is watching. <strong>The brand audit becomes a byproduct.</strong></p>
+      <div class="hero-ctas">
+        <a class="btn-copper" href="/scheduling/">Schedule the Conversation</a>
+        <a class="btn-outline" href="#story">Read the Story</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ THE STORY ═══ -->
+  <section class="story" id="story">
+    <div class="container">
+      <div class="story-wrap">
+        <div class="section-label reveal">Two Guests. One Sunday Night.</div>
+        <div class="copper-line reveal"></div>
+        <p class="story-scene reveal">A 96-room hotel off the interstate.<br>Sunday night, 9:40 p.m.</p>
+        <p class="story-setup reveal">The front desk manager went home at five. The newest front desk associate is three weeks into the job. Sunday night is always the leanest crew of the week. This is the shift nobody designs for. Watch what happens.</p>
+
+        <div class="story-block bennetts reveal">
+          <div class="story-who">The Bennetts</div>
+          <p>Nine hours of driving. Two kids under six, both past their limit. A grandmother two exits away, recovering from surgery at St.&nbsp;Luke&rsquo;s. They booked the cheapest decent option at eleven o&rsquo;clock last night. They are not looking for an experience. They are looking for a bed, and a way to hold it together.</p>
+          <p>They never make it to the desk. The associate comes to them — <i>&ldquo;You made it. Let&rsquo;s get you to your room.&rdquo;</i> She&rsquo;d seen the late booking on the arrivals list at the start of her shift — two adults, two kids — and had already blocked a quiet room near the elevator and staged the crib before they ever pulled in. She hears &ldquo;hospital&rdquo; once, in passing, and doesn&rsquo;t let it drop: she writes down the pharmacy that&rsquo;s open until midnight, two blocks east.</p>
+          <p>Nobody asked her permission to do any of it. Nobody needed to.</p>
+          <span class="audit-note">Audit address — A1.1 &middot; &ldquo;We are expecting you&rdquo;</span>
+          <img class="story-img" src="../assets/hotelblueprint/bennetts-checkin.jpg" alt="A front desk associate steps out from behind the desk to welcome an exhausted family arriving at night" loading="lazy">
+        </div>
+
+        <div class="story-block dana reveal">
+          <div class="story-who">Dana</div>
+          <p>Dana Okafor landed at 9:05 p.m. with a presentation to rebuild and a suit that spent six hours in a garment bag. By the time she pushes through the lobby doors it&rsquo;s just past eleven — the hour the desk hands over to the night audit. Monday at 10 a.m., she walks into the meeting that decides the largest contract of her career.</p>
+          <p>At the desk she asks a question she expects nothing from: is there anywhere to print, and somewhere quiet to rehearse? The overnight associate doesn&rsquo;t shrug. <i>&ldquo;The breakfast room is yours until six. And leave the deck with me tonight — it&rsquo;ll be printed by morning.&rdquo;</i> She rehearses until one — and between his audit runs, the auditor takes the chair across from her and plays the client. A 6:30 wake-up call is set before she thinks to ask for one.</p>
+          <span class="audit-note">Audit address — A7.1 &middot; The request is received with ownership</span>
+          <img class="story-img" src="../assets/hotelblueprint/dana-rehearse.jpg" alt="Dana rehearsing her presentation in the empty breakfast room at night while the night auditor plays her client" loading="lazy">
+        </div>
+
+        <div class="shift-band reveal">
+          <div class="story-who">The Shift Change</div>
+          <p><strong>Between Sunday night and Monday morning, the desk changes hands twice.</strong></p>
+          <p>This is where most hotels lose the thread. A request made to one person evaporates when that person goes home. At this hotel, both requests crossed a shift change — the Bennetts&rsquo; at eleven, Dana&rsquo;s at dawn — and neither guest ever knew there was a handoff to cross.</p>
+          <span class="audit-note" style="border-left-color:var(--copper-light)">Audit address — A7.4 &middot; The request survives the shift change</span>
+        </div>
+
+        <div class="story-block reveal">
+          <div class="story-who">Monday Morning</div>
+          <p>Hot food is out. Tables are clear. There&rsquo;s coffee set aside for the parents in 214, and a table set with two high chairs. A corner table held for the woman with the laptop — her presentation handed to her in a folder as she walks in. The attendant asks the Bennett kids how their grandmother is doing — by name.</p>
+          <p>Then the iron leaves a mark on the only blouse that matters. At the desk: <i>&ldquo;I&rsquo;m so sorry — let&rsquo;s fix that,&rdquo;</i> before anyone asks for her room number. Pressed, hung on her door by nine, a call at 9:20 to confirm — and a taxi offered. At ten, Dana walks in pressed, printed, and rehearsed. The room she walks out of is the one that won.</p>
+          <span class="audit-note">Audit addresses — A5.5 &middot; A8.1&ndash;A8.3 &middot; The recovery, loop closed</span>
+          <div class="story-imgrow">
+            <img class="story-img" src="../assets/hotelblueprint/breakfast-room.jpg" alt="Monday morning in the breakfast room: the family at a table with high chairs while the attendant hands Dana her printed presentation at a reserved corner table" loading="lazy">
+            <img class="story-img" src="../assets/hotelblueprint/blouse-delivered.jpg" alt="A house person hangs the freshly pressed blouse on the guest room door" loading="lazy">
+          </div>
+        </div>
+
+        <div class="story-block bennetts reveal">
+          <div class="story-who">Two Sundays Later</div>
+          <p>The Bennetts are back. They didn&rsquo;t compare prices this time. <i>&ldquo;Welcome back. We have your room near the elevator.&rdquo;</i> The crib is already up.</p>
+          <p>They came back every weekend of the recovery. Then the aunts started staying there. Then the uncles. When Grandma was finally well, the reunion booked the place. A month after the meeting, Dana signed the contract in this hotel&rsquo;s meeting room — she wanted her client to see the place that got her there. Her firm&rsquo;s regional meetings have run out of that room ever since.</p>
+          <p><strong>The hotel never advertised to any of them.</strong></p>
+          <span class="audit-note">Audit address — A10.1 &middot; The return: &ldquo;Welcome back&rdquo;</span>
+          <div class="story-imgrow">
+            <img class="story-img" src="../assets/hotelblueprint/bennetts-return.jpg" alt="The family returns to the front desk and is recognized — a welcome back card sits on the counter" loading="lazy">
+            <img class="story-img" src="../assets/hotelblueprint/dana-contract.jpg" alt="Dana shakes hands with her client outside the hotel meeting room after signing the contract" loading="lazy">
+          </div>
+        </div>
+
+        <p class="story-pull reveal">Neither of them believed a hotel could help them succeed. <em>That&rsquo;s what they tell people now.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE TURN ═══ -->
+  <section class="turn">
+    <div class="turn-inner">
+      <h2 class="reveal">None of this was magic.<br>And none of it was luck.</h2>
+      <p class="turn-body reveal">Every moment in that story has an address. An arrivals list someone actually reads. A handoff log. An empowerment guardrail. A breakfast standard written as behavior, not adjectives. A three-week associate who was taught the <i>why</i>, not just the <i>what</i>. Your team is capable of a night like this — that has never been the question. The question is whether your hotel produces it <strong>by design — every shift, every Sunday — or by chance.</strong></p>
+      <p class="turn-q reveal">Is your hotel the same hotel on Sunday night as it is on Wednesday morning?</p>
+      <p class="turn-fn reveal">Your brand audit can&rsquo;t answer that. It asks whether the right thing is present on inspection day. A mystery shop scores one visit against a checklist. Reviews report symptoms, months after the system that caused them failed. <strong>None of them grades the system that generates outcomes — or tells you whether it will hold tomorrow. We built the instrument that does.</strong></p>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-label reveal">How It Works</div>
+      <h2 class="section-title reveal">We don&rsquo;t measure one night.<br>We read <em>the heartbeat.</em></h2>
+      <div class="how-grid">
+        <div class="move-card reveal">
+          <div class="move-num">01</div>
+          <h3>We stay as your guest.</h3>
+          <p>Two anonymous stays in the same week, under your two most different operating conditions — the Sunday hotel and the Wednesday hotel. We make a real request and report a real problem, and watch what your system does with them. Then we check out, come back, and see if anyone remembers us. The difference between the two stays is the measurement no checklist can take: <strong>variance.</strong></p>
+        </div>
+        <div class="move-card reveal">
+          <div class="move-num">02</div>
+          <h3>We find out why.</h3>
+          <p>Good performance is easy to see. The question is why it happened. Three lenses locate the answer: the people behind the performance, the leadership behind the people, and the system behind them both. We audit systems — never people. No associate is named in any finding. And your General Manager is briefed first, before ownership, always. <strong>This is a partnership, not an inspection.</strong></p>
+        </div>
+        <div class="move-card reveal">
+          <div class="move-num">03</div>
+          <h3>We hand you the blueprint.</h3>
+          <p>You receive a Performance Reliability Index&trade;, the root cause behind every gap, and a prioritized build plan — sequenced, owned, and measurable. Not a binder of findings. <strong>A blueprint for the hotel you intend to own.</strong></p>
+        </div>
+      </div>
+
+      <div class="scale-wrap">
+        <p class="scale-intro reveal">Every observation is scored on one question. Not &ldquo;was it good?&rdquo; — but &ldquo;why was it good?&rdquo;</p>
+        <div class="scale-grid">
+          <div class="scale-card reveal">
+            <div class="scale-num">4</div>
+            <div class="scale-name">Designed</div>
+            <p>Excellent, and traceable to a system. Any associate, any shift, same result.</p>
+          </div>
+          <div class="scale-card reveal">
+            <div class="scale-num">3</div>
+            <div class="scale-name">Performed</div>
+            <p>Excellent, but person-dependent. A strong individual delivered; the system didn&rsquo;t.</p>
+          </div>
+          <div class="scale-card reveal">
+            <div class="scale-num">2</div>
+            <div class="scale-name">Inconsistent</div>
+            <p>Varies by person, shift, or moment.</p>
+          </div>
+          <div class="scale-card reveal">
+            <div class="scale-num">1</div>
+            <div class="scale-name">Absent</div>
+            <p>The expected behavior wasn&rsquo;t there.</p>
+          </div>
+        </div>
+        <p class="scale-note reveal">A 3 is a future 2. A property full of 3s looks identical to a property full of 4s — until turnover hits.</p>
+        <div class="cls-strip reveal">
+          <span class="cls-chip">Architected</span>
+          <span class="cls-chip hot">Person-Powered</span>
+          <span class="cls-chip">Variable</span>
+          <span class="cls-chip">Unreliable</span>
+        </div>
+        <p class="cls-caption reveal">The Index classifies your hotel. Most well-run hotels learn they are <strong>Person-Powered</strong> — strong today, exposed to the next resignation. No other instrument on the market can see it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY IT MATTERS ═══ -->
+  <section class="why" id="why">
+    <div class="container">
+      <div class="section-label reveal">Why It Matters</div>
+      <h2 class="section-title reveal">Every tool you already use<br>measures something <em>adjacent</em> to performance.</h2>
+      <div class="why-table-wrap reveal">
+        <table class="why-table">
+          <tr><th>Instrument</th><th>What It Measures</th><th>What It Cannot See</th></tr>
+          <tr><td class="inst">Brand standards audit</td><td>Compliance — is the right thing present today?</td><td class="gap">Whether it will be present tomorrow, or why it varies</td></tr>
+          <tr><td class="inst">Mystery shop</td><td>One visit, one snapshot, scripted checklist</td><td class="gap">Variance — a single draw from the distribution</td></tr>
+          <tr><td class="inst">Guest review platforms</td><td>Lagging guest sentiment</td><td class="gap">Root cause — reviews report symptoms months late</td></tr>
+          <tr><td class="inst">Engagement surveys</td><td>Self-reported sentiment, annually</td><td class="gap">Behavior — what the system produces at 9 p.m. Sunday</td></tr>
+        </table>
+      </div>
+      <p class="why-line reveal">One audit threatens to take your flag. <em>Ours builds the hotel that never has to worry about it.</em></p>
+      <div class="lever-grid">
+        <div class="lever reveal">
+          <h3>Turnover is the silent P&amp;L leak</h3>
+          <p>Frontline hospitality turnover runs high everywhere — but the cost hides in recruiting, ramp-up, and the guest experience damage during every vacancy. The diagnostic finds <strong>why people leave</strong>; the system build — onboarding, recognition, growth path — is the fix.<span class="q">What does replacing one associate actually cost you — and how many did you replace last year?</span></p>
+        </div>
+        <div class="lever reveal">
+          <h3>Reputation converts directly to rate</h3>
+          <p>Your reviews are lagging indicators of the exact behaviors the audit measures first-hand: friendliness, cleanliness, hot food, problems fixed. Fix the system and the scores follow — <strong>with ADR, occupancy, and RevPAR behind them.</strong><span class="q">What happened to your rate the last time your review scores dipped?</span></p>
+        </div>
+        <div class="lever reveal">
+          <h3>The repeat guest is the business model</h3>
+          <p>Select-service and extended-stay properties live on returning crews, relocations, and corporate accounts. One account quietly choosing the competitor after an inconsistent stay is a year of room nights gone — and it never shows up as a complaint. <strong>The Return Probe tests repeat-guest readiness directly.</strong><span class="q">Which account would hurt most if it didn&rsquo;t come back — and would you even know why?</span></p>
+        </div>
+        <div class="lever reveal">
+          <h3>The Person-Powered hotel is an unpriced risk</h3>
+          <p>Your best property may be your most fragile: strong reviews, no systems, performance concentrated in two veterans and a GM working sixty-hour weeks. <strong>The Index makes that risk visible before the resignation</strong> — not after the reviews crater. You insure the building. Nobody insures the performance.<span class="q">If your best front desk associate gave notice tonight, what would next month look like?</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT YOU RECEIVE ═══ -->
+  <section class="receive" id="receive">
+    <div class="container">
+      <div class="section-label reveal">What You Receive</div>
+      <h2 class="section-title reveal">Not a report. <em>A working asset.</em></h2>
+      <div class="receive-grid">
+        <div>
+          <div class="artifact reveal">
+            <h3>01 — The Reveal</h3>
+            <p>The executive report-out. Your Performance Reliability Index&trade; and classification. The top three system gaps — stated as root causes, not symptoms. The top three strengths worth protecting, including the strong performers currently masking gaps. Strengths come first. Every finding has a system address and a fix.</p>
+          </div>
+          <div class="artifact reveal">
+            <h3>02 — The Living Blueprint</h3>
+            <p>Your dashboard. The score lives at the top, big and honest. Every action item is a checkable commitment — complete a correction, check the box, watch the projected score move. Built for the Monday meeting: here&rsquo;s where we are, here&rsquo;s what we closed, here&rsquo;s what&rsquo;s next. Own more than one property, and every flag rolls up to one screen.</p>
+          </div>
+          <div class="artifact reveal">
+            <h3>03 — Architect on Call <span>&middot; optional</span></h3>
+            <p>The architect stays through construction. A retainer for ongoing, hotel-specific guidance — system installs, leadership alignment, and the six-month Pulse Check that proves the score held. The blueprint is yours either way. This keeps the architect on site.</p>
+          </div>
+          <p class="receive-close reveal">The audit is the front door.<br>The system is the house.</p>
+        </div>
+        <div class="reveal">
+          <div class="dash" id="dashDemo">
+            <div class="dash-head"><span class="t">The Living Blueprint</span><span class="p">The Hartwell Inn &amp; Suites</span></div>
+            <div class="dash-pri">
+              <div class="big">2.9</div>
+              <div class="cls">Person-Powered</div>
+              <div class="proj">Projected score: <b id="projVal">2.9</b> &middot; <span id="projCls">check the open actions to watch it move</span></div>
+            </div>
+            <div class="dash-bars">
+              <div class="dbar"><div class="lab"><span>A &middot; Guest Experience</span><span class="v">3.2</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+              <div class="dbar"><div class="lab"><span>B &middot; People (NAME)</span><span class="v">2.8</span></div><div class="track"><div class="fill" style="width:70%"></div></div></div>
+              <div class="dbar"><div class="lab"><span>C &middot; Leadership (TAG)</span><span class="v">2.9</span></div><div class="track"><div class="fill" style="width:72%"></div></div></div>
+              <div class="dbar"><div class="lab"><span>D &middot; System Architecture</span><span class="v">2.6</span></div><div class="track"><div class="fill" style="width:65%"></div></div></div>
+            </div>
+            <div class="dash-items">
+              <div class="hint">Action plan — try checking one</div>
+              <div class="ditem done"><span class="bx">&#10003;</span><span>Shift-handoff log installed — requests now survive the change&nbsp;<span class="gain">+0.1</span></span></div>
+              <div class="ditem done"><span class="bx">&#10003;</span><span>Arrivals-list pre-block routine — every late booking read by 6 p.m.&nbsp;<span class="gain">+0.1</span></span></div>
+              <div class="ditem" data-gain="0.2"><span class="bx"></span><span>Recovery loop-close standard — every fixed problem gets a follow-up call&nbsp;<span class="gain">+0.2</span></span></div>
+              <div class="ditem" data-gain="0.2"><span class="bx"></span><span>Empowerment guardrails in writing — what the desk can resolve on the spot&nbsp;<span class="gain">+0.2</span></span></div>
+            </div>
+            <div class="dash-milestone" id="dashMilestone">&#9733; Milestone — one build phase from Architected</div>
+          </div>
+          <p class="dash-cap">Sample engagement — fictional property, real methodology. Every action item names the system it repairs, its owner, and the measurable that proves it worked.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EDITIONS ═══ -->
+  <section class="editions" id="editions">
+    <div class="container">
+      <div class="section-label reveal">Editions</div>
+      <h2 class="section-title reveal">Built for your segment.<br>Designed for <em>your portfolio.</em></h2>
+      <div class="ed-grid">
+        <div class="ed-card featured reveal">
+          <h3>Select Edition</h3>
+          <div class="ed-seg">Select &amp; Limited Service &middot; Extended Stay</div>
+          <p>The Split Stay — two covert stays under maximum-contrast conditions. Instrumented for breakfast, market, guest laundry, extended-stay living, and repeat-guest economics.</p>
+          <div class="ed-status"><span class="badge-now">Available Now</span></div>
+        </div>
+        <div class="ed-card reveal">
+          <h3>Full Service Edition</h3>
+          <div class="ed-seg">Full Service Hotels</div>
+          <p>Split Stay with extended instrumentation. F&amp;B outlets, banquet and event operations, and the multi-department handoffs where full-service performance lives or dies.</p>
+          <div class="ed-status"><span class="badge-dev">In Development</span></div>
+        </div>
+        <div class="ed-card reveal">
+          <h3>Resort Edition</h3>
+          <div class="ed-seg">Luxury &amp; Resort</div>
+          <p>Multi-day journey protocol. Recreation, the full guest journey across days, and luxury service standards — where the promise is highest and variance is least forgivable.</p>
+          <div class="ed-status"><span class="badge-dev">In Development</span></div>
+        </div>
+      </div>
+      <p class="ed-foot reveal">Every edition delivers the same three artifacts — The Reveal, The Living Blueprint, and Architect on Call — and scores on the same Performance Reliability Index&trade;.</p>
+      <div class="portfolio-band reveal">
+        <h3>One property gets a blueprint. A portfolio gets a pattern.</h3>
+        <p>When the same three gaps surface at five of your properties, you don&rsquo;t have five problems. You have one architectural absence, replicated by growth — and it can be designed once and installed network-wide. Every flag on one screen. Every future acquisition pre-wired: audit on day one, deploy the system, raise the flag <i>and</i> the standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INVESTMENT ═══ -->
+  <section class="invest" id="investment">
+    <div class="invest-inner container">
+      <div class="section-label reveal">Initial Investment</div>
+      <h2 class="section-title reveal">You already pay for broken systems.<br><em>Invisibly.</em></h2>
+      <p class="invest-frame reveal">Turnover you&rsquo;ve normalized. The corporate account that quietly didn&rsquo;t come back. The rate you couldn&rsquo;t hold the last time reviews dipped. The GM compensating personally for systems that don&rsquo;t exist. <strong>The Hotel Blueprint prices a risk you&rsquo;re already paying for — then makes it stop.</strong></p>
+      <div class="inv-grid">
+        <div class="inv-card reveal">
+          <h3>Per-Property Engagement</h3>
+          <p>One engagement, one property, by edition: the Split Stay, the full three-lens diagnostic, The Reveal, the prioritized build plan, and The Living Blueprint.</p>
+          <p class="inv-price">Engagement fee by edition — request the current schedule.</p>
+        </div>
+        <div class="inv-card reveal">
+          <h3>Portfolio Packages</h3>
+          <p>Volume pricing across your flags, structured so each hotel carries its own engagement — the way your properties already bill. The portfolio view comes with it.</p>
+          <p class="inv-price">Scaled per property — priced on portfolio size.</p>
+        </div>
+        <div class="inv-card reveal">
+          <h3>Architect on Call</h3>
+          <p>The optional retainer: ongoing consultation for your hotel, continued Living Blueprint access, and the six-month Pulse Check that proves the improvement held.</p>
+          <p class="inv-price">Monthly retainer — scoped to your property.</p>
+        </div>
+      </div>
+      <div class="invest-cta reveal">
+        <p class="lead">The value of one returning family exceeds the cost of finding out.</p>
+        <a class="btn-copper" href="/scheduling/">Schedule the Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-logo">
+      <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
+    </div>
+    <div class="footer-links">
+      <a href="/#origin">Our Story</a>
+      <a href="/#framework">How We Work</a>
+      <a href="/people-behind-the-magic.html">People</a>
+      <a href="/bizhealth/">Assessment</a>
+      <a href="/scheduling/">Schedule</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
+    <div class="footer-locale">The name tag is the symbol. The system behind it is the reality.</div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script>
+    // Scroll-aware nav shadow
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // Mobile menu
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Living Blueprint demo — projected PRI climbs as open actions are checked
+    (function () {
+      const base = 2.9; // current PRI; the two pre-completed installs are already reflected
+      const projEl = document.getElementById('projVal');
+      const projCls = document.getElementById('projCls');
+      const milestone = document.getElementById('dashMilestone');
+      const items = document.querySelectorAll('#dashDemo .ditem[data-gain]');
+      function recalc() {
+        let gain = 0;
+        items.forEach(it => { if (it.classList.contains('done')) gain += parseFloat(it.dataset.gain); });
+        const proj = Math.round((base + gain) * 10) / 10;
+        projEl.textContent = proj.toFixed(1);
+        if (proj >= 3.3) { projCls.textContent = 'classification climbing — Architected in sight'; milestone.classList.add('show'); }
+        else if (proj > 2.9) { projCls.textContent = 'the score moves when you do'; milestone.classList.remove('show'); }
+        else { projCls.textContent = 'check the open actions to watch it move'; milestone.classList.remove('show'); }
+      }
+      items.forEach(it => {
+        it.addEventListener('click', () => {
+          it.classList.toggle('done');
+          it.querySelector('.bx').innerHTML = it.classList.contains('done') ? '&#10003;' : '';
+          recalc();
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
