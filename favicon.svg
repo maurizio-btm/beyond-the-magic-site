@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Beyond the Magic compass favicon">
+  <title>BTM Compass Favicon — Copper Bullet on Navy</title>
+  <rect x="0" y="0" width="200" height="200" rx="44" fill="#1A2744"/>
+  <g transform="translate(100,100) scale(0.64) translate(-100,-100)">
+    <polygon points="100,10 112,88 100,100 88,88" fill="#C49A72"/>
+    <polygon points="100,190 112,112 100,100 88,112" fill="#C49A72"/>
+    <polygon points="184,100 106,88 100,100 106,112" fill="#C49A72"/>
+    <polygon points="16,100 94,88 100,100 94,112" fill="#C49A72"/>
+    <circle cx="100" cy="100" r="11" fill="#C49A72"/>
+  </g>
+</svg>
