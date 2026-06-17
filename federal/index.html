@@ -78,11 +78,25 @@
     .btn-outline:hover { background:var(--copper); color:var(--white); }
 
     /* ---------- HERO ---------- */
-    .hero { background:var(--navy); color:var(--white); padding:5.5rem 0 4.5rem; position:relative; }
-    .hero::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:4px; background:var(--copper); }
+    .hero { background:var(--navy); color:var(--white); padding:4.8rem 0; position:relative; overflow:hidden; }
+    .hero::before {
+      content:""; position:absolute; inset:-30px;
+      background:url('../assets/hero-executive-room.jpeg') center center / cover no-repeat;
+      filter:blur(5px); z-index:0;
+    }
+    .hero-overlay {
+      content:""; position:absolute; inset:0; z-index:1;
+      background:
+        linear-gradient(180deg, rgba(20,31,56,0.80) 0%, rgba(20,31,56,0.90) 100%),
+        radial-gradient(circle at 18% 30%, rgba(181,136,90,0.18), transparent 38%);
+    }
+    .hero::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:4px; background:var(--copper); z-index:3; }
+    .hero .wrap { position:relative; z-index:2; }
+    .hero-grid { display:grid; grid-template-columns:1fr auto; align-items:center; gap:3rem; }
+    .hero-badge { width:230px; height:auto; justify-self:end; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.35)); }
     .hero .label { color:var(--copper-light); }
-    .hero h1 { color:var(--white); font-size:3.5rem; margin:1rem 0 1.3rem; max-width:14ch; }
-    .hero p { font-size:1.15rem; color:rgba(245,243,239,0.85); max-width:60ch; font-weight:300; }
+    .hero h1 { color:var(--white); font-size:3.5rem; margin:1rem 0 1.3rem; max-width:15ch; }
+    .hero p { font-size:1.15rem; color:rgba(245,243,239,0.88); max-width:54ch; font-weight:300; }
     .hero-cta { margin-top:2.2rem; display:flex; gap:1rem; flex-wrap:wrap; }
 
     /* ---------- CREDENTIAL BAR ---------- */
@@ -140,6 +154,7 @@
     table.code-tbl td .pri { color:var(--copper); font-weight:600; }
 
     /* past performance */
+    .pp-feature { width:100%; height:300px; object-fit:cover; object-position:center 35%; display:block; margin-bottom:1.9rem; border-top:3px solid var(--copper); }
     .pp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
     .pp-card { background:var(--white); padding:1.6rem 1.7rem; border-left:3px solid var(--copper); }
     section.alt .pp-card { background:var(--offwhite); }
@@ -192,13 +207,17 @@
       .cred:nth-child(3) { border-left:none; }
       .cred:nth-child(odd) { border-left:none; }
       .codes { grid-template-columns:1fr; gap:2.4rem; }
+      .hero-grid { grid-template-columns:1fr; gap:1.8rem; }
+      .hero-badge { width:160px; justify-self:start; order:-1; }
     }
     @media (max-width:640px) {
       .wrap { padding:0 1.3rem; }
-      .hero { padding:3.6rem 0 3rem; }
+      .hero { padding:3.4rem 0 2.8rem; }
       .hero h1 { font-size:2.5rem; }
+      .hero-badge { width:135px; }
       h2 { font-size:2rem; }
       .cap-grid, .diff-grid, .pp-grid, .creds-grid { grid-template-columns:1fr; }
+      .pp-feature { height:200px; }
       .cred { border-left:none; border-top:1px solid rgba(255,255,255,0.07); }
       .cred:first-child { border-top:none; }
       .topbar-cta { padding:0.55rem 1rem; font-size:0.74rem; }
@@ -225,13 +244,19 @@
 
   <!-- HERO -->
   <header class="hero">
+    <div class="hero-overlay"></div>
     <div class="wrap">
-      <span class="label">Federal Capabilities</span>
-      <h1>Performance, engineered for mission readiness.</h1>
-      <p>Beyond the Magic Consulting is a small-business performance architecture firm. We design and install the operating systems that make high-quality performance consistent, measurable, and scalable — closing the gap between intention and execution across leadership, workforce, and operations.</p>
-      <div class="hero-cta">
-        <a href="../BTM_Capability_Statement.pdf" class="btn-copper" target="_blank" rel="noopener">Download Capability Statement</a>
-        <a href="/scheduling/" class="btn-outline">Request a Conversation</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="label">Federal Capabilities</span>
+          <h1>Performance, engineered for mission readiness.</h1>
+          <p>Beyond the Magic Consulting is a small-business performance architecture firm. We design and install the operating systems that make high-quality performance consistent, measurable, and scalable — closing the gap between intention and execution across leadership, workforce, and operations.</p>
+          <div class="hero-cta">
+            <a href="../BTM_Capability_Statement.pdf" class="btn-copper" target="_blank" rel="noopener">Download Capability Statement</a>
+            <a href="/scheduling/" class="btn-outline">Request a Conversation</a>
+          </div>
+        </div>
+        <img src="../assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting logo" class="hero-badge">
       </div>
     </div>
   </header>
@@ -254,11 +279,13 @@
       <div class="sec-head reveal">
         <span class="label">Core Capabilities</span>
         <h2>How we help agencies perform.</h2>
-        <p>We modernize how a workforce executes — not by adding more training, but by designing the systems that make performance repeatable at scale.</p>
+        <p>We modernize how a workforce executes — not by adding more training, but by designing the systems that make performance repeatable at scale. BTM specializes in strengthening leadership effectiveness, workforce capability, organizational culture, customer experience, and operational execution.</p>
       </div>
       <div class="cap-grid">
         <div class="cap-card reveal"><h3>Organizational Culture &amp; Experience Design</h3><span class="out">So culture becomes observable</span></div>
-        <div class="cap-card reveal"><h3>Leadership Development</h3><span class="out">So strategy is lived consistently</span></div>
+        <div class="cap-card reveal"><h3>Leadership Development &amp; Executive Coaching</h3><span class="out">So strategy is lived consistently</span></div>
+        <div class="cap-card reveal"><h3>Customer Experience &amp; Service Excellence</h3><span class="out">So service stays consistent at every touchpoint</span></div>
+        <div class="cap-card reveal"><h3>Facilitation &amp; Strategic Planning</h3><span class="out">So groups align and move to action</span></div>
         <div class="cap-card reveal"><h3>Learning &amp; Development / Curriculum Design</h3><span class="out">So standards scale through capability</span></div>
         <div class="cap-card reveal"><h3>Change Management</h3><span class="out">So adoption happens with less friction</span></div>
         <div class="cap-card reveal"><h3>Train-the-Trainer &amp; Capacity Building</h3><span class="out">So ownership stays in house</span></div>
@@ -306,9 +333,10 @@
           <h3>NAICS Codes</h3>
           <table class="code-tbl">
             <tr><th>541611</th><td>Administrative &amp; General Management Consulting <span class="pri">(Primary)</span></td></tr>
+            <tr><th>541612</th><td>Human Resources Consulting Services</td></tr>
             <tr><th>611430</th><td>Professional &amp; Management Development Training</td></tr>
-            <tr><th>541613</th><td>Marketing Consulting Services</td></tr>
             <tr><th>541618</th><td>Other Management Consulting Services</td></tr>
+            <tr><th>541613</th><td>Marketing Consulting Services</td></tr>
           </table>
         </div>
         <div class="reveal">
@@ -332,6 +360,7 @@
         <span class="label">Representative Past Performance</span>
         <h2>Trusted in high-stakes environments.</h2>
       </div>
+      <img src="../assets/stryker-costa-rica.jpg" alt="Beyond the Magic facilitating a leadership session at Stryker's Costa Rica operations" class="pp-feature reveal" loading="lazy">
       <div class="pp-grid">
         <div class="pp-card reveal"><div class="org">U.S. Army War College</div><p>Senior leadership development engagement supporting an experienced command audience.</p></div>
         <div class="pp-card reveal"><div class="org">Stryker</div><p>Fully customized, on-site leadership experience for a Fortune 500 medical-device leader, including bilingual facilitation at international operations.</p></div>
@@ -347,7 +376,7 @@
     <div class="wrap">
       <span class="label">Teaming &amp; Partnerships</span>
       <h2>We&rsquo;d be glad to team with you.</h2>
-      <p>Beyond the Magic partners with federal agencies, prime contractors, and fellow small businesses to design and deliver workforce and leadership programs. We&rsquo;re flexible on teaming arrangements and bring senior expertise from complex, large-scale initiatives.</p>
+      <p>Beyond the Magic is available for prime contracts, subcontracts, teaming arrangements, and strategic partnerships supporting federal, state, local, and commercial clients. We bring senior expertise from complex, large-scale initiatives and are flexible on teaming structures.</p>
       <div class="hero-cta">
         <a href="../BTM_Capability_Statement.pdf" class="btn-copper" target="_blank" rel="noopener">Download Capability Statement</a>
         <a href="/scheduling/" class="btn-outline">Request a Conversation</a>
