@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Federal Capabilities | Beyond the Magic Consulting</title>
+  <meta name="description" content="Beyond the Magic Consulting — Federal Capabilities. A small-business performance architecture firm registered and active in SAM.gov. UEI TB94NBMJ2KY6 · CAGE 20Q61.">
+  <!-- Standalone capability page: discoverable by direct URL (SAM.gov, teaming partners), not indexed or linked from the main site. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#1A2744">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Barlow+Condensed:wght@300;400;500;600;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════
+       BTM BRAND SYSTEM
+       Navy #1A2744 · Copper #A0714F · Copper Light #C49A72
+       Off White #F5F3EF · Charcoal #1E2023
+       Display: Cormorant Garamond · UI: Barlow Condensed · Body: Barlow
+    ══════════════════════════════════════ */
+    :root {
+      --navy:#1A2744; --navy-deep:#111B30; --navy-light:#243458;
+      --copper:#A0714F; --copper-light:#C49A72; --copper-pale:#D4B896;
+      --offwhite:#F5F3EF; --offwhite-warm:#EDE9E2; --charcoal:#1E2023;
+      --text-body:#3D3D3D; --text-muted:#6E6E6E; --white:#FFFFFF;
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body {
+      font-family:'Barlow',sans-serif; font-weight:400; color:var(--text-body);
+      background:var(--offwhite); line-height:1.75; overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    p, blockquote, li { text-wrap:pretty; }
+    a { color:inherit; }
+    .wrap { width:100%; max-width:1180px; margin:0 auto; padding:0 2rem; }
+
+    .label {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase;
+      letter-spacing:0.22em; font-size:0.82rem; font-weight:600; color:var(--copper);
+    }
+    h1,h2,h3 { font-family:'Cormorant Garamond',serif; color:var(--navy); font-weight:600; line-height:1.12; }
+    h2 { font-size:2.4rem; margin-bottom:0.4rem; }
+    h2.on-dark { color:var(--white); }
+
+    /* ---------- TOP BAR ---------- */
+    .topbar {
+      position:sticky; top:0; z-index:50; background:var(--navy);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    .topbar-inner { display:flex; align-items:center; justify-content:space-between; height:74px; }
+    .topbar-logo img { height:30px; display:block; }
+    .topbar-cta {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase;
+      letter-spacing:0.12em; font-weight:600; font-size:0.82rem;
+      color:var(--navy); background:var(--copper-light);
+      padding:0.6rem 1.4rem; text-decoration:none; transition:background .25s,color .25s;
+    }
+    .topbar-cta:hover { background:var(--copper); color:var(--white); }
+
+    /* ---------- BUTTONS ---------- */
+    .btn-copper {
+      display:inline-block; font-family:'Barlow Condensed',sans-serif; text-transform:uppercase;
+      letter-spacing:0.12em; font-weight:600; font-size:0.92rem; color:var(--navy);
+      background:var(--copper-light); padding:0.9rem 2.2rem; text-decoration:none;
+      transition:background .25s, color .25s;
+    }
+    .btn-copper:hover { background:var(--copper); color:var(--white); }
+    .btn-outline {
+      display:inline-block; font-family:'Barlow Condensed',sans-serif; text-transform:uppercase;
+      letter-spacing:0.12em; font-weight:600; font-size:0.92rem; color:var(--white);
+      background:transparent; border:1px solid var(--copper); padding:0.9rem 2.2rem; text-decoration:none;
+      transition:background .25s, color .25s;
+    }
+    .btn-outline:hover { background:var(--copper); color:var(--white); }
+
+    /* ---------- HERO ---------- */
+    .hero { background:var(--navy); color:var(--white); padding:5.5rem 0 4.5rem; position:relative; }
+    .hero::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:4px; background:var(--copper); }
+    .hero .label { color:var(--copper-light); }
+    .hero h1 { color:var(--white); font-size:3.5rem; margin:1rem 0 1.3rem; max-width:14ch; }
+    .hero p { font-size:1.15rem; color:rgba(245,243,239,0.85); max-width:60ch; font-weight:300; }
+    .hero-cta { margin-top:2.2rem; display:flex; gap:1rem; flex-wrap:wrap; }
+
+    /* ---------- CREDENTIAL BAR ---------- */
+    .creds { background:var(--navy-deep); }
+    .creds-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+    .cred {
+      padding:1.6rem 1.4rem; text-align:center; border-left:1px solid rgba(255,255,255,0.07);
+    }
+    .cred:first-child { border-left:none; }
+    .cred .k {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.16em;
+      font-size:0.72rem; color:var(--copper-light); font-weight:600; margin-bottom:0.3rem;
+    }
+    .cred .v {
+      font-family:'Cormorant Garamond',serif; color:var(--white); font-size:1.5rem; font-weight:600;
+      letter-spacing:0.01em; font-variant-numeric:tabular-nums;
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section.band { padding:4.5rem 0; }
+    section.alt { background:var(--offwhite-warm); }
+    .sec-head { margin-bottom:2.6rem; max-width:62ch; }
+    .sec-head p { margin-top:0.7rem; color:var(--text-body); font-size:1.05rem; }
+
+    /* capabilities */
+    .cap-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+    .cap-card { background:var(--white); border-top:3px solid var(--copper); padding:1.7rem 1.6rem; }
+    .cap-card h3 { font-size:1.4rem; margin-bottom:0.35rem; }
+    .cap-card .out {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.08em;
+      font-size:0.8rem; color:var(--copper); font-weight:600;
+    }
+
+    /* differentiators */
+    .diff-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2.2rem; }
+    .diff h3 { font-size:1.55rem; margin-bottom:0.5rem; }
+    .diff .num {
+      font-family:'Barlow Condensed',sans-serif; font-size:0.9rem; letter-spacing:0.2em;
+      color:var(--copper); font-weight:600; margin-bottom:0.6rem;
+    }
+    .diff p { color:var(--text-body); }
+
+    /* codes */
+    .codes { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+    .codes h3 { font-size:1.6rem; padding-bottom:0.6rem; margin-bottom:0.4rem; border-bottom:2px solid var(--copper); }
+    table.code-tbl { width:100%; border-collapse:collapse; }
+    table.code-tbl tr { border-bottom:1px solid var(--offwhite-warm); }
+    section.alt table.code-tbl tr { border-bottom:1px solid #e0dacf; }
+    table.code-tbl th {
+      text-align:left; vertical-align:top; padding:0.7rem 1rem 0.7rem 0; width:26%;
+      font-family:'Barlow Condensed',sans-serif; font-weight:700; color:var(--navy);
+      font-size:1.05rem; letter-spacing:0.04em; font-variant-numeric:tabular-nums;
+    }
+    table.code-tbl td { padding:0.7rem 0; color:var(--text-body); font-size:0.98rem; }
+    table.code-tbl td .pri { color:var(--copper); font-weight:600; }
+
+    /* past performance */
+    .pp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+    .pp-card { background:var(--white); padding:1.6rem 1.7rem; border-left:3px solid var(--copper); }
+    section.alt .pp-card { background:var(--offwhite); }
+    .pp-card .org {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.07em;
+      font-weight:700; color:var(--navy); font-size:1.05rem; margin-bottom:0.3rem;
+    }
+    .pp-card p { font-size:0.96rem; color:var(--text-body); line-height:1.6; }
+    .pp-note { margin-top:1.6rem; font-size:0.9rem; color:var(--text-muted); font-style:italic; }
+
+    /* teaming / CTA */
+    .teaming { background:var(--navy); color:var(--white); padding:4.8rem 0; text-align:center; position:relative; }
+    .teaming::before { content:""; position:absolute; top:0; left:0; width:100%; height:4px; background:var(--copper); }
+    .teaming .label { color:var(--copper-light); }
+    .teaming h2 { color:var(--white); margin:0.8rem 0 1rem; font-size:2.6rem; }
+    .teaming p { max-width:62ch; margin:0 auto; color:rgba(245,243,239,0.85); font-size:1.1rem; font-weight:300; }
+    .teaming .hero-cta { justify-content:center; margin-top:2.2rem; }
+
+    /* contact strip */
+    .contact-strip { background:var(--navy-deep); color:var(--white); padding:2.6rem 0; }
+    .contact-inner { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.5rem; }
+    .contact-inner .who .name { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--white); font-weight:600; }
+    .contact-inner .who .role {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.12em;
+      font-size:0.78rem; color:var(--copper-light); font-weight:600;
+    }
+    .contact-inner .lines { text-align:right; font-size:1rem; }
+    .contact-inner .lines a { color:var(--copper-light); text-decoration:none; }
+    .contact-inner .lines a:hover { color:var(--white); }
+
+    /* footer */
+    footer { background:var(--navy); color:rgba(245,243,239,0.6); padding:2.2rem 0; text-align:center; border-top:1px solid rgba(255,255,255,0.08); }
+    footer .footer-logo img { height:26px; opacity:0.9; margin-bottom:0.9rem; }
+    footer .meta {
+      font-family:'Barlow Condensed',sans-serif; text-transform:uppercase; letter-spacing:0.14em;
+      font-size:0.74rem; color:var(--copper-pale);
+    }
+    footer .copy { font-size:0.82rem; margin-top:0.5rem; }
+    footer a { color:var(--copper-light); text-decoration:none; }
+
+    /* reveal */
+    .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .no-js .reveal { opacity:1; transform:none; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width:900px) {
+      .cap-grid, .diff-grid { grid-template-columns:1fr 1fr; }
+      .creds-grid { grid-template-columns:1fr 1fr; }
+      .cred:nth-child(3) { border-left:none; }
+      .cred:nth-child(odd) { border-left:none; }
+      .codes { grid-template-columns:1fr; gap:2.4rem; }
+    }
+    @media (max-width:640px) {
+      .wrap { padding:0 1.3rem; }
+      .hero { padding:3.6rem 0 3rem; }
+      .hero h1 { font-size:2.5rem; }
+      h2 { font-size:2rem; }
+      .cap-grid, .diff-grid, .pp-grid, .creds-grid { grid-template-columns:1fr; }
+      .cred { border-left:none; border-top:1px solid rgba(255,255,255,0.07); }
+      .cred:first-child { border-top:none; }
+      .topbar-cta { padding:0.55rem 1rem; font-size:0.74rem; }
+      .topbar-logo img { height:25px; }
+      .hero-cta { flex-direction:column; }
+      .hero-cta a { text-align:center; }
+      .contact-inner { flex-direction:column; align-items:flex-start; }
+      .contact-inner .lines { text-align:left; }
+    }
+  </style>
+</head>
+<body class="no-js">
+  <script>document.body.classList.remove('no-js');</script>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="/" class="topbar-logo" aria-label="Beyond the Magic Consulting home">
+        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
+      </a>
+      <a href="../BTM_Capability_Statement.pdf" class="topbar-cta" target="_blank" rel="noopener">Capability Statement (PDF)</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <span class="label">Federal Capabilities</span>
+      <h1>Performance, engineered for mission readiness.</h1>
+      <p>Beyond the Magic Consulting is a small-business performance architecture firm. We design and install the operating systems that make high-quality performance consistent, measurable, and scalable — closing the gap between intention and execution across leadership, workforce, and operations.</p>
+      <div class="hero-cta">
+        <a href="../BTM_Capability_Statement.pdf" class="btn-copper" target="_blank" rel="noopener">Download Capability Statement</a>
+        <a href="/scheduling/" class="btn-outline">Request a Conversation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- CREDENTIAL BAR -->
+  <div class="creds">
+    <div class="wrap">
+      <div class="creds-grid">
+        <div class="cred"><div class="k">UEI</div><div class="v">TB94NBMJ2KY6</div></div>
+        <div class="cred"><div class="k">CAGE Code</div><div class="v">20Q61</div></div>
+        <div class="cred"><div class="k">SAM.gov</div><div class="v">Registered &middot; Active</div></div>
+        <div class="cred"><div class="k">Business Size</div><div class="v">Small Business</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORE CAPABILITIES -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Core Capabilities</span>
+        <h2>How we help agencies perform.</h2>
+        <p>We modernize how a workforce executes — not by adding more training, but by designing the systems that make performance repeatable at scale.</p>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-card reveal"><h3>Organizational Culture &amp; Experience Design</h3><span class="out">So culture becomes observable</span></div>
+        <div class="cap-card reveal"><h3>Leadership Development</h3><span class="out">So strategy is lived consistently</span></div>
+        <div class="cap-card reveal"><h3>Learning &amp; Development / Curriculum Design</h3><span class="out">So standards scale through capability</span></div>
+        <div class="cap-card reveal"><h3>Change Management</h3><span class="out">So adoption happens with less friction</span></div>
+        <div class="cap-card reveal"><h3>Train-the-Trainer &amp; Capacity Building</h3><span class="out">So ownership stays in house</span></div>
+        <div class="cap-card reveal"><h3>Measurement &amp; Governance</h3><span class="out">So performance stays accountable</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT SETS US APART -->
+  <section class="band alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">What Sets Us Apart</span>
+        <h2>We build systems, then we leave them with you.</h2>
+      </div>
+      <div class="diff-grid">
+        <div class="diff reveal">
+          <div class="num">01</div>
+          <h3>Operating Systems, Not Training Alone</h3>
+          <p>We install repeatable systems that produce performance — not one-time events that inspire and then fade.</p>
+        </div>
+        <div class="diff reveal">
+          <div class="num">02</div>
+          <h3>Arrive, Build, Transfer, Endure</h3>
+          <p>We transfer capability to your people so results survive our exit. Our goal is never dependency — it is durable ownership.</p>
+        </div>
+        <div class="diff reveal">
+          <div class="num">03</div>
+          <h3>Scale Without Losing Fidelity</h3>
+          <p>A curated bench of senior practitioners, structured around capabilities rather than name recognition.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODES -->
+  <section class="band">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Codes &amp; Classifications</span>
+        <h2>How to find and contract us.</h2>
+      </div>
+      <div class="codes">
+        <div class="reveal">
+          <h3>NAICS Codes</h3>
+          <table class="code-tbl">
+            <tr><th>541611</th><td>Administrative &amp; General Management Consulting <span class="pri">(Primary)</span></td></tr>
+            <tr><th>611430</th><td>Professional &amp; Management Development Training</td></tr>
+            <tr><th>541613</th><td>Marketing Consulting Services</td></tr>
+            <tr><th>541618</th><td>Other Management Consulting Services</td></tr>
+          </table>
+        </div>
+        <div class="reveal">
+          <h3>PSC Codes</h3>
+          <table class="code-tbl">
+            <tr><th>R408</th><td>Program Management / Support Services <span class="pri">(Primary)</span></td></tr>
+            <tr><th>R499</th><td>Other Professional Services</td></tr>
+            <tr><th>U001</th><td>Lectures / Training Services</td></tr>
+            <tr><th>R406</th><td>Policy Review / Development Services</td></tr>
+            <tr><th>R410</th><td>Program Evaluation Services</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAST PERFORMANCE -->
+  <section class="band alt">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Representative Past Performance</span>
+        <h2>Trusted in high-stakes environments.</h2>
+      </div>
+      <div class="pp-grid">
+        <div class="pp-card reveal"><div class="org">U.S. Army War College</div><p>Senior leadership development engagement supporting an experienced command audience.</p></div>
+        <div class="pp-card reveal"><div class="org">Stryker</div><p>Fully customized, on-site leadership experience for a Fortune 500 medical-device leader, including bilingual facilitation at international operations.</p></div>
+        <div class="pp-card reveal"><div class="org">Drury Hotels</div><p>Service-culture and experience-design work scaled across a multi-property hospitality operation.</p></div>
+        <div class="pp-card reveal"><div class="org">Thrivent</div><p>Leadership and organizational-performance support within a large financial-services enterprise.</p></div>
+      </div>
+      <p class="pp-note">Representative engagements drawn from our practitioner bench. Additional past performance and references available on request.</p>
+    </div>
+  </section>
+
+  <!-- TEAMING / CTA -->
+  <section class="teaming">
+    <div class="wrap">
+      <span class="label">Teaming &amp; Partnerships</span>
+      <h2>We&rsquo;d be glad to team with you.</h2>
+      <p>Beyond the Magic partners with federal agencies, prime contractors, and fellow small businesses to design and deliver workforce and leadership programs. We&rsquo;re flexible on teaming arrangements and bring senior expertise from complex, large-scale initiatives.</p>
+      <div class="hero-cta">
+        <a href="../BTM_Capability_Statement.pdf" class="btn-copper" target="_blank" rel="noopener">Download Capability Statement</a>
+        <a href="/scheduling/" class="btn-outline">Request a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT STRIP -->
+  <div class="contact-strip">
+    <div class="wrap contact-inner">
+      <div class="who">
+        <div class="name">Maurizio Landi</div>
+        <div class="role">Founder &middot; Performance Architect</div>
+      </div>
+      <div class="lines">
+        <div><a class="eml" data-u="maurizio" data-d="beyondthemagic" data-t="co"></a></div>
+        <div><a class="phn" data-p="3212856244">(321) 285-MAGIC</a></div>
+        <div><a href="/">beyondthemagic.com</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy"></div>
+    <div class="meta">Beyond the Magic Consulting LLC &middot; Central Florida &middot; Global Reach</div>
+    <div class="copy">&copy; 2026 Beyond the Magic Consulting. All rights reserved. &nbsp;&middot;&nbsp; <a href="../BTM_Capability_Statement.pdf" target="_blank" rel="noopener">Capability Statement</a></div>
+  </footer>
+
+  <script>
+    // Email assembly (Cloudflare-safe runtime pattern)
+    document.querySelectorAll('.eml').forEach(el => {
+      const addr = el.getAttribute('data-u') + '@' + el.getAttribute('data-d') + '.' + el.getAttribute('data-t');
+      el.href = 'mai' + 'lto:' + addr;
+      el.textContent = addr;
+    });
+    // Phone assembly
+    document.querySelectorAll('.phn').forEach(el => {
+      el.href = 'tel:+1' + el.getAttribute('data-p');
+    });
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold:0.12 });
+      reveals.forEach(r => obs.observe(r));
+    } else {
+      reveals.forEach(r => r.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
