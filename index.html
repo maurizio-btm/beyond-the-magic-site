@@ -130,16 +130,17 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.15rem;
       align-items: center;
       margin-left: auto;
     }
     .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.03rem;
+      font-size: 0.97rem;
       font-weight: 500;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      white-space: nowrap;
       color: rgba(255,255,255,0.65);
       text-decoration: none;
       transition: color 0.3s ease;
@@ -1059,9 +1060,12 @@
     .no-js .reveal { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 1060px) {
+    /* Collapse the inline nav to the menu before the 7 items + EN|ES toggle can crowd or wrap */
+    @media (max-width: 1220px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
+    }
+    @media (max-width: 1060px) {
       .framework-grid { grid-template-columns: repeat(2, 1fr); }
       .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
