@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beyond the Magic Consulting | Performance Architects</title>
-  <meta name="description" content="Beyond the Magic Consulting — Performance Architects. We design the systems that make consistent performance predictable, measurable, and sustainable.">
+  <title>Beyond the Magic Consulting | Arquitectos del Desempeño</title>
+  <meta name="description" content="Beyond the Magic Consulting — Arquitectos del Desempeño. Diseñamos los sistemas que hacen que el alto desempeño sea predecible, medible y sostenible.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -130,16 +130,17 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.15rem;
       align-items: center;
       margin-left: auto;
     }
     .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.03rem;
+      font-size: 0.97rem;
       font-weight: 500;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      white-space: nowrap;
       color: rgba(255,255,255,0.65);
       text-decoration: none;
       transition: color 0.3s ease;
@@ -247,7 +248,7 @@
       content: '';
       position: absolute;
       inset: -30px;
-      background: url('assets/hero-executive-room.jpeg') center center / cover no-repeat;
+      background: url('../assets/hero-executive-room.jpeg') center center / cover no-repeat;
       filter: blur(5px);
       z-index: 0;
     }
@@ -474,7 +475,7 @@
       inset: -6px;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.2), rgba(20,31,56,0.52)),
-        url('assets/final-stage-speaking.jpeg') center center / cover no-repeat;
+        url('../assets/final-stage-speaking.jpeg') center center / cover no-repeat;
       filter: blur(4px);
       z-index: 0;
     }
@@ -543,7 +544,7 @@
       content: '';
       position: absolute;
       inset: -30px;
-      background: url('assets/activate-circle-room.jpeg') center center / cover no-repeat;
+      background: url('../assets/activate-circle-room.jpeg') center center / cover no-repeat;
       filter: blur(5px);
       z-index: 0;
     }
@@ -606,6 +607,17 @@
       font-weight: 600;
       color: var(--navy);
       margin-bottom: 0.75rem;
+    }
+    .framework-card .pillar-en {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-top: -0.4rem;
+      margin-bottom: 0.6rem;
     }
     .framework-card p {
       font-size: 1.15rem;
@@ -756,7 +768,7 @@
       content: '';
       position: absolute;
       inset: -30px;
-      background: url('assets/reach-ballroom.jpeg') center center / cover no-repeat;
+      background: url('../assets/reach-ballroom.jpeg') center center / cover no-repeat;
       filter: blur(5px);
       z-index: 0;
     }
@@ -934,21 +946,11 @@
     }
 
     .proof-featured {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
       background: var(--white);
       box-shadow: 0 2px 20px rgba(0,0,0,0.07);
       border-top: 3px solid var(--copper);
       margin-bottom: 1.5rem;
       overflow: hidden;
-    }
-    .proof-featured-img {
-      width: 100%;
-      height: 100%;
-      min-height: 360px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
     }
     .proof-featured-copy {
       padding: 3rem 2.8rem;
@@ -1059,9 +1061,12 @@
     .no-js .reveal { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 1060px) {
+    /* Spanish labels are longer — collapse the inline nav to the menu a touch earlier so it never crowds */
+    @media (max-width: 1220px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
+    }
+    @media (max-width: 1060px) {
       .framework-grid { grid-template-columns: repeat(2, 1fr); }
       .origin-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
@@ -1084,8 +1089,6 @@
       .origin-quote { position: relative; right: auto; bottom: auto; max-width: 100%; }
       .people-cta-card { padding: 1.8rem; }
       .framework-divider { margin: 2.5rem -1.5rem; padding: 4rem 1.5rem; }
-      .proof-featured { grid-template-columns: 1fr; }
-      .proof-featured-img { min-height: 260px; object-position: center; }
       .proof-featured-copy { padding: 2rem 1.8rem; }
       .proof-grid { grid-template-columns: 1fr; }
       .proof-stats { margin: 2.5rem -1.5rem 2.5rem; }
@@ -1108,45 +1111,45 @@
   <nav id="mainNav">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
+        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Arquitectos del Desempeño">
       </a>
       <ul class="nav-links">
-        <li><a href="#origin">Our Story</a></li>
-        <li><a href="#framework">How We Work</a></li>
-        <li><a href="#why-us">Why Us</a></li>
-        <li><a href="people-behind-the-magic.html">People</a></li>
-        <li><a href="/bizhealth/">Assessment</a></li>
-        <li><a href="/scheduling/">Schedule</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-        <li class="lang-toggle"><span class="active">EN</span><span class="sep">|</span><a href="/es/">ES</a></li>
+        <li><a href="#origin">Nuestra Historia</a></li>
+        <li><a href="#framework">Cómo Trabajamos</a></li>
+        <li><a href="#why-us">Por Qué Nosotros</a></li>
+        <li><a href="people-behind-the-magic.html">Personas</a></li>
+        <li><a href="https://bizhealth.ai/es">Evaluación</a></li>
+        <li><a href="/es/scheduling/">Agendar</a></li>
+        <li><a href="#contact" class="nav-cta">Contacto</a></li>
+        <li class="lang-toggle"><a href="/">EN</a><span class="sep">|</span><span class="active">ES</span></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir navegación">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#origin" onclick="closeMobile()">Our Story</a>
-    <a href="#framework" onclick="closeMobile()">How We Work</a>
-    <a href="#why-us" onclick="closeMobile()">Why Us</a>
-    <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
-    <a href="/bizhealth/" onclick="closeMobile()">Assessment</a>
-    <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
-    <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="/es/" onclick="closeMobile()" style="color:var(--copper-light);">Español</a>
+    <a href="#origin" onclick="closeMobile()">Nuestra Historia</a>
+    <a href="#framework" onclick="closeMobile()">Cómo Trabajamos</a>
+    <a href="#why-us" onclick="closeMobile()">Por Qué Nosotros</a>
+    <a href="people-behind-the-magic.html" onclick="closeMobile()">Personas</a>
+    <a href="https://bizhealth.ai/es" onclick="closeMobile()">Evaluación</a>
+    <a href="/es/scheduling/" onclick="closeMobile()">Agendar</a>
+    <a href="#contact" onclick="closeMobile()">Contacto</a>
+    <a href="/" onclick="closeMobile()" style="color:var(--copper-light);">English</a>
   </div>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <img src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" class="hero-badge" fetchpriority="high">
-      <p class="hero-pa">Performance Architects</p>
-      <h1>Performance is not inspired.<br>It is <span class="copper">designed.</span></h1>
-      <p class="hero-body">We design the systems behind service excellence — so customer experience, leadership behavior, and team performance improve in ways that last.</p>
+      <img src="../assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" class="hero-badge" fetchpriority="high">
+      <p class="hero-pa">Arquitectos del Desempeño</p>
+      <h1>El desempeño no se inspira.<br>Se <span class="copper">diseña.</span></h1>
+      <p class="hero-body">Diseñamos los sistemas detrás de la excelencia en el servicio — para que la experiencia del cliente, el comportamiento del liderazgo y el desempeño de los equipos mejoren de forma duradera.</p>
       <div class="hero-actions">
-        <a href="/scheduling/" class="btn-copper" style="min-width:220px; text-align:center; white-space:nowrap; padding:0.9rem 2.2rem;">Book a Session</a>
-        <a href="#origin" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">Our Story</a>
+        <a href="/es/scheduling/" class="btn-copper" style="min-width:220px; text-align:center; white-space:nowrap; padding:0.9rem 2.2rem;">Agendar una Sesión</a>
+        <a href="#origin" class="btn-outline" style="min-width:220px; text-align:center; white-space:nowrap;">Nuestra Historia</a>
       </div>
     </div>
     <div class="hero-scroll">
@@ -1159,20 +1162,20 @@
   <!-- ═══ INDUSTRY TICKER ═══ -->
   <div class="ticker">
     <div class="ticker-inner">
-      <span class="ticker-tag">Automotive</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Aviation</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Education</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Faith-Based Organizations</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Financial Services</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Food &amp; Beverage</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Government</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Healthcare</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Hospitality</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Human Resources</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Manufacturing</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Public Sector</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Retail</span><span class="ticker-dot"></span>
-      <span class="ticker-tag">Sports &amp; Venues</span>
+      <span class="ticker-tag">Automotriz</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Aviación</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Educación</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Organizaciones de Fe</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Servicios Financieros</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Alimentos y Bebidas</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Gobierno</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Salud</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Hospitalidad</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Recursos Humanos</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Manufactura</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Sector Público</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Comercio Minorista</span><span class="ticker-dot"></span>
+      <span class="ticker-tag">Deportes y Recintos</span>
     </div>
   </div>
 
@@ -1181,25 +1184,26 @@
     <span id="philosophy"></span>
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Our Story</div>
+        <div class="section-label">Nuestra Historia</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">Built from the inside. <em>Committed to what lasts.</em></h2>
+        <h2 class="section-title">Construido desde adentro. <em>Comprometido con lo que perdura.</em></h2>
       </div>
       <div class="origin-grid">
         <div class="origin-text reveal">
-          <p>Beyond the Magic was built on a belief that the strongest performance principles in the world should not be confined to a single organization.</p>
-          <p>Founded by Maurizio Landi and shaped by decades inside one of the world's most operationally complex entertainment enterprises — leading enterprise consulting and facilitating executive leadership programs across industries — BTM carries a practitioner's understanding of how culture, leadership, learning, and service become repeatable at scale. Not in theory. In the daily systems and operational disciplines that hold under real-world&nbsp;pressure.</p>
-          <p><a href="people-behind-the-magic.html" style="color:var(--copper); text-decoration:none; font-weight:500;">Meet the people behind the magic &rarr;</a></p>
+          <p>Beyond the Magic nació de una convicción: que los principios de desempeño más sólidos del mundo no deberían quedar confinados a una sola organización.</p>
+          <p>Fundada por Maurizio Landi y forjada a lo largo de décadas dentro de una de las empresas de entretenimiento más complejas operativamente del mundo — liderando consultoría empresarial y facilitando programas de liderazgo ejecutivo en múltiples industrias — BTM aporta la comprensión de un practicante sobre cómo la cultura, el liderazgo, el aprendizaje y el servicio se vuelven repetibles a escala. No en teoría. En los sistemas diarios y las disciplinas operativas que resisten la presión del mundo&nbsp;real.</p>
+          <p>Con experiencia directa en América Latina y la capacidad de diseñar y facilitar con la misma fidelidad en español y en inglés.</p>
+          <p><a href="people-behind-the-magic.html" style="color:var(--copper); text-decoration:none; font-weight:500;">Conozca a las personas detrás de la magia &rarr;</a></p>
           <div class="philosophy-pillars reveal">
-            <div class="pillar"><span class="pillar-label">Structure, not just inspiration</span></div>
-            <div class="pillar"><span class="pillar-label">Integration, not just content</span></div>
-            <div class="pillar"><span class="pillar-label">Sustainment, not just launch</span></div>
+            <div class="pillar"><span class="pillar-label">Estructura, no solo inspiración</span></div>
+            <div class="pillar"><span class="pillar-label">Integración, no solo contenido</span></div>
+            <div class="pillar"><span class="pillar-label">Sostenimiento, no solo lanzamiento</span></div>
           </div>
         </div>
         <div class="reveal">
           <div class="origin-quote-wrap">
             <div class="origin-quote">
-              <blockquote>We do not just deliver training. We build operating systems for performance.</blockquote>
+              <blockquote>No solo impartimos capacitación. Construimos sistemas operativos para el desempeño.</blockquote>
               <cite>Beyond the Magic</cite>
             </div>
           </div>
@@ -1215,31 +1219,35 @@
     <!-- The Name Tag Framework -->
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">Our Approach</div>
+        <div class="section-label">Nuestro Enfoque</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">From aspiration <em>to operation</em></h2>
-        <p class="framework-intro">Every organization has symbols, standards, and behaviors that shape how its brand is experienced. Our work helps leaders design those systems intentionally, build them into daily operations, activate them through learning and leadership, and sustain them over time.</p>
+        <h2 class="section-title">De la aspiración <em>a la operación</em></h2>
+        <p class="framework-intro">Toda organización tiene símbolos, estándares y comportamientos que definen cómo se experimenta su marca. Nuestro trabajo ayuda a los líderes a diseñar esos sistemas de forma intencional, integrarlos en la operación diaria, activarlos a través del aprendizaje y el liderazgo, y sostenerlos en el tiempo. Lo hacemos a través de cuatro fases — <strong>Design, Build, Activate, Sustain</strong> (Diseñar, Construir, Activar, Sostener).</p>
       </div>
       <div class="framework-grid">
         <div class="framework-card reveal">
           <div class="framework-num">01</div>
-          <h3>Design</h3>
-          <p>Define the identity, standards, symbols, and experiences the organization wants to be known for. Map the gap between what you say you value and what people actually experience.</p>
+          <h3>Diseñar</h3>
+          <span class="pillar-en">Design</span>
+          <p>Definir la identidad, los estándares, los símbolos y las experiencias por los que la organización quiere ser reconocida. Mapear la brecha entre lo que se dice valorar y lo que las personas realmente experimentan.</p>
         </div>
         <div class="framework-card reveal">
           <div class="framework-num">02</div>
-          <h3>Build</h3>
-          <p>Create the systems, tools, leadership practices, and behaviors that make the identity real — so culture is supported by structure, not just intention.</p>
+          <h3>Construir</h3>
+          <span class="pillar-en">Build</span>
+          <p>Crear los sistemas, las herramientas, las prácticas de liderazgo y los comportamientos que hacen real la identidad — para que la cultura se sostenga en la estructura, no solo en la intención.</p>
         </div>
         <div class="framework-card reveal">
           <div class="framework-num">03</div>
-          <h3>Activate</h3>
-          <p>Introduce people to the meaning behind the work so they do not just wear the brand — they understand what it asks of them and are equipped to deliver it.</p>
+          <h3>Activar</h3>
+          <span class="pillar-en">Activate</span>
+          <p>Acercar a las personas al significado detrás del trabajo, para que no solo porten la marca — comprendan lo que les exige y estén preparadas para cumplirla.</p>
         </div>
         <div class="framework-card reveal">
           <div class="framework-num">04</div>
-          <h3>Sustain</h3>
-          <p>Reinforce, measure, coach, and maintain the culture so the identity does not fade as the organization grows, changes, or faces pressure.</p>
+          <h3>Sostener</h3>
+          <span class="pillar-en">Sustain</span>
+          <p>Reforzar, medir, acompañar y mantener la cultura para que la identidad no se desvanezca a medida que la organización crece, cambia o enfrenta presión.</p>
         </div>
       </div>
     </div>
@@ -1247,62 +1255,62 @@
     <!-- BizHealth.ai Integration Block -->
     <div class="container">
       <div class="reveal" style="margin-top:3rem; padding:2.5rem 3rem; background:var(--white); border-top:3px solid var(--copper); box-shadow:0 1px 12px rgba(0,0,0,0.05); text-align:center;">
-        <div class="section-label">Start with diagnosis before design</div>
+        <div class="section-label">Empiece por el diagnóstico antes del diseño</div>
         <div class="copper-line center"></div>
-        <p style="font-size:1.2rem; color:var(--text-body); max-width:580px; margin:0 auto 1.75rem; line-height:1.7;">For organizations that need clarity before committing to a larger engagement, <a href="/bizhealth/" style="color:var(--copper); text-decoration:none;">BizHealth.ai</a> offers a practical starting point. It helps identify where leadership, culture, operations, and customer experience need the most attention — so the next step is more informed.</p>
-        <a href="/bizhealth/" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Explore the Assessment</a>
+        <p style="font-size:1.2rem; color:var(--text-body); max-width:580px; margin:0 auto 1.75rem; line-height:1.7;">Para organizaciones que necesitan claridad antes de comprometerse con un proyecto mayor, <a href="https://bizhealth.ai/es" style="color:var(--copper); text-decoration:none;">BizHealth.ai</a> ofrece un punto de partida práctico. Ayuda a identificar dónde el liderazgo, la cultura, las operaciones y la experiencia del cliente requieren mayor atención — para que el siguiente paso sea más informado.</p>
+        <a href="https://bizhealth.ai/es" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Explorar la Evaluación</a>
       </div>
     </div>
 
     <!-- Visual divider band -->
     <div class="framework-divider reveal">
-      <span class="framework-divider-label">What We Deliver</span>
+      <span class="framework-divider-label">Lo Que Entregamos</span>
     </div>
 
     <!-- Services -->
     <div class="container">
-      <p class="services-intro reveal">We partner with organizations over months — and at times years — to co-design, install, and embed the systems required for excellence to be felt in every interaction.</p>
+      <p class="services-intro reveal">Acompañamos a las organizaciones durante meses — y a veces años — para co-diseñar, instalar e integrar los sistemas necesarios para que la excelencia se sienta en cada interacción.</p>
       <div class="services-grid reveal">
         <div class="service-item">
-          <h3>Organizational Culture &amp; Experience Design</h3>
-          <span class="service-outcome">So culture becomes observable</span>
+          <h3>Diseño de Cultura y Experiencia Organizacional</h3>
+          <span class="service-outcome">Para que la cultura se vuelva observable</span>
         </div>
         <div class="service-item">
-          <h3>Leadership Development</h3>
-          <span class="service-outcome">So strategy is lived consistently</span>
+          <h3>Desarrollo de Liderazgo</h3>
+          <span class="service-outcome">Para que la estrategia se viva con consistencia</span>
         </div>
         <div class="service-item">
-          <h3>Learning &amp; Development / Curriculum Design</h3>
-          <span class="service-outcome">So standards scale through capability</span>
+          <h3>Aprendizaje y Desarrollo / Diseño Curricular</h3>
+          <span class="service-outcome">Para que los estándares escalen mediante la capacidad</span>
         </div>
         <div class="service-item">
-          <h3>Change Management</h3>
-          <span class="service-outcome">So adoption happens with less friction</span>
+          <h3>Gestión del Cambio</h3>
+          <span class="service-outcome">Para que la adopción ocurra con menos fricción</span>
         </div>
         <div class="service-item">
-          <h3>Train-the-Trainer &amp; Internal Capacity Building</h3>
-          <span class="service-outcome">So ownership stays in house</span>
+          <h3>Formación de Formadores y Capacidad Interna</h3>
+          <span class="service-outcome">Para que la propiedad permanezca en casa</span>
         </div>
         <div class="service-item">
-          <h3>Measurement &amp; Governance</h3>
-          <span class="service-outcome">So performance stays measurable</span>
+          <h3>Medición y Gobernanza</h3>
+          <span class="service-outcome">Para que el desempeño siga siendo medible</span>
         </div>
       </div>
       <div class="reveal" style="text-align:center; margin-top:2.5rem;">
-        <a href="/scheduling/" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Start the Conversation</a>
+        <a href="/es/scheduling/" class="btn-copper" style="display:inline-block; padding:0.9rem 2.5rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Iniciar la Conversación</a>
       </div>
     </div>
 
   </section>
 
-  <!-- ═══ PROOF / TRACK RECORD ═══ -->
+  <!-- ═══ PROOF / TRACK RECORD (reactivated, anonymized, no client photos) ═══ -->
   <section class="proof" id="proof">
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">Track Record</div>
+        <div class="section-label">Trayectoria</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">The work <em>speaks for itself</em></h2>
-        <p style="max-width:620px; margin:0 auto 0; font-size:1.2rem; color:var(--text-body);">Before BTM, this bench was already in the room — at Fortune 500 companies, military institutions, global enterprises, and universities. That experience doesn't disappear when the umbrella changes.</p>
+        <h2 class="section-title">El trabajo <em>habla por sí solo</em></h2>
+        <p style="max-width:620px; margin:0 auto 0; font-size:1.2rem; color:var(--text-body);">Antes de BTM, este equipo ya estaba en la sala — en empresas Fortune 500, instituciones militares, empresas globales y universidades. Esa experiencia no desaparece cuando cambia el nombre en la puerta.</p>
       </div>
     </div>
 
@@ -1310,63 +1318,62 @@
     <div class="proof-stats reveal">
       <div class="proof-stat">
         <span class="proof-stat-num">12,000+</span>
-        <span class="proof-stat-label">Professionals Developed</span>
+        <span class="proof-stat-label">Profesionales Desarrollados</span>
       </div>
       <div class="proof-stat">
         <span class="proof-stat-num">113</span>
-        <span class="proof-stat-label">Engagements Delivered</span>
+        <span class="proof-stat-label">Proyectos Entregados</span>
       </div>
       <div class="proof-stat">
         <span class="proof-stat-num">200+</span>
-        <span class="proof-stat-label">Facilitation Days</span>
+        <span class="proof-stat-label">Días de Facilitación</span>
       </div>
       <div class="proof-stat">
         <span class="proof-stat-num">14</span>
-        <span class="proof-stat-label">Industries Served</span>
+        <span class="proof-stat-label">Industrias Atendidas</span>
       </div>
     </div>
 
     <div class="container">
 
-      <!-- Featured: Stryker -->
-      <div class="proof-featured reveal" style="display:none">
-        <img src="assets/stryker-costa-rica.jpg" alt="Maurizio Landi facilitating at Stryker's Costa Rica office" class="proof-featured-img" loading="lazy">
+      <!-- Featured: anonymized, bilingual + Latin America -->
+      <div class="proof-featured reveal">
         <div class="proof-featured-copy">
-          <div class="proof-sector">Enterprise &middot; Global Operations</div>
-          <h3>Stryker</h3>
-          <p>A Fortune 500 medical device leader engaged our team to design and deliver a custom leadership experience at their Costa Rica operations — entirely on-site, in their environment. The engagement required full curriculum customization, bilingual facilitation capability, and deep alignment with Stryker's operational culture. This is what it looks like when development is built around an organization's specific identity, not adapted from a shelf.</p>
+          <div class="proof-sector">Empresa Global &middot; Operaciones</div>
+          <h3>Una empresa Fortune 500 de dispositivos médicos</h3>
+          <p>Una compañía líder en dispositivos médicos (Fortune 500) nos confió el diseño y la entrega de una experiencia de liderazgo a la medida en sus operaciones en América Latina — íntegramente presencial, en su propio entorno. El proyecto exigió personalización curricular total, capacidad de facilitación bilingüe y una alineación profunda con su cultura operativa. Así se ve el desarrollo construido en torno a la identidad específica de una organización, y no adaptado de un estante.</p>
         </div>
       </div>
 
       <!-- Three supporting vignettes -->
-      <div class="proof-grid" style="display:none">
+      <div class="proof-grid">
         <div class="proof-card reveal">
-          <div class="proof-sector">Government &middot; Senior Leadership</div>
-          <h3>U.S. Army War College</h3>
-          <p>Engaged to develop and facilitate programming for the nation's most senior military leaders and strategic decision-makers. An audience that demands substance over inspiration — and structure that holds under pressure.</p>
+          <div class="proof-sector">Gobierno &middot; Alto Liderazgo</div>
+          <h3>Una institución superior de liderazgo militar de EE. UU.</h3>
+          <p>Contratados para desarrollar y facilitar programas para los líderes militares y tomadores de decisiones estratégicas de mayor rango del país. Una audiencia que exige sustancia por encima de inspiración — y una estructura que resiste bajo presión.</p>
         </div>
         <div class="proof-card reveal">
-          <div class="proof-sector">Hospitality &middot; Service Excellence</div>
-          <h3>Drury Hotels</h3>
-          <p>Led a custom-designed service excellence program for 400 team members — on-site, built directly around Drury's brand standards. Designed to be owned and sustained by their internal leaders long after the engagement ended.</p>
+          <div class="proof-sector">Hospitalidad &middot; Excelencia en el Servicio</div>
+          <h3>Un grupo hotelero nacional de EE. UU.</h3>
+          <p>Lideramos un programa de excelencia en el servicio diseñado a la medida para 400 colaboradores — presencial, construido directamente en torno a los estándares de la marca. Pensado para ser apropiado y sostenido por sus líderes internos mucho después de finalizado el proyecto.</p>
         </div>
         <div class="proof-card reveal">
-          <div class="proof-sector">Financial Services &middot; Executive Learning</div>
-          <h3>Thrivent</h3>
-          <p>A two-day custom leadership experience for 96 senior leaders — designed around Thrivent's organizational identity and mission, delivered in an immersive environment where the setting itself became part of the learning.</p>
+          <div class="proof-sector">Servicios Financieros &middot; Aprendizaje Ejecutivo</div>
+          <h3>Una organización de servicios financieros y de membresía de EE. UU.</h3>
+          <p>Una experiencia de liderazgo a la medida de dos días para 96 líderes senior — diseñada en torno a la identidad y la misión de la organización, entregada en un entorno inmersivo donde el lugar mismo se volvió parte del aprendizaje.</p>
         </div>
       </div>
 
-      <!-- Also served -->
-      <div class="proof-also reveal" style="display:none">
-        <div class="proof-also-label">Also Served</div>
+      <!-- Also served — anonymized sector descriptors -->
+      <div class="proof-also reveal">
+        <div class="proof-also-label">También Hemos Atendido</div>
         <div class="proof-also-names">
-          <span>Southern Methodist University</span><span class="proof-also-dot">&middot;</span>
-          <span>Sicredi</span><span class="proof-also-dot">&middot;</span>
-          <span>Zion Church</span><span class="proof-also-dot">&middot;</span>
-          <span>Hispanic Chamber of Commerce</span><span class="proof-also-dot">&middot;</span>
-          <span>Spruce Meadows</span><span class="proof-also-dot">&middot;</span>
-          <span>SR Companies</span>
+          <span>Una importante universidad privada</span><span class="proof-also-dot">&middot;</span>
+          <span>Una cooperativa financiera latinoamericana</span><span class="proof-also-dot">&middot;</span>
+          <span>Una cámara de comercio</span><span class="proof-also-dot">&middot;</span>
+          <span>Un recinto internacional de eventos</span><span class="proof-also-dot">&middot;</span>
+          <span>Organizaciones de fe</span><span class="proof-also-dot">&middot;</span>
+          <span>Empresas de servicios</span>
         </div>
       </div>
 
@@ -1377,39 +1384,39 @@
   <section class="why-us" id="why-us">
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">Why Us</div>
+        <div class="section-label">Por Qué Nosotros</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">Three distinctions that <em>define our work</em></h2>
-        <p class="why-us-intro">BTM is not built to deliver inspiration alone. It is built to help organizations translate standards, values, and service ambitions into operating reality. Our engagements are collaborative, immersive, and designed for transfer of ownership — these three principles define how we partner and what clients can expect.</p>
+        <h2 class="section-title">Tres distinciones que <em>definen nuestro trabajo</em></h2>
+        <p class="why-us-intro">BTM no está hecho para entregar solo inspiración. Está hecho para ayudar a las organizaciones a traducir estándares, valores y aspiraciones de servicio en realidad operativa. Nuestros proyectos son colaborativos, inmersivos y diseñados para la transferencia de propiedad — estos tres principios definen cómo trabajamos y qué pueden esperar nuestros clientes.</p>
       </div>
 
       <div class="distinction reveal">
         <div class="dist-num">01</div>
         <div>
-          <h3>Operating Systems, Not Training Alone</h3>
-          <p>Training creates awareness. Operating systems create consistency. We design the latter — building on your existing strengths rather than replacing them, so the desired experience does not depend on individual heroics.</p>
+          <h3>Sistemas Operativos, No Solo Capacitación</h3>
+          <p>La capacitación crea conciencia. Los sistemas operativos crean consistencia. Nosotros diseñamos lo segundo — construyendo sobre sus fortalezas existentes en lugar de reemplazarlas, para que la experiencia deseada no dependa de actos heroicos individuales.</p>
         </div>
       </div>
       <div class="distinction reveal">
         <div class="dist-num">02</div>
         <div>
-          <h3>Arrive, Build, Transfer, Endure</h3>
-          <p>We do not arrive, inspire, and depart. We build with your team, transfer capability, and equip your people to own and evolve the system independently. Our goal is never dependency — it is capability transfer.</p>
+          <h3>Llegar, Construir, Transferir, Perdurar</h3>
+          <p>No llegamos, inspiramos y nos vamos. Construimos con su equipo, transferimos capacidad y preparamos a su gente para apropiarse del sistema y evolucionarlo de forma independiente. Nuestra meta nunca es la dependencia — es la transferencia de capacidad.</p>
         </div>
       </div>
       <div class="distinction reveal">
         <div class="dist-num">03</div>
         <div>
-          <h3>Scale Without Losing Fidelity</h3>
-          <p>Whether an engagement touches 50 leaders or 30,000 participants, we protect clarity, consistency, and trust across every layer — reinforced through governance, feedback loops, and leader reinforcement that prevents drift.</p>
+          <h3>Escalar Sin Perder Fidelidad</h3>
+          <p>Ya sea que un proyecto involucre a 50 líderes o a 30,000 participantes, protegemos la claridad, la consistencia y la confianza en cada capa — reforzadas mediante gobernanza, ciclos de retroalimentación y el refuerzo de los líderes que evita la desviación.</p>
         </div>
       </div>
 
       <!-- People CTA -->
       <div class="people-cta-card reveal">
-        <h3>The People Behind the Magic</h3>
-        <p>A curated bench of practitioners spanning leadership development, facilitation, instructional design, content strategy, and enterprise learning — structured around capabilities, not name recognition.</p>
-        <a href="people-behind-the-magic.html" class="btn-copper">Explore the Team Bench</a>
+        <h3>Las Personas Detrás de la Magia</h3>
+        <p>Un equipo curado de practicantes que abarca desarrollo de liderazgo, facilitación, diseño instruccional, estrategia de contenido y aprendizaje empresarial — estructurado en torno a capacidades, no a reconocimiento de nombres.</p>
+        <a href="people-behind-the-magic.html" class="btn-copper">Conocer el Equipo</a>
       </div>
     </div>
   </section>
@@ -1417,11 +1424,11 @@
   <!-- ═══ CTA BRIDGE ═══ -->
   <section class="commitment">
     <div class="commitment-content reveal">
-      <div class="section-label" style="color:var(--copper-light);">The Next Step</div>
-      <blockquote>Ready to move from aspiration<br>to operation?</blockquote>
+      <div class="section-label" style="color:var(--copper-light);">El Siguiente Paso</div>
+      <blockquote>¿Listo para pasar de la aspiración<br>a la operación?</blockquote>
       <div class="copper-line center"></div>
-      <p class="commitment-sub">Start with a conversation. No pitch — just an honest dialogue about what your organization needs and whether we are the right fit to help you build it.</p>
-      <a href="/scheduling/" class="btn-outline" style="display:inline-block; margin-top:2rem;">Book an Advisory Conversation</a>
+      <p class="commitment-sub">Empiece con una conversación. Sin discurso de venta — solo un diálogo honesto sobre lo que su organización necesita y si somos el aliado indicado para ayudarle a construirlo.</p>
+      <a href="/es/scheduling/" class="btn-outline" style="display:inline-block; margin-top:2rem;">Agendar una Conversación de Asesoría</a>
     </div>
   </section>
 
@@ -1429,35 +1436,36 @@
   <section class="contact" id="contact">
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">Get In Touch</div>
+        <div class="section-label">Contáctenos</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">Let's build something <em>extraordinary</em></h2>
-        <p style="max-width:560px; margin:0 auto 1.5rem; color:var(--text-body);">Whether you are exploring a focused engagement or beginning with an assessment, BTM can help you identify the right next step.</p>
-        <a href="/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Book an Initial Advisory Conversation</a>
-        <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted);">Or reach our team directly below</p>
-        <p style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; letter-spacing:0.1em; margin-top:0.6rem; color:var(--text-muted);">Main Office &middot; <a class="phn" data-p="3212856244" style="color:var(--copper); text-decoration:none;">(321) 285-MAGIC</a></p>
+        <h2 class="section-title">Construyamos algo <em>extraordinario</em></h2>
+        <p style="max-width:560px; margin:0 auto 1.5rem; color:var(--text-body);">Ya sea que esté explorando un proyecto puntual o comenzando con una evaluación, BTM puede ayudarle a identificar el siguiente paso correcto.</p>
+        <a href="/es/scheduling/" class="btn-copper" style="display:inline-block; margin-bottom:0.75rem; color:#1A2744;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#1A2744'">Agendar una Conversación Inicial de Asesoría</a>
+        <p style="font-family:'Barlow Condensed',sans-serif; font-size:0.95rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-muted);">O comuníquese con nuestro equipo directamente abajo</p>
+        <p style="font-family:'Barlow Condensed',sans-serif; font-size:1rem; letter-spacing:0.1em; margin-top:0.6rem; color:var(--text-muted);">Oficina Principal &middot; <a class="phn" data-p="3212856244" style="color:var(--copper); text-decoration:none;">(321) 285-MAGIC</a></p>
       </div>
       <div class="contact-grid" style="margin-top:2.5rem;">
         <div class="contact-card reveal">
-          <img src="assets/maurizio-contact.jpeg" alt="Maurizio Landi" class="contact-photo" loading="lazy">
+          <img src="../assets/maurizio-contact.jpeg" alt="Maurizio Landi" class="contact-photo" loading="lazy">
           <div class="contact-info">
-            <div class="primary-label">Primary Contact</div>
+            <div class="primary-label">Contacto Principal</div>
             <h3>Maurizio Landi</h3>
-            <div class="contact-role">Founder &middot; Performance Architect</div>
+            <div class="contact-role">Fundador &middot; Arquitecto del Desempeño</div>
             <div class="contact-detail"><a class="eml" data-u="maurizio" data-d="beyondthemagic" data-t="co"></a></div>
             <div class="contact-detail"><a href="tel:4079253295">407.925.3295</a></div>
-            <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
+            <div class="contact-detail"><a class="wa" data-p="14079253295" target="_blank" rel="noopener" style="color:var(--copper);">WhatsApp</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co/es/">www.beyondthemagic.co/es</a></div>
           </div>
         </div>
         <div class="contact-card reveal">
-          <img src="assets/dennis-contact.jpeg" alt="Dennis Hough" class="contact-photo" loading="lazy">
+          <img src="../assets/dennis-contact.jpeg" alt="Dennis Hough" class="contact-photo" loading="lazy">
           <div class="contact-info">
-            <div class="primary-label">Co-Founder Contact</div>
+            <div class="primary-label">Contacto Co-Fundador</div>
             <h3>Dennis Hough</h3>
-            <div class="contact-role">Co-Founder &middot; Performance Architect</div>
+            <div class="contact-role">Co-Fundador &middot; Arquitecto del Desempeño</div>
             <div class="contact-detail"><a class="eml" data-u="dennis" data-d="beyondthemagic" data-t="co"></a></div>
             <div class="contact-detail"><a href="tel:8655664147">865.566.4147</a></div>
-            <div class="contact-detail"><a href="https://www.beyondthemagic.co">www.beyondthemagic.co</a></div>
+            <div class="contact-detail"><a href="https://www.beyondthemagic.co/es/">www.beyondthemagic.co/es</a></div>
           </div>
         </div>
       </div>
@@ -1467,18 +1475,19 @@
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-logo">
-      <img src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
+      <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
     </div>
     <div class="footer-links">
-      <a href="#origin">Our Story</a>
-      <a href="#framework">How We Work</a>
-      <a href="#why-us">Why Us</a>
-      <a href="people-behind-the-magic.html">People</a>
-      <a href="/bizhealth/">Assessment</a>
-      <a href="#contact">Contact</a>
+      <a href="#origin">Nuestra Historia</a>
+      <a href="#framework">Cómo Trabajamos</a>
+      <a href="#why-us">Por Qué Nosotros</a>
+      <a href="people-behind-the-magic.html">Personas</a>
+      <a href="https://bizhealth.ai/es">Evaluación</a>
+      <a href="#contact">Contacto</a>
+      <a href="/">English</a>
     </div>
-    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
-    <div class="footer-locale">Central Florida &middot; Global Reach</div>
+    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. Todos los derechos reservados.</div>
+    <div class="footer-locale">Florida Central &middot; Alcance Global</div>
     <div class="footer-info" style="margin-top:0.35rem;"><a class="phn" data-p="3212856244" style="color:var(--copper-light); text-decoration:none;">(321) 285-MAGIC</a></div>
   </footer>
 
@@ -1533,12 +1542,15 @@
       el.href = 'tel:+1' + el.getAttribute('data-p');
     });
 
+    // Assemble WhatsApp links at runtime
+    document.querySelectorAll('.wa').forEach(el => {
+      el.href = 'https://wa.me/' + el.getAttribute('data-p');
+    });
+
     // Hide Cal floating button when contact section is visible
     (function () {
       const contactSection = document.getElementById('contact');
       if (!contactSection) return;
-      // Cal injects a <cal-floating-button> custom element as a direct child
-      // of <body>. Fading the wrapper fades the fixed-position button inside it.
       function hookCalButton(node) {
         node.style.transition = 'opacity 0.4s ease';
         let overCta = false, overHero = false;
@@ -1551,7 +1563,6 @@
           overCta = entries[0].isIntersecting;
           update();
         }, { threshold: 0.15 }).observe(contactSection);
-        // On small screens, also hide while the hero (with its own CTA) is on screen
         const hero = document.querySelector('.hero');
         if (hero && window.matchMedia('(max-width: 768px)').matches) {
           new IntersectionObserver(function (entries) {
@@ -1581,7 +1592,7 @@
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "initial-advisory-conversation", {origin:"https://app.cal.com"});
-    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Let's Talk","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
+    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Hablemos","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
     Cal.ns["initial-advisory-conversation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1A2744"},"dark":{"cal-brand":"#F5F3EF"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   <!-- Cal floating-popup embed code ends -->

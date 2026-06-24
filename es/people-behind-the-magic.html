@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The People Behind the Magic | Beyond the Magic Consulting</title>
-  <meta name="description" content="Meet the leadership and practitioner bench behind Beyond the Magic Consulting — a curated team of specialists built for real-world performance transformation.">
+  <title>Las Personas Detrás de la Magia | Beyond the Magic Consulting</title>
+  <meta name="description" content="Conozca al liderazgo y al equipo de practicantes detrás de Beyond the Magic Consulting — un equipo curado de especialistas construido para la transformación del desempeño en el mundo real.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -95,17 +95,18 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.15rem;
       align-items: center;
       margin-left: auto;
     }
     .nav-links a {
       text-decoration: none;
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.03rem;
+      font-size: 0.97rem;
       font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.07em;
+      white-space: nowrap;
       color: rgba(255,255,255,0.65);
       transition: color 0.3s ease;
       position: relative;
@@ -130,6 +131,7 @@
     }
     .nav-cta:hover { background: #8B6143 !important; }
     .nav-cta::after { display: none !important; }
+
     /* Language toggle (EN | ES) */
     .lang-toggle {
       display: flex;
@@ -149,6 +151,7 @@
     .lang-toggle a:hover { color: var(--white); }
     .lang-toggle .sep { color: rgba(255,255,255,0.25); }
     .lang-toggle .active { color: var(--copper-light); }
+
     .nav-toggle {
       display: none;
       flex-direction: column;
@@ -192,7 +195,7 @@
       padding: 10rem 0 6rem;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.78), rgba(20,31,56,0.86)),
-        url('assets/people-hero.jpeg') center center / cover no-repeat;
+        url('../assets/people-hero.jpeg') center center / cover no-repeat;
       color: var(--white);
       text-align: center;
       transform: translateZ(0);
@@ -484,7 +487,7 @@
       padding: 7rem 0;
       background:
         linear-gradient(180deg, rgba(20,31,56,0.76), rgba(20,31,56,0.86)),
-        url('assets/team-gallery-band.jpeg') center center / cover no-repeat;
+        url('../assets/team-gallery-band.jpeg') center center / cover no-repeat;
       text-align: center;
       color: var(--white);
       transform: translateZ(0);
@@ -683,9 +686,11 @@
     noscript ~ * .reveal, .no-js .reveal { opacity: 1; transform: none; }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 1060px) {
+    @media (max-width: 1220px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
+    }
+    @media (max-width: 1060px) {
       .leadership-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); }
       .principles-grid { grid-template-columns: repeat(2, 1fr); }
@@ -726,42 +731,42 @@
   <nav id="mainNav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
+        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Arquitectos del Desempeño">
       </a>
       <ul class="nav-links">
-        <li><a href="index.html#origin">Our Story</a></li>
-        <li><a href="index.html#framework">How We Work</a></li>
-        <li><a href="index.html#why-us">Why Us</a></li>
-        <li><a href="people-behind-the-magic.html">People</a></li>
-        <li><a href="/bizhealth/">Assessment</a></li>
-        <li><a href="/scheduling/">Schedule</a></li>
-        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
-        <li class="lang-toggle"><span class="active">EN</span><span class="sep">|</span><a href="/es/people-behind-the-magic.html">ES</a></li>
+        <li><a href="index.html#origin">Nuestra Historia</a></li>
+        <li><a href="index.html#framework">Cómo Trabajamos</a></li>
+        <li><a href="index.html#why-us">Por Qué Nosotros</a></li>
+        <li><a href="people-behind-the-magic.html">Personas</a></li>
+        <li><a href="https://bizhealth.ai/es">Evaluación</a></li>
+        <li><a href="scheduling/">Agendar</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contacto</a></li>
+        <li class="lang-toggle"><a href="/people-behind-the-magic.html">EN</a><span class="sep">|</span><span class="active">ES</span></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir navegación">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#origin" onclick="closeMobile()">Our Story</a>
-    <a href="index.html#framework" onclick="closeMobile()">How We Work</a>
-    <a href="index.html#why-us" onclick="closeMobile()">Why Us</a>
-    <a href="people-behind-the-magic.html" onclick="closeMobile()">People</a>
-    <a href="/bizhealth/" onclick="closeMobile()">Assessment</a>
-    <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
-    <a href="index.html#contact" onclick="closeMobile()">Contact</a>
-    <a href="/es/people-behind-the-magic.html" onclick="closeMobile()" style="color:var(--copper-light);">Español</a>
+    <a href="index.html#origin" onclick="closeMobile()">Nuestra Historia</a>
+    <a href="index.html#framework" onclick="closeMobile()">Cómo Trabajamos</a>
+    <a href="index.html#why-us" onclick="closeMobile()">Por Qué Nosotros</a>
+    <a href="people-behind-the-magic.html" onclick="closeMobile()">Personas</a>
+    <a href="https://bizhealth.ai/es" onclick="closeMobile()">Evaluación</a>
+    <a href="scheduling/" onclick="closeMobile()">Agendar</a>
+    <a href="index.html#contact" onclick="closeMobile()">Contacto</a>
+    <a href="/people-behind-the-magic.html" onclick="closeMobile()" style="color:var(--copper-light);">English</a>
   </div>
 
   <!-- ═══ HERO ═══ -->
   <header class="hero">
     <div class="container">
-      <img class="hero-logo" src="assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" fetchpriority="high">
-      <div class="section-label">The People Behind the Magic</div>
-      <h1>A curated bench of practitioners built for real-world execution</h1>
-      <p>Beyond the Magic is intentionally structured around capability, not celebrity. What follows is the leadership every engagement is anchored to — and the practitioner bench that stands behind it.</p>
+      <img class="hero-logo" src="../assets/BTM_Logo_Transparent.png" alt="Beyond the Magic Consulting" fetchpriority="high">
+      <div class="section-label">Las Personas Detrás de la Magia</div>
+      <h1>Un equipo curado de practicantes construido para la ejecución en el mundo real</h1>
+      <p>Beyond the Magic está estructurado intencionalmente en torno a la capacidad, no a la fama. Lo que sigue es el liderazgo al que se ancla cada proyecto — y el equipo de practicantes que lo respalda.</p>
     </div>
   </header>
 
@@ -769,10 +774,10 @@
   <section>
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Your Points of Contact</div>
+        <div class="section-label">Sus Puntos de Contacto</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">The architects who lead <em>every engagement</em></h2>
-        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8;">Every BTM engagement is led directly by a named Performance Architect — a practitioner with decades of earned experience inside world-class organizations. They are the relationship, the strategy, and the accountability from first conversation through final delivery.</p>
+        <h2 class="section-title">Los arquitectos que lideran <em>cada proyecto</em></h2>
+        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8;">Cada proyecto de BTM es liderado directamente por un Arquitecto del Desempeño con nombre y apellido — un practicante con décadas de experiencia ganada dentro de organizaciones de clase mundial. Ellos son la relación, la estrategia y la responsabilidad, desde la primera conversación hasta la entrega final.</p>
       </div>
 
       <div class="leadership-grid">
@@ -780,41 +785,41 @@
         <!-- Maurizio Landi -->
         <div class="leader-card reveal">
           <div class="leader-card-top">
-            <img class="leader-photo" src="assets/maurizio-contact.jpeg" alt="Maurizio Landi, Founder and Performance Architect" style="object-position: center 20%;">
+            <img class="leader-photo" src="../assets/maurizio-contact.jpeg" alt="Maurizio Landi, Fundador y Arquitecto del Desempeño" style="object-position: center 20%;">
             <div class="leader-meta">
               <div class="leader-name">Maurizio Landi</div>
-              <div class="leader-title">Founder &middot; Performance Architect</div>
-              <div class="leader-hook">"Performance is not inspired, it is designed."</div>
+              <div class="leader-title">Fundador &middot; Arquitecto del Desempeño</div>
+              <div class="leader-hook">"El desempeño no se inspira, se diseña."</div>
             </div>
           </div>
-          <p class="leader-bio">Maurizio spent over two decades inside world-class operational environments — opening a hotel from the ground up before thirty at Marriott International, then leading 375 Cast Members across Disney's flagship resorts and earning the Walt Disney Legacy Award. At Disney Institute, he closed over $3.2 million in enterprise engagements with Fortune 100 clients before founding Beyond the Magic. A trusted counselor and advisor by nature, he brings the same integrity, genuine investment, and commitment to service to his clients that define how he shows up in every room — professional or community.</p>
+          <p class="leader-bio">Maurizio pasó más de dos décadas dentro de entornos operativos de clase mundial — abriendo un hotel desde cero antes de los treinta en Marriott International, para luego liderar a 375 Cast Members en los resorts insignia de Disney y recibir el Walt Disney Legacy Award. En Disney Institute, cerró más de $3.2 millones en proyectos empresariales con clientes Fortune 100 antes de fundar Beyond the Magic. Consejero y asesor de confianza por naturaleza, aporta a sus clientes la misma integridad, inversión genuina y compromiso con el servicio que definen cómo se presenta en cada sala — profesional o comunitaria.</p>
           <div class="tag-row">
             <span class="tag">Walt Disney Legacy Award</span>
             <span class="tag">Marriott International</span>
             <span class="tag">Disney Institute</span>
-            <span class="tag">English &amp; Spanish</span>
+            <span class="tag">Inglés y Español</span>
           </div>
-          <button class="bio-link" onclick="openModal('modal-maurizio')">Read Full Bio</button>
+          <button class="bio-link" onclick="openModal('modal-maurizio')">Leer Biografía Completa</button>
         </div>
 
         <!-- Dennis Hough -->
         <div class="leader-card reveal">
           <div class="leader-card-top">
-            <img class="leader-photo" src="assets/dennis.png" alt="Dennis Hough, Co-Founder and Performance Architect">
+            <img class="leader-photo" src="../assets/dennis.png" alt="Dennis Hough, Co-Fundador y Arquitecto del Desempeño">
             <div class="leader-meta">
               <div class="leader-name">Dennis Hough</div>
-              <div class="leader-title">Co-Founder &middot; Performance Architect</div>
-              <div class="leader-hook">"Success is achieved by helping others be successful."</div>
+              <div class="leader-title">Co-Fundador &middot; Arquitecto del Desempeño</div>
+              <div class="leader-hook">"El éxito se logra ayudando a otros a tener éxito."</div>
             </div>
           </div>
-          <p class="leader-bio">An Industrial Engineer by training and a people developer by conviction, Dennis brings thirty years of experience shaped by Fortune 100 operations, the rigors of national security infrastructure, and his own organizational development practice — delivering an average 20% improvement in operational efficiency and profitability across clients ranging from startups to $150 million enterprises. A servant leader in every sense of the word.</p>
+          <p class="leader-bio">Ingeniero Industrial de formación y desarrollador de personas por convicción, Dennis aporta treinta años de experiencia forjada en operaciones Fortune 100, el rigor de la infraestructura de seguridad nacional y su propia práctica de desarrollo organizacional — logrando una mejora promedio del 20% en eficiencia operativa y rentabilidad en clientes que van desde startups hasta empresas de $150 millones. Un líder servicial en todo el sentido de la palabra.</p>
           <div class="tag-row">
-            <span class="tag">Industrial Engineer</span>
+            <span class="tag">Ingeniero Industrial</span>
             <span class="tag">Six Sigma Black Belt</span>
             <span class="tag">DOE National Security Complex</span>
-            <span class="tag">Founder, Affirm Consulting</span>
+            <span class="tag">Fundador, Affirm Consulting</span>
           </div>
-          <button class="bio-link" onclick="openModal('modal-dennis')">Read Full Bio</button>
+          <button class="bio-link" onclick="openModal('modal-dennis')">Leer Biografía Completa</button>
         </div>
 
       </div>
@@ -825,101 +830,101 @@
   <section style="background: var(--offwhite-warm);">
     <div class="container">
       <div class="reveal">
-        <div class="section-label">Practitioner Roster</div>
+        <div class="section-label">Equipo de Practicantes</div>
         <div class="copper-line"></div>
-        <h2 class="section-title">The specialists who <em>stand behind the work</em></h2>
-        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8; margin-bottom: 3rem;">Assembled by conversation, not by resume. Every practitioner on this bench was invited because they hold a specific capability that took years — sometimes decades — to develop inside some of the most demanding organizations in the world. None of them are generic. All of them are proven.</p>
+        <h2 class="section-title">Los especialistas que <em>respaldan el trabajo</em></h2>
+        <p style="font-size: 1.15rem; max-width: 760px; line-height: 1.8; margin-bottom: 3rem;">Reunidos por conversación, no por currículum. Cada practicante de este equipo fue invitado porque posee una capacidad específica que tomó años — a veces décadas — desarrollar dentro de algunas de las organizaciones más exigentes del mundo. Ninguno es genérico. Todos están probados.</p>
       </div>
 
       <div class="roster-wrapper reveal">
 
         <div class="roster-entry">
-          <div class="roster-specialty">Executive Team Alignment &amp; C-Suite Advisory</div>
-          <p class="roster-desc">The practitioner you bring in when the leadership team is talented but not unified. A former corporate attorney whose legal training sharpened not just how they think, but how they listen, question, and guide. Specializes in working with C-suite executives who struggle to align — not by forcing consensus, but by building the process architecture that makes agreement the natural outcome.</p>
+          <div class="roster-specialty">Alineación de Equipos Ejecutivos y Asesoría a la Alta Dirección</div>
+          <p class="roster-desc">El practicante que se trae cuando el equipo de liderazgo es talentoso pero no está unificado. Un ex abogado corporativo cuya formación legal afinó no solo cómo piensa, sino cómo escucha, cuestiona y guía. Se especializa en trabajar con ejecutivos de la alta dirección que luchan por alinearse — no forzando el consenso, sino construyendo la arquitectura de procesos que hace del acuerdo el resultado natural.</p>
           <div class="tag-row">
-            <span class="tag">C-Suite Advisory &amp; Facilitation</span>
-            <span class="tag">Consensus &amp; Agreement Building</span>
-            <span class="tag">Negotiation &amp; Process Architecture</span>
+            <span class="tag">Asesoría y Facilitación a la Alta Dirección</span>
+            <span class="tag">Construcción de Consenso y Acuerdos</span>
+            <span class="tag">Negociación y Arquitectura de Procesos</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Executive Coaching &amp; Leadership Wellbeing</div>
-          <p class="roster-desc">A former leadership development manager who has spent a career working inside the layer of the organization most often overlooked and most often responsible for whether anything actually holds: middle management. Works one-on-one with executives and emerging leaders to reduce burnout, build sustainable performance habits, and develop leadership teams that operate at their best — not just on good days.</p>
+          <div class="roster-specialty">Coaching Ejecutivo y Bienestar del Liderazgo</div>
+          <p class="roster-desc">Un ex gerente de desarrollo de liderazgo que ha dedicado una carrera a trabajar dentro de la capa de la organización más a menudo pasada por alto y más a menudo responsable de que algo realmente se sostenga: los mandos medios. Trabaja uno a uno con ejecutivos y líderes emergentes para reducir el agotamiento, construir hábitos de desempeño sostenibles y desarrollar equipos de liderazgo que operan en su mejor versión — no solo en los días buenos.</p>
           <div class="tag-row">
-            <span class="tag">Executive Coaching</span>
-            <span class="tag">Leadership Development</span>
-            <span class="tag">Wellbeing &amp; Burnout Prevention</span>
+            <span class="tag">Coaching Ejecutivo</span>
+            <span class="tag">Desarrollo de Liderazgo</span>
+            <span class="tag">Bienestar y Prevención del Agotamiento</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Culture &amp; Guest Experience Design</div>
-          <p class="roster-desc">A practitioner who spent a career inside one of the world's most admired organizations, reaching its highest levels of recognition for living the culture from the inside out — not just teaching it. Brings that same operational lens to client challenges: not what the culture should say, but what it should feel like on the floor, in the interaction, and in every guest-facing moment. Designs solutions that are lean, legible, and built to hold long after the engagement ends.</p>
+          <div class="roster-specialty">Diseño de Cultura y Experiencia del Cliente</div>
+          <p class="roster-desc">Un practicante que dedicó una carrera dentro de una de las organizaciones más admiradas del mundo, alcanzando sus niveles más altos de reconocimiento por vivir la cultura desde adentro hacia afuera — no solo enseñarla. Aporta esa misma lente operativa a los desafíos del cliente: no lo que la cultura debería decir, sino lo que debería sentirse en el piso, en la interacción y en cada momento de cara al cliente. Diseña soluciones esbeltas, legibles y construidas para perdurar mucho después de que termina el proyecto.</p>
           <div class="tag-row">
-            <span class="tag">Service Culture Design</span>
-            <span class="tag">Behavioral Standards Development</span>
-            <span class="tag">Guest Experience Architecture</span>
+            <span class="tag">Diseño de Cultura de Servicio</span>
+            <span class="tag">Desarrollo de Estándares de Comportamiento</span>
+            <span class="tag">Arquitectura de Experiencia del Cliente</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Learning Systems &amp; Journey Architecture</div>
-          <p class="roster-desc">The practitioner who walks into a training conversation and asks the harder question: where does the learning actually go after the room empties? Rooted in operations at one of the world's most admired entertainment organizations, this specialist engineers full learning journeys — systems that follow a person from their first day through full, sustained performance. Not a course designer. A learning architect.</p>
+          <div class="roster-specialty">Sistemas de Aprendizaje y Arquitectura de Trayectorias</div>
+          <p class="roster-desc">El practicante que entra a una conversación sobre capacitación y hace la pregunta más difícil: ¿a dónde va realmente el aprendizaje después de que la sala se vacía? Con raíces en las operaciones de una de las organizaciones de entretenimiento más admiradas del mundo, este especialista diseña trayectorias completas de aprendizaje — sistemas que acompañan a una persona desde su primer día hasta un desempeño pleno y sostenido. No es un diseñador de cursos. Es un arquitecto del aprendizaje.</p>
           <div class="tag-row">
-            <span class="tag">Learning Journey Architecture</span>
-            <span class="tag">Onboarding &amp; Performance Systems</span>
-            <span class="tag">L&amp;D Design &amp; Sustainment</span>
+            <span class="tag">Arquitectura de Trayectorias de Aprendizaje</span>
+            <span class="tag">Onboarding y Sistemas de Desempeño</span>
+            <span class="tag">Diseño y Sostenimiento de L&amp;D</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Emotional Intelligence &amp; Communication Strategy</div>
-          <p class="roster-desc">A leadership strategist shaped by two environments that demand absolute clarity under pressure: finance and military service. Certified in Applied Strategic Thinking through the Center for Management and Organizational Effectiveness. Works at the intersection of emotional intelligence, business acumen, and organizational communication to build leadership teams that perform with composure, cohesion, and accountability — regardless of conditions.</p>
+          <div class="roster-specialty">Inteligencia Emocional y Estrategia de Comunicación</div>
+          <p class="roster-desc">Un estratega de liderazgo forjado por dos entornos que exigen claridad absoluta bajo presión: las finanzas y el servicio militar. Certificado en Applied Strategic Thinking por el Center for Management and Organizational Effectiveness. Trabaja en la intersección de la inteligencia emocional, el conocimiento del negocio y la comunicación organizacional para construir equipos de liderazgo que se desempeñan con compostura, cohesión y responsabilidad — sin importar las condiciones.</p>
           <div class="tag-row">
-            <span class="tag">Emotional Intelligence Coaching</span>
-            <span class="tag">Organizational Communication</span>
+            <span class="tag">Coaching de Inteligencia Emocional</span>
+            <span class="tag">Comunicación Organizacional</span>
             <span class="tag">Applied Strategic Thinking</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Talent Acquisition &amp; Onboarding Strategy</div>
-          <p class="roster-desc">The specialist who understands that who you hire and how you welcome them shapes everything that follows. A former senior recruiter who spent years inside one of the world's most selective hiring environments — with particular expertise in translating non-traditional backgrounds, including military service, into organizational strength. A published author whose frameworks connect selection criteria to culture, not just skill set.</p>
+          <div class="roster-specialty">Adquisición de Talento y Estrategia de Onboarding</div>
+          <p class="roster-desc">El especialista que entiende que a quién contrata y cómo le da la bienvenida moldea todo lo que sigue. Un ex reclutador senior que pasó años dentro de uno de los entornos de contratación más selectivos del mundo — con experiencia particular en traducir trayectorias no tradicionales, incluido el servicio militar, en fortaleza organizacional. Un autor publicado cuyos marcos conectan los criterios de selección con la cultura, no solo con las competencias.</p>
           <div class="tag-row">
-            <span class="tag">Talent Selection &amp; Culture Fit</span>
-            <span class="tag">Military-to-Civilian Translation</span>
-            <span class="tag">Onboarding Program Design</span>
+            <span class="tag">Selección de Talento y Encaje Cultural</span>
+            <span class="tag">Traducción de lo Militar a lo Civil</span>
+            <span class="tag">Diseño de Programas de Onboarding</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Creative Problem Solving &amp; Innovation Design</div>
-          <p class="roster-desc">The practitioner called in when the challenge is not execution — it is imagination. Applies research-backed creative frameworks to executive-level challenges, designing learning solutions that unlock capability rather than simply transfer information. A trusted thought partner for leaders who know something needs to change but cannot yet see what, or how.</p>
+          <div class="roster-specialty">Resolución Creativa de Problemas y Diseño de Innovación</div>
+          <p class="roster-desc">El practicante al que se llama cuando el desafío no es la ejecución — es la imaginación. Aplica marcos creativos respaldados por la investigación a desafíos de nivel ejecutivo, diseñando soluciones de aprendizaje que desbloquean capacidad en lugar de simplemente transferir información. Un socio de pensamiento de confianza para líderes que saben que algo debe cambiar pero aún no logran ver qué, ni cómo.</p>
           <div class="tag-row">
-            <span class="tag">Creative Strategy</span>
-            <span class="tag">Executive Learning Design</span>
-            <span class="tag">Innovation Frameworks</span>
+            <span class="tag">Estrategia Creativa</span>
+            <span class="tag">Diseño de Aprendizaje Ejecutivo</span>
+            <span class="tag">Marcos de Innovación</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">International Business &amp; Growth Strategy</div>
-          <p class="roster-desc">A multilingual business mentor and certified leadership coach with more than twenty years of international consulting experience spanning European, American, and Latin American markets. Has driven measurable revenue and profitability growth for small and medium-sized companies across three continents — through work in marketing, market research, talent management, and technology. Delivers in both English and Spanish.</p>
+          <div class="roster-specialty">Negocios Internacionales y Estrategia de Crecimiento</div>
+          <p class="roster-desc">Un mentor de negocios multilingüe y coach de liderazgo certificado con más de veinte años de experiencia en consultoría internacional, abarcando los mercados europeo, estadounidense y latinoamericano. Ha impulsado un crecimiento medible en ingresos y rentabilidad para pequeñas y medianas empresas en tres continentes — a través del trabajo en marketing, investigación de mercados, gestión de talento y tecnología. Atiende tanto en inglés como en español.</p>
           <div class="tag-row">
-            <span class="tag">International Market Strategy</span>
-            <span class="tag">Multilingual Delivery (EN/ES)</span>
-            <span class="tag">Revenue &amp; Growth Consulting</span>
+            <span class="tag">Estrategia de Mercados Internacionales</span>
+            <span class="tag">Servicio Multilingüe (EN/ES)</span>
+            <span class="tag">Consultoría de Ingresos y Crecimiento</span>
           </div>
         </div>
 
         <div class="roster-entry">
-          <div class="roster-specialty">Content Design, Visual Production &amp; Operations</div>
-          <p class="roster-desc">The team working behind the scenes to make every engagement real and every deliverable worthy of the client's name on it. This collective brings together instructional design and adult learning expertise — translating strategy into structured, learner-centered content — alongside expert graphic design that renders each client's specific work into finished materials built meticulously to their brand standards, colors, and look and feel. A third member manages project coordination, scheduling, financial administration, and business operations, ensuring every engagement runs cleanly from first brief to final delivery. They are not visible in the room. They are the reason what happens in the room is worth remembering.</p>
+          <div class="roster-specialty">Diseño de Contenido, Producción Visual y Operaciones</div>
+          <p class="roster-desc">El equipo que trabaja tras bambalinas para hacer real cada proyecto y para que cada entregable sea digno del nombre del cliente. Este colectivo reúne experiencia en diseño instruccional y aprendizaje de adultos — traduciendo la estrategia en contenido estructurado y centrado en quien aprende — junto con un diseño gráfico experto que plasma el trabajo específico de cada cliente en materiales terminados, construidos meticulosamente según sus estándares de marca, colores y estética. Un tercer integrante gestiona la coordinación de proyectos, la programación, la administración financiera y las operaciones del negocio, asegurando que cada proyecto fluya impecablemente desde el primer brief hasta la entrega final. No son visibles en la sala. Son la razón por la que lo que sucede en la sala vale la pena recordar.</p>
           <div class="tag-row">
-            <span class="tag">Instructional Design</span>
-            <span class="tag">Visual &amp; Brand Production</span>
-            <span class="tag">Project Management &amp; Operations</span>
+            <span class="tag">Diseño Instruccional</span>
+            <span class="tag">Producción Visual y de Marca</span>
+            <span class="tag">Gestión de Proyectos y Operaciones</span>
           </div>
         </div>
 
@@ -930,25 +935,25 @@
   <!-- ═══ STATS BAND ═══ -->
   <div class="stats-band">
     <div class="container reveal">
-      <div class="section-label">The Collective</div>
-      <div class="stats-band-title">The depth behind every engagement</div>
-      <p class="stats-band-sub">This is not a one-person operation. And it was never meant to be.</p>
+      <div class="section-label">El Colectivo</div>
+      <div class="stats-band-title">La profundidad detrás de cada proyecto</div>
+      <p class="stats-band-sub">Esto no es una operación de una sola persona. Y nunca fue concebido para serlo.</p>
       <div class="stats-grid">
         <div class="stat-item">
           <div class="stat-number">11+</div>
-          <div class="stat-label">Practitioners &amp; Architects</div>
+          <div class="stat-label">Practicantes y Arquitectos</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">200+</div>
-          <div class="stat-label">Combined Years of Experience</div>
+          <div class="stat-label">Años Combinados de Experiencia</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">6+</div>
-          <div class="stat-label">Industries Represented</div>
+          <div class="stat-label">Industrias Representadas</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">4+</div>
-          <div class="stat-label">Continents of Delivery</div>
+          <div class="stat-label">Continentes de Entrega</div>
         </div>
       </div>
     </div>
@@ -957,14 +962,14 @@
   <!-- ═══ INDUSTRIES BAND ═══ -->
   <div class="industries-band">
     <div class="container reveal">
-      <div class="industries-label">Environments &amp; Industries Represented Across This Bench</div>
+      <div class="industries-label">Entornos e Industrias Representados en Este Equipo</div>
       <div class="industries-list">
-        <span class="industry-item">Global Entertainment</span>
-        <span class="industry-item">Hospitality &amp; Hotels</span>
-        <span class="industry-item">Manufacturing &amp; Engineering</span>
-        <span class="industry-item">Professional Sports &amp; Venues</span>
-        <span class="industry-item">Military &amp; Defense</span>
-        <span class="industry-item">International Markets</span>
+        <span class="industry-item">Entretenimiento Global</span>
+        <span class="industry-item">Hospitalidad y Hoteles</span>
+        <span class="industry-item">Manufactura e Ingeniería</span>
+        <span class="industry-item">Deportes Profesionales y Recintos</span>
+        <span class="industry-item">Militar y Defensa</span>
+        <span class="industry-item">Mercados Internacionales</span>
       </div>
     </div>
   </div>
@@ -972,25 +977,25 @@
   <!-- ═══ WHY THIS MATTERS ═══ -->
   <section class="gallery-band">
     <div class="container reveal">
-      <div class="section-label">Why This Matters</div>
-      <h2>Transformation demands more than one point of view</h2>
-      <p>The firms that create lasting change do not rely on a single personality. They rely on aligned expertise. This bench brings together complementary disciplines so each phase of the work is supported by the people best equipped to move it forward.</p>
+      <div class="section-label">Por Qué Esto Importa</div>
+      <h2>La transformación exige más de un solo punto de vista</h2>
+      <p>Las firmas que crean cambios duraderos no dependen de una sola personalidad. Dependen de experticia alineada. Este equipo reúne disciplinas complementarias para que cada fase del trabajo cuente con el respaldo de las personas mejor preparadas para hacerla avanzar.</p>
       <div class="principles-grid">
         <div class="principle">
-          <h3>Depth</h3>
-          <div>Experienced practitioners from the world's most demanding organizations — not generic staffing.</div>
+          <h3>Profundidad</h3>
+          <div>Practicantes experimentados de las organizaciones más exigentes del mundo — no personal genérico.</div>
         </div>
         <div class="principle">
-          <h3>Flexibility</h3>
-          <div>The right capability aligned to the specific engagement — not a one-size-fits-all model.</div>
+          <h3>Flexibilidad</h3>
+          <div>La capacidad correcta alineada al proyecto específico — no un modelo de talla única.</div>
         </div>
         <div class="principle">
-          <h3>Consistency</h3>
-          <div>One operating philosophy across all contributors, regardless of who is in the room.</div>
+          <h3>Consistencia</h3>
+          <div>Una sola filosofía operativa en todos los colaboradores, sin importar quién esté en la sala.</div>
         </div>
         <div class="principle">
-          <h3>Transfer</h3>
-          <div>Every engagement is designed to strengthen the client organization long after the work ends.</div>
+          <h3>Transferencia</h3>
+          <div>Cada proyecto está diseñado para fortalecer a la organización cliente mucho después de que el trabajo termina.</div>
         </div>
       </div>
     </div>
@@ -1001,12 +1006,12 @@
     <div class="container">
       <div class="cta-box reveal">
         <div>
-          <h2>Interested in how the bench supports a specific engagement?</h2>
-          <p>We can help map the right blend of leadership, design, facilitation, and operational support based on your goals, scale, and business environment.</p>
+          <h2>¿Le interesa saber cómo el equipo respalda un proyecto específico?</h2>
+          <p>Podemos ayudarle a definir la combinación correcta de liderazgo, diseño, facilitación y soporte operativo según sus objetivos, escala y entorno de negocio.</p>
         </div>
         <div style="display:flex; flex-direction:column; gap:0.85rem; align-items:center;">
-          <a class="button" href="/scheduling/">Book an Initial Advisory Conversation</a>
-          <a href="index.html#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.92rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s ease;" onmouseover="this.style.color='rgba(196,154,114,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">Or contact us directly &rarr;</a>
+          <a class="button" href="scheduling/">Agendar una Conversación Inicial de Asesoría</a>
+          <a href="index.html#contact" style="font-family:'Barlow Condensed',sans-serif; font-size:0.92rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.45); text-decoration:none; transition:color 0.3s ease;" onmouseover="this.style.color='rgba(196,154,114,0.9)'" onmouseout="this.style.color='rgba(255,255,255,0.45)'">O contáctenos directamente &rarr;</a>
         </div>
       </div>
     </div>
@@ -1015,8 +1020,8 @@
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="container">
-      <img class="footer-logo" src="assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
-      <div>&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
+      <img class="footer-logo" src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
+      <div>&copy; 2026 Beyond the Magic Consulting. Todos los derechos reservados.</div>
       <div style="margin-top:0.35rem;"><a class="phn" data-p="3212856244" style="color:var(--copper-light); text-decoration:none;">(321) 285-MAGIC</a></div>
     </div>
   </footer>
@@ -1024,32 +1029,32 @@
   <!-- ═══ MODAL: MAURIZIO ═══ -->
   <div class="modal-backdrop" id="modal-maurizio" role="dialog" aria-modal="true" aria-labelledby="modal-maurizio-name">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-maurizio')" aria-label="Close">&times;</button>
+      <button class="modal-close" onclick="closeModal('modal-maurizio')" aria-label="Cerrar">&times;</button>
       <div class="modal-header">
-        <img class="modal-photo" src="assets/maurizio-contact.jpeg" alt="Maurizio Landi" style="object-position: center 20%;">
+        <img class="modal-photo" src="../assets/maurizio-contact.jpeg" alt="Maurizio Landi" style="object-position: center 20%;">
         <div class="modal-header-meta">
           <div class="modal-name" id="modal-maurizio-name">Maurizio Landi</div>
-          <div class="modal-title">Founder &middot; Performance Architect</div>
-          <div class="modal-hook">"Performance is not inspired, it is designed."</div>
+          <div class="modal-title">Fundador &middot; Arquitecto del Desempeño</div>
+          <div class="modal-hook">"El desempeño no se inspira, se diseña."</div>
         </div>
       </div>
       <div class="modal-body">
-        <p>Maurizio Landi has spent over two decades studying one question: why do some organizations deliver exceptional performance consistently while others, with the same talent, the same training, and the same intentions, cannot?</p>
-        <p>That conviction was shaped early. Maurizio grew up inside a family-owned import business, watching a small warehouse grow into a substantial operation bringing fine European foods to the U.S. market. He saw firsthand that growth does not come from ambition alone — it comes from the structure you build around the people who do the work.</p>
-        <p>He carried that understanding into a nine-year career with Marriott International, starting as an hourly front desk agent and advancing through four properties across Central Florida — ultimately leading the build-out, hiring, grand opening, and full operations of the Residence Inn by Marriott in Lake Mary. Before he was thirty, he had opened a hotel from the ground up.</p>
-        <p>In 2011, Maurizio joined The Walt Disney Company as Concierge Manager at Disney's Grand Floridian Resort &amp; Spa — the company's flagship property. It was there he first observed something that would shape the rest of his career: the same service culture that defined the Grand Floridian's luxury experience was present, in equal measure, at Disney's most affordable property. The offering was different. The service was not. That consistency was not accidental — it was systematic. And that fascination pulled him toward the architecture behind the culture.</p>
-        <p>Over the next fifteen years, he held operational leadership roles across housekeeping, custodial, and warehouse management — leading a team of 375 Cast Members and overseeing more than 5,400 rooms at Disney's All-Star Resorts. He was recognized with the Walt Disney Legacy Award, the highest honor a Cast Member can receive, given to those who exemplify dreaming, creating, and inspiring.</p>
-        <p>His trajectory shifted from operations to organizational development. At Disney University, he led the onboarding team, facilitated a seven-week leadership development program, and developed safety and wellness training for leaders across Walt Disney World, Disneyland Resort, Disney Cruise Line, and Walt Disney Imagineering — shaping how Disney's own leaders learned to lead.</p>
-        <p>At Disney Institute, Maurizio spent four years as an Account Manager and Senior Facilitator. He led consultative engagements with enterprise clients across diverse industries, closed over $3.2 million in revenue, and built a portfolio of 28 strategic client relationships — helping organizations translate world-class principles into their own business environments.</p>
-        <p>It was inside that work — delivering world-class content to organizations eager to transform — that he identified the gap. Clients left inspired. But inspiration without infrastructure does not sustain. That insight became Beyond the Magic. Maurizio delivers in both English and Spanish, having built curriculum and facilitated programs for international clients across aviation and finance in Latin America.</p>
-        <p>Beyond the work, Maurizio's orientation has always been toward service. He is a proud member of the Clermont 100 — a chapter of the 100 Network, a community of men invested in putting their time, talent, and treasure toward local causes that matter. He has served as Vice-Chairman of the Board of Directors at Imagine South Lake Charter School — a 1,000+ student K-8 charter school in Lake County, Florida — since 2019. And he is a Founder and Treasurer of Arise Church South Lake in Minneola, Florida. Those commitments are not peripheral to the work — they are an extension of the same conviction that drives it. "I find it extremely rewarding when I get to serve others," he says. Whether that is a client organization, a school board, or a new church community, the posture is the same: show up with integrity, invest genuinely, and build something that lasts.</p>
+        <p>Maurizio Landi ha dedicado más de dos décadas a estudiar una sola pregunta: ¿por qué algunas organizaciones entregan un desempeño excepcional de forma consistente mientras que otras, con el mismo talento, la misma capacitación y las mismas intenciones, no pueden?</p>
+        <p>Esa convicción se forjó temprano. Maurizio creció dentro de un negocio familiar de importación, observando cómo una pequeña bodega se convertía en una operación considerable que traía finos alimentos europeos al mercado estadounidense. Vio de primera mano que el crecimiento no proviene solo de la ambición — proviene de la estructura que se construye en torno a las personas que hacen el trabajo.</p>
+        <p>Llevó esa comprensión a una carrera de nueve años en Marriott International, comenzando como agente de recepción por hora y avanzando a través de cuatro propiedades en el centro de Florida — hasta liderar la construcción, la contratación, la gran apertura y la operación completa del Residence Inn by Marriott en Lake Mary. Antes de cumplir treinta años, había abierto un hotel desde cero.</p>
+        <p>En 2011, Maurizio se unió a The Walt Disney Company como Concierge Manager en Disney's Grand Floridian Resort &amp; Spa — la propiedad insignia de la compañía. Fue allí donde observó por primera vez algo que daría forma al resto de su carrera: la misma cultura de servicio que definía la experiencia de lujo del Grand Floridian estaba presente, en igual medida, en la propiedad más económica de Disney. La oferta era diferente. El servicio no. Esa consistencia no era accidental — era sistemática. Y esa fascinación lo atrajo hacia la arquitectura detrás de la cultura.</p>
+        <p>Durante los siguientes quince años, ocupó roles de liderazgo operativo en housekeeping, custodia y gestión de bodegas — liderando un equipo de 375 Cast Members y supervisando más de 5,400 habitaciones en los Disney's All-Star Resorts. Fue reconocido con el Walt Disney Legacy Award, el máximo honor que un Cast Member puede recibir, otorgado a quienes ejemplifican soñar, crear e inspirar.</p>
+        <p>Su trayectoria pasó de las operaciones al desarrollo organizacional. En Disney University, lideró el equipo de onboarding, facilitó un programa de desarrollo de liderazgo de siete semanas y desarrolló capacitaciones de seguridad y bienestar para líderes en Walt Disney World, Disneyland Resort, Disney Cruise Line y Walt Disney Imagineering — moldeando cómo los propios líderes de Disney aprendían a liderar.</p>
+        <p>En Disney Institute, Maurizio pasó cuatro años como Account Manager y Facilitador Senior. Lideró proyectos consultivos con clientes empresariales de diversas industrias, cerró más de $3.2 millones en ingresos y construyó un portafolio de 28 relaciones estratégicas con clientes — ayudando a las organizaciones a traducir principios de clase mundial a sus propios entornos de negocio.</p>
+        <p>Fue dentro de ese trabajo — entregando contenido de clase mundial a organizaciones ansiosas por transformarse — donde identificó la brecha. Los clientes se iban inspirados. Pero la inspiración sin infraestructura no se sostiene. Esa idea se convirtió en Beyond the Magic. Maurizio atiende tanto en inglés como en español, habiendo construido currículos y facilitado programas para clientes internacionales en aviación y finanzas en América Latina.</p>
+        <p>Más allá del trabajo, la orientación de Maurizio siempre ha sido hacia el servicio. Es un orgulloso miembro del Clermont 100 — un capítulo de la 100 Network, una comunidad de hombres comprometidos a poner su tiempo, talento y recursos al servicio de causas locales que importan. Se ha desempeñado como Vicepresidente de la Junta Directiva de Imagine South Lake Charter School — una escuela charter K-8 con más de 1,000 estudiantes en el condado de Lake, Florida — desde 2019. Y es Fundador y Tesorero de Arise Church South Lake en Minneola, Florida. Esos compromisos no son periféricos al trabajo — son una extensión de la misma convicción que lo impulsa. "Encuentro extremadamente gratificante poder servir a los demás", dice. Ya sea una organización cliente, una junta escolar o una nueva comunidad de fe, la postura es la misma: presentarse con integridad, invertir genuinamente y construir algo que perdure.</p>
         <div class="tag-row">
           <span class="tag">Walt Disney Legacy Award</span>
           <span class="tag">Marriott International</span>
-          <span class="tag">Disney Institute Senior Facilitator</span>
+          <span class="tag">Facilitador Senior, Disney Institute</span>
           <span class="tag">Disney University</span>
-          <span class="tag">English &amp; Spanish</span>
-          <span class="tag">Community Board Service</span>
+          <span class="tag">Inglés y Español</span>
+          <span class="tag">Servicio en Juntas Comunitarias</span>
         </div>
       </div>
     </div>
@@ -1058,28 +1063,28 @@
   <!-- ═══ MODAL: DENNIS ═══ -->
   <div class="modal-backdrop" id="modal-dennis" role="dialog" aria-modal="true" aria-labelledby="modal-dennis-name">
     <div class="modal-content">
-      <button class="modal-close" onclick="closeModal('modal-dennis')" aria-label="Close">&times;</button>
+      <button class="modal-close" onclick="closeModal('modal-dennis')" aria-label="Cerrar">&times;</button>
       <div class="modal-header">
-        <img class="modal-photo" src="assets/dennis.png" alt="Dennis Hough">
+        <img class="modal-photo" src="../assets/dennis.png" alt="Dennis Hough">
         <div class="modal-header-meta">
           <div class="modal-name" id="modal-dennis-name">Dennis Hough</div>
-          <div class="modal-title">Co-Founder &middot; Performance Architect</div>
-          <div class="modal-hook">"Success is achieved by helping others be successful."</div>
+          <div class="modal-title">Co-Fundador &middot; Arquitecto del Desempeño</div>
+          <div class="modal-hook">"El éxito se logra ayudando a otros a tener éxito."</div>
         </div>
       </div>
       <div class="modal-body">
-        <p>Dennis Hough has spent thirty years asking the same question inside every organization he has served: what separates the leaders who develop people from the leaders who simply manage them? The answer, he has found, is almost never talent. It is intention, investment, and the willingness to come alongside someone and believe in their potential before they believe in it themselves.</p>
-        <p>Trained as an Industrial Engineer at the University of Tennessee — shaped to see systems, diagnose gaps, and build solutions that hold — Dennis entered the workforce with a rigorous, process-oriented mind. Early in his career, working in quality management and operations leadership within a Fortune 100 corporation, he discovered something no engineering curriculum teaches: the most important variable in any system is the person running it. That discovery became his life's work.</p>
-        <p>He spent a decade at the Department of Energy's Y-12 National Security Complex — one of the nation's most demanding operational environments — progressing through roles in quality engineering, facility management, business development, and strategic program development. He launched the Oak Ridge–Huntsville Partnership Office, a multi-institution collaboration connecting national laboratories, federal agencies, and universities. Along the way, he was recognized as a Department of Energy Mentor of the Year Nominee and a Small Business Advocate of the Year.</p>
-        <p>In 2015, Dennis founded Affirm Consulting, building it into a respected organizational development and strategy execution practice that partnered with companies ranging from startups to $150 million enterprises — delivering an average 20% improvement in operational efficiency and profitability across client engagements. In 2022, he served as Chief Operating Officer at MacArthur Group, a behavioral health enterprise serving U.S. Veterans, where he grew the organization to $20+ million in revenue and rebuilt the executive leadership team from the inside out.</p>
-        <p>In 2026, Dennis joined forces with Maurizio Landi as Co-Founder of Beyond the Magic Consulting — bringing decades of operational strategy, leadership development, and organizational transformation to BTM's growing portfolio of clients.</p>
-        <p>What unifies every chapter of Dennis's career is not an industry or a title. It is a posture. He teaches. He mentors. He encourages. Rooted in his faith and his family, Dennis is a servant leader in every sense of the word — someone who has sat in the seat, made the hard calls, and consistently helped organizations and individuals find their way forward.</p>
+        <p>Dennis Hough ha pasado treinta años haciendo la misma pregunta dentro de cada organización a la que ha servido: ¿qué separa a los líderes que desarrollan personas de los líderes que simplemente las gestionan? La respuesta, ha descubierto, casi nunca es el talento. Es la intención, la inversión y la disposición a acompañar a alguien y creer en su potencial antes de que esa persona crea en sí misma.</p>
+        <p>Formado como Ingeniero Industrial en la University of Tennessee — moldeado para ver sistemas, diagnosticar brechas y construir soluciones que se sostienen — Dennis entró al mundo laboral con una mente rigurosa y orientada a los procesos. Al principio de su carrera, trabajando en gestión de calidad y liderazgo operativo dentro de una corporación Fortune 100, descubrió algo que ningún plan de estudios de ingeniería enseña: la variable más importante de cualquier sistema es la persona que lo opera. Ese descubrimiento se convirtió en el trabajo de su vida.</p>
+        <p>Pasó una década en el Y-12 National Security Complex del Department of Energy — uno de los entornos operativos más exigentes del país — avanzando por roles en ingeniería de calidad, gestión de instalaciones, desarrollo de negocios y desarrollo estratégico de programas. Lanzó la Oak Ridge–Huntsville Partnership Office, una colaboración multi-institucional que conecta laboratorios nacionales, agencias federales y universidades. En el camino, fue reconocido como Nominado a Mentor del Año del Department of Energy y como Defensor de la Pequeña Empresa del Año.</p>
+        <p>En 2015, Dennis fundó Affirm Consulting, convirtiéndola en una respetada práctica de desarrollo organizacional y ejecución de estrategia que se asoció con empresas que iban desde startups hasta compañías de $150 millones — logrando una mejora promedio del 20% en eficiencia operativa y rentabilidad en sus proyectos. En 2022, se desempeñó como Director de Operaciones (COO) en MacArthur Group, una empresa de salud conductual al servicio de los Veteranos de EE. UU., donde hizo crecer la organización a más de $20 millones en ingresos y reconstruyó el equipo de liderazgo ejecutivo desde adentro.</p>
+        <p>En 2026, Dennis unió fuerzas con Maurizio Landi como Co-Fundador de Beyond the Magic Consulting — aportando décadas de estrategia operativa, desarrollo de liderazgo y transformación organizacional al creciente portafolio de clientes de BTM.</p>
+        <p>Lo que une cada capítulo de la carrera de Dennis no es una industria ni un título. Es una postura. Enseña. Es mentor. Anima. Arraigado en su fe y su familia, Dennis es un líder servicial en todo el sentido de la palabra — alguien que ha ocupado el cargo, tomado las decisiones difíciles y ayudado consistentemente a organizaciones e individuos a encontrar su camino hacia adelante.</p>
         <div class="tag-row">
-          <span class="tag">Industrial Engineer</span>
+          <span class="tag">Ingeniero Industrial</span>
           <span class="tag">Six Sigma Black Belt</span>
           <span class="tag">DOE National Security Complex</span>
-          <span class="tag">Founder, Affirm Consulting</span>
-          <span class="tag">Servant Leadership</span>
+          <span class="tag">Fundador, Affirm Consulting</span>
+          <span class="tag">Liderazgo Servicial</span>
         </div>
       </div>
     </div>
@@ -1153,8 +1158,6 @@
     (function () {
       const ctaTarget = document.querySelector('.cta-box') || document.querySelector('footer');
       if (!ctaTarget) return;
-      // Cal injects a <cal-floating-button> custom element as a direct child
-      // of <body>. Fading the wrapper fades the fixed-position button inside it.
       function hookCalButton(node) {
         node.style.transition = 'opacity 0.4s ease';
         let overCta = false, overHero = false;
@@ -1167,7 +1170,6 @@
           overCta = entries[0].isIntersecting;
           update();
         }, { threshold: 0.15 }).observe(ctaTarget);
-        // On small screens, also hide while the hero (with its own CTA) is on screen
         const hero = document.querySelector('.hero');
         if (hero && window.matchMedia('(max-width: 768px)').matches) {
           new IntersectionObserver(function (entries) {
@@ -1197,7 +1199,7 @@
   <script type="text/javascript">
     (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
     Cal("init", "initial-advisory-conversation", {origin:"https://app.cal.com"});
-    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Let's Talk","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
+    Cal.ns["initial-advisory-conversation"]("floatingButton", {"calLink":"beyondthemagic/initial-advisory-conversation","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},"buttonText":"Hablemos","buttonColor":"#C49A72","buttonTextColor":"#1A2744"});
     Cal.ns["initial-advisory-conversation"]("ui", {"cssVarsPerTheme":{"light":{"cal-brand":"#1A2744"},"dark":{"cal-brand":"#F5F3EF"}},"hideEventTypeDetails":false,"layout":"month_view"});
   </script>
   <!-- Cal floating-popup embed code ends -->

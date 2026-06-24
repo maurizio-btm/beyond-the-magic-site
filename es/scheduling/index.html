@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Schedule an Initial Advisory Conversation | Beyond the Magic Consulting</title>
-  <meta name="description" content="Book a complimentary Initial Advisory Conversation with Beyond the Magic Consulting. Let's explore whether we're the right fit for your organization's performance goals.">
+  <title>Agende una Conversación Inicial de Asesoría | Beyond the Magic Consulting</title>
+  <meta name="description" content="Reserve una Conversación Inicial de Asesoría sin costo con Beyond the Magic Consulting. Exploremos si somos el aliado indicado para los objetivos de desempeño de su organización.">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -113,16 +113,17 @@
     .nav-links {
       display: flex;
       list-style: none;
-      gap: 1.6rem;
+      gap: 1.15rem;
       align-items: center;
       margin-left: auto;
     }
     .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.03rem;
+      font-size: 0.97rem;
       font-weight: 500;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      white-space: nowrap;
       color: rgba(255,255,255,0.65);
       text-decoration: none;
       transition: color 0.3s ease;
@@ -399,7 +400,7 @@
     }
 
     /* ═══ RESPONSIVE ═══ */
-    @media (max-width: 1060px) {
+    @media (max-width: 1220px) {
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
     }
@@ -421,47 +422,43 @@
   <!-- ═══ NAVIGATION ═══ -->
   <nav id="mainNav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Performance Architects">
+      <a href="/es/" class="nav-logo">
+        <img src="../../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting, Arquitectos del Desempeño">
       </a>
       <ul class="nav-links">
-        <li><a href="/#origin">Origin</a></li>
-        <li><a href="/#philosophy">Philosophy</a></li>
-        <li><a href="/#framework">How We Work</a></li>
-        <li><a href="/#services">Services</a></li>
-        <li><a href="/#why-us">Why Us</a></li>
-        <li><a href="/people-behind-the-magic.html">People</a></li>
-        <li><a href="/bizhealth/">Assessment</a></li>
-        <li><a href="/scheduling/" class="active">Schedule</a></li>
-        <li><a href="/#contact" class="nav-cta">Contact</a></li>
-        <li class="lang-toggle"><span class="active">EN</span><span class="sep">|</span><a href="/es/scheduling/">ES</a></li>
+        <li><a href="/es/#origin">Nuestra Historia</a></li>
+        <li><a href="/es/#framework">Cómo Trabajamos</a></li>
+        <li><a href="/es/#why-us">Por Qué Nosotros</a></li>
+        <li><a href="/es/people-behind-the-magic.html">Personas</a></li>
+        <li><a href="https://bizhealth.ai/es">Evaluación</a></li>
+        <li><a href="/es/scheduling/" class="active">Agendar</a></li>
+        <li><a href="/es/#contact" class="nav-cta">Contacto</a></li>
+        <li class="lang-toggle"><a href="/scheduling/">EN</a><span class="sep">|</span><span class="active">ES</span></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir navegación">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/#origin" onclick="closeMobile()">Origin</a>
-    <a href="/#philosophy" onclick="closeMobile()">Philosophy</a>
-    <a href="/#framework" onclick="closeMobile()">How We Work</a>
-    <a href="/#services" onclick="closeMobile()">Services</a>
-    <a href="/#why-us" onclick="closeMobile()">Why Us</a>
-    <a href="/people-behind-the-magic.html" onclick="closeMobile()">People</a>
-    <a href="/bizhealth/" onclick="closeMobile()">Assessment</a>
-    <a href="/scheduling/" onclick="closeMobile()">Schedule</a>
-    <a href="/#contact" onclick="closeMobile()">Contact</a>
-    <a href="/es/scheduling/" onclick="closeMobile()" style="color:var(--copper-light);">Español</a>
+    <a href="/es/#origin" onclick="closeMobile()">Nuestra Historia</a>
+    <a href="/es/#framework" onclick="closeMobile()">Cómo Trabajamos</a>
+    <a href="/es/#why-us" onclick="closeMobile()">Por Qué Nosotros</a>
+    <a href="/es/people-behind-the-magic.html" onclick="closeMobile()">Personas</a>
+    <a href="https://bizhealth.ai/es" onclick="closeMobile()">Evaluación</a>
+    <a href="/es/scheduling/" onclick="closeMobile()">Agendar</a>
+    <a href="/es/#contact" onclick="closeMobile()">Contacto</a>
+    <a href="/scheduling/" onclick="closeMobile()" style="color:var(--copper-light);">English</a>
   </div>
 
   <!-- ═══ PAGE HERO ═══ -->
   <section class="page-hero">
     <div class="page-hero-inner">
-      <div class="section-label">Initial Advisory Conversation</div>
+      <div class="section-label">Conversación Inicial de Asesoría</div>
       <div class="copper-line center" style="background:var(--copper);"></div>
-      <h1 class="section-title">The right fit starts with<br><em>the right conversation.</em></h1>
-      <p class="page-hero-body">This complimentary conversation is designed to explore your organization's unique needs — and determine whether Beyond the Magic is the right solution to help you build something enduring.</p>
+      <h1 class="section-title">El aliado correcto comienza con<br><em>la conversación correcta.</em></h1>
+      <p class="page-hero-body">Esta conversación sin costo está diseñada para explorar las necesidades particulares de su organización — y determinar si Beyond the Magic es la solución indicada para ayudarle a construir algo que perdure.</p>
     </div>
   </section>
 
@@ -469,25 +466,25 @@
   <section class="expect">
     <div class="container">
       <div class="reveal" style="text-align:center;">
-        <div class="section-label">What to Expect</div>
+        <div class="section-label">Qué Esperar</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">A conversation, <em>not a pitch.</em></h2>
+        <h2 class="section-title">Una conversación, <em>no un discurso de venta.</em></h2>
       </div>
       <div class="expect-grid">
         <div class="expect-card reveal">
           <div class="expect-num">01</div>
-          <h3>Understand Your World</h3>
-          <p>We start by listening. We want to understand your organization's goals, challenges, and the performance gaps you're trying to close — before we say a single word about ourselves.</p>
+          <h3>Entender Su Mundo</h3>
+          <p>Empezamos escuchando. Queremos comprender los objetivos, los desafíos y las brechas de desempeño que su organización busca cerrar — antes de decir una sola palabra sobre nosotros.</p>
         </div>
         <div class="expect-card reveal">
           <div class="expect-num">02</div>
-          <h3>Explore the Fit</h3>
-          <p>We'll share how we think about performance architecture and whether our approach aligns with where you are and where you're going. No pressure — alignment matters more than the sale.</p>
+          <h3>Explorar el Encaje</h3>
+          <p>Compartiremos cómo pensamos la arquitectura del desempeño y si nuestro enfoque se alinea con dónde está y hacia dónde va. Sin presión — la alineación importa más que la venta.</p>
         </div>
         <div class="expect-card reveal">
           <div class="expect-num">03</div>
-          <h3>Define the Next Step</h3>
-          <p>If there's a genuine fit, we'll outline what a partnership could look like and what the next logical step would be. If there isn't, we'll tell you honestly — and point you in the right direction.</p>
+          <h3>Definir el Siguiente Paso</h3>
+          <p>Si existe un encaje genuino, esbozaremos cómo podría verse una alianza y cuál sería el siguiente paso lógico. Si no lo hay, se lo diremos con honestidad — y le orientaremos en la dirección correcta.</p>
         </div>
       </div>
     </div>
@@ -497,10 +494,10 @@
   <section class="scheduling" id="scheduling">
     <div class="container">
       <div class="scheduling-header reveal">
-        <div class="section-label">Book Your Conversation</div>
+        <div class="section-label">Reserve Su Conversación</div>
         <div class="copper-line center"></div>
-        <h2 class="section-title">Select a time that <em>works for you.</em></h2>
-        <p class="scheduling-subtext">Choose a date and time below. You'll receive a confirmation with everything you need to prepare for our conversation.</p>
+        <h2 class="section-title">Elija un horario que <em>le funcione.</em></h2>
+        <p class="scheduling-subtext">Elija una fecha y hora abajo. Recibirá una confirmación con todo lo que necesita para prepararse para nuestra conversación.</p>
       </div>
       <div class="cal-wrapper reveal">
         <!-- Cal inline embed code begins -->
@@ -522,29 +519,28 @@
 
   <!-- ═══ FOOTER CALLOUT ═══ -->
   <div class="footer-callout">
-    <div class="section-label" style="color:var(--copper-light);">Prefer to Reach Out Directly?</div>
-    <p>Our team is available by email or phone if you'd prefer a more direct introduction before scheduling.</p>
-    <a href="/#contact" class="btn-outline">View Contact Information</a>
+    <div class="section-label" style="color:var(--copper-light);">¿Prefiere Contactarnos Directamente?</div>
+    <p>Nuestro equipo está disponible por correo o teléfono si prefiere una introducción más directa antes de agendar.</p>
+    <a href="/es/#contact" class="btn-outline">Ver Información de Contacto</a>
   </div>
 
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="footer-logo">
-      <img src="../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
+      <img src="../../assets/logo-horizontal-navy.png" alt="Beyond the Magic Consulting" loading="lazy">
     </div>
     <div class="footer-links">
-      <a href="/#origin">Origin</a>
-      <a href="/#philosophy">Philosophy</a>
-      <a href="/#framework">How We Work</a>
-      <a href="/#services">Services</a>
-      <a href="/#why-us">Why Us</a>
-      <a href="/people-behind-the-magic.html">People</a>
-      <a href="/bizhealth/">Assessment</a>
-      <a href="/scheduling/">Schedule</a>
-      <a href="/#contact">Contact</a>
+      <a href="/es/#origin">Nuestra Historia</a>
+      <a href="/es/#framework">Cómo Trabajamos</a>
+      <a href="/es/#why-us">Por Qué Nosotros</a>
+      <a href="/es/people-behind-the-magic.html">Personas</a>
+      <a href="https://bizhealth.ai/es">Evaluación</a>
+      <a href="/es/scheduling/">Agendar</a>
+      <a href="/es/#contact">Contacto</a>
+      <a href="/scheduling/">English</a>
     </div>
-    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. All rights reserved.</div>
-    <div class="footer-locale">Central Florida &middot; Global Reach</div>
+    <div class="footer-info">&copy; 2026 Beyond the Magic Consulting. Todos los derechos reservados.</div>
+    <div class="footer-locale">Florida Central &middot; Alcance Global</div>
   </footer>
 
   <!-- ═══ SCRIPTS ═══ -->
