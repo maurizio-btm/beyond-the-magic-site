@@ -194,15 +194,15 @@
     .hero {
       padding: 10rem 0 6rem;
       background:
-        linear-gradient(180deg, rgba(20,31,56,0.78), rgba(20,31,56,0.86)),
-        url('../assets/people-hero.jpeg') center center / cover no-repeat;
+        linear-gradient(90deg, rgba(20,31,56,0.95) 0%, rgba(20,31,56,0.88) 40%, rgba(20,31,56,0.55) 68%, rgba(20,31,56,0.22) 100%),
+        url('../assets/people-hero.jpeg') right top / cover no-repeat;
       color: var(--white);
-      text-align: center;
+      text-align: left;
       transform: translateZ(0);
     }
     .hero-logo {
-      width: min(320px, 60vw);
-      margin: 0 auto 1.75rem;
+      width: min(300px, 55vw);
+      margin: 0 0 1.5rem;
     }
     .section-label {
       font-family: 'Barlow Condensed', sans-serif;
@@ -222,11 +222,12 @@
       font-weight: 500;
       margin-bottom: 1rem;
       line-height: 1.2;
+      max-width: 640px;
     }
     .hero p {
       font-family: 'Barlow', sans-serif;
-      max-width: 780px;
-      margin: 0 auto;
+      max-width: 600px;
+      margin: 0;
       font-size: 1.3rem;
       font-weight: 300;
       color: rgba(255,255,255,0.8);
@@ -699,7 +700,12 @@
     @media (max-width: 768px) {
       .container { width: calc(100% - 2rem); }
       section { padding: 4.5rem 0; }
-      .hero { padding: 8rem 0 4rem; }
+      .hero {
+        padding: 8rem 0 4rem;
+        background:
+          linear-gradient(180deg, rgba(20,31,56,0.84), rgba(20,31,56,0.9)),
+          url('../assets/people-hero.jpeg') 70% top / cover no-repeat;
+      }
       .hero-logo { width: min(200px, 50vw); }
       .gallery-band { padding: 5rem 0; }
       .cta-box { padding: 2rem; }
